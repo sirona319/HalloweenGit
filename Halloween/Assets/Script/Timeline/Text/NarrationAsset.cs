@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Playables;
+
+public class NarrationAsset : PlayableAsset
+{
+    // [SerializeField]
+    // ExposedReference<GameObject> narrationGameObject;
+
+    //[SerializeField]
+    //ExposedReference<TMP_Text> text;
+    [TextArea(1, 20)]
+    public string TextErea;
+    public NarrationBehaviour narration = new NarrationBehaviour();
+
+    //public TMP_Text mText;
+    public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
+    {
+        var playable = ScriptPlayable<NarrationBehaviour>.Create(graph, narration);
+
+        var behaviour = playable.GetBehaviour();
+
+        behaviour.inputText = TextErea;
+       // behaviour.narrationGameObject = narrationGameObject.Resolve(graph.GetResolver());
+
+        //behaviour.mTextUI = owner.GetComponent<TMP_Text>();
+
+
+        //behaviour.mTextUI= (TMP_Text)narrationGameObject.defaultValue;
+        //behaviour.OnPlayableCreate(playable);
+
+
+        return playable;
+        //throw new System.NotImplementedException();
+    }
+}
