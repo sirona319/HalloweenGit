@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd2c18130d084441802761e204ff96f, type: 3}
+  m_Name: EnemySetting
+  m_EditorClassIdentifier: 
+  DataList:
+  - Id: Fly
+    moveType: 00000000
+    attackType: 00000000
+    Speed: 4
+    HpMax: 1
+    AtkIntervalMax: 1
+    go: {fileID: 8993108005238923625, guid: e7847cfb934f9ee48a9532668de7244c, type: 3}
+  - Id: Pumpkin
+    moveType: 01000000
+    attackType: 
+    Speed: 4
+    HpMax: 1
+    AtkIntervalMax: 1
+    go: {fileID: 6205204080456637428, guid: c5d8c39d676599a4082a613046747a16, type: 3}
+  - Id: NULLPumpkin
+    moveType: 
+    attackType: 
+    Speed: 4
+    HpMax: 1
+    AtkIntervalMax: 1
+    go: {fileID: 5547165019575917904, guid: 16d5981da867b6b4f9d32b3657a745e8, type: 3}
