@@ -3560,8 +3560,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6F22\u5B57\u306A\u3093\u3075\u3041\uFF53\uFF48\u3075\u3043\uFF12\uFF132323\n\u6539\u884C\u30C6\u30B9\u30C8"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bf408391cd2aa45449027d0303e289fa, type: 2}
-  m_sharedMaterial: {fileID: -2763737896981043317, guid: bf408391cd2aa45449027d0303e289fa, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebe73d652838ffd41ae65592f5e7d13d, type: 2}
+  m_sharedMaterial: {fileID: -314602230843501041, guid: ebe73d652838ffd41ae65592f5e7d13d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
