@@ -12,10 +12,10 @@ public class PlayerScr2D : MonoBehaviour
 
     Rigidbody2D m_rb;      //剛体
     [SerializeField] Vector2 m_movement;
-    public float MAXMOVESPEED = 3f;
-    [SerializeField] public float moveSpeed = 3f;   //移動速度
+    public float maxMoveSpeed;
+    public float moveSpeed;   //移動速度
 
-    [SerializeField] bool isGround = true;
+    public bool isGround = true;
     public bool isLimitMove = true;    //アニメーション中などの移動制限
     public bool isDamage = false;
     bool isDead = false;
@@ -44,6 +44,8 @@ public class PlayerScr2D : MonoBehaviour
     // #endregion
     void Start()
     {
+        moveSpeed = maxMoveSpeed;
+
         nMag = GetComponent<TargetMagazine>();
         m_rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
@@ -90,7 +92,9 @@ public class PlayerScr2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)&&isGround)
         {
             isJump = true;
-            keepPosY=transform.position.y;
+            isGround = false;
+            keepPosY =transform.position.y;
+          
             //m_movement.y += 20.0f;
         }
         JumpControl();
@@ -248,21 +252,22 @@ public class PlayerScr2D : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGround = true;
-            Debug.Log("GROUND TRUE");
+            if(isJump)
+            isJump = false;
+            //Debug.Log("GROUND TRUE");
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
 
-        if (collision.gameObject.CompareTag("Ground"))
-        {
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
 
-            isGround = false;
-            Debug.Log("GROUND FALSE");
-        }
-    }
+    //        isGround = false;
+    //        Debug.Log("GROUND FALSE");
+    //    }
+    //}
 
 
     //private void OnTriggerEnter(Collider other)

@@ -73,7 +73,7 @@ public class NarrationBehaviour : PlayableBehaviour
         //textBackImage.enabled = true;
         //mTextUI.enabled = true;
         base.OnBehaviourPlay(playable, info);
-        Debug.Log($"OnBehaviourPlay" + NumPlay++);
+       // Debug.Log($"OnBehaviourPlay" + NumPlay++);
 
 
         clipStart = true;
@@ -102,7 +102,7 @@ public class NarrationBehaviour : PlayableBehaviour
 
         //base.OnBehaviourPause(playable, info);
         
-        Debug.Log($"OnBehaviourPause"+ NumPause++);
+        //Debug.Log($"OnBehaviourPause"+ NumPause++);
     }
 
     public override void OnGraphStart(Playable playable)
@@ -110,7 +110,7 @@ public class NarrationBehaviour : PlayableBehaviour
         //base.OnGraphStart(playable);
         //Debug.Log("[CustomTimeline] Behaviour OnGraphStart");
 
-        Debug.Log("OnGraphStart");
+        //Debug.Log("OnGraphStart");
     }
 
     public override void OnGraphStop(Playable playable)
@@ -118,7 +118,7 @@ public class NarrationBehaviour : PlayableBehaviour
         // base.OnGraphStop(playable);
         //Debug.Log("[CustomTimeline] Behaviour OnGraphStop");
 
-        Debug.Log("OnGraphStop");
+       // Debug.Log("OnGraphStop");
     }
 
     int NumDes = 0;
@@ -130,7 +130,7 @@ public class NarrationBehaviour : PlayableBehaviour
 
 
         //  base.OnPlayableDestroy(playable);
-        Debug.Log("[CustomTimeline] Behaviour OnPlayableDestroy"+ NumDes++);
+       // Debug.Log("[CustomTimeline] Behaviour OnPlayableDestroy"+ NumDes++);
     }
 
     public override void ProcessFrame(Playable playable, FrameData info, object playerData)

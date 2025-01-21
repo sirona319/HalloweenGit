@@ -211,7 +211,7 @@ public class Message : MonoBehaviour
         //プレイヤーの移動制限解除
         var p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScr2D>();
         p.isLimitMove = false;
-        p.moveSpeed = p.MAXMOVESPEED;
+        p.moveSpeed = p.maxMoveSpeed;
 
     }
 
