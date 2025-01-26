@@ -68,12 +68,12 @@ public class JumpMove : BaseMove
 
     public override void MoveUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            transform.position = startPosition;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    transform.position = startPosition;
+        //}
 
-            if (jumpInterval > 0f)
+        if (jumpInterval > 0f)
             jumpInterval-=Time.deltaTime;
 
 

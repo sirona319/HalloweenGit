@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +29,7 @@ public class FlyScr : EnemyBase
 
         stateController.UpdateSequence();
 
-        ResetPos2DZ();
+        //ResetPos2DZ();
     }
 
     void ResetPos2DZ()
@@ -88,7 +88,7 @@ public class FlyScr : EnemyBase
 
     //    Debug.Log("ColPlayer");
 
-    //    //ƒvƒŒƒCƒ„[‚Ö‚Ìƒ_ƒ[ƒWˆ—
+    //    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¸ã®ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†
     //    other.gameObject.GetComponent<PlayerScr2D>().PlayerDamage(1);
 
 
@@ -102,7 +102,7 @@ public class FlyScr : EnemyBase
 
     //    Debug.Log("ColPlayer");
 
-    //    //ƒvƒŒƒCƒ„[‚Ö‚Ìƒ_ƒ[ƒWˆ—
+    //    //ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¸ã®ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†
     //    other.transform.GetComponent<PlayerScr2D>().PlayerDamage(1);
 
 

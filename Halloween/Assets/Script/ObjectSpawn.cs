@@ -75,17 +75,16 @@ public class ObjectSpawn : MonoBehaviour
         //colTrigger.isActiveTrigger = false;
     }
 
-    public async UniTask DelaySpawnAsyncSceneObject
-    (float seconds, ObjLoadState loadState, Vector3 spawnPos)
+    public async UniTask DelaySpawnAsyncSceneObject(float seconds, GameObject loadObj, Vector3 spawnPos)
     {
 
 
         await UniTask.WaitForSeconds(seconds);
 
         //オブジェクトマネージャーに変更する？
-        var eData = EnemyManager.I.GetEnemyData(loadState.ToString());
+        //var eData = EnemyManager.I.GetEnemyData(loadState.ToString());
 
-        //Instantiate(eData.go, spawnPos, transform.rotation);
+        Instantiate(loadObj, spawnPos, transform.rotation);
 
     }
 }

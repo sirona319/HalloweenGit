@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class FlyCtr : StateControllerBase
+public class PumpkinBossCtr : StateControllerBase
 {
     public enum State
     {
-        Fly_Wait,
-        Fly_Damage,
-        Fly_Dead,
-        Fly_Attack,
-        Fly_Move,
-        //Fly_Circle,
+        PumpkinBoss_Wait,
+        //PumpkinBoss_Damage,
+        PumpkinBoss_Dead,
+        PumpkinBoss_Attack,
+        //PumpkinBoss_Move,
+        //Pumpkin_Circle,
 
 
         NumStates
@@ -30,7 +27,7 @@ public class FlyCtr : StateControllerBase
             if (typeClass != null)
             {
                 var state = (StateChildBase)gameObject.AddComponent(typeClass);
-                
+
                 stateDic[i] = state;
                 state.Initialize(i);
 
@@ -41,11 +38,4 @@ public class FlyCtr : StateControllerBase
         CurrentState = initializeStateType;
         stateDic[CurrentState].OnEnter();
     }
-
-    //protected void BaseFlyStateSet(State enemyState)
-    //{
-    //    AutoStateTransitionSequence((int)enemyState);
-    //}
 }
-
-//public class BaseFly_Move : EnemyStateChildBaseMove2D{}

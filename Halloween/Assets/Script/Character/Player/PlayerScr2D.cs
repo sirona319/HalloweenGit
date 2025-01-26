@@ -19,7 +19,9 @@ public class PlayerScr2D : MonoBehaviour
     public bool isLimitMove = true;    //アニメーション中などの移動制限
     public bool isDamage = false;
     bool isDead = false;
-    bool isJump = false;
+    public bool isJump = false;
+
+    public float jumpHeight; //1.8
 
     readonly float MAXATKINTERVAL = 1;
     float atkInterval = 0;
@@ -57,7 +59,7 @@ public class PlayerScr2D : MonoBehaviour
     {
 
         if (isDead) return;
-        if (isLimitMove) return;
+        //if (isLimitMove) return;
 
         if(atkInterval > 0) 
             atkInterval-=Time.deltaTime;
@@ -66,9 +68,6 @@ public class PlayerScr2D : MonoBehaviour
         //{
         //    atkInterval = 1;
         //}
-
-
-
 
         //MoveControl();     //移動用関数
         if (Input.GetKeyDown(KeyCode.F)&& atkInterval<=0)
@@ -97,6 +96,7 @@ public class PlayerScr2D : MonoBehaviour
           
             //m_movement.y += 20.0f;
         }
+
         JumpControl();
 
         //アニメーションの設定
@@ -116,7 +116,7 @@ public class PlayerScr2D : MonoBehaviour
         if (!isJump) return;
         m_movement.y += 4f;
 
-        if(transform.position.y>keepPosY+2.5f)
+        if(transform.position.y>keepPosY+jumpHeight)
         {
             isJump = false;
         }
@@ -248,15 +248,15 @@ public class PlayerScr2D : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            if(isJump)
-            isJump = false;
-            //Debug.Log("GROUND TRUE");
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        if(isJump)
+    //        isJump = false;
+    //        //Debug.Log("GROUND TRUE");
+    //    }
+    //}
 
     //private void OnCollisionExit2D(Collision2D collision)
     //{

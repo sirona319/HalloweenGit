@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
 using System;
+using UnityEngine;
 using static EnemyData;
-using System.Collections.Generic;
 
-
-public class EnemyBase : MonoBehaviour
+public class PumpkinBossScr : MonoBehaviour
 {
     #region ステートコントローラー
     [SerializeField] protected StateControllerBase stateController = default;
@@ -15,8 +14,6 @@ public class EnemyBase : MonoBehaviour
     }
     #endregion
 
-    //protected int hpPoint;
-
     [NonSerialized] public bool IsDead = false;
     [NonSerialized] public bool IsDamage = false;
     [NonSerialized] public bool IsAttack = true;
@@ -24,12 +21,12 @@ public class EnemyBase : MonoBehaviour
 
 
 
-    public EnemyData enemyData;//スクリプタルオブジェクト　リスト
-    public string findName;
+    //public EnemyData enemyData;//スクリプタルオブジェクト　リスト
+    //public string findName;
 
 
     //[NonSerialized] public List<BaseMagazine> baseMagazine=new ();
-    public List<BaseMove> baseMove = new ();
+    //public List<BaseMove> baseMove = new();
 
 
     //public Transform[] movePointsDatas;
@@ -37,23 +34,25 @@ public class EnemyBase : MonoBehaviour
     //public int MaxHp = 1;
     [NonSerialized] public int Hp = 0;
     //public float MaxAtkInterval = 1f;
-    [NonSerialized]public float AtkInterval =1;
+    [NonSerialized] public float AtkInterval = 1;
+
+    public GameObject[] pumpkins;
 
     //const int ATKVAL = 1;
 
     //呼び出し先でキャストして使用する
-    public BaseMove MoveTypeSelect(MoveType mt)
-    {
-        foreach (var move in baseMove)
-        {
+    //public BaseMove MoveTypeSelect(MoveType mt)
+    //{
+    //    foreach (var move in baseMove)
+    //    {
 
-            if (move.GetType().FullName == mt.ToString())
-                return move;
-        }
+    //        if (move.GetType().FullName == mt.ToString())
+    //            return move;
+    //    }
 
 
-        return null;
-    }
+    //    return null;
+    //}
 
     //public void AttackMagazineUpdate(AttackType atkType)
     //{
@@ -61,7 +60,7 @@ public class EnemyBase : MonoBehaviour
     //    foreach (var magazine in baseMagazine)
     //        if (magazine.GetType().FullName == atkType.ToString())
     //            magazine.MagazineUpdate();
-        
+
     //}
     //public void AttackMagazineUpdateAll()
     //{
@@ -70,27 +69,43 @@ public class EnemyBase : MonoBehaviour
     //}
 
 
-    protected virtual void StartInit()
+    //protected virtual void StartInit()
+    //{
+    //    //スクリプタルオブジェクトのデータを取得
+    //    enemyData = EnemyManager.I.GetEnemyData(findName);
+
+    //    //enemyDataのnullチェック
+    //    if (enemyData == null)
+    //        throw new System.Exception(gameObject.name + "　Data null");
+
+
+
+    //    // if((int)enemyData.attackType.Length<=0)
+    //    //    throw new System.Exception(gameObject.name + "　スクリプタルオブジェクトattackType　空");
+
+    //    //if ((int)enemyData.moveType.Length <= 0)
+    //    //    throw new System.Exception(gameObject.name + "スクリプタルオブジェクト　moveType 空");
+    //}
+
+
+    void Start()
     {
-        //スクリプタルオブジェクトのデータを取得
-        enemyData = EnemyManager.I.GetEnemyData(findName);
+        //base.StartInit();
+        //base.Init();
 
-        //enemyDataのnullチェック
-        if (enemyData == null)
-            throw new System.Exception(gameObject.name + "　Data null");
-
-
-
-        // if((int)enemyData.attackType.Length<=0)
-        //    throw new System.Exception(gameObject.name + "　スクリプタルオブジェクトattackType　空");
-
-        //if ((int)enemyData.moveType.Length <= 0)
-        //    throw new System.Exception(gameObject.name + "スクリプタルオブジェクト　moveType 空");
+        stateController.Initialize((int)FlyCtr.State.Fly_Wait);
     }
     protected virtual void Init()
     {
+        ////スクリプタルオブジェクトのデータを取得
+        //enemyData = EnemyManager.I.GetEnemyData(findName);
+
+        ////enemyDataのnullチェック
+        //if (enemyData == null)
+        //    throw new System.Exception(gameObject.name + "　Data null");
+
         //ステータスの初期化
-        Hp = enemyData.HpMax;
+       // Hp = enemyData.HpMax;
 
 
         //baseMagazine初期化
@@ -152,7 +167,6 @@ public class EnemyBase : MonoBehaviour
 
         if (IsDead) return;
 
-
         Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         Hp -= damage;        //HP減少処理
 
@@ -161,24 +175,6 @@ public class EnemyBase : MonoBehaviour
         if (Hp <= 0)
             IsDead = true;
     }
-
-
-
-    //public int ReturnStateTypeDamage()
-    //{
-    //    const int DAMAGESTATE = 1;
-    //    return DAMAGESTATE;
-    //}
-
-    public bool ReturnStateTypeDead()
-    {
-        if (IsDead) return true;
-
-        return false;
-
-    }
-
-
 
     public int ReturnStateMoveType(int stateType)
     {
@@ -192,6 +188,44 @@ public class EnemyBase : MonoBehaviour
 
         return stateType;
     }
-    
 
+    void Update()
+    {
+        //AttackTimeUpdate();
+
+        //if (transform.position.z != 0f)
+        //{
+        //    var tr = transform.position;
+        //    tr.z = 0f;
+        //    transform.position = tr;
+        //}
+
+        stateController.UpdateSequence();
+
+        //ResetPos2DZ();
+    }
+
+    void ResetPos2DZ()
+    {
+        if (transform.position.z == 0f)
+            return;
+
+        var tr = transform.position;
+        tr.z = 0f;
+        transform.position = tr;
+
+    }
+
+
+    public int FlyReturnStateType(int stateType)
+    {
+        if (AtkInterval <= 0)
+            return (int)FlyCtr.State.Fly_Attack;
+        else if (IsMove)
+            return (int)FlyCtr.State.Fly_Move;
+
+        else
+            return (int)FlyCtr.State.Fly_Wait;
+
+    }
 }

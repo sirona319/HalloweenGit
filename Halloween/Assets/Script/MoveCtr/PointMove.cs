@@ -55,7 +55,8 @@ public class PointMove : BaseMove
         //Vector3 resultPos= rb2D + up2D * moveSpd * Time.deltaTime;
         //resultPos.z = 0f;
         //m_rb.MovePosition(resultPos);
-        transform.position= transform.position + transform.up * speed * Time.deltaTime;
+        transform.position = transform.position + transform.up * speed * Time.deltaTime;
+
 
         //const float INTERPOLANT = 5f;
 

@@ -29,7 +29,7 @@ public class PumpkinScr : EnemyBase
 
         stateController.UpdateSequence();
 
-        ResetPos2DZ();
+        //ResetPos2DZ();
     }
 
     void ResetPos2DZ()

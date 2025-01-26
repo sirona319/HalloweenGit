@@ -1,13 +1,20 @@
-﻿using System.Runtime.InteropServices;
+﻿using DG.Tweening;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 //https://gomafrontier.com/unity/1585
 public class CameraControl : MonoBehaviour
 {
+    [SerializeField] public bool isEventCamera=false;
+    Vector3 eventTargetPos = Vector3.zero;
+    float cameraDuration = 1f;
+
     [SerializeField] bool is2D = false;
     [SerializeField] float cameraZRange = 6f;
     [SerializeField] float cameraYPos = 0f;
+
 
     private Transform pTrans;
     //public GameObject mainCamera;
@@ -32,7 +39,8 @@ public class CameraControl : MonoBehaviour
         
         if (is2D)
         {
-            CameraTarget2D();
+            CameraTarget2DUpdate();
+            CameraEventUpdate();
             return;
         }
 
@@ -45,8 +53,6 @@ public class CameraControl : MonoBehaviour
         if (Input.GetMouseButton(1)) return;//右クリック中
 
 #endif
-
-
 
         //SetCursorPos(1920 / 2, 1080 / 2);
         //const int WHEEL = 2;
@@ -109,13 +115,15 @@ public class CameraControl : MonoBehaviour
     }
 
 
-    void CameraTarget2D()
+    void CameraTarget2DUpdate()
     {
+        if (isEventCamera) return;
+
         if(pTrans==null)return;
 
         GetComponent<Camera>().orthographicSize = cameraZRange;
 
-        var pos=transform.position;
+        var pos = transform.position;
 
         pos = pTrans.position;
 
@@ -124,5 +132,22 @@ public class CameraControl : MonoBehaviour
         pos.y = cameraYPos;
 
         transform.position = pos;
+    }
+
+    
+    void CameraEventUpdate()
+    {
+        if (!isEventCamera) return;
+        //transform.position = eventTargetPos;
+
+        transform.DOMove(eventTargetPos, cameraDuration).SetEase(Ease.OutSine);
+
+    }
+
+    public void CameraEventTrigger(Vector3 targetPos,float dur)
+    {
+        isEventCamera = true;
+        eventTargetPos = targetPos;
+        cameraDuration = dur;
     }
 }

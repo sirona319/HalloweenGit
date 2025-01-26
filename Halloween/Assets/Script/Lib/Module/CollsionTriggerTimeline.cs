@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 
-public class CollisionTrigger : MonoBehaviour
+public class TimelineCollsionTrigger : MonoBehaviour
 {
-    public bool isActiveTrigger = false;
-
     //タイムライン再生用の関数
-    //public void SetTimeline(bool act)
-    //{
-    //    if (transform.parent.GetComponent<TimelineControl>() == null)return;
+    public void SetTimeline(bool act)
+    {
+        if (transform.parent.GetComponent<TimelineControl>() == null) return;
 
-    //    transform.parent.GetComponent<TimelineControl>().isPlayTrigger = act;
-    //}
+        transform.parent.GetComponent<TimelineControl>().isPlayTrigger = act;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = true;
-           // SetTimeline(true);
+
+            SetTimeline(true);
+
 
         }
 
@@ -27,8 +26,7 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = false;
-           /// SetTimeline(false);
+            SetTimeline(false);
         }
 
     }
@@ -37,8 +35,9 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = true;
-            //SetTimeline(true);
+
+            SetTimeline(true);
+
         }
 
     }
@@ -47,8 +46,7 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = false;
-           // SetTimeline(false);
+            SetTimeline(false);
         }
 
     }

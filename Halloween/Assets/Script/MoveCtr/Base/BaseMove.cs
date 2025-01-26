@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,6 +11,7 @@ public abstract class BaseMove : MonoBehaviour
 
     public virtual void Initialize()
     {
+        if(GetComponent<Rigidbody2D>()!=null)
         m_rb = GetComponent<Rigidbody2D>();
     }
 

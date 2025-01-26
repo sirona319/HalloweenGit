@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Pumpkin_Dead : StateChildBase
+public class PumpkinBoss_Dead : StateChildBase
 {
     const float DEADTIME = 0.1f;
 
@@ -18,22 +14,15 @@ public class Pumpkin_Dead : StateChildBase
         base.Initialize(stateNo);
 
         //deadParticle = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/Flash_star_ellow_green");
-
-
-        deadParticleR = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtR");
-        deadParticleY = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtY");
-        deadParticleB = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtB");
     }
 
     public override void OnEnter()
     {
         stateTime = 0f;
 
-        GetComponent<CreateDeadSound>().Create();
-
-        Instantiate(deadParticleR, transform.position, Quaternion.identity);
-        Instantiate(deadParticleY, transform.position, Quaternion.identity);
-        Instantiate(deadParticleB, transform.position, Quaternion.identity);
+        deadParticleR = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtR");
+        deadParticleY = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtY");
+        deadParticleB = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtB");
 
         gameObject.SetActive(false);
         //Instantiate(deadParticle, transform.position, Quaternion.identity);
@@ -79,13 +68,4 @@ public class Pumpkin_Dead : StateChildBase
         return (int)StateType;
 
     }
-
-    //public override void OnEnter()
-    //{
-    //    //var anim = gameObject.GetComponent<Animator>();
-    //    //anim.SetBool("DamageB", false);
-    //    //anim.SetTrigger("DeadT");
-
-    //    base.OnEnter();
-    //}
 }

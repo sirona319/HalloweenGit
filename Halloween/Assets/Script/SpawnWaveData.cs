@@ -50,7 +50,7 @@ public class ObjSpawnData
 
     public float[] spawnTime; //生成タイム設定できるようにする
 
-    public ObjectSpawn.ObjLoadState[] ObjState;
+    public GameObject[] ObjState;
 
     public Transform[] spawnLocations;//敵の移動範囲　位置
 }
