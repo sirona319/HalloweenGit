@@ -8,8 +8,11 @@ public class TimelineControl : MonoBehaviour
 {
     //public CollisionTrigger colTriTimeline;
 
+    public bool isPlayerMoveStop = true;
     public bool isPlayTrigger = false;
     bool isPlay = false;
+
+    
    // bool isEnd = false;
     //public void TimelineEnd()
     //{

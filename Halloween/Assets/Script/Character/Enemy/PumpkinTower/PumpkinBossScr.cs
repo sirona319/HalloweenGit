@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using static EnemyData;
 
-public class PumpkinBossScr : MonoBehaviour
+public class PumpkinBossScr : MonoBehaviour, IHaveText
 {
     #region ステートコントローラー
     [SerializeField] protected StateControllerBase stateController = default;
@@ -19,11 +19,8 @@ public class PumpkinBossScr : MonoBehaviour
     [NonSerialized] public bool IsAttack = true;
     [NonSerialized] public bool IsMove = true;
 
-
-
     //public EnemyData enemyData;//スクリプタルオブジェクト　リスト
     //public string findName;
-
 
     //[NonSerialized] public List<BaseMagazine> baseMagazine=new ();
     //public List<BaseMove> baseMove = new();
@@ -36,7 +33,21 @@ public class PumpkinBossScr : MonoBehaviour
     //public float MaxAtkInterval = 1f;
     [NonSerialized] public float AtkInterval = 1;
 
-    public GameObject[] pumpkins;
+
+
+
+
+    public GameObject[] pumpkins; //主に攻撃に使用
+
+    public TimelineControl[] timelineTexts;
+    int timelineNo = 0;
+
+
+    public void TextReadPlus()
+    {
+        timelineTexts[timelineNo].isPlayTrigger = true;
+        timelineNo++;
+    }
 
     //const int ATKVAL = 1;
 
@@ -90,11 +101,9 @@ public class PumpkinBossScr : MonoBehaviour
 
     void Start()
     {
-        //base.StartInit();
-        //base.Init();
-
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);
     }
+
     protected virtual void Init()
     {
         ////スクリプタルオブジェクトのデータを取得
@@ -176,18 +185,18 @@ public class PumpkinBossScr : MonoBehaviour
             IsDead = true;
     }
 
-    public int ReturnStateMoveType(int stateType)
-    {
-        if (IsAttack)
-            return (int)FlyCtr.State.Fly_Attack;
+    //public int ReturnStateMoveType(int stateType)
+    //{
+    //    if (IsAttack)
+    //        return (int)FlyCtr.State.Fly_Attack;
 
-        else if (IsMove)
-            return (int)FlyCtr.State.Fly_Move;
+    //    else if (IsMove)
+    //        return (int)FlyCtr.State.Fly_Move;
 
 
 
-        return stateType;
-    }
+    //    return stateType;
+    //}
 
     void Update()
     {
@@ -217,15 +226,15 @@ public class PumpkinBossScr : MonoBehaviour
     }
 
 
-    public int FlyReturnStateType(int stateType)
-    {
-        if (AtkInterval <= 0)
-            return (int)FlyCtr.State.Fly_Attack;
-        else if (IsMove)
-            return (int)FlyCtr.State.Fly_Move;
+    //public int FlyReturnStateType(int stateType)
+    //{
+    //    if (AtkInterval <= 0)
+    //        return (int)FlyCtr.State.Fly_Attack;
+    //    else if (IsMove)
+    //        return (int)FlyCtr.State.Fly_Move;
 
-        else
-            return (int)FlyCtr.State.Fly_Wait;
+    //    else
+    //        return (int)FlyCtr.State.Fly_Wait;
 
-    }
+    //}
 }

@@ -7,6 +7,8 @@ public class BossCollisionTrigger : MonoBehaviour
 
     public BoxCollider2D box2DLeft;
     public BoxCollider2D box2DRight;
+
+    public GameObject haveTextObject;
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
@@ -34,6 +36,11 @@ public class BossCollisionTrigger : MonoBehaviour
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
             box2DLeft.enabled = true;
             box2DRight.enabled = true;
+
+            var readText= haveTextObject.GetComponent<IHaveText>();
+            if (readText != null)
+                readText.TextReadPlus();
+            
         }
 
 

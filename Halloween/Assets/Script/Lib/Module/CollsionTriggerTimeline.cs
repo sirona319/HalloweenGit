@@ -10,26 +10,26 @@ public class TimelineCollsionTrigger : MonoBehaviour
         transform.parent.GetComponent<TimelineControl>().isPlayTrigger = act;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
-        {
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+    //    {
 
-            SetTimeline(true);
+    //        SetTimeline(true);
 
 
-        }
+    //    }
 
-    }
+    //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
-        {
-            SetTimeline(false);
-        }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+    //    {
+    //        SetTimeline(false);
+    //    }
 
-    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {

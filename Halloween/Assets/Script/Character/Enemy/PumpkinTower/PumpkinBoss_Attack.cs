@@ -2,6 +2,14 @@
 
 public class PumpkinBoss_Attack : StateChildBase
 {
+    bool isAtkLife = true;
+
+    int isAtkCount = 6; //6 10 15
+
+
+    int isAtkLv = 1;
+
+
     public override void Initialize(int stateType)
     {
         base.Initialize(stateType);
@@ -38,12 +46,12 @@ public class PumpkinBoss_Attack : StateChildBase
 
 
 
-        if (stateTime > GetComponent<EnemyBase>().AtkInterval)
-        {
-            GetComponent<EnemyBase>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
-            //GetComponent<FlyScr>().IsAttack = false;
-            return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
-        }
+        //if (stateTime > GetComponent<EnemyBase>().AtkInterval)
+        //{
+        //    GetComponent<EnemyBase>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
+        //    //GetComponent<FlyScr>().IsAttack = false;
+        //    return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
+        //}
 
 
         return (int)StateType;
