@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6205204080456637428
+--- !u!1 &3274384295980444309
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,70 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6876327976606149784}
-  - component: {fileID: 8687611365685043167}
-  - component: {fileID: 2696936777909329388}
-  - component: {fileID: 3222325484234883123}
-  - component: {fileID: 8070656094626350437}
-  - component: {fileID: 8694150602881707665}
-  - component: {fileID: 3751133012385811689}
-  - component: {fileID: -6963965400007205647}
-  - component: {fileID: 3389971620290101742}
+  - component: {fileID: 5621662921215999905}
   m_Layer: 3
-  m_Name: Pumpkin
-  m_TagString: Enemy
+  m_Name: r
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6876327976606149784
+--- !u!4 &5621662921215999905
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205204080456637428}
+  m_GameObject: {fileID: 3274384295980444309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.69, y: 2.48, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 6876327976606149784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8687611365685043167
+--- !u!1 &3788687268465517032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3659553763855957920}
+  - component: {fileID: 8701814753559720864}
+  - component: {fileID: 2844733973372985539}
+  - component: {fileID: 1015396810584521128}
+  m_Layer: 3
+  m_Name: spriteP
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3659553763855957920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3788687268465517032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6876327976606149784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8701814753559720864
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205204080456637428}
+  m_GameObject: {fileID: 3788687268465517032}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -94,40 +120,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2696936777909329388
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205204080456637428}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &3222325484234883123
+--- !u!61 &2844733973372985539
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205204080456637428}
+  m_GameObject: {fileID: 3788687268465517032}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -137,7 +136,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -151,7 +150,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -167,6 +166,59 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3423884, y: 0.9346769}
   m_EdgeRadius: 0
+--- !u!114 &1015396810584521128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3788687268465517032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4232bf00c4f82624db6b11ef0e29ec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMove: 1
+  speed: 7
+  targetsVec: {x: 0, y: 0, z: 0}
+--- !u!1 &6205204080456637428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6876327976606149784}
+  - component: {fileID: 8070656094626350437}
+  - component: {fileID: 8694150602881707665}
+  - component: {fileID: -6963965400007205647}
+  - component: {fileID: 3389971620290101742}
+  - component: {fileID: -7719076171076298577}
+  m_Layer: 3
+  m_Name: PumpkinDirection
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6876327976606149784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.69, y: 2.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3659553763855957920}
+  - {fileID: 5621662921215999905}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8070656094626350437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,8 +253,10 @@ MonoBehaviour:
     AtkIntervalMax: 1
   findName: Pumpkin
   baseMove:
-  - {fileID: 3751133012385811689}
---- !u!114 &3751133012385811689
+  - {fileID: 1015396810584521128}
+  Hp: 1
+  AtkInterval: 1
+--- !u!114 &-6963965400007205647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,27 +265,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6205204080456637428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ef11c8ea80b354c9675a806d6a29e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsMove: 1
-  forceUpR: {x: 0, y: 0, z: 0}
-  forceUpL: {x: 0, y: 0, z: 0}
-  startPosition: {x: 0, y: 0, z: 0}
-  maxJumpInterval: 2.5
-  jumpInterval: 0
-  jumpForceX: 7
-  jumpForceY: 7
-  moveEreaVal: 10
---- !u!114 &-6963965400007205647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205204080456637428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d17e919a9947d7c44ad90771acd67016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -239,6 +272,7 @@ MonoBehaviour:
   y: 0
   z: 1
   SPEED: 30
+  target: {fileID: 3659553763855957920}
 --- !u!114 &3389971620290101742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +287,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
   audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
+--- !u!114 &-7719076171076298577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4232bf00c4f82624db6b11ef0e29ec57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMove: 1
+  speed: 7
+  targetsVec: {x: 0, y: 0, z: 0}

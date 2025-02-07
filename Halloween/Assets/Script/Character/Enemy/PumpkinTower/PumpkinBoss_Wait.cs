@@ -2,15 +2,21 @@
 
 public class PumpkinBoss_Wait : StateChildBase
 {
+    PumpkinBossScr bossScr;
+
     public override void Initialize(int stateNo)
     {
         base.Initialize(stateNo);
 
+        bossScr = GetComponent<PumpkinBossScr>();
     }
 
     public override void OnEnter()
     {
         stateTime = 0f;
+
+        if (bossScr.pumpkinChildDeadCount == 6)
+            Debug.Log("次の攻撃レベル移行");
     }
 
     public override void OnExit()
@@ -22,7 +28,7 @@ public class PumpkinBoss_Wait : StateChildBase
     {
 
         //transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
-
+        
 
 
         //if (GetComponent<PumpkinBossScr>().IsDamage)
@@ -31,6 +37,14 @@ public class PumpkinBoss_Wait : StateChildBase
 
         stateTime += Time.deltaTime;
 
+        if (GetComponent<PumpkinBossScr>().startBattle)
+            if (bossScr.pumpkinChildDeadCount == 6)
+                return (int)PumpkinBossCtr.State.PumpkinBoss_Attack;
+
+
+        if (GetComponent<PumpkinBossScr>().startBattle)
+            if (bossScr.pumpkinChildDeadCount == 0)
+                return (int)PumpkinBossCtr.State.PumpkinBoss_Attack;
 
         //return GetComponent<EnemyBase>().ReturnStateMoveTypeAttack(StateType);
 

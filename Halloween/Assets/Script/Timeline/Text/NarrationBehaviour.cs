@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
+using Image = UnityEngine.UI.Image;
 
 public class NarrationBehaviour : PlayableBehaviour
 {
@@ -25,7 +28,7 @@ public class NarrationBehaviour : PlayableBehaviour
     //int testVal = 0;
     public string inputText { get; set; }
 
-
+    AudioSource textSe;
     //使えないStart関数
     void Start() { }
 
@@ -37,6 +40,7 @@ public class NarrationBehaviour : PlayableBehaviour
         //textBackImage.enabled = false;
         var textBackImage = GameObject.Find("TextPanel").gameObject.GetComponent<Image>();
         mTextUI = textBackImage.transform.Find("TalkText").GetComponent<TMP_Text>();
+        textSe = mTextUI.GetComponent<AudioSource>();
        // mTextUI.enabled = false;
 
     }
@@ -67,24 +71,25 @@ public class NarrationBehaviour : PlayableBehaviour
     }
 
 
-    int NumPlay = 0;
+    //int NumPlay = 0;
     public override void OnBehaviourPlay(Playable playable, FrameData info)
     {
         //textBackImage.enabled = true;
         //mTextUI.enabled = true;
         base.OnBehaviourPlay(playable, info);
-       // Debug.Log($"OnBehaviourPlay" + NumPlay++);
+        // Debug.Log($"OnBehaviourPlay" + NumPlay++);
 
-
+        textSe.Play();
         clipStart = true;
 
     }
 
-    int NumPause = 0;
+    //int NumPause = 0;
     public override void OnBehaviourPause(Playable playable, FrameData info)
     {
         if (clipStart)
         {
+            textSe.Stop();
 
             director.Pause();
             //playable.GetGraph().GetRootPlayable(0).SetSpeed(0);
@@ -121,7 +126,7 @@ public class NarrationBehaviour : PlayableBehaviour
        // Debug.Log("OnGraphStop");
     }
 
-    int NumDes = 0;
+    //int NumDes = 0;
     public override void OnPlayableDestroy(Playable playable)
     {
         //mTextUI.text = "";

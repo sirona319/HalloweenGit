@@ -57,7 +57,7 @@ public class TimelineControl : MonoBehaviour
             var p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScr2D>();
             p.isLimitMove = true;
             p.moveSpeed = 0f;
-            Debug.Log("再生開始");
+            //Debug.Log("再生開始"+ GetType().FullName);
         }
         //if (gameObject.GetComponent<PlayableDirector>().state == PlayState.Paused)
         //    Debug.Log("tgaff");
@@ -80,7 +80,7 @@ public class TimelineControl : MonoBehaviour
             //playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1.0f);
            // Debug.Log("SPACE　再開 メッセージ送り");
         }
-
+        //playableDirector.state
 
         //if (Input.GetKeyDown(KeyCode.Q))
         //{

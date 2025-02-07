@@ -31,9 +31,11 @@ public class Pumpkin_Dead : StateChildBase
 
         GetComponent<CreateDeadSound>().Create();
 
-        Instantiate(deadParticleR, transform.position, Quaternion.identity);
-        Instantiate(deadParticleY, transform.position, Quaternion.identity);
-        Instantiate(deadParticleB, transform.position, Quaternion.identity);
+        var pos= GetComponent<PumpkinScr>().baseMove[0].GetPos();
+
+        Instantiate(deadParticleR, pos, Quaternion.identity);
+        Instantiate(deadParticleY, pos, Quaternion.identity);
+        Instantiate(deadParticleB, pos, Quaternion.identity);
 
         gameObject.SetActive(false);
         //Instantiate(deadParticle, transform.position, Quaternion.identity);

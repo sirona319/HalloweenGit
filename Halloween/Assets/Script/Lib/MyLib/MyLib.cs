@@ -6,7 +6,9 @@ using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 using Random = UnityEngine.Random;
+using Transform = UnityEngine.Transform;
 
 //utility
 public static class MyLib
@@ -235,6 +237,17 @@ public static class MyLib
 
     #endregion
 
+    #region 移動
+
+    //public static Vector3 TargetMoveNormalized(Vector3 target, Vector3 pos)
+    //{
+    //    Vector3 direction = target - pos;
+
+    //    return direction.normalized;
+
+    //}
+    #endregion
+
     #region　エネミー
 
     /// <summary>
@@ -365,14 +378,30 @@ public static class MyLib
         action?.Invoke();
     }
 
-    public static IEnumerator DelayCoroutineIf(bool IfBreak, Action action)
-    {
+    /// <summary>
+    /// 条件がtrueなら呼び出すコルーチン
+    /// </summary>
+    /// <param name="seconds">秒</param>
+    /// <param name="action">関数内の処理</param>
+    /// <returns></returns>
+    //public static IEnumerator DelayCoroutineIfUntil(bool flg, Action action)
+    //{
 
-        yield return new WaitWhile(() => IfBreak);//While  falseで実行
+    //    yield return new WaitUntil(() => flg);//trueなら
 
-        action?.Invoke();
 
-    }
+    //    action?.Invoke();
+    //}
+
+    //public static IEnumerator DelayCoroutineIfWhile(bool IfBreak, Action action)
+    //{
+
+    //    yield return new WaitWhile(() => IfBreak);//While  falseで実行
+
+    //    action?.Invoke();
+
+    //    yield break;
+    //}
 
     /// <summary>
     /// 一定時間後に処理を定期的に呼び出すコルーチン　存在する限りずっと
@@ -398,16 +427,17 @@ public static class MyLib
     /// <param name="seconds">秒</param>
     /// <param name="action">関数内の処理</param>
     /// <returns></returns>
-    public static IEnumerator LoopDelayCoroutineIf(float seconds, bool IfBreak, Action action,string debug="クラス名など")
+    public static IEnumerator LoopDelayCoroutineIf(bool IfBreak, Action action, float seconds=0, string debug ="クラス名など")
     {
         while (IfBreak)
         {
+            //if (!IfBreak)
+             //   break;
 
             yield return new WaitForSeconds(seconds);
             action?.Invoke();
 
-            //yield return new WaitUntil(() => IfBreak);
-            //break;
+
 
         }
 
@@ -422,13 +452,16 @@ public static class MyLib
     /// <param name="seconds">秒</param>
     /// <param name="action">関数内の処理</param>
     /// <returns></returns>
-    //public static IEnumerator BoolDelayCoroutine(float seconds, Action action)
+    //public static IEnumerator BoolDelayCoroutine(bool flg, Action action, float seconds = 0f)
     //{
+    //    yield return new WaitForSeconds(seconds);
 
-    //        //yield return new WaitUntil(条件);trueなら
-    //        //yield return new WaitWhile(条件);falseなら
+    //    yield return new WaitUntil(() => flg);//trueなら
+    //    //yield return new WaitWhile(()=>flg);falseなら
 
-    //        //action?.Invoke();
+    //    //yield return new WaitForSeconds(seconds);
+
+    //    action?.Invoke();
     //}
 
     #endregion
@@ -509,6 +542,7 @@ public static class MyLib
         return audio;
     }
 
+    //Unity6のみ？AudioResource
     /// <summary>
     /// ボリューム調整なし
     /// </summary>

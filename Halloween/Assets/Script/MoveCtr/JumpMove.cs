@@ -8,7 +8,7 @@ public class JumpMove : BaseMove
 
     //Vector3 targetsVec;
     //Vector2 targetDir;
-    bool isGround = false;
+   // bool isGround = false;
 
     [SerializeField] Vector3 forceUpR;
     bool isRight = false;
@@ -54,6 +54,7 @@ public class JumpMove : BaseMove
 
         forceUpL.x *= jumpForceX;
         forceUpL.y *= jumpForceY;
+
 
         jumpInterval = maxJumpInterval;
 
@@ -156,7 +157,7 @@ public class JumpMove : BaseMove
 
         if (other.gameObject.CompareTag("Ground"))
         {
-            isGround = true;
+            //isGround = true;
             m_rb.linearVelocity = new Vector2(0f, 0f);
 
             m_rb.freezeRotation = true;
@@ -185,7 +186,7 @@ public class JumpMove : BaseMove
 
         if (other.gameObject.CompareTag("Ground"))
         {
-            isGround = false;
+            //isGround = false;
             m_rb.freezeRotation = false;
 
             if (GetComponent<RotModule>())

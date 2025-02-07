@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-public class CollisionTrigger : MonoBehaviour
+public class CollisionTriggerDamage : MonoBehaviour
 {
-    public bool isActiveTrigger = false;
+    //public IDamage damage;
+    //public bool isActiveTrigger = false;
 
     //タイムライン再生用の関数
     //public void SetTimeline(bool act)
@@ -16,7 +17,7 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = true;
+            //isActiveTrigger = true;
             // SetTimeline(true);
             Debug.Log(other.name);
 
@@ -28,7 +29,7 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = false;
+            //isActiveTrigger = false;
            /// SetTimeline(false);
         }
 
@@ -38,7 +39,7 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = true;
+            //isActiveTrigger = true;
             Debug.Log(other.name);
 
             //Destroy(other.gameObject);
@@ -51,7 +52,7 @@ public class CollisionTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            isActiveTrigger = false;
+            //isActiveTrigger = false;
             // SetTimeline(false);
             Debug.Log(other.name);
         }

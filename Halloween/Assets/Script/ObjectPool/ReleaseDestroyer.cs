@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ReleaseDestroyer : MonoBehaviour
 {
@@ -47,10 +48,24 @@ public class ReleaseDestroyer : MonoBehaviour
         //    PoolDestroy();
         //    return;
         //}
-
+        //AudioResource aa;
         if (other.CompareTag("Enemy"))
         {
-            other.transform.GetComponent<EnemyBase>().EnemyDamage(1);
+            var iDamage = other.transform.GetComponent<IDamage>();
+            if(iDamage != null)
+                iDamage.Damage(1);
+
+            Debug.Log("攻撃が敵にHIT");
+            PoolDestroy();
+            return;
+        }
+
+        if (other.CompareTag("EnemyBoss"))
+        {
+            var iDamage = other.transform.parent.parent.GetComponent<IDamage>();
+            if (iDamage != null)
+                iDamage.Damage(1);
+
 
             Debug.Log("攻撃が敵にHIT");
             PoolDestroy();

@@ -1,13 +1,16 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class RotModule : MonoBehaviour
 {
     [SerializeField] bool x = false;
     [SerializeField] bool y = false;
-    [SerializeField] bool z = true;
+    [SerializeField] bool z = false;
 
     [SerializeField] float SPEED = 30;
+
+    [SerializeField] Transform target = null;
     //[SerializeField] float d=0;
     // Start is called before the first frame update
     //void Start()
@@ -24,6 +27,9 @@ public class RotModule : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (TargetRotIf())
+            return;
+
         float ROTVALUE = SPEED;
         float duration = 1f;
         // StartCoroutine(MyLib.LoopDelayCoroutine(1f, () =>
@@ -40,5 +46,24 @@ public class RotModule : MonoBehaviour
         //var rot = Quaternion.AngleAxis(ROLLSPEED, Vector3.right);
 
         //transform.rotation = transform.rotation * rot;
+    }
+
+    bool TargetRotIf()
+    {
+        if (target == null) return false;
+
+        float ROTVALUE = SPEED;
+        float duration = 1f;
+        // StartCoroutine(MyLib.LoopDelayCoroutine(1f, () =>
+        // {
+        if (y)
+            target.DORotate(Vector3.up * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+        else if (x)
+            target.DORotate(Vector3.right * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+        else if (z)
+            target.DORotate(Vector3.forward * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+
+        return true;
+
     }
 }

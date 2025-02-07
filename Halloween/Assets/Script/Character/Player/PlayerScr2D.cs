@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cysharp.Threading.Tasks.Triggers;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -240,12 +241,19 @@ public class PlayerScr2D : MonoBehaviour
        // Debug.Log("Test");
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("ColPlayer");
-            Destroy(this);
+            //Debug.Log("ColPlayer");
+            //Destroy(this);
             //プレイヤーへのダメージ処理
             PlayerDamage(1);
         }
 
+        //if (collision.gameObject.CompareTag("EnemyBoss"))
+        //{
+        //    //Debug.Log("ColPlayer");
+        //    Destroy(this);
+        //    //プレイヤーへのダメージ処理
+        //    PlayerDamage(1);
+        //}
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

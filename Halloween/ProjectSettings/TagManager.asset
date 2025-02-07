@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - ExitErea
   - Ground
+  - EnemyBoss
+  - test
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - 
   - ExitErea
   - 
-  - 
+  - BossEnemy
   - 
   - Knife
   - 
@@ -31,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - BlockReflect
   - 
   - 
   - 

@@ -76,8 +76,6 @@ public class PumpkinScr : EnemyBase
         else
             return (int)FlyCtr.State.Fly_Wait;
 
-
-
     }
 
     //private void OnCollisionEnter2D(Collision2D other)

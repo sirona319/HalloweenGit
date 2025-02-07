@@ -150,4 +150,9 @@ public class CameraControl : MonoBehaviour
         eventTargetPos = targetPos;
         cameraDuration = dur;
     }
+
+    public void CameraEventTriggerOff()
+    {
+        isEventCamera = false;
+    }
 }

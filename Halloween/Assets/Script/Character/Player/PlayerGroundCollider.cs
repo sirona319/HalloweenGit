@@ -7,7 +7,7 @@ public class PlayerGroundCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             transform.parent.GetComponent<PlayerScr2D>().isGround = true;
-            Debug.Log("GROUND TRUE");
+            //Debug.Log("GROUND TRUE");
         }
     }
 
@@ -18,7 +18,7 @@ public class PlayerGroundCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             transform.parent.GetComponent<PlayerScr2D>().isGround = true;
-            Debug.Log("GROUND TRUE");
+            //Debug.Log("GROUND TRUE");
         }
     }
 
@@ -29,7 +29,7 @@ public class PlayerGroundCollider : MonoBehaviour
         {
 
             transform.parent.GetComponent<PlayerScr2D>().isGround = false;
-            Debug.Log("GROUND FALSE");
+            //Debug.Log("GROUND FALSE");
         }
     }
 }

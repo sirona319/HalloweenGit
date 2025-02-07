@@ -14,7 +14,7 @@ public class ObjectSpawn : MonoBehaviour
     //
     ////この敵たちが倒されたら　範囲外に出たら破棄する？　スポーンする　登録方法を考える
 
-    int CountIndex = 0;
+    //int CountIndex = 0;
     //public void UpdateCount()
     //{
     //    spawnData[CountIndex].enemyCount--;

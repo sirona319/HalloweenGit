@@ -29,12 +29,14 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     //public Transform[] movePointsDatas;
 
     //public int MaxHp = 1;
-    [NonSerialized] public int Hp = 0;
+    //public int Hp = 0;
     //public float MaxAtkInterval = 1f;
-    [NonSerialized] public float AtkInterval = 1;
+    //public float AtkInterval = 1;
 
 
+    public bool startBattle = false;
 
+    public int pumpkinChildDeadCount = 0;
 
 
     public GameObject[] pumpkins; //主に攻撃に使用
@@ -47,6 +49,11 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
         timelineNo++;
+    }
+
+    public void BattleStart(bool f)
+    {
+        startBattle = f;
     }
 
     //const int ATKVAL = 1;
@@ -171,19 +178,19 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     //}
     #endregion
 
-    public virtual void EnemyDamage(int damage)
-    {
+    //public virtual void EnemyDamage(int damage)
+    //{
 
-        if (IsDead) return;
+    //    if (IsDead) return;
 
-        Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
-        Hp -= damage;        //HP減少処理
+    //    Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
+    //    Hp -= damage;        //HP減少処理
 
-        IsDamage = true;
+    //    IsDamage = true;
 
-        if (Hp <= 0)
-            IsDead = true;
-    }
+    //    if (Hp <= 0)
+    //        IsDead = true;
+    //}
 
     //public int ReturnStateMoveType(int stateType)
     //{

@@ -4,7 +4,7 @@ using static EnemyData;
 using System.Collections.Generic;
 
 
-public class EnemyBase : MonoBehaviour
+public class EnemyBase : MonoBehaviour, IDamage
 {
     #region ステートコントローラー
     [SerializeField] protected StateControllerBase stateController = default;
@@ -35,11 +35,21 @@ public class EnemyBase : MonoBehaviour
     //public Transform[] movePointsDatas;
 
     //public int MaxHp = 1;
-    [NonSerialized] public int Hp = 0;
+    public int Hp = 0;
     //public float MaxAtkInterval = 1f;
-    [NonSerialized]public float AtkInterval =1;
+    public float AtkInterval =1;
 
     //const int ATKVAL = 1;
+
+    //DamageScr damageScr 
+
+    public BaseMove GetBaseMove(int no)
+    {
+        if (baseMove[no] == null)
+            Debug.Log("baseMoveが設定されていない");
+
+        return baseMove[no];
+    }
 
     //呼び出し先でキャストして使用する
     public BaseMove MoveTypeSelect(MoveType mt)
@@ -90,7 +100,7 @@ public class EnemyBase : MonoBehaviour
     protected virtual void Init()
     {
         //ステータスの初期化
-        Hp = enemyData.HpMax;
+        //Hp = enemyData.HpMax;
 
 
         //baseMagazine初期化
@@ -147,7 +157,7 @@ public class EnemyBase : MonoBehaviour
     //}
     #endregion
 
-    public virtual void EnemyDamage(int damage)
+    public void Damage(int damage)
     {
 
         if (IsDead) return;
