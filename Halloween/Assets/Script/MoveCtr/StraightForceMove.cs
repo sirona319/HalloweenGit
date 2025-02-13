@@ -8,8 +8,6 @@ public class StraightForceMove : BaseMove
 
     public Transform targets;
 
-    //public bool isRot = true;
-    //Vector2 targetDir;
     Vector3 direction;
 
     public void SetTarget(Transform t)
@@ -24,19 +22,13 @@ public class StraightForceMove : BaseMove
     public override void Initialize()
     {
         base.Initialize();
-        //Debug.Log("Initialize");
+
     }
 
     public override void MoveEnter()
     {
-        //Debug.Log("MoveEnter");
-
-
         if (m_rb3 != null)
             m_rb3.AddForce(/*m_rb3.position + */direction.normalized * speed, ForceMode.Impulse);
-        //m_rb3.gameObject.GetComponent<Rigidbody>().AddForce(moveVector, ForceMode.VelocityChange);
-
-        //m_rb3.MovePosition(m_rb3.position + direction.normalized * speed * Time.deltaTime);
 
     }
 
@@ -80,8 +72,6 @@ public class StraightForceMove : BaseMove
         {
             m_rb3.angularVelocity = m_rb3.angularVelocity.normalized * speed;
             m_rb3.linearVelocity = m_rb3.linearVelocity.normalized * speed;
-            //m_rb3.angularVelocity
-            //Debug.Log("reflectLayer23");
         }
     }
 }
