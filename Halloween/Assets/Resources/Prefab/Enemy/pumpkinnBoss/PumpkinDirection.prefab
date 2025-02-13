@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3274384295980444309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5621662921215999905}
-  m_Layer: 3
-  m_Name: r
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5621662921215999905
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3274384295980444309}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6876327976606149784}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3788687268465517032
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsMove: 1
   speed: 7
-  targetsVec: {x: 0, y: 0, z: 0}
+  IsLastPointMoveEnd:
+    value: 0
 --- !u!1 &6205204080456637428
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +164,6 @@ GameObject:
   - component: {fileID: 8694150602881707665}
   - component: {fileID: -6963965400007205647}
   - component: {fileID: 3389971620290101742}
-  - component: {fileID: -7719076171076298577}
   m_Layer: 3
   m_Name: PumpkinDirection
   m_TagString: Enemy
@@ -216,7 +185,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3659553763855957920}
-  - {fileID: 5621662921215999905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8070656094626350437
@@ -256,6 +224,7 @@ MonoBehaviour:
   - {fileID: 1015396810584521128}
   Hp: 1
   AtkInterval: 1
+  isBoss: 1
 --- !u!114 &-6963965400007205647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,18 +256,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
   audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
---- !u!114 &-7719076171076298577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6205204080456637428}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4232bf00c4f82624db6b11ef0e29ec57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsMove: 1
-  speed: 7
-  targetsVec: {x: 0, y: 0, z: 0}

@@ -37,6 +37,12 @@ public class Pumpkin_Dead : StateChildBase
         Instantiate(deadParticleY, pos, Quaternion.identity);
         Instantiate(deadParticleB, pos, Quaternion.identity);
 
+        if (GetComponent<PumpkinScr>().isBoss)
+        {
+            GameObject.Find("PumpkinBOSS").GetComponent<PumpkinBossScr>().pumpkinChildDeadCount++;
+
+        }
+
         gameObject.SetActive(false);
         //Instantiate(deadParticle, transform.position, Quaternion.identity);
 

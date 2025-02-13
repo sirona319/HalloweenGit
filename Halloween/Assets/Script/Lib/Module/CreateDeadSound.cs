@@ -11,17 +11,6 @@ public class CreateDeadSound : MonoBehaviour
 
     //[SerializeField] AudioResource audioSe;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //deadSound = MyLib.GetComponentLoad<AudioSource>("prefab/Sound/JerryDestroySound");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Create()
     {

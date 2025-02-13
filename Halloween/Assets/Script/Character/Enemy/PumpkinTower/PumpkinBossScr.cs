@@ -40,6 +40,7 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
 
     public GameObject[] pumpkins; //主に攻撃に使用
+    public GameObject[] pumpkinsLv2; //主に攻撃に使用
 
     public TimelineControl[] timelineTexts;
     int timelineNo = 0;

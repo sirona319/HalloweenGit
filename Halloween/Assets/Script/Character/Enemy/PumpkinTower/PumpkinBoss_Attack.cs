@@ -25,14 +25,14 @@ public class PumpkinBoss_Attack : StateChildBase
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 0);//trueなら
 
-        StartCoroutine(MyLib.DelayCoroutine(10f, () =>
-        {
-            Destroy(bossScr.pumpkins[0]);
-            Destroy(bossScr.pumpkins[1]);
-            bossScr.pumpkinChildDeadCount++;
-            bossScr.pumpkinChildDeadCount++;
+        //StartCoroutine(MyLib.DelayCoroutine(10f, () =>
+        //{
+        //    Destroy(bossScr.pumpkins[0]);
+        //    Destroy(bossScr.pumpkins[1]);
+        //    //bossScr.pumpkinChildDeadCount++;
+        //    //bossScr.pumpkinChildDeadCount++;
 
-        }));
+        //}));
 
         //Lv1
         bossScr.pumpkins[0].GetComponent<RotModule>().enabled = true;
@@ -44,8 +44,8 @@ public class PumpkinBoss_Attack : StateChildBase
         {
             if (bossScr.pumpkins[0] != null)
             {
-                bossScr.pumpkins[0].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkins[1].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkins[0].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
+                bossScr.pumpkins[1].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
             }
 
         }));
@@ -53,16 +53,16 @@ public class PumpkinBoss_Attack : StateChildBase
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 2);//trueなら
                                                                              //                                                                     //yield return new WaitWhile(条件);falseなら
-        StartCoroutine(MyLib.DelayCoroutine(5f, () =>
-        {
-            Destroy(bossScr.pumpkins[2]);
-            Destroy(bossScr.pumpkins[3]);
-            Destroy(bossScr.pumpkins[4]);
-            bossScr.pumpkinChildDeadCount++;
-            bossScr.pumpkinChildDeadCount++;
-            bossScr.pumpkinChildDeadCount++;
+        //StartCoroutine(MyLib.DelayCoroutine(10f, () =>
+        //{
+        //    Destroy(bossScr.pumpkins[2]);
+        //    Destroy(bossScr.pumpkins[3]);
+        //    Destroy(bossScr.pumpkins[4]);
+        //    //bossScr.pumpkinChildDeadCount++;
+        //   // bossScr.pumpkinChildDeadCount++;
+        //   // bossScr.pumpkinChildDeadCount++;
 
-        }));
+        //}));
         ////上　ななめ　攻撃        //Lv2
         bossScr.pumpkins[2].GetComponent<RotModule>().enabled = true;
         bossScr.pumpkins[3].GetComponent<RotModule>().enabled = true;
@@ -76,9 +76,9 @@ public class PumpkinBoss_Attack : StateChildBase
         {
             if (bossScr.pumpkins[2] != null)
             {
-                bossScr.pumpkins[2].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkins[3].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkins[4].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkins[2].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
+                bossScr.pumpkins[3].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
+                bossScr.pumpkins[4].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
             }
 
         }));
@@ -86,12 +86,12 @@ public class PumpkinBoss_Attack : StateChildBase
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5);
 
 
-        StartCoroutine(MyLib.DelayCoroutine(5f, () =>
-        {
-            Destroy(bossScr.pumpkins[5]);
-            bossScr.pumpkinChildDeadCount++;
+        //StartCoroutine(MyLib.DelayCoroutine(5f, () =>
+        //{
+        //    Destroy(bossScr.pumpkins[5]);
+        //    bossScr.pumpkinChildDeadCount++;
 
-        }));
+        //}));
 
         bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
         ////ボスかぼちゃ　ピンボール        //Lv3
@@ -102,7 +102,7 @@ public class PumpkinBoss_Attack : StateChildBase
         {
             if (bossScr.pumpkins[5] != null)
             {
-                bossScr.pumpkins[5].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkins[5].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
             }
 
         }));

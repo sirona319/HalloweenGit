@@ -305,6 +305,7 @@ MonoBehaviour:
   - {fileID: 6696721821032989560}
   Hp: 1
   AtkInterval: 1
+  isBoss: 1
 --- !u!114 &-6963965400007205647
 MonoBehaviour:
   m_ObjectHideFlags: 0

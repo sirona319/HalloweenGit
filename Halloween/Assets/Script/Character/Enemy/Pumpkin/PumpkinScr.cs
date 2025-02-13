@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PumpkinScr : EnemyBase
 {
-
+    public bool isBoss = false;
     void Start()
     {
         base.StartInit();

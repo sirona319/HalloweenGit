@@ -6,16 +6,16 @@ public class StraightForceMove : BaseMove
     float rotSpeed = 10f;
     float rotStopTime = 3f;
 
-    public Vector3 targetsVec;
+    public Transform targets;
 
     //public bool isRot = true;
     //Vector2 targetDir;
     Vector3 direction;
 
-    public void SetTarget(Vector3 t)
+    public void SetTarget(Transform t)
     {
-        targetsVec = t;
-        direction = targetsVec - transform.position;
+        targets = t;
+        direction = targets.position - transform.position;
         //targetDir = (targetsVec - transform.position).normalized;
 
         //Debug.Log("SetTarget");
@@ -60,15 +60,15 @@ public class StraightForceMove : BaseMove
 
     }
 
-    void RotUpdate()
-    {
-        if (rotStopTime <= 0) return;
-        rotStopTime -= Time.deltaTime;
+    //void RotUpdate()
+    //{
+    //    if (rotStopTime <= 0) return;
+    //    rotStopTime -= Time.deltaTime;
 
-        transform.rotation = MyLib.GetAngleRotationFuncs(targetsVec, transform, rotSpeed);
+    //    transform.rotation = MyLib.GetAngleRotationFuncs(targetsVec, transform, rotSpeed);
 
 
-    }
+    //}
 
     private void OnCollisionEnter(Collision other)
     {

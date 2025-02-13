@@ -4,4 +4,6 @@
 public interface IDamage
 {
     public void Damage(int damage);
+
+    public virtual void Damage(int damage,bool sound) { }
 }

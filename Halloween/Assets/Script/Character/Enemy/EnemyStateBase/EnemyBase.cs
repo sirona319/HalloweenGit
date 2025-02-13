@@ -172,6 +172,12 @@ public class EnemyBase : MonoBehaviour, IDamage
             IsDead = true;
     }
 
+    public void Damage(int damage,bool deadSound)
+    {
+        Damage(damage);
+        GetComponent<CreateDeadSound>().IsSoundEnable = false;
+    }
+
 
 
     //public int ReturnStateTypeDamage()

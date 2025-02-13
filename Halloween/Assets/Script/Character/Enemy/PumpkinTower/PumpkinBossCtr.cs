@@ -8,6 +8,8 @@ public class PumpkinBossCtr : StateControllerBase
         //PumpkinBoss_Damage,
         PumpkinBoss_Dead,
         PumpkinBoss_Attack,
+        PumpkinBoss_AttackL2,
+        PumpkinBoss_Fall,
         //PumpkinBoss_Move,
         //Pumpkin_Circle,
 
