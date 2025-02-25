@@ -58,6 +58,8 @@ public class Message : MonoBehaviour
     //　メッセージをすべて表示したかどうか
     private bool isEndMessage = false;
 
+    const float fadeSpeed = 350;
+
     void Start()
     {
         //clickIcon = transform.Find("Panel/Image").GetComponent<Image>();
@@ -193,7 +195,7 @@ public class Message : MonoBehaviour
     }
 
 
-    const float fadeSpeed = 300;
+
     public void MessageEnd()
     {
         this.messageText.enabled = false;

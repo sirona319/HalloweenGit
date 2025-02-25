@@ -63,6 +63,6 @@ public class StraightPointMove : BaseMove
 
         //transform.position += (Vector3)transform.up * speed * Time.deltaTime;
 
-        }
+    }
 
 }

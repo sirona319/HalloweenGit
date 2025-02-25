@@ -35,6 +35,8 @@ public class GManager : Singleton<GManager>
 
     private void Start()
     {
+        //DG.Tweening.DOTween.SetTweensCapacity(tweenersCapacity: 800, sequencesCapacity: 200);
+
         DontDestroyOnLoad(this.gameObject);
 
         //1280　720 

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public abstract class StateControllerBase : MonoBehaviour
 {
     protected Dictionary<int, StateChildBase> stateDic = new();
 
-    //Œ»İƒXƒe[ƒg
+    //ç¾åœ¨ã‚¹ãƒ†ãƒ¼ãƒˆ
     public int CurrentState { protected set; get; }
 
     public abstract void Initialize(int initializeStateType);

@@ -24,6 +24,11 @@ public class ActiveMessagePanel : MonoBehaviour
 
     int messageNo = 0;
 
+    // float IntensityVal = 1;
+    //const float TrailEndSpeed = 0.02f;
+
+    const float fadeSpeed = 300;
+
     //public GameObject messagePanel;
 
     // Start is called before the first frame update
@@ -80,10 +85,7 @@ public class ActiveMessagePanel : MonoBehaviour
         }
            
     }
-    // float IntensityVal = 1;
-    //const float TrailEndSpeed = 0.02f;
 
-    const float fadeSpeed = 300;
     public void MessageEnd()
     {
         messageScript.messageText.enabled = false;

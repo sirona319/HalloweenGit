@@ -40,10 +40,12 @@ public class ReleaseDestroyer : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             var iDamage = other.transform.GetComponent<IDamage>();
-            if(iDamage != null)
+            if (iDamage != null)
                 iDamage.Damage(1);
+            else
+                Debug.Log("ダメージインターフェイスが無いよ！！Enemy");
 
-            Debug.Log("攻撃が敵にHIT");
+                //Debug.Log("攻撃が敵にHIT");
             PoolDestroy();
             return;
         }
@@ -53,9 +55,10 @@ public class ReleaseDestroyer : MonoBehaviour
             var iDamage = other.transform.parent.parent.GetComponent<IDamage>();
             if (iDamage != null)
                 iDamage.Damage(1);
+            else
+                Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss");
 
-
-            Debug.Log("攻撃が敵にHIT");
+            //Debug.Log("攻撃が敵にHITBOSS");
             PoolDestroy();
             return;
         }

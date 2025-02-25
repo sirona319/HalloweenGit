@@ -6,11 +6,12 @@ using UnityEngine;
 public class PumpkinScr : EnemyBase
 {
     public bool isBoss = false;
+    public SpriteRenderer sprite;
+    public float AtkInterval = 1;
     void Start()
     {
         base.StartInit();
         base.Init();
-
 
 
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);

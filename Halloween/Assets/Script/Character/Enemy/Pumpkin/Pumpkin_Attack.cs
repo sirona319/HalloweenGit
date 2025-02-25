@@ -44,9 +44,9 @@ public class Pumpkin_Attack : StateChildBase
 
 
 
-        if (stateTime > GetComponent<EnemyBase>().AtkInterval)
+        if (stateTime > GetComponent<PumpkinScr>().AtkInterval)
         {
-            GetComponent<EnemyBase>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
+            GetComponent<PumpkinScr>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
             //GetComponent<FlyScr>().IsAttack = false;
             return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
         }

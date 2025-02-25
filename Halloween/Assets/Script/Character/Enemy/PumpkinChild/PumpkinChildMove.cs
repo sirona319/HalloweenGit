@@ -13,6 +13,8 @@ public class PumpkinChildMove : MonoBehaviour
     public bool isFall=false;
     public bool isAllFall = false;
 
+    public bool isShakeEnd = false;
+
     [SerializeField] GameObject spawnObj;
 
     [SerializeField] public Transform[] moveTrans;
@@ -24,7 +26,9 @@ public class PumpkinChildMove : MonoBehaviour
     int targetNo = 0;
     bool isMoveEnd = false;
 
-    
+
+    [SerializeField]GameObject fallPtL;
+    [SerializeField]GameObject fallPtR;
 
     public void movePointSet(Transform[] ts)
     {
@@ -38,7 +42,7 @@ public class PumpkinChildMove : MonoBehaviour
     {
 
 
-     }
+    }
 
     public void MoveEnter()
     {
@@ -52,16 +56,14 @@ public class PumpkinChildMove : MonoBehaviour
         if (isFall)
         {
             if(isAllFall)
-            {
                 PumpkinMove();
-            }
+            
             ////ENDMOVELENのような ROTSTARTLENを作成する？　挙動が不自然なため
             /////transform.GetChild(0).rotation = MyLib.GetAngleRotationFuncs((transform.GetChild(0).position + Vector3.up), transform.GetChild(0), 5f);
             return;
         }
 
         PumpkinMove();
-
     }
 
     public void MoveUpdateNoRotisFall()
@@ -114,24 +116,24 @@ public class PumpkinChildMove : MonoBehaviour
                 eBase.GetComponent<StraightForceMove>().SetTarget(spawnObjMovePoints[0]);//spawnObjMovePoint[0].position;
 
 
-            if (obj.name.Contains("Red"))
-            {
-                Debug.Log("赤かぼちゃ");
-            }
-            else
-            {
-                const float eraseTime = 5f;
-                StartCoroutine(DelayCoroutine(eraseTime, () =>
-                {
+            //if (obj.name.Contains("Red"))
+            //{
+            //    Debug.Log("赤かぼちゃ");
+            //}
+            //else
+            //{
+            //    const float eraseTime = 5f;
+            //    StartCoroutine(DelayCoroutine(eraseTime, () =>
+            //    {
 
-                    var iDamage = obj.transform.GetComponent<IDamage>();
-                    if (iDamage != null)
-                        iDamage.Damage(100,false);
+            //        var iDamage = obj.transform.GetComponent<IDamage>();
+            //        if (iDamage != null)
+            //            iDamage.Damage(100,false);
 
-                    Destroy(gameObject, 1f);
+            //        Destroy(gameObject, 1f);
 
-                }));
-            }
+            //    }));
+            //}
 
             gameObject.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
 
@@ -144,4 +146,35 @@ public class PumpkinChildMove : MonoBehaviour
         }
 
     }
+
+    #region　アニメーションイベント
+    public void EventShake()
+    {
+        fallPtL.SetActive(false);
+        fallPtR.SetActive(false);
+
+        GetComponent<Animator>().enabled = false;
+
+        //揺らす長さ
+        const float shakeLength = 0.15f;
+        //揺らす力
+        const float power = 0.3f;
+
+        StartCoroutine(MyLib.DoShake(shakeLength, power, transform));
+
+        StartCoroutine(MyLib.DelayCoroutine(shakeLength + 0.5f, () =>
+        {
+            isShakeEnd = true;
+        }));
+    }
+
+    public void EventPtActive()
+    {
+        fallPtL.SetActive(true);
+        fallPtR.SetActive(true);
+
+    }
+
+    #endregion
+
 }

@@ -3,8 +3,8 @@
 public class StraightForceMove : BaseMove
 {
     public float speed = 7f;
-    float rotSpeed = 10f;
-    float rotStopTime = 3f;
+    //float rotSpeed = 10f;
+    //float rotStopTime = 3f;
 
     public Transform targets;
 

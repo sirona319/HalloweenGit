@@ -28,8 +28,9 @@ public class Pumpkin_Wait : StateChildBase
     public override int StateUpdate()
     {
 
-        transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
-
+        //XYの回転がずれる　PUmpkinJump (Prefab)
+        //////transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
+        transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
 
 
         if (GetComponent<EnemyBase>().IsDamage)

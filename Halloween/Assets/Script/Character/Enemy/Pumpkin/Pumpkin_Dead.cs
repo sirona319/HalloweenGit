@@ -29,13 +29,17 @@ public class Pumpkin_Dead : StateChildBase
     {
         stateTime = 0f;
 
-        GetComponent<CreateDeadSound>().Create();
+        var isDeadEffect=GetComponent<CreateDeadSound>().Create();
 
         var pos= GetComponent<PumpkinScr>().baseMove[0].GetPos();
 
-        Instantiate(deadParticleR, pos, Quaternion.identity);
-        Instantiate(deadParticleY, pos, Quaternion.identity);
-        Instantiate(deadParticleB, pos, Quaternion.identity);
+        if(isDeadEffect)
+        {
+            Instantiate(deadParticleR, pos, Quaternion.identity);
+            Instantiate(deadParticleY, pos, Quaternion.identity);
+            Instantiate(deadParticleB, pos, Quaternion.identity);
+
+        }
 
         if (GetComponent<PumpkinScr>().isBoss)
         {

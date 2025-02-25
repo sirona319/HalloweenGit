@@ -163,7 +163,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.82, y: 1.07}
+  m_Size: {x: 1.42, y: 0.97}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -215,8 +215,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.42, y: 0.97, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3555546, y: 0.8457119, z: 3}
+  m_Center: {x: 0.004603386, y: -0.011508068, z: 0}
 --- !u!114 &6696721821032989560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,8 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsMove: 1
-  speed: 8
-  targetsVec: {x: 0, y: 0, z: 0}
+  speed: 9
+  targets: {fileID: 0}
 --- !u!1 &6205204080456637428
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,8 +245,9 @@ GameObject:
   - component: {fileID: 8694150602881707665}
   - component: {fileID: -6963965400007205647}
   - component: {fileID: 3389971620290101742}
+  - component: {fileID: 5259147308363892619}
   m_Layer: 10
-  m_Name: PumpkinDirectioRed3DCol
+  m_Name: PumpkinDirectioRed3DCol LV2
   m_TagString: EnemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
+  eDamage: {fileID: 0}
   enemyData:
     Id: 
     moveType: 
@@ -303,9 +305,10 @@ MonoBehaviour:
   findName: Pumpkin
   baseMove:
   - {fileID: 6696721821032989560}
-  Hp: 1
-  AtkInterval: 1
+  Hp: 3
   isBoss: 1
+  sprite: {fileID: 8701814753559720864}
+  AtkInterval: 1
 --- !u!114 &-6963965400007205647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,3 +340,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
   audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
+--- !u!114 &5259147308363892619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb07212bbdef3c40b6b8b63e3def82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eBase: {fileID: 0}

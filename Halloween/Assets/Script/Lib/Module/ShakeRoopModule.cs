@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //[DisallowMultipleComponent]
-public sealed class ShakeModule : MonoBehaviour
+public sealed class ShakeLoopModule : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

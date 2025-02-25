@@ -4,8 +4,11 @@ using UnityEngine;
 public class Pumpkin_Damage : StateChildBase
 {
     const float DAMAGETIMEMAX = 0.4f;
-    float damageTime = 0f;
+   // float damageTime = 0f;
 
+    const float duration = 0.07f;
+    Color32 startColor = new(255, 255, 255, 255);
+    Color32 endColor = new(255, 255, 255, 0);
     //Animator m_anim;
 
     //void Start()
@@ -20,7 +23,7 @@ public class Pumpkin_Damage : StateChildBase
     }
     public override void OnEnter()
     {
-        damageTime = 0f;
+        //damageTime = 0f;
         stateTime = 0f;
         //オブジェクトを揺らしオン
         StartCoroutine(MyLib.DoShake(0.25f, 0.1f, transform));
@@ -37,7 +40,7 @@ public class Pumpkin_Damage : StateChildBase
         //if (!m_anim.GetBool("DamageB"))
          //   m_anim.SetBool("DamageB", true);
 
-        damageTime = DAMAGETIMEMAX;
+        //damageTime = DAMAGETIMEMAX;
         //コルーチンの起動
        // StartCoroutine(MyLib.DelayCoroutine(damageTime, () =>
         //{
@@ -49,11 +52,15 @@ public class Pumpkin_Damage : StateChildBase
     public override void OnExit()
     {
         gameObject.GetComponent<EnemyBase>().IsDamage = false;
-        //gameObject.GetComponent<Animator>().SetBool("DamageB", false);
+        gameObject.GetComponent<PumpkinScr>().sprite.material.color = startColor;
     }
 
     public override int StateUpdate()
     {
+        if (gameObject.GetComponent<EnemyBase>().IsDamage)
+            gameObject.GetComponent<PumpkinScr>().sprite.material.color = 
+                Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, DAMAGETIMEMAX));
+
         stateTime += Time.deltaTime;
 
         if (gameObject.GetComponent<EnemyBase>().IsDead)
@@ -62,7 +69,7 @@ public class Pumpkin_Damage : StateChildBase
             return DEAD;
         }
 
-        if (stateTime >= damageTime)
+        if (stateTime >= DAMAGETIMEMAX)
         {
 
             return GetComponent<EnemyBase>().ReturnStateMoveType(StateType);

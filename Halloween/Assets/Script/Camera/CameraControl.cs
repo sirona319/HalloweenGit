@@ -7,6 +7,8 @@ using UnityEngine.Rendering;
 //https://gomafrontier.com/unity/1585
 public class CameraControl : MonoBehaviour
 {
+    Tween tween = null;
+
     [SerializeField] public bool isEventCamera=false;
     Vector3 eventTargetPos = Vector3.zero;
     float cameraDuration = 1f;
@@ -41,18 +43,18 @@ public class CameraControl : MonoBehaviour
         {
             CameraTarget2DUpdate();
             CameraEventUpdate();
-            return;
+            //return;
         }
 
         //プレイヤーが死んでたら無効
         //if (pTrans.GetComponent<HPUIControl>().GetHp() <= 0)
           //  return;
-#if UNITY_ANDROID
-#else
-        if (Input.GetMouseButton(0)) return;//左クリック中
-        if (Input.GetMouseButton(1)) return;//右クリック中
+//#if UNITY_ANDROID
+//#else
+//        if (Input.GetMouseButton(0)) return;//左クリック中
+//        if (Input.GetMouseButton(1)) return;//右クリック中
 
-#endif
+//#endif
 
         //SetCursorPos(1920 / 2, 1080 / 2);
         //const int WHEEL = 2;
@@ -68,51 +70,51 @@ public class CameraControl : MonoBehaviour
         //    transform.rotation = Quaternion.Lerp(transform.rotation, elookAtRotation, Time.deltaTime * 100f);
         //}
 
-        transform.position = pTrans.position;
+        //transform.position = pTrans.position;
 
-        RotateCmaeraAngle();
+        //RotateCmaeraAngle();
 
-        float angle_x = 180f <= transform.eulerAngles.x ? transform.eulerAngles.x - 360 : transform.eulerAngles.x;
-        transform.eulerAngles = new Vector3(
-            Mathf.Clamp(angle_x, ANGLE_LIMIT_DOWN, ANGLE_LIMIT_UP),
-            transform.eulerAngles.y,
-            transform.eulerAngles.z
-        );
+        //float angle_x = 180f <= transform.eulerAngles.x ? transform.eulerAngles.x - 360 : transform.eulerAngles.x;
+        //transform.eulerAngles = new Vector3(
+        //    Mathf.Clamp(angle_x, ANGLE_LIMIT_DOWN, ANGLE_LIMIT_UP),
+        //    transform.eulerAngles.y,
+        //    transform.eulerAngles.z
+        //);
     }
 
-    private void RotateCmaeraAngle()
-    {
-        Vector3 angle=Vector3.zero;
-#if UNITY_ANDROID
+//    private void RotateCmaeraAngle()
+//    {
+//        Vector3 angle=Vector3.zero;
+//#if UNITY_ANDROID
 
-        if (UnityEngine.Device.SystemInfo.operatingSystem.Contains("Android"))
-        {
-            angle = new Vector3(
-                m_variableJoystickCamera.Horizontal * rotate_speed,
-                -m_variableJoystickCamera.Vertical * rotate_speed,
-                0
-            );
-        }
-        else
-        {
-            angle = new Vector3(
-                Input.GetAxis("Mouse X") * rotate_speed,
-                Input.GetAxis("Mouse Y") * rotate_speed,
-                0
-            );
-        }
+//        if (UnityEngine.Device.SystemInfo.operatingSystem.Contains("Android"))
+//        {
+//            angle = new Vector3(
+//                m_variableJoystickCamera.Horizontal * rotate_speed,
+//                -m_variableJoystickCamera.Vertical * rotate_speed,
+//                0
+//            );
+//        }
+//        else
+//        {
+//            angle = new Vector3(
+//                Input.GetAxis("Mouse X") * rotate_speed,
+//                Input.GetAxis("Mouse Y") * rotate_speed,
+//                0
+//            );
+//        }
 
-#elif UNITY_EDITOR_WIN
-        angle = new Vector3(
-            Input.GetAxis("Mouse X") * rotate_speed,
-            Input.GetAxis("Mouse Y") * rotate_speed,
-            0
-        );
+//#elif UNITY_EDITOR_WIN
+//        angle = new Vector3(
+//            Input.GetAxis("Mouse X") * rotate_speed,
+//            Input.GetAxis("Mouse Y") * rotate_speed,
+//            0
+//        );
 
-#endif
+//#endif
 
-        transform.eulerAngles += new Vector3(-angle.y, angle.x,0f);
-    }
+//        transform.eulerAngles += new Vector3(-angle.y, angle.x,0f);
+//    }
 
 
     void CameraTarget2DUpdate()
@@ -140,7 +142,14 @@ public class CameraControl : MonoBehaviour
         if (!isEventCamera) return;
         //transform.position = eventTargetPos;
 
-        transform.DOMove(eventTargetPos, cameraDuration).SetEase(Ease.OutSine);
+        if (Vector3.Distance(eventTargetPos, transform.position) < 0.01f)
+        {
+            //Debug.Log("カメラ移動終了Tween");
+            return;
+        }
+
+
+        tween = transform.DOMove(eventTargetPos, cameraDuration).SetEase(Ease.OutSine);
 
     }
 
@@ -154,5 +163,14 @@ public class CameraControl : MonoBehaviour
     public void CameraEventTriggerOff()
     {
         isEventCamera = false;
+    }
+
+    private void OnDisable()
+    {
+        // Tween破棄
+        if (DOTween.instance != null)
+        {
+            tween?.Kill();
+        }
     }
 }

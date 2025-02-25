@@ -18,8 +18,12 @@ public class PumpkinBoss_Attack : StateChildBase
 
     PumpkinBossScr bossScr;
 
-    //public bool isTest = false;
+    const float Lv1LimitTime = 10f;
+    const float Lv2LimitTime = 22f;
+    //const float Lv3LimitTime = 10f;
 
+    //public bool isTest = false;
+    //bool isShake = false;
     public IEnumerator AtkEnable()
     {
 
@@ -31,7 +35,7 @@ public class PumpkinBoss_Attack : StateChildBase
 
         bossScr.pumpkins[0].GetComponent<PumpkinChildMove>().Initialize();
         bossScr.pumpkins[1].GetComponent<PumpkinChildMove>().Initialize();
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime<10f,() =>
+        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime< Lv1LimitTime, () =>
         {
             if (bossScr.pumpkins[0] != null)
             {
@@ -54,7 +58,7 @@ public class PumpkinBoss_Attack : StateChildBase
         bossScr.pumpkins[3].GetComponent<PumpkinChildMove>().Initialize();
         bossScr.pumpkins[4].GetComponent<PumpkinChildMove>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 22f, () =>
+        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < Lv2LimitTime, () =>
         {
             if (bossScr.pumpkins[2] != null)
             {
@@ -66,7 +70,13 @@ public class PumpkinBoss_Attack : StateChildBase
         }));
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5);
+        //赤かぼちゃアニメーションなど
 
+        var anim = bossScr.pumpkins[5].GetComponent<Animator>();
+        anim.SetBool("Shake", true);
+
+        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5&& 
+                                        bossScr.pumpkins[5].GetComponent<PumpkinChildMove>().isShakeEnd);
 
         bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
         ////ボスかぼちゃ　ピンボール        //Lv3
@@ -87,13 +97,11 @@ public class PumpkinBoss_Attack : StateChildBase
 
     public IEnumerator DEBUGAtkEnable()
     {
+        var anim = bossScr.pumpkins[5].GetComponent<Animator>();
+        anim.SetBool("Shake", true);
 
-        StartCoroutine(MyLib.DelayCoroutine(5f, () =>
-        {
-            Destroy(bossScr.pumpkins[5]);
-            bossScr.pumpkinChildDeadCount++;
-
-        }));
+        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 0 &&
+                                        bossScr.pumpkins[5].GetComponent<PumpkinChildMove>().isShakeEnd);
 
         bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
         ////ボスかぼちゃ　ピンボール        //Lv3
@@ -104,12 +112,10 @@ public class PumpkinBoss_Attack : StateChildBase
         {
             if (bossScr.pumpkins[5] != null)
             {
-                bossScr.pumpkins[5].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkins[5].GetComponent<PumpkinChildMove>().MoveUpdateNoRotisFall();
             }
 
         }));
-
-        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 6);
 
 
 
@@ -138,7 +144,7 @@ public class PumpkinBoss_Attack : StateChildBase
 
         //画面外に行き　当たり判定のある　敵を生成
         StartCoroutine(AtkEnable());
-
+        //StartCoroutine(DEBUGAtkEnable());
     }
 
     public override void OnExit()

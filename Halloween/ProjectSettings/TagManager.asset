@@ -8,7 +8,6 @@ TagManager:
   - ExitErea
   - Ground
   - EnemyBoss
-  - test
   layers:
   - Default
   - TransparentFX

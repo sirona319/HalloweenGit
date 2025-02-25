@@ -5,6 +5,8 @@ public class BossCollisionTrigger : MonoBehaviour
     public float cameraDuration;
     public Vector3 cameraBossPos;
 
+    public BoxCollider2D ereaCol; 
+
     public BoxCollider2D box2DLeft;
     public BoxCollider2D box2DRight;
     public BoxCollider box3DLeft;
@@ -15,6 +17,8 @@ public class BossCollisionTrigger : MonoBehaviour
     public GameObject haveTextObject;
 
     public bool isBossBattle = false;
+
+    public GameObject DEBUGBOSSFLG;
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
@@ -41,7 +45,7 @@ public class BossCollisionTrigger : MonoBehaviour
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
 
-
+            ereaCol.enabled = true;
             box2DLeft.enabled = true;
             box2DRight.enabled = true;
 
@@ -49,13 +53,16 @@ public class BossCollisionTrigger : MonoBehaviour
             box3DRight.enabled = true;
             box3DUp.enabled = true;
             box3DDown.enabled = true;
+
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
-            var readText= haveTextObject.GetComponent<IHaveText>();
-            if (readText != null)
-                readText.TextReadPlus();
+            //var readText= haveTextObject.GetComponent<IHaveText>();
+            //if (readText != null)
+            //    readText.TextReadPlus();
 
             isBossBattle = true;
+
+            DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
         }
 
 
@@ -64,6 +71,8 @@ public class BossCollisionTrigger : MonoBehaviour
     //
     public void BossCollisionOff()
     {
+        ereaCol.enabled = false;
+
         box2DLeft.enabled = false;
         box2DRight.enabled = false;
 

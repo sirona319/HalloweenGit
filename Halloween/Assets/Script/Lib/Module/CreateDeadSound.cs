@@ -12,10 +12,12 @@ public class CreateDeadSound : MonoBehaviour
     //[SerializeField] AudioResource audioSe;
 
 
-    public void Create()
+    public bool Create()
     {
-        if (!IsSoundEnable) return;
+        if (!IsSoundEnable) return IsSoundEnable;
         var seGo = Instantiate(audioSe, transform.position, Quaternion.identity);
         seGo.GetComponent<SoundEndDestroy>().StartDestroyFlg();//削除登録
+
+        return IsSoundEnable;
     }
 }

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class FlyScr : EnemyBase
 {
-
+    //public float MaxAtkInterval = 1f;
+    public float AtkInterval =1;
     void Start()
     {
         base.StartInit();

@@ -81,6 +81,7 @@ GameObject:
   - component: {fileID: 3353146902859642005}
   - component: {fileID: -6898568745677087848}
   - component: {fileID: -1688240844712754749}
+  - component: {fileID: 836253347083890156}
   m_Layer: 3
   m_Name: Fly
   m_TagString: Enemy
@@ -268,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 2134192767689481326}
+  eDamage: {fileID: 0}
   enemyData:
     Id: 
     moveType: 
@@ -278,6 +280,8 @@ MonoBehaviour:
   findName: Fly
   baseMove:
   - {fileID: 2466869346531362125}
+  Hp: 0
+  AtkInterval: 1
 --- !u!114 &2134192767689481326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,4 +357,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
   audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
-  aa: {fileID: 8300000, guid: bb443c9a85a6c914abddfa9f00d4f571, type: 3}
+--- !u!114 &836253347083890156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8993108005238923625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb07212bbdef3c40b6b8b63e3def82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eBase: {fileID: 0}

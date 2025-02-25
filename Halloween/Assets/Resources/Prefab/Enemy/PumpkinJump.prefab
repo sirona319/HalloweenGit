@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3751133012385811689}
   - component: {fileID: -6963965400007205647}
   - component: {fileID: 3389971620290101742}
+  - component: {fileID: 6045209402796862328}
   m_Layer: 3
   m_Name: PumpkinJump
   m_TagString: Enemy
@@ -62,7 +63,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a55e21b34eb5df746b2bad3683487f98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.82, y: 1.07}
+  m_Size: {x: 1.42, y: 0.97}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -160,7 +161,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.42, y: 0.97}
-    newSize: {x: 1.82, y: 1.07}
+    newSize: {x: 1.42, y: 0.97}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
+  eDamage: {fileID: 6045209402796862328}
   enemyData:
     Id: 
     moveType: 
@@ -202,6 +204,10 @@ MonoBehaviour:
   findName: Pumpkin
   baseMove:
   - {fileID: 3751133012385811689}
+  Hp: 0
+  isBoss: 0
+  sprite: {fileID: 8687611365685043167}
+  AtkInterval: 1
 --- !u!114 &3751133012385811689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +245,7 @@ MonoBehaviour:
   y: 0
   z: 1
   SPEED: 30
+  target: {fileID: 0}
 --- !u!114 &3389971620290101742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,3 +260,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
   audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
+--- !u!114 &6045209402796862328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb07212bbdef3c40b6b8b63e3def82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eBase: {fileID: 0}

@@ -23,7 +23,7 @@ public class EnemyBase : MonoBehaviour, IDamage
     [NonSerialized] public bool IsMove = true;
 
 
-
+    [SerializeField] EnemyDamage eDamage;
     public EnemyData enemyData;//スクリプタルオブジェクト　リスト
     public string findName;
 
@@ -37,11 +37,8 @@ public class EnemyBase : MonoBehaviour, IDamage
     //public int MaxHp = 1;
     public int Hp = 0;
     //public float MaxAtkInterval = 1f;
-    public float AtkInterval =1;
+    //public float AtkInterval =1;
 
-    //const int ATKVAL = 1;
-
-    //DamageScr damageScr 
 
     public BaseMove GetBaseMove(int no)
     {
@@ -82,6 +79,12 @@ public class EnemyBase : MonoBehaviour, IDamage
 
     protected virtual void StartInit()
     {
+        if(GetComponent<EnemyDamage>()!=null)
+            eDamage = GetComponent<EnemyDamage>();
+
+        if (eDamage == null)
+            Debug.Log("ダメージクラスが設定されていない");
+
         //スクリプタルオブジェクトのデータを取得
         enemyData = EnemyManager.I.GetEnemyData(findName);
 
@@ -159,23 +162,35 @@ public class EnemyBase : MonoBehaviour, IDamage
 
     public void Damage(int damage)
     {
+        eDamage.Damage(damage);
+        //if (IsDead) return;
 
-        if (IsDead) return;
+        //#region カメラシェイク
+        ////https://baba-s.hatenablog.com/entry/2018/03/14/170400
+
+        ////揺らす長さ
+        //const float shakeLength = 0.3f;
+        ////揺らす力
+        //const float power = 0.3f;
+
+        //StartCoroutine(MyLib.DoShake(shakeLength, power, transform));
 
 
-        Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
-        Hp -= damage;        //HP減少処理
+        //#endregion
+        ////Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
+        //Hp -= damage;        //HP減少処理
 
-        IsDamage = true;
+        //IsDamage = true;
 
-        if (Hp <= 0)
-            IsDead = true;
+        //if (Hp <= 0)
+        //    IsDead = true;
     }
 
-    public void Damage(int damage,bool deadSound)
+    public void Damage(int damage,bool isSound)
     {
-        Damage(damage);
-        GetComponent<CreateDeadSound>().IsSoundEnable = false;
+        eDamage.Damage(damage, isSound);
+        //Damage(damage);
+        //GetComponent<CreateDeadSound>().IsSoundEnable = false;
     }
 
 

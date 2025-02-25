@@ -1,6 +1,4 @@
-﻿using NUnit.Framework;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 //using static UnityEngine.RuleTile.TilingRuleOutput;
 
 

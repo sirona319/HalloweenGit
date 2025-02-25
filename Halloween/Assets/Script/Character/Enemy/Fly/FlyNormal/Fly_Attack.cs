@@ -45,9 +45,9 @@ public class Fly_Attack : StateChildBase
 
 
 
-        if (stateTime > GetComponent<EnemyBase>().AtkInterval)
+        if (stateTime > GetComponent<FlyScr>().AtkInterval)
         {
-            GetComponent<EnemyBase>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
+            GetComponent<FlyScr>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
             //GetComponent<FlyScr>().IsAttack = false;
             return GetComponent<FlyScr>().FlyReturnStateType(StateType);
         }
