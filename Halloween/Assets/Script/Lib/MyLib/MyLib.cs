@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using Random = UnityEngine.Random;
 using Transform = UnityEngine.Transform;
@@ -248,7 +245,7 @@ public static class MyLib
     //}
     #endregion
 
-    #region　エネミー
+    #region カメラ
 
     /// <summary>
     /// メインカメラからレイを飛ばして確認
@@ -257,18 +254,19 @@ public static class MyLib
     /// </summary>
     /// <param name="target"></param>
     /// <returns></returns>
-    public static bool FrontCameraDrawObject(Transform target)
+    public static bool FrontCameraDrawObject(Vector3 target)
     {
 
         Vector3 cameraPos = Camera.main.transform.position;
-        Vector3 targetDir = target.position - cameraPos;
+        Vector3 targetDir = target - cameraPos;
         //レイの描画
         Debug.DrawRay(cameraPos, targetDir * 100f, Color.red);
 
         //カメラ内かどうかを判定
-        var vp = Camera.main.WorldToViewportPoint(target.position);
+        var vp = Camera.main.WorldToViewportPoint(target);
         bool isActive = vp.x >= -0.5f && vp.x <= 1.5f && vp.y >= -0.5f && vp.y <= 1.5f && vp.z >= -0.5f;
-        if (!isActive)
+        //bool isActive = vp.x >= -1.5f && vp.x <= 1.5f && vp.y >= -1.5f && vp.y <= 1.5f && vp.z >= -1.5f;
+        if (isActive==false)
             return isActive;
 
 
@@ -277,14 +275,94 @@ public static class MyLib
         float rayDistance = 100f;
         if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.gameObject.CompareTag("Block"))
-                isActive = false;
+            //壁判定用
+            //if (hit.collider.gameObject.CompareTag("Block"))
+            //    isActive = false;
 
         }
 
         return isActive;
-
     }
+
+    public static bool IsVisibleByCamera(Vector3 target)
+    {
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(target);
+        // viewPosのx座標とy座標が0以上1以下かつzが0以上だったらみえる
+        if (viewPos.x >= 0 && viewPos.x <= 1 &&
+            viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z >= 0)
+        {
+            //Debug.Log("カメラ内");
+            return true;
+        }
+        else
+        {
+           // Debug.Log("カメラ外");
+            return false;
+        }
+    }
+
+    #endregion
+
+    #region　レイ
+
+
+    //レイの表示Scene右上の球体Gizmob Onにする
+    public static GameObject DebugRayViewCameraPosZ(bool DebugDraw = true)
+    {
+        float distance = 1000;   // 飛ばす&表示するRayの長さ
+        float duration = 50; // 表示期間（秒）
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (DebugDraw)
+            Debug.DrawRay(ray.origin, ray.direction * distance, Color.red, duration, false);
+
+        RaycastHit hit = new RaycastHit();
+        GameObject hitObject = null;
+        if (Physics.Raycast(ray, out hit, distance))
+        {
+            hitObject = hit.collider.gameObject;
+
+            if (DebugDraw)
+                Debug.Log(hitObject.name);
+
+            return hitObject;
+        }
+
+        return hitObject;
+    }
+
+    //メインカメラのZ位置 cameraZ
+    //public static GameObject DebugRayViewCameraZ(float cameraZ)
+    //{
+    //    Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZ));
+
+    //    Vector3 targetDir = worldPos + new Vector3(0, 0, 100f);//(MousePos + Vector3.forward) - MousePos;
+
+    //    //Debug.DrawRay(worldPos, targetDir * 100, Color.red, 100, false);        //レイの描画
+
+
+    //    float distance = 1000;   // 飛ばす&表示するRayの長さ
+    //    float duration = 50; // 表示期間（秒）
+
+    //    Ray ray = Camera.main.ScreenPointToRay(worldPos);
+    //    Debug.DrawRay(ray.origin, ray.direction * distance, Color.red, duration, false);
+
+    //    RaycastHit hit = new RaycastHit();
+    //    if (Physics.Raycast(ray, out hit, distance))
+    //    {
+    //        GameObject hitObject = hit.collider.gameObject;
+    //        Debug.Log(hitObject.name);
+
+    //        return hitObject;
+    //    }
+
+    //    return null;
+    //}
+
+    #endregion
+
+    #region　エネミー
 
     /// <summary>
     ///　敵の数を返す
@@ -305,7 +383,7 @@ public static class MyLib
     /// 一番近い敵の座標を取得
     /// </summary>
     /// <param name="pos">プレイヤーなどのオブジェクト座標</param>
-    /// <returns>一番近い敵の座標</returns>
+    /// <returns>一番近い敵の座標を返す</returns>
     public static Vector3 EnemysNearVec(Vector3 pos)
     {
         var Enemys = GameObject.FindGameObjectsWithTag("Enemy");

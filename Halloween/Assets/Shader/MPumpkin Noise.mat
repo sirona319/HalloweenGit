@@ -141,7 +141,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlendOp: 0
-    - _BlockSize: 24.3
+    - _BlockSize: 24
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -154,9 +154,9 @@ Material:
     - _EnableExternalAlpha: 0
     - _EnvironmentReflections: 1
     - _FrameRate: 27.26
-    - _GlitchAmount: 0.313
-    - _GlitchDuration: 0.79
-    - _GlitchFrequency: 0.74
+    - _GlitchAmount: 0.3
+    - _GlitchDuration: 0.8
+    - _GlitchFrequency: 0.7
     - _GlitchScale: 0.063
     - _GlitchScale_B: 1
     - _GlitchScale_G: 0.82

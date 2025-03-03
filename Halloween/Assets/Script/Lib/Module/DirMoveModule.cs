@@ -1,5 +1,4 @@
-﻿using UniRx;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DirMoveModule : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class DirMoveModule : MonoBehaviour
 
     //int targetNo = 0;
 
-    public ReactiveProperty<bool> IsLastPointMoveEnd = new ReactiveProperty<bool>(false);
+    //public ReactiveProperty<bool> IsLastPointMoveEnd = new ReactiveProperty<bool>(false);
     //目標地点に付いたときに処理をする用
 
     //public void SetTarget(Transform[] t)

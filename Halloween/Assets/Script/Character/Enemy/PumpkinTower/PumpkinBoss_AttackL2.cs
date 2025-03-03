@@ -13,24 +13,20 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 6);//trueなら
 
         //Lv1
-        bossScr.pumpkinsLv2[0].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[1].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[2].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[3].GetComponent<RotModule>().enabled = true;
 
-        bossScr.pumpkinsLv2[0].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[1].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[2].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[3].GetComponent<PumpkinChildMove>().Initialize();
+        bossScr.pumpkinsLv2[0].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[1].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[2].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[3].GetComponent<PumpkinChild>().Initialize();
 
         StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 10f, () =>
         {
             if (bossScr.pumpkinsLv2[0] != null)
             {
-                bossScr.pumpkinsLv2[0].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[1].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[2].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[3].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[0].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[1].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[2].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[3].GetComponent<PumpkinChild>().MoveUpdateNoRot();
             }
 
         }));
@@ -39,17 +35,12 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 10);//trueなら
 
         //Lv2
-        bossScr.pumpkinsLv2[4].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[5].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[6].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[7].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[8].GetComponent<RotModule>().enabled = true;
 
-        bossScr.pumpkinsLv2[4].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[5].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[6].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[7].GetComponent<PumpkinChildMove>().Initialize();
-        bossScr.pumpkinsLv2[8].GetComponent<PumpkinChildMove>().Initialize();
+        bossScr.pumpkinsLv2[4].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[5].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[6].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[7].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[8].GetComponent<PumpkinChild>().Initialize();
 
         StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 22f, () => {         
             if (bossScr.pumpkinsLv2[4] != null&&
@@ -59,11 +50,11 @@ public class PumpkinBoss_AttackL2 : StateChildBase
             bossScr.pumpkinsLv2[8] != null
             )
             {
-                bossScr.pumpkinsLv2[4].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[5].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[6].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[7].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[8].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[4].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[5].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[6].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[7].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[8].GetComponent<PumpkinChild>().MoveUpdateNoRot();
             }
 
         }));
@@ -75,17 +66,16 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         anim.SetBool("Shake", true);
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15 &&
-                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildMove>().isShakeEnd);
+                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().isShakeEnd);
         //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15);//trueなら
 
-        bossScr.pumpkinsLv2[9].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildMove>().Initialize();
+        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().Initialize();
 
         StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 35, () =>
         {
             if (bossScr.pumpkinsLv2[9] != null)
             {
-                bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().MoveUpdateNoRot();
             }
 
         }));
@@ -102,17 +92,17 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         anim.SetBool("Shake", true);
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15 &&
-                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildMove>().isShakeEnd);
+                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().isShakeEnd);
         //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15);//trueなら
 
         bossScr.pumpkinsLv2[9].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildMove>().Initialize();
+        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().Initialize();
 
         StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 35, () =>
         {
             if (bossScr.pumpkinsLv2[9] != null)
             {
-                bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().MoveUpdateNoRot();
             }
 
         }));
@@ -133,8 +123,8 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
         stateTime = 0f;
 
-        StartCoroutine(AtkEnable());
-        //StartCoroutine(DEBUGAtkEnable());
+        //StartCoroutine(AtkEnable());
+        StartCoroutine(DEBUGAtkEnable());
     }
 
     public override void OnExit()

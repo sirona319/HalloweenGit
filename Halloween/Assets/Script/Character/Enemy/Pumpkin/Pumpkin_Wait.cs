@@ -55,7 +55,7 @@ public class Pumpkin_Wait : StateChildBase
         //else if (GetComponent<EnemyBase>().moveType == EnemyBase.MoveType.point)
         //    return (int)SlimeCtr.State.Slime_MovePoint;//　ポイントムーブ
 
-        return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
+        return GetComponent<PumpkinScr>().ReturnStateType(StateType);
 
 
         //return StateType;

@@ -17,6 +17,9 @@ public class CollisionTriggerDamage : MonoBehaviour
     {
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
+            var iDamage = other.transform.GetComponent<IDamage>();
+            if (iDamage != null)
+                iDamage.Damage(1);
             //isActiveTrigger = true;
             // SetTimeline(true);
             Debug.Log(other.name);
@@ -39,11 +42,15 @@ public class CollisionTriggerDamage : MonoBehaviour
     {
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
-            //isActiveTrigger = true;
-            Debug.Log(other.name);
+            var iDamage = other.transform.GetComponent<IDamage>();
+            if (iDamage != null)
+            {
+                iDamage.Damage(1);
+                //isActiveTrigger = true;
+                // SetTimeline(true);
+                Debug.Log(other.name);
+            }
 
-            //Destroy(other.gameObject);
-            //SetTimeline(true);
         }
 
     }

@@ -1,5 +1,7 @@
 ﻿using Cysharp.Threading.Tasks;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnWavePrefab : MonoBehaviour
@@ -49,15 +51,25 @@ public class EnemySpawnWavePrefab : MonoBehaviour
         //1回目以降
         while (true)
         {
-            DelaySpawnAsyncWave
-                (spawnData[No].spawnTime[spawnData[No].enemyCount] /** spawnData[No].enemyCount + 1*/,//float型　生成時間
-
+            StartCoroutine(DelaySpawnWave(
+                spawnData[No].spawnTime[spawnData[No].enemyCount], /** spawnData[No].enemyCount + 1*///float型　生成時間
+                
                 spawnData[No].LoadState[spawnData[No].enemyCount],//敵の種類
-
 
                 spawnData[No].spawnLocations[spawnData[No].enemyCount],//生成座標
                 spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
-                ).Forget();
+                ));
+
+
+            //DelaySpawnAsyncWave
+            //    (spawnData[No].spawnTime[spawnData[No].enemyCount] /** spawnData[No].enemyCount + 1*/,//float型　生成時間
+
+            //    spawnData[No].LoadState[spawnData[No].enemyCount],//敵の種類
+
+
+            //    spawnData[No].spawnLocations[spawnData[No].enemyCount],//生成座標
+            //    spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
+            //    ).Forget();
 
             spawnData[No].enemyCount++;
             if (spawnData[No].enemyCount >= spawnData[No].LoadState.Length)
@@ -68,25 +80,27 @@ public class EnemySpawnWavePrefab : MonoBehaviour
     }
 
 
-    void Update()
+    public IEnumerator DelaySpawnWave(float seconds, GameObject loadState, Transform spawnTrans, Transform[] movePoint)
     {
-    }
-
-    public void ResetEnemySpawn()
-    {
-
-    }
-
-    public async UniTask DelaySpawnAsyncWave(float seconds, GameObject loadState, Transform spawnTrans, Transform[] movePoint)
-    {
-        await UniTask.WaitForSeconds(seconds);
+        yield return new WaitForSeconds(seconds);
 
         var obj = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
-
 
         SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
 
     }
+
+
+    //public async UniTask DelaySpawnAsyncWave(float seconds, GameObject loadState, Transform spawnTrans, Transform[] movePoint)
+    //{
+    //    await UniTask.WaitForSeconds(seconds);
+
+    //    var obj = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
+
+
+    //    SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
+
+    //}
 
     //ムーブ設定
     void SelectCreateMoveJerry(string moveType, Transform[] movePoint, GameObject go)

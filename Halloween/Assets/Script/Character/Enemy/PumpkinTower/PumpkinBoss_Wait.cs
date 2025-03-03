@@ -29,37 +29,32 @@ public class PumpkinBoss_Wait : StateChildBase
 
         //transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
 
-
-
         //if (GetComponent<PumpkinBossScr>().IsDamage)
         //    if (GetComponent<PumpkinBossScr>().ReturnStateTypeDead())
         //        return (int)FlyCtr.State.Fly_Dead;
 
         stateTime += Time.deltaTime;
 
-        if (GetComponent<PumpkinBossScr>().startBattle)
-        { 
-            if (bossScr.pumpkinChildDeadCount == 6)
-            {
-                bool isFallEnd = false;
-                foreach (var f in bossScr.pumpkinsLv2)
-                    isFallEnd = f.GetComponent<PumpkinChildMove>().isFall;
+        if (!GetComponent<PumpkinBossScr>().startBattle)return StateType;
+
+        if (bossScr.pumpkinChildDeadCount == 6)
+        {
+            bool isFallEnd = false;
+            foreach (var f in bossScr.pumpkinsLv2)
+                isFallEnd = f.GetComponent<PumpkinChild>().isFall;
 
 
-                //全てのかぼちゃが落下し終わっていたら
-                if (isFallEnd)
-                    return (int)PumpkinBossCtr.State.PumpkinBoss_AttackL2;
-                else
-                    return (int)PumpkinBossCtr.State.PumpkinBoss_Fall;//かぼちゃを落とす
-            }
+            //全てのかぼちゃが落下し終わっていたら
+            if (isFallEnd)
+                return (int)PumpkinBossCtr.State.PumpkinBoss_AttackL2;
+            else
+                return (int)PumpkinBossCtr.State.PumpkinBoss_Fall;//かぼちゃを落とす
         }
+        
 
-
-
-
-        if (GetComponent<PumpkinBossScr>().startBattle)
-            if (bossScr.pumpkinChildDeadCount == 0)
-                return (int)PumpkinBossCtr.State.PumpkinBoss_Attack;
+        //if (GetComponent<PumpkinBossScr>().startBattle)
+        if (bossScr.pumpkinChildDeadCount == 0)
+            return (int)PumpkinBossCtr.State.PumpkinBoss_Attack;
 
         //return GetComponent<EnemyBase>().ReturnStateMoveTypeAttack(StateType);
 

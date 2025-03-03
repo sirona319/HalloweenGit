@@ -2,33 +2,19 @@
 
 public class Pumpkin_Move : StateChildBase
 {
-    //[SerializeField] float MOVEXY = 100;
-    //[SerializeField] Vector3[] movePos;
-    //[SerializeField] Vector3 targetPos;
-    //[SerializeField] float moveSaveTime = 0;
-
-
-    //const float ENDMOVELEN = 1f;
-
-    //Rigidbody m_rb;
-
-
+    PumpkinScr pScr;
     public override void Initialize(int stateNo)
     {
         base.Initialize(stateNo);
 
-        //foreach (var move in GetComponent<FlyScr>().baseMove)
-        //    move.Initialize();
-
-
-        //GetComponent<FlyScr>().baseMove.move
+        pScr = GetComponent<PumpkinScr>();
     }
 
     public override void OnEnter()
     {
         stateTime = 0f;
 
-        foreach (var move in GetComponent<PumpkinScr>().baseMove)
+        foreach (var move in pScr.baseMove)
             move.MoveEnter();
 
     }
@@ -52,26 +38,18 @@ public class Pumpkin_Move : StateChildBase
             //        return (int)FlyCtr.State.Fly_Dead;
 
 
-            //移動の更新
-            foreach (var move in GetComponent<PumpkinScr>().baseMove)
+        //移動の更新
+        foreach (var move in pScr.baseMove)
         {
             move.MoveUpdate();
             //GetComponent<FlyScr>().IsMove = move.IsMove;
         }
 
-        //マガジンの更新
-
-
-
-        if (!GetComponent<PumpkinScr>().IsMove)
-            GetComponent<PumpkinScr>().IsAttack = true;
-
-        //GetComponent<FlyScr>().AttackMagazineUpdateAll();
-
-        //return GetComponent<FlyScr>().FlyReturnStateType(StateType);
-
+        if (!pScr.IsMove)
+            pScr.IsAttack = true;
 
         return (int)StateType;
 
     }
+
 }

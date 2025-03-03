@@ -66,6 +66,7 @@ Transform:
   - {fileID: 4667248850588145462}
   - {fileID: 8937839125099228917}
   - {fileID: 4152855284318463721}
+  - {fileID: 354566583560433198}
   - {fileID: 7159319313664494269}
   - {fileID: 8414615853710522412}
   - {fileID: 8717601480166172309}
@@ -217,15 +218,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 4476373283514577311}
   - {fileID: 4667248850588145462}
   spawnObjMovePoints:
   - {fileID: 8526126341931758972}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &1146293344694150746
@@ -342,15 +345,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 1
+  noiseTiming: 2
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 7559152634333981174}
   - {fileID: 4667248850588145462}
   spawnObjMovePoints:
   - {fileID: 8937839125099228917}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &1602959413946432709
@@ -822,15 +827,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 1
+  noiseTiming: 1
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: 8330646a6664e874fa5c8a2582b6379b, type: 3}
   moveTrans:
   - {fileID: 6700590147694504829}
-  - {fileID: 4152855284318463721}
+  - {fileID: 354566583560433198}
   spawnObjMovePoints:
   - {fileID: 7073980362980716867}
+  isShakeEnd: 0
   fallPtL: {fileID: 3736433971542901824}
   fallPtR: {fileID: 3755716144532304893}
 --- !u!95 &2741432882618187311
@@ -1150,8 +1157,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8011186718793638905, guid: 6a5f7aef8ca4fa94fbf6920281cf460c, type: 3}
-  m_Color: {r: 1, g: 0.2971698, b: 0.2971698, a: 1}
+  m_Sprite: {fileID: 4842590130733673965, guid: 6bb98b2f98c155e4b979248f734fb7ba, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1324,8 +1331,8 @@ SpriteRenderer:
   m_SortingLayerID: 353610973
   m_SortingLayer: 3
   m_SortingOrder: -2
-  m_Sprite: {fileID: 8011186718793638905, guid: 6a5f7aef8ca4fa94fbf6920281cf460c, type: 3}
-  m_Color: {r: 1, g: 0.2971698, b: 0.2971698, a: 1}
+  m_Sprite: {fileID: 4842590130733673965, guid: 6bb98b2f98c155e4b979248f734fb7ba, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1522,15 +1529,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 1434242773029838734}
   - {fileID: 7159319313664494269}
   spawnObjMovePoints:
   - {fileID: 7364465092173990502}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &4092892266388094681
@@ -1815,15 +1824,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 3873016680149958342}
   - {fileID: 8937839125099228917}
   spawnObjMovePoints:
   - {fileID: 4667248850588145462}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &4572027902687088864
@@ -2139,16 +2150,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 7159319313664494269}
   spawnObjMovePoints:
   - {fileID: 8717601480166172309}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+--- !u!1 &4955930380518728572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354566583560433198}
+  - component: {fileID: 2517320777119137674}
+  - component: {fileID: 627171463009636537}
+  m_Layer: 0
+  m_Name: upMiddleBoss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &354566583560433198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955930380518728572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4809394584115230578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2517320777119137674
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955930380518728572}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &627171463009636537
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4955930380518728572}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5033944381478996254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,15 +2311,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 1
+  noiseTiming: 1
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 3743144445587176580}
   - {fileID: 8414615853710522412}
   spawnObjMovePoints:
   - {fileID: 6350677653890349196}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &5275032952432506531
@@ -2376,14 +2477,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 4667248850588145462}
   spawnObjMovePoints:
   - {fileID: 8937839125099228917}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &5527511720341171624
@@ -2497,14 +2600,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: 1110b85c0bab55b4c84387a55eaa6e0e, type: 3}
   moveTrans:
   - {fileID: 4152855284318463721}
   spawnObjMovePoints:
   - {fileID: 4152855284318463721}
+  isShakeEnd: 0
   fallPtL: {fileID: 5328344944690297628}
   fallPtR: {fileID: 7349828405487312573}
 --- !u!95 &3028818467906650823
@@ -2898,14 +3003,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 4152855284318463721}
   spawnObjMovePoints:
   - {fileID: 8526126341931758972}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &6405225614208899405
@@ -2971,14 +3078,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 8414615853710522412}
   spawnObjMovePoints:
   - {fileID: 7364465092173990502}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &6541389292729856622
@@ -3076,15 +3185,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 1
+  noiseTiming: 1.3
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 2277490359973287949}
   - {fileID: 4152855284318463721}
   spawnObjMovePoints:
   - {fileID: 4171741002045432289}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &6906339324959194415
@@ -3236,15 +3347,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 6468661564657309912}
   - {fileID: 8414615853710522412}
   spawnObjMovePoints:
   - {fileID: 8717601480166172309}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &7513864499334317639
@@ -3429,15 +3542,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 9188155486582160042}
   - {fileID: 7159319313664494269}
   spawnObjMovePoints:
   - {fileID: 7391720782203098596}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &8253108067849944325
@@ -3620,15 +3735,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 0
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 6818223026667523309}
   - {fileID: 8937839125099228917}
   spawnObjMovePoints:
   - {fileID: 8526126341931758972}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1 &8942989983752950115
@@ -3781,14 +3898,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  isShakeEnd: 0
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 8937839125099228917}
   spawnObjMovePoints:
   - {fileID: 4667248850588145462}
+  isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
 --- !u!1001 &1559342906628458700

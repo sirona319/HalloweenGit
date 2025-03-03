@@ -1,19 +1,14 @@
-﻿using NUnit.Framework;
-using System.Collections;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using UnityEngine;
-using static EnemySpawnWave;
-using static UnityEngine.GraphicsBuffer;
+﻿using UnityEngine;
 
-public class PumpkinChildMove : MonoBehaviour
+public class PumpkinChild : MonoBehaviour
 {
+    [SerializeField] bool isNoise;
+    [SerializeField] float noiseTiming = 5f;//ランダムで数字を足して　瞬間移動させる
+    [SerializeField] Transform[] warpPositions;
+    //public int childNo = 0;
+
     public bool isFall=false;
     public bool isAllFall = false;
-
-    public bool isShakeEnd = false;
 
     [SerializeField] GameObject spawnObj;
 
@@ -27,8 +22,12 @@ public class PumpkinChildMove : MonoBehaviour
     bool isMoveEnd = false;
 
 
-    [SerializeField]GameObject fallPtL;
-    [SerializeField]GameObject fallPtR;
+    //赤かぼちゃ用　継承する？
+    public bool isShakeEnd = false;
+
+    [SerializeField] GameObject fallPtL;
+    [SerializeField] GameObject fallPtR;
+    //
 
     public void movePointSet(Transform[] ts)
     {
@@ -40,7 +39,7 @@ public class PumpkinChildMove : MonoBehaviour
 
     public void Initialize()
     {
-
+        GetComponent<RotModule>().enabled = true;
 
     }
 
@@ -74,12 +73,6 @@ public class PumpkinChildMove : MonoBehaviour
 
 
     }
-    public IEnumerator DelayCoroutine(float seconds, Action action)
-    {
-        yield return new WaitForSeconds(seconds);
-        action?.Invoke();
-    }
-
 
     void PumpkinMove()
     {
@@ -106,6 +99,10 @@ public class PumpkinChildMove : MonoBehaviour
             var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
             var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
             eBase.Initialize();
+            eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
+            eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
+            eBase.GetComponent<PumpkinScr>().warpPositions = warpPositions;
+
 
 
             if (eBase.GetComponent<StraightPointMove>() != null)
@@ -116,24 +113,6 @@ public class PumpkinChildMove : MonoBehaviour
                 eBase.GetComponent<StraightForceMove>().SetTarget(spawnObjMovePoints[0]);//spawnObjMovePoint[0].position;
 
 
-            //if (obj.name.Contains("Red"))
-            //{
-            //    Debug.Log("赤かぼちゃ");
-            //}
-            //else
-            //{
-            //    const float eraseTime = 5f;
-            //    StartCoroutine(DelayCoroutine(eraseTime, () =>
-            //    {
-
-            //        var iDamage = obj.transform.GetComponent<IDamage>();
-            //        if (iDamage != null)
-            //            iDamage.Damage(100,false);
-
-            //        Destroy(gameObject, 1f);
-
-            //    }));
-            //}
 
             gameObject.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
 

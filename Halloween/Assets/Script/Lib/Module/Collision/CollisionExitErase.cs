@@ -23,13 +23,33 @@ public class CollisionExitErase : MonoBehaviour
             if (iDamage != null)
             {
                 iDamage.Damage(1, false);
-                Debug.Log(other.tag + " " + other.gameObject.layer);
+                //Debug.Log(other.tag + " " + other.gameObject.layer);
             }
             else
-                Debug.Log(other.tag + " " + other.gameObject.layer);
+                //Debug.Log(other.tag + " " + other.gameObject.layer);
 
             //Debug.Log("攻撃が敵にHIT");
             return;
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.CompareTag("Enemy"))
+        {
+            //var iDamage = other.transform.GetComponent<IDamage>();
+            //if (iDamage != null)
+            //{
+            //    iDamage.Damage(1, false);
+            //    Debug.Log(other.tag + " " + other.gameObject.layer);
+            //}
+            //else
+            //    Debug.Log(other.tag + " " + other.gameObject.layer);
+
+            //Debug.Log("攻撃が敵にHIT");
+            //return;
         }
 
     }

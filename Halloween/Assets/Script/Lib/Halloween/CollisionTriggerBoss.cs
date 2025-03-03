@@ -9,10 +9,13 @@ public class BossCollisionTrigger : MonoBehaviour
 
     public BoxCollider2D box2DLeft;
     public BoxCollider2D box2DRight;
-    public BoxCollider box3DLeft;
-    public BoxCollider box3DRight;
-    public BoxCollider box3DUp;
-    public BoxCollider box3DDown;
+    public BoxCollider2D box2DUp;
+    public BoxCollider2D box2DDown;
+
+    //public BoxCollider box3DLeft;
+    //public BoxCollider box3DRight;
+    //public BoxCollider box3DUp;
+    //public BoxCollider box3DDown;
 
     public GameObject haveTextObject;
 
@@ -48,11 +51,13 @@ public class BossCollisionTrigger : MonoBehaviour
             ereaCol.enabled = true;
             box2DLeft.enabled = true;
             box2DRight.enabled = true;
+            box2DUp.enabled = true;
+            box2DDown.enabled = true;
 
-            box3DLeft.enabled = true;
-            box3DRight.enabled = true;
-            box3DUp.enabled = true;
-            box3DDown.enabled = true;
+            //box3DLeft.enabled = true;
+            //box3DRight.enabled = true;
+            //box3DUp.enabled = true;
+            //box3DDown.enabled = true;
 
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
@@ -75,11 +80,12 @@ public class BossCollisionTrigger : MonoBehaviour
 
         box2DLeft.enabled = false;
         box2DRight.enabled = false;
-
-        box3DLeft.enabled = false;
-        box3DRight.enabled = false;
-        box3DUp.enabled = false;
-        box3DDown.enabled = false;
+        box2DUp.enabled = false;
+        box2DDown.enabled = false;
+        //box3DLeft.enabled = false;
+        //box3DRight.enabled = false;
+        //box3DUp.enabled = false;
+        //box3DDown.enabled = false;
         Camera.main.GetComponent<CameraControl>().isEventCamera = false;
     }
 

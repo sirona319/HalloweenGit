@@ -21,6 +21,24 @@ public abstract class BaseMove : MonoBehaviour
         return transform.position;
     }
 
+    public void SetPos(Vector3 pos)
+    {
+        if (GetComponent<Rigidbody2D>() != null)
+        {
+            m_rb.position = pos;
+            return;
+        }
+
+        if (GetComponent<Rigidbody>() != null)
+        {
+            m_rb3.position = pos;
+
+            return;
+        }
+
+        transform.position=pos;
+    }
+
     public virtual void Initialize()
     {
         if(GetComponent<Rigidbody2D>()!=null)

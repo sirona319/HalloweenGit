@@ -29,14 +29,14 @@ public class PumpkinBoss_Fall : StateChildBase
         {
             go.GetComponent<RotModule>().enabled = true;
 
-            go.GetComponent<PumpkinChildMove>().Initialize();
+            go.GetComponent<PumpkinChild>().Initialize();
         }
         //bossScr.pumpkinsLv2[pNo].GetComponent<RotModule>().enabled = true;
 
 
 
 
-        //bossScr.pumpkinsLv2[pNo].GetComponent<PumpkinChildMove>().Initialize();
+        //bossScr.pumpkinsLv2[pNo].GetComponent<PumpkinChild>().Initialize();
 
         StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
         {
@@ -47,13 +47,13 @@ public class PumpkinBoss_Fall : StateChildBase
                 {
                     //go.GetComponent<RotModule>().enabled = true;
 
-                    //go.GetComponent<PumpkinChildMove>().Initialize();
+                    //go.GetComponent<PumpkinChild>().Initialize();
 
-                    go.GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                    go.GetComponent<PumpkinChild>().MoveUpdateNoRot();
 
                 }
-                //bossScr.pumpkinsLv2[pNo].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                //bossScr.pumpkinsLv2[1].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                //bossScr.pumpkinsLv2[pNo].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                //bossScr.pumpkinsLv2[1].GetComponent<PumpkinChild>().MoveUpdateNoRot();
             }
 
         }));
@@ -83,7 +83,7 @@ public class PumpkinBoss_Fall : StateChildBase
 
 
         bossScr.pumpkinsLv2[0].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[0].GetComponent<PumpkinChildMove>().Initialize();
+        bossScr.pumpkinsLv2[0].GetComponent<PumpkinChild>().Initialize();
 
         //if (bossScr.pumpkinChildDeadCount == 6)//trueなら
         //   StartCoroutine(DEBUGAtkEnable());
@@ -92,7 +92,7 @@ public class PumpkinBoss_Fall : StateChildBase
         //{
         //    go.GetComponent<RotModule>().enabled = true;
 
-        //    go.GetComponent<PumpkinChildMove>().Initialize();
+        //    go.GetComponent<PumpkinChild>().Initialize();
         //}
     }
 
@@ -110,14 +110,14 @@ public class PumpkinBoss_Fall : StateChildBase
         //
         bool isFallEnd = false;
         foreach (var f in bossScr.pumpkinsLv2)
-            isFallEnd = f.GetComponent<PumpkinChildMove>().isFall;
+            isFallEnd = f.GetComponent<PumpkinChild>().isFall;
 
         if (isFallEnd)
         {
 
             Debug.Log("LV2の全てのかぼちゃが落下した");
             foreach (var f in bossScr.pumpkinsLv2)
-                f.GetComponent<PumpkinChildMove>().isAllFall=true;
+                f.GetComponent<PumpkinChild>().isAllFall=true;
             //イベント会話などの挿入
             return (int)PumpkinBossCtr.State.PumpkinBoss_AttackL2;
 
@@ -141,12 +141,12 @@ public class PumpkinBoss_Fall : StateChildBase
         //{
         //    go.GetComponent<RotModule>().enabled = true;
 
-        //    go.GetComponent<PumpkinChildMove>().Initialize();
+        //    go.GetComponent<PumpkinChild>().Initialize();
         //}
 
 
         //bossScr.pumpkinsLv2[pNo].GetComponent<RotModule>().enabled = true;
-        //bossScr.pumpkinsLv2[pNo].GetComponent<PumpkinChildMove>().Initialize();
+        //bossScr.pumpkinsLv2[pNo].GetComponent<PumpkinChild>().Initialize();
 
         //StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
         //{
@@ -163,13 +163,13 @@ public class PumpkinBoss_Fall : StateChildBase
                 //{
                 //    //go.GetComponent<RotModule>().enabled = true;
 
-                //    //go.GetComponent<PumpkinChildMove>().Initialize();
+                //    //go.GetComponent<PumpkinChild>().Initialize();
 
-                //    go.GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                //    go.GetComponent<PumpkinChild>().MoveUpdateNoRot();
 
                 //}
-                bossScr.pumpkinsLv2[i].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
-                //bossScr.pumpkinsLv2[1].GetComponent<PumpkinChildMove>().MoveUpdateNoRot();
+                bossScr.pumpkinsLv2[i].GetComponent<PumpkinChild>().MoveUpdateNoRot();
+                //bossScr.pumpkinsLv2[1].GetComponent<PumpkinChild>().MoveUpdateNoRot();
             }
 
             stayNo = i;
@@ -178,7 +178,7 @@ public class PumpkinBoss_Fall : StateChildBase
         //}));
 
 
-        //if(bossScr.pumpkinsLv2[stayNo].GetComponent<PumpkinChildMove>().isFall)
+        //if(bossScr.pumpkinsLv2[stayNo].GetComponent<PumpkinChild>().isFall)
         if(fallTime> fallStartTime)
         {
             //配列の上限超えていたら
@@ -187,7 +187,7 @@ public class PumpkinBoss_Fall : StateChildBase
 
             bossScr.pumpkinsLv2[stayNo+1].GetComponent<RotModule>().enabled = true;
 
-            bossScr.pumpkinsLv2[stayNo+1].GetComponent<PumpkinChildMove>().Initialize();
+            bossScr.pumpkinsLv2[stayNo+1].GetComponent<PumpkinChild>().Initialize();
 
             fallTime = 0;
             pNo++;

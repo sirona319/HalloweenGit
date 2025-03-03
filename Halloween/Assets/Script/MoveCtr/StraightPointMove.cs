@@ -38,6 +38,8 @@ public class StraightPointMove : BaseMove
     public override void MoveUpdate()
     {
 
+
+
         transform.position += direction.normalized * speed * Time.deltaTime;
 
        

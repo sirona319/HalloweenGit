@@ -11,7 +11,7 @@ public class Pumpkin_Attack : StateChildBase
     public override void Initialize(int stateType)
     {
         base.Initialize(stateType);
-        GetComponent<PumpkinScr>().AtkInterval = GetComponent<PumpkinScr>().enemyData.AtkIntervalMax;
+        //GetComponent<PumpkinScr>().AtkInterval = GetComponent<PumpkinScr>().enemyData.AtkIntervalMax;
     }
 
     public override void OnEnter()
@@ -44,12 +44,12 @@ public class Pumpkin_Attack : StateChildBase
 
 
 
-        if (stateTime > GetComponent<PumpkinScr>().AtkInterval)
-        {
-            GetComponent<PumpkinScr>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
-            //GetComponent<FlyScr>().IsAttack = false;
-            return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
-        }
+        //if (stateTime > GetComponent<PumpkinScr>().AtkInterval)
+        //{
+        //    GetComponent<PumpkinScr>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
+        //    //GetComponent<FlyScr>().IsAttack = false;
+        //    return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
+        //}
 
 
         return (int)StateType;

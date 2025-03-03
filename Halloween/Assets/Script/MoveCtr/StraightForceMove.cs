@@ -8,7 +8,9 @@ public class StraightForceMove : BaseMove
 
     public Transform targets;
 
-    Vector3 direction;
+    public Vector3 direction;
+
+    public Rigidbody2D rb;
 
     public void SetTarget(Transform t)
     {
@@ -27,8 +29,12 @@ public class StraightForceMove : BaseMove
 
     public override void MoveEnter()
     {
-        if (m_rb3 != null)
-            m_rb3.AddForce(/*m_rb3.position + */direction.normalized * speed, ForceMode.Impulse);
+        //var randf = Random.Range(0.3f, 1f);
+
+        //direction.x += randf;
+        if (rb != null)
+            rb.linearVelocity = direction.normalized * speed;
+            //rb.AddForce(/*m_rb3.position + */direction.normalized * speed, ForceMode2D.Impulse);
 
     }
 
@@ -62,16 +68,18 @@ public class StraightForceMove : BaseMove
 
     //}
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
-            Debug.Log("Player");
+    //private void OnCollisionEnter(Collision other)
+    //{
 
-        const int BlockReflect = 23;
-        if (other.gameObject.layer == BlockReflect)
-        {
-            m_rb3.angularVelocity = m_rb3.angularVelocity.normalized * speed;
-            m_rb3.linearVelocity = m_rb3.linearVelocity.normalized * speed;
-        }
-    }
+    //    var m_rb3 = GetComponent<Rigidbody>();
+    //    //if (other.gameObject.tag == "Player")
+    //     //   Debug.Log("Player");
+
+    //    const int BlockReflect = 23;
+    //    if (other.gameObject.layer == BlockReflect)
+    //    {
+    //        m_rb3.angularVelocity = m_rb3.angularVelocity.normalized * speed;
+    //        m_rb3.linearVelocity = m_rb3.linearVelocity.normalized * speed;
+    //    }
+    //}
 }
