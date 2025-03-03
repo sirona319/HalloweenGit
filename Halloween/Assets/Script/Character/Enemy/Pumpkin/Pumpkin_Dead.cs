@@ -31,7 +31,9 @@ public class Pumpkin_Dead : StateChildBase
 
         var isDeadEffect=GetComponent<CreateDeadSound>().Create();
 
-        var pos= GetComponent<PumpkinScr>().baseMove[0].GetPos();
+        Vector2 pos=Vector2.zero;
+        if (GetComponent<PumpkinScr>().baseMove[0].rb2!=null)
+            pos= GetComponent<PumpkinScr>().baseMove[0].rb2.position;
 
         if(isDeadEffect)
         {

@@ -5,47 +5,47 @@ using UnityEngine;
 public abstract class BaseMove : MonoBehaviour
 {
 
-    protected Rigidbody m_rb3;
+    public Rigidbody rb3;
 
-    protected Rigidbody2D m_rb;
+    public Rigidbody2D rb2;
     public bool IsMove = true;
 
-    public Vector3 GetPos()
-    {
-        if (GetComponent<Rigidbody2D>() != null)
-            return m_rb.position;
+    //public Vector3 GetRb()
+    //{
+    //    if (GetComponent<Rigidbody2D>() != null)
+    //        return rb2;
 
-        if (GetComponent<Rigidbody>() != null)
-            return m_rb3.position;
+    //    if (GetComponent<Rigidbody>() != null)
+    //        return rb3;
 
-        return transform.position;
-    }
+    //    return null;
+    //}
 
-    public void SetPos(Vector3 pos)
-    {
-        if (GetComponent<Rigidbody2D>() != null)
-        {
-            m_rb.position = pos;
-            return;
-        }
+    //public void SetPos(Vector3 pos)
+    //{
+    //    if (GetComponent<Rigidbody2D>() != null)
+    //    {
+    //        rb2.position = pos;
+    //        return;
+    //    }
 
-        if (GetComponent<Rigidbody>() != null)
-        {
-            m_rb3.position = pos;
+    //    if (GetComponent<Rigidbody>() != null)
+    //    {
+    //        rb3.position = pos;
 
-            return;
-        }
+    //        return;
+    //    }
 
-        transform.position=pos;
-    }
+    //    transform.position=pos;
+    //}
 
     public virtual void Initialize()
     {
         if(GetComponent<Rigidbody2D>()!=null)
-        m_rb = GetComponent<Rigidbody2D>();
+            rb2 = GetComponent<Rigidbody2D>();
 
         if (GetComponent<Rigidbody>() != null)
-            m_rb3 = GetComponent<Rigidbody>();
+            rb3 = GetComponent<Rigidbody>();
     }
 
     public abstract void MoveEnter();

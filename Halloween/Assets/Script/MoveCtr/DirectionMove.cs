@@ -32,8 +32,8 @@ public class DirectionMove : BaseMove
         //if (isRot)
         RotUpdate();
 
-        if(m_rb!=null)
-            m_rb.MovePosition(m_rb.position + (Vector2)transform.up * speed * Time.deltaTime);
+        if(rb2!=null)
+            rb2.MovePosition(rb2.position + (Vector2)transform.up * speed * Time.deltaTime);
 
         transform.position += (Vector3)transform.up * speed * Time.deltaTime;
 

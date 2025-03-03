@@ -302,7 +302,7 @@ MonoBehaviour:
   isBoss: 1
   sprite: {fileID: 0}
   isNoise: 0
-  noiseTiming: 1.5
+  noiseTiming: 8
   noiseTime: 0
   warpPositions: []
   randTime: 0
@@ -380,7 +380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cbb3fb1bba98d41b1136b2616e0d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterReflectVero: {x: 0, y: 0, z: 0}
   speed: 15
 --- !u!114 &530132563322007067
 MonoBehaviour:
@@ -394,8 +393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f0a02c68b1ed7429ef064bf79c163a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb3: {fileID: 0}
+  rb2: {fileID: 0}
   IsMove: 1
   speed: 15
   targets: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
-  rb: {fileID: 7962176103443069363}

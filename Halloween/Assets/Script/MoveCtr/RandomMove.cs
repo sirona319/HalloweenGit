@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -46,13 +46,13 @@ public class RandomMove : BaseMove
 
         Vector2 movement = transform.up * Time.deltaTime * GetComponent<EnemyBase>().enemyData.Speed;
 
-        m_rb.MovePosition(m_rb.position + movement);
+        rb2.MovePosition(rb2.position + movement);
 
 
-        ////âÒì]
+        ////ÂõûËª¢
         //Vector3 targetDirection = targetPos - transform.position;
 
-        ////2DÅ@Vector3.forwardÅ®Vector3.up
+        ////2D„ÄÄVector3.forward‚ÜíVector3.up
         //Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, targetDirection.normalized);
 
         //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, INTERPOLANT * Time.deltaTime);
@@ -63,7 +63,7 @@ public class RandomMove : BaseMove
 
         float len = Vector3.Distance(transform.position, targetPos);
         if (len < ENDMOVELEN)
-            MoveRandomSet();            //à⁄ìÆínì_ÇÃçƒê›íË
+            MoveRandomSet();            //ÁßªÂãïÂú∞ÁÇπ„ÅÆÂÜçË®≠ÂÆö
         
     }
 

@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEditor.PlayerSettings;
 public class CircleMove : BaseMove
@@ -6,16 +6,16 @@ public class CircleMove : BaseMove
     //https://nekojara.city/unity-circular-motion
 
 
-    // ’†S“_
+    // ä¸­å¿ƒç‚¹
     //[SerializeField] private Vector3 targetPos = Vector3.zero;
 
-    // ‰ñ“]²
+    // å›è»¢è»¸
     [SerializeField] private Vector3 _axis = Vector3.forward;
 
-    // ‰~‰^“®üŠú
+    // å††é‹å‹•å‘¨æœŸ
     [SerializeField] private float _period = 2;
 
-    // Œü‚«‚ğXV‚·‚é‚©‚Ç‚¤‚©
+    // å‘ãã‚’æ›´æ–°ã™ã‚‹ã‹ã©ã†ã‹
     [SerializeField] private bool _updateRotation = true;
 
 
@@ -35,7 +35,7 @@ public class CircleMove : BaseMove
 
 
         //if (GetComponent<EnemyBase>().enemyData.moveType == EnemyData.MoveType.CircleMove)
-        //using UniRx•K—v
+        //using UniRxå¿…è¦
         //pScr.prePosDiff.Subscribe(prePosDiff => UpdatePos(pScr));
     }
 
@@ -53,12 +53,12 @@ public class CircleMove : BaseMove
 
     public override void MoveUpdate()
     {
-        //ƒ^[ƒQƒbƒg‚Æ‚Ì‹——£‚Í‰ŠúˆÊ’u‚ÅŒˆ‚Ü‚éII
+        //ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã¨ã®è·é›¢ã¯åˆæœŸä½ç½®ã§æ±ºã¾ã‚‹ï¼ï¼
         var tr = transform;
-        // ‰ñ“]‚ÌƒNƒH[ƒ^ƒjƒIƒ“ì¬
+        // å›è»¢ã®ã‚¯ã‚©ãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ä½œæˆ
         var angleAxis = Quaternion.AngleAxis(360 / _period * Time.deltaTime, _axis);
 
-        // ‰~‰^“®‚ÌˆÊ’uŒvZ
+        // å††é‹å‹•ã®ä½ç½®è¨ˆç®—
         var pos = tr.position;
 
         pos -= targetTrans.position;
@@ -67,10 +67,10 @@ public class CircleMove : BaseMove
 
 
         tr.position = pos;
-        m_rb.MovePosition(pos);
+        rb2.MovePosition(pos);
 
 
-        // Œü‚«XV
+        // å‘ãæ›´æ–°
         if (_updateRotation)
         {
             tr.rotation = tr.rotation * angleAxis;
@@ -81,7 +81,7 @@ public class CircleMove : BaseMove
 
 
 
-        // ’†S“_center‚Ìü‚è‚ğA²axis‚ÅAperiodüŠú‚Å‰~‰^“®
+        // ä¸­å¿ƒç‚¹centerã®å‘¨ã‚Šã‚’ã€è»¸axisã§ã€periodå‘¨æœŸã§å††é‹å‹•
         //transform.RotateAround(
         //    targetPos,
         //    _axis,
@@ -91,12 +91,12 @@ public class CircleMove : BaseMove
 
 
 
-        ////‰ñ“]
+        ////å›è»¢
         //const float INTERPOLANT = 5f;
 
         //Vector3 targetDirection = targetTrans.position - transform.position;
 
-        ////2D@Vector3.forward¨Vector3.up
+        ////2Dã€€Vector3.forwardâ†’Vector3.up
         //Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, targetDirection.normalized);
 
 
@@ -115,7 +115,7 @@ public class CircleMove : BaseMove
         //float len = Vector3.Distance(transform.position, targetTrans.position);
         //if (len < ENDMOVELEN)
         //{
-        //    //ˆÚ“®’n“_‚ÌÄİ’è
+        //    //ç§»å‹•åœ°ç‚¹ã®å†è¨­å®š
         //    //MoveRandomSet();
         //}
         //else
@@ -143,7 +143,7 @@ public class CircleMove : BaseMove
         //float len = Vector3.Distance(transform.position, targetTrans.position);
         //if (len < ENDMOVELEN)
         //{
-        //    //ˆÚ“®’n“_‚ÌÄİ’è
+        //    //ç§»å‹•åœ°ç‚¹ã®å†è¨­å®š
         //    //MoveRandomSet();
 
         //    //var MoveDir = GameObject.Find("CirclePoint").transform.position;

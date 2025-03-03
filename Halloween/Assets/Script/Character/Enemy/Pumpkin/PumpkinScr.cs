@@ -13,20 +13,22 @@ public class PumpkinScr : EnemyBase
 
     //ノイズ　瞬間移動
     public bool isNoise;
-    const float noiseTimingDefault = 5f;
-    public float noiseTiming = 5f;//ランダムで数字を足して　瞬間移動させる
-    float noiseLength = 0.4f;
+    public float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
+    float noiseLength = 0.5f;
     [SerializeField] float noiseTime = 0f;
 
 
-    public Transform[] warpPositions;
+    GameObject[] warpPositions;
     [SerializeField] float randTime = 0f;
     float randTimeMax = 2f;
     float randTimeMin = 0.5f;
-    const float speed = 12f;
+
 
     Transform pTrans;
-    StraightForceMove sMove;
+
+    //赤かぼちゃのみ
+    const float noiseTimingDefaultRed = 8f;
+    //StraightForceMove sMove;
 
     //
     void Start()
@@ -38,7 +40,16 @@ public class PumpkinScr : EnemyBase
 
         randTime = Random.Range(randTimeMin, randTimeMax);
         pTrans = GameObject.FindWithTag("Player").transform;
-        sMove = baseMove[0].GetComponent<StraightForceMove>();
+        //sMove = baseMove[0].GetComponent<StraightForceMove>();
+
+        warpPositions = GameObject.FindGameObjectsWithTag("PumpkinWorp");
+
+
+        //warpPositions;
+        //foreach(var t in objs)
+        //{
+        //    warpPositions.ad = t.transform;
+        //}
 
     }
 
@@ -183,17 +194,19 @@ public class PumpkinScr : EnemyBase
 
         if (noiseTime >= (noiseTiming + randTime) + noiseLength && GetComponent<NoiseEnable>().enabled == true)
         {
-            GetComponent<NoiseEnable>().enabled = false;
 
             //赤かぼちゃのみ
             if (transform.name.Contains("Red"))
             {
+                //乱数の再計算　大きめにする？
+                //タイミングの加算
                 randTime = Random.Range(randTimeMin, randTimeMax + 1);
 
-                noiseTiming += noiseTimingDefault;
+                noiseTiming += noiseTimingDefaultRed;
             }
-            //乱数の再計算　大きめにする？
-            //タイミングの加算
+
+            GetComponent<NoiseEnable>().enabled = false;
+
         }
 
 
@@ -209,11 +222,13 @@ public class PumpkinScr : EnemyBase
 
     void WorpPositionSelect()
     {
+        const float speed = 12f;
         List<Vector2> warpList = new List<Vector2>();
 
-        foreach(var i in warpPositions)
+        //var points = GameObject.FindGameObjectsWithTag("PumpkinWorp");
+        foreach (var i in warpPositions)
         {
-            warpList.Add(i.position);
+            warpList.Add(i.transform.position);
         }
 
         while (true)
@@ -225,11 +240,23 @@ public class PumpkinScr : EnemyBase
             //座標移動させる　カメラ内かどうか判定
             if (MyLib.IsVisibleByCamera(warpList[randInt]))
             {
+                if (transform.name.Contains("Red"))
+                {
+                    var sMove = baseMove[0].GetComponent<StraightForceMove>();
+                    sMove.rb2.position = warpList[randInt];
+                    var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
 
-                sMove.rb.position= warpList[randInt];
-                var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
+                    sMove.rb2.linearVelocity = dir.normalized * speed;
+                }
+                else
+                {
+                    var sMove = baseMove[0].GetComponent<StraightPointMove>();
+                    sMove.transform.position = warpList[randInt];
+                    var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
 
-                sMove.rb.linearVelocity = dir.normalized * speed;
+                    //sMove.transform.linearVelocity = dir.normalized * speed;
+                }
+
 
                 Debug.Log("ワープ");
                 break;

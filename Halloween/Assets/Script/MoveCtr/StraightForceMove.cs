@@ -10,7 +10,7 @@ public class StraightForceMove : BaseMove
 
     public Vector3 direction;
 
-    public Rigidbody2D rb;
+    //public Rigidbody2D rb;
 
     public void SetTarget(Transform t)
     {
@@ -32,8 +32,8 @@ public class StraightForceMove : BaseMove
         //var randf = Random.Range(0.3f, 1f);
 
         //direction.x += randf;
-        if (rb != null)
-            rb.linearVelocity = direction.normalized * speed;
+        if (rb2 != null)
+            rb2.linearVelocity = direction.normalized * speed;
             //rb.AddForce(/*m_rb3.position + */direction.normalized * speed, ForceMode2D.Impulse);
 
     }

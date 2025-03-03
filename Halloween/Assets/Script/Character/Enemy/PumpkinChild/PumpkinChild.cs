@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PumpkinChild : MonoBehaviour
 {
     [SerializeField] bool isNoise;
-    [SerializeField] float noiseTiming = 5f;//ランダムで数字を足して　瞬間移動させる
-    [SerializeField] Transform[] warpPositions;
+    [SerializeField] float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
+    //[SerializeField] Transform[] warpPositions;
     //public int childNo = 0;
 
     public bool isFall=false;
@@ -15,6 +16,7 @@ public class PumpkinChild : MonoBehaviour
     [SerializeField] public Transform[] moveTrans;
 
     [SerializeField] public Transform[] spawnObjMovePoints;
+    [SerializeField] public  List<Transform> spawnObjMovePointsList;
 
     [HideInInspector] float speed = 5f;
     const float ENDMOVELEN = 0.2f;
@@ -101,7 +103,7 @@ public class PumpkinChild : MonoBehaviour
             eBase.Initialize();
             eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
             eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
-            eBase.GetComponent<PumpkinScr>().warpPositions = warpPositions;
+            //eBase.GetComponent<PumpkinScr>().warpPositions = warpPositions;
 
 
 

@@ -9,7 +9,7 @@ public class StraightPointMove : BaseMove
     public float speed = 7f;
 
     [SerializeField]Transform[] targets;// = new List<Vector3>();
-
+    [SerializeField] public List<Transform> spawnObjMovePointsList;
     int targetNo = 0;
 
     Vector3 direction;
@@ -21,7 +21,14 @@ public class StraightPointMove : BaseMove
     {
         targets = t;
         direction = targets[0].position - transform.position;
+        
+    }
 
+    public void ReTarget(Transform t)
+    {
+        spawnObjMovePointsList.Clear();
+        spawnObjMovePointsList.Add(t);
+        targetNo = 0;
     }
 
     public override void Initialize()
@@ -37,9 +44,6 @@ public class StraightPointMove : BaseMove
 
     public override void MoveUpdate()
     {
-
-
-
         transform.position += direction.normalized * speed * Time.deltaTime;
 
        

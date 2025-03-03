@@ -92,9 +92,9 @@ public class JumpMove : BaseMove
             }
 
             if(isRight)
-                m_rb.AddForce(forceUpR, ForceMode2D.Impulse);
+                rb2.AddForce(forceUpR, ForceMode2D.Impulse);
             else if(isLeft)
-                m_rb.AddForce(forceUpL, ForceMode2D.Impulse);
+                rb2.AddForce(forceUpL, ForceMode2D.Impulse);
 
 
 
@@ -158,9 +158,9 @@ public class JumpMove : BaseMove
         if (other.gameObject.CompareTag("Ground"))
         {
             //isGround = true;
-            m_rb.linearVelocity = new Vector2(0f, 0f);
+            rb2.linearVelocity = new Vector2(0f, 0f);
 
-            m_rb.freezeRotation = true;
+            rb2.freezeRotation = true;
             if (GetComponent<RotModule>())
                 GetComponent<RotModule>().enabled = false;
             Debug.Log("地面hit"+this.gameObject.name);
@@ -187,7 +187,7 @@ public class JumpMove : BaseMove
         if (other.gameObject.CompareTag("Ground"))
         {
             //isGround = false;
-            m_rb.freezeRotation = false;
+            rb2.freezeRotation = false;
 
             if (GetComponent<RotModule>())
                 GetComponent<RotModule>().enabled = true;

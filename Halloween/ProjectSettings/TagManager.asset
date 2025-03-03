@@ -8,6 +8,7 @@ TagManager:
   - ExitErea
   - Ground
   - EnemyBoss
+  - PumpkinWorp
   layers:
   - Default
   - TransparentFX
