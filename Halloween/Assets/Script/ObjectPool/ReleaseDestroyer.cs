@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Audio;
+﻿using UnityEngine;
 
 public class ReleaseDestroyer : MonoBehaviour
 {
@@ -37,26 +35,26 @@ public class ReleaseDestroyer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(TagName.Enemy))
         {
-            var iDamage = other.transform.GetComponent<IDamage>();
+            var iDamage = other.GetComponent<IDamage>();
             if (iDamage != null)
                 iDamage.Damage(1);
             else
-                Debug.Log("ダメージインターフェイスが無いよ！！Enemy");
+                Debug.Log("ダメージインターフェイスが無いよ！！"+TagName.Enemy);
 
                 //Debug.Log("攻撃が敵にHIT");
             PoolDestroy();
             return;
         }
 
-        if (other.CompareTag("EnemyBoss"))
+        if (other.CompareTag(TagName.EnemyBoss))
         {
-            var iDamage = other.transform.parent.parent.GetComponent<IDamage>();
+            var iDamage = other.GetComponent<IDamage>();
             if (iDamage != null)
                 iDamage.Damage(1);
             else
-                Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss");
+                Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss"+TagName.EnemyBoss);
 
             //Debug.Log("攻撃が敵にHITBOSS");
             PoolDestroy();
@@ -68,7 +66,7 @@ public class ReleaseDestroyer : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.CompareTag("ExitErea"))
+        if (other.CompareTag(TagName.ExitErea))
         {
             PoolDestroy();
             return;

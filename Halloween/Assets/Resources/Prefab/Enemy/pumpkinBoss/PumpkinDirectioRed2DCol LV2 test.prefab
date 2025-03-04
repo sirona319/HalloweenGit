@@ -298,13 +298,12 @@ MonoBehaviour:
   findName: Pumpkin
   baseMove:
   - {fileID: 530132563322007067}
-  Hp: 3
+  Hp: 1
   isBoss: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: 6303169489364544547}
   isNoise: 0
   noiseTiming: 8
   noiseTime: 0
-  warpPositions: []
   randTime: 0
 --- !u!114 &-6963965400007205647
 MonoBehaviour:

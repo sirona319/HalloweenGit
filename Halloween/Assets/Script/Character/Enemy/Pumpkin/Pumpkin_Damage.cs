@@ -57,17 +57,19 @@ public class Pumpkin_Damage : StateChildBase
 
     public override int StateUpdate()
     {
+        if (gameObject.GetComponent<EnemyBase>().IsDead)
+        {
+            const int DEAD = 2;
+            return DEAD;
+        }
+
         if (gameObject.GetComponent<EnemyBase>().IsDamage)
             gameObject.GetComponent<PumpkinScr>().sprite.material.color = 
                 Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, DAMAGETIMEMAX));
 
         stateTime += Time.deltaTime;
 
-        if (gameObject.GetComponent<EnemyBase>().IsDead)
-        {
-            const int DEAD = 2;
-            return DEAD;
-        }
+
 
         if (stateTime >= DAMAGETIMEMAX)
         {

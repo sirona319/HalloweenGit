@@ -15,8 +15,8 @@ public class PumpkinChild : MonoBehaviour
 
     [SerializeField] public Transform[] moveTrans;
 
-    [SerializeField] public Transform[] spawnObjMovePoints;
-    [SerializeField] public  List<Transform> spawnObjMovePointsList;
+    //[SerializeField] public Transform[] spawnObjMovePoints;
+    [SerializeField] public List<Transform> movePointLists=new();
 
     [HideInInspector] float speed = 5f;
     const float ENDMOVELEN = 0.2f;
@@ -108,15 +108,15 @@ public class PumpkinChild : MonoBehaviour
 
 
             if (eBase.GetComponent<StraightPointMove>() != null)
-                eBase.GetComponent<StraightPointMove>().SetTarget(spawnObjMovePoints);//spawnObjMovePoint[0].position;
+                eBase.GetComponent<StraightPointMove>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
 
 
             if (eBase.GetComponent<StraightForceMove>() != null)
-                eBase.GetComponent<StraightForceMove>().SetTarget(spawnObjMovePoints[0]);//spawnObjMovePoint[0].position;
+                eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);//
 
 
 
-            gameObject.transform.GetChild(0).transform.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
 
             isMoveEnd = true;
         }

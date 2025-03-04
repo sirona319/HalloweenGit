@@ -61,13 +61,13 @@ public class BossCollisionTrigger : MonoBehaviour
 
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
-            //var readText= haveTextObject.GetComponent<IHaveText>();
-            //if (readText != null)
-            //    readText.TextReadPlus();
+            var readText = haveTextObject.GetComponent<IHaveText>();
+            if (readText != null)
+                readText.TextReadPlus();
 
             isBossBattle = true;
 
-            DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
+            //DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
         }
 
 
@@ -82,6 +82,10 @@ public class BossCollisionTrigger : MonoBehaviour
         box2DRight.enabled = false;
         box2DUp.enabled = false;
         box2DDown.enabled = false;
+
+        var readText = haveTextObject.GetComponent<IHaveText>();
+        if (readText != null)
+            readText.TextReadPlus();
         //box3DLeft.enabled = false;
         //box3DRight.enabled = false;
         //box3DUp.enabled = false;

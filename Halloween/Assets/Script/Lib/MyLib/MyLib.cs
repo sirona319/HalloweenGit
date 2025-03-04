@@ -10,6 +10,11 @@ using Transform = UnityEngine.Transform;
 //utility
 public static class MyLib
 {
+    public enum TagList
+    {
+
+    }
+
     #region　便利な関数まとめ
 
     #region  sin移動

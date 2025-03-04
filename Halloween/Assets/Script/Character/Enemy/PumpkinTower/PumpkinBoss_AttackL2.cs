@@ -123,8 +123,8 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
         stateTime = 0f;
 
-        StartCoroutine(AtkEnable());
-        //StartCoroutine(DEBUGAtkEnable());
+        //StartCoroutine(AtkEnable());
+        StartCoroutine(DEBUGAtkEnable());
     }
 
     public override void OnExit()

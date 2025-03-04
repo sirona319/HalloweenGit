@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -254,6 +252,7 @@ public class PumpkinScr : EnemyBase
                     sMove.transform.position = warpList[randInt];
                     var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
 
+                    sMove.ReTarget(pTrans);
                     //sMove.transform.linearVelocity = dir.normalized * speed;
                 }
 

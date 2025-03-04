@@ -8,8 +8,8 @@ public class StraightPointMove : BaseMove
     const float ENDMOVELEN = 0.8f;
     public float speed = 7f;
 
-    [SerializeField]Transform[] targets;// = new List<Vector3>();
-    [SerializeField] public List<Transform> spawnObjMovePointsList;
+    //[SerializeField]Transform[] targets;// = new List<Vector3>();
+    public List<Transform> movePointLists = new ();
     int targetNo = 0;
 
     Vector3 direction;
@@ -17,18 +17,20 @@ public class StraightPointMove : BaseMove
     public ReactiveProperty<bool> IsLastPointMoveEnd = new ReactiveProperty<bool>(false);
     //public ReactiveProperty<bool[]> IsPointMoveEnd = new ReactiveProperty<bool[]>(new bool[] {false,false });
 
-    public void SetTarget(Transform[] t)
+    public void SetTarget(List<Transform> t)
     {
-        targets = t;
-        direction = targets[0].position - transform.position;
+        movePointLists = t;
+        direction = movePointLists[0].position - transform.position;
         
     }
 
     public void ReTarget(Transform t)
     {
-        spawnObjMovePointsList.Clear();
-        spawnObjMovePointsList.Add(t);
-        targetNo = 0;
+        //movePointLists.Clear();
+        movePointLists.Add(t);
+        targetNo++;
+        direction = movePointLists[targetNo].position - transform.position;
+
     }
 
     public override void Initialize()
@@ -44,20 +46,21 @@ public class StraightPointMove : BaseMove
 
     public override void MoveUpdate()
     {
+        //指定ポイント方向へ進み続ける（停止しない）
         transform.position += direction.normalized * speed * Time.deltaTime;
 
        
-        float len = Vector3.Distance(transform.position, targets[targetNo].position);
+        float len = Vector3.Distance(transform.position, movePointLists[targetNo].position);
 
         if (len < ENDMOVELEN)
         {
             //最後の移動地点へ到着したら
-            if (targetNo == targets.Length-1)
+            if (targetNo == movePointLists.Count-1)
                 IsLastPointMoveEnd.Value = true;
             else
             {
                 targetNo++;
-                direction = targets[targetNo].position - transform.position;
+                direction = movePointLists[targetNo].position - transform.position;
             }
 
            // Debug.Log("目標へ到着");

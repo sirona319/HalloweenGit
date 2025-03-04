@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Timeline;
 
 public class TimelineControl : MonoBehaviour
 {
@@ -54,7 +51,7 @@ public class TimelineControl : MonoBehaviour
             playableDirector.Play();
             isPlay = true;
 
-            var p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScr2D>();
+            var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerScr2D>();
             p.isLimitMove = true;
             p.moveSpeed = 0f;
             //Debug.Log("再生開始"+ GetType().FullName);
