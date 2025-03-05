@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-
+[DisallowMultipleComponent]
 public class PumpkinBoss_AttackL2 : StateChildBase
 {
     PumpkinBossScr bossScr;
@@ -14,12 +14,12 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
         //Lv1
 
-        bossScr.pumpkinsLv2[0].GetComponent<PumpkinChild>().Initialize();
-        bossScr.pumpkinsLv2[1].GetComponent<PumpkinChild>().Initialize();
-        bossScr.pumpkinsLv2[2].GetComponent<PumpkinChild>().Initialize();
-        bossScr.pumpkinsLv2[3].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkinsLv2[0].GetComponent<RotModule>().enabled = true;
+        bossScr.pumpkinsLv2[1].GetComponent<RotModule>().enabled = true;
+        bossScr.pumpkinsLv2[2].GetComponent<RotModule>().enabled = true;
+        bossScr.pumpkinsLv2[3].GetComponent<RotModule>().enabled = true;
 
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 10f, () =>
+        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
         {
             if (bossScr.pumpkinsLv2[0] != null)
             {
@@ -42,7 +42,8 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         bossScr.pumpkinsLv2[7].GetComponent<PumpkinChild>().Initialize();
         bossScr.pumpkinsLv2[8].GetComponent<PumpkinChild>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 22f, () => {         
+        StartCoroutine(MyLib.LoopDelayCoroutine(0, () => 
+        { 
             if (bossScr.pumpkinsLv2[4] != null&&
             bossScr.pumpkinsLv2[5] != null&&
             bossScr.pumpkinsLv2[6] != null&&
@@ -71,7 +72,7 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
         bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 35, () =>
+        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
         {
             if (bossScr.pumpkinsLv2[9] != null)
             {
@@ -98,7 +99,7 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         bossScr.pumpkinsLv2[9].GetComponent<RotModule>().enabled = true;
         bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < 35, () =>
+        StartCoroutine(MyLib.LoopDelayCoroutine(0,() =>
         {
             if (bossScr.pumpkinsLv2[9] != null)
             {

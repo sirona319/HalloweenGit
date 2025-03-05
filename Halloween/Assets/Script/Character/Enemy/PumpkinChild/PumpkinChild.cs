@@ -31,13 +31,13 @@ public class PumpkinChild : MonoBehaviour
     [SerializeField] GameObject fallPtR;
     //
 
-    public void movePointSet(Transform[] ts)
-    {
-        moveTrans = ts;
+    //public void movePointSet(Transform[] ts)
+    //{
+    //    moveTrans = ts;
 
-        if (moveTrans.Length <= 0)
-            throw new System.Exception(GetComponent<EnemyBase>().name + "ムーブポイント未設定");
-    }
+    //    if (moveTrans.Length <= 0)
+    //        throw new System.Exception(GetComponent<EnemyBase>().name + "ムーブポイント未設定");
+    //}
 
     public void Initialize()
     {

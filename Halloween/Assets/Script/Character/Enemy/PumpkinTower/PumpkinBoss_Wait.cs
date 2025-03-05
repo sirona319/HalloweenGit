@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-
+﻿using System.Collections.Generic;
+using UnityEngine;
+[DisallowMultipleComponent]
 public class PumpkinBoss_Wait : StateChildBase
 {
     PumpkinBossScr bossScr;
@@ -17,6 +18,9 @@ public class PumpkinBoss_Wait : StateChildBase
 
         if (bossScr.pumpkinChildDeadCount == 6)
             Debug.Log("Lv2移行");
+
+        if (bossScr.pumpkinChildDeadCount == 16)
+            Debug.Log("Lv3移行");
     }
 
     public override void OnExit()
@@ -34,15 +38,38 @@ public class PumpkinBoss_Wait : StateChildBase
         //        return (int)FlyCtr.State.Fly_Dead;
 
         stateTime += Time.deltaTime;
+        if (!GetComponent<PumpkinBossScr>().startBattle) return StateType;
 
-        if (!GetComponent<PumpkinBossScr>().startBattle)return StateType;
+
+
+
+
+        //if (bossScr.pumpkinChildDeadCount == 31)
+        //{
+        //    GetComponent<PumpkinBossScr>().startBattle = false;
+        //    GetComponent<PumpkinBossScr>().BattleEnd();
+        //    Debug.Log("戦闘終了");
+        //}
 
         if (bossScr.pumpkinChildDeadCount == 16)
         {
-            GetComponent<PumpkinBossScr>().startBattle = false;
-            GetComponent<PumpkinBossScr>().BattleEnd();
-            Debug.Log("戦闘終了");
+            bool isFallEnd = false;
+            foreach (var f in bossScr.pumpkinsLv3)
+                isFallEnd = f.GetComponent<PumpkinChild>().isFall;
+
+
+            //全てのかぼちゃが落下し終わっていたら
+            if (isFallEnd)
+                return (int)PumpkinBossCtr.State.PumpkinBoss_AttackL3;
+            else
+            {
+                GetComponent<PumpkinBoss_Fall>().pumpkinsArray = bossScr.pumpkinsLv3;
+                GetComponent<PumpkinBoss_Fall>().maxCountPumpkin = 14;
+                return (int)PumpkinBossCtr.State.PumpkinBoss_Fall;//かぼちゃを落とす
+
+            }
         }
+
 
         if (bossScr.pumpkinChildDeadCount == 6)
         {
@@ -51,17 +78,28 @@ public class PumpkinBoss_Wait : StateChildBase
                 isFallEnd = f.GetComponent<PumpkinChild>().isFall;
 
 
+
             //全てのかぼちゃが落下し終わっていたら
             if (isFallEnd)
                 return (int)PumpkinBossCtr.State.PumpkinBoss_AttackL2;
             else
-                return (int)PumpkinBossCtr.State.PumpkinBoss_Fall;//かぼちゃを落とす
-        }
-        
+            {
+                //フォールクラスの設定
+                //foreach (var go in bossScr.pumpkinsLv2List)
+                //{
+                    GetComponent<PumpkinBoss_Fall>().pumpkinsArray = bossScr.pumpkinsLv2;
+                    //GetComponent<PumpkinBoss_FallL2>().pumpkins = new List<GameObject>(bossScr.pumpkinsLv2List);
+                //}
 
-        //if (GetComponent<PumpkinBossScr>().startBattle)
+                return (int)PumpkinBossCtr.State.PumpkinBoss_Fall;//かぼちゃを落とす
+
+            }
+        }
+
         if (bossScr.pumpkinChildDeadCount == 0)
             return (int)PumpkinBossCtr.State.PumpkinBoss_Attack;
+        //if (GetComponent<PumpkinBossScr>().startBattle)
+
 
         //return GetComponent<EnemyBase>().ReturnStateMoveTypeAttack(StateType);
 

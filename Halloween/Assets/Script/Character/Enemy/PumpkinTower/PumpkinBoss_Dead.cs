@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+[DisallowMultipleComponent]
 public class PumpkinBoss_Dead : StateChildBase
 {
     const float DEADTIME = 0.1f;

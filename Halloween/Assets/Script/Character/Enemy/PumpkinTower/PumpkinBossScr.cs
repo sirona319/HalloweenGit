@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using static EnemyData;
 
+[DisallowMultipleComponent]
 public class PumpkinBossScr : MonoBehaviour, IHaveText
 {
     #region ステートコントローラー
@@ -40,7 +41,13 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
 
     public GameObject[] pumpkins; //主に攻撃に使用
-    public GameObject[] pumpkinsLv2; //主に攻撃に使用
+    public GameObject[] pumpkinsLv2;
+    //public List<GameObject> pumpkinsLv2List = new List<GameObject> { };
+    //public GameObject[] pumpkinsLv3;
+    public GameObject[] pumpkinsLv3;
+
+    public GameObject[][] pumpkinsDEBUG;
+    //SerializeField] SerializedDictionary<PumpkinChild, bool> pumpkinDicLv3;
 
     public TimelineControl[] timelineTexts;
     int timelineNo = 0;
@@ -117,7 +124,7 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     void Start()
     {
-        stateController.Initialize((int)FlyCtr.State.Fly_Wait);
+        stateController.Initialize((int)PumpkinBossCtr.State.PumpkinBoss_Wait);
     }
 
     protected virtual void Init()

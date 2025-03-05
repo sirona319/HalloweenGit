@@ -61,13 +61,13 @@ public class BossCollisionTrigger : MonoBehaviour
 
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
-            var readText = haveTextObject.GetComponent<IHaveText>();
-            if (readText != null)
-                readText.TextReadPlus();
+            //var readText = haveTextObject.GetComponent<IHaveText>();
+            //if (readText != null)
+            //    readText.TextReadPlus();
 
             isBossBattle = true;
 
-            //DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
+            DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
         }
 
 

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using Unity.VisualScripting;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.SceneManagement;
-
+[DisallowMultipleComponent]
 public class PumpkinBoss_Attack : StateChildBase
 {
     //bool isAtkLife = true;
@@ -35,7 +31,7 @@ public class PumpkinBoss_Attack : StateChildBase
 
         bossScr.pumpkins[0].GetComponent<PumpkinChild>().Initialize();
         bossScr.pumpkins[1].GetComponent<PumpkinChild>().Initialize();
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime< Lv1LimitTime, () =>
+        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
         {
             if (bossScr.pumpkins[0] != null)
             {
@@ -58,7 +54,7 @@ public class PumpkinBoss_Attack : StateChildBase
         bossScr.pumpkins[3].GetComponent<PumpkinChild>().Initialize();
         bossScr.pumpkins[4].GetComponent<PumpkinChild>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutineIf(stateTime < Lv2LimitTime, () =>
+        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
         {
             if (bossScr.pumpkins[2] != null)
             {
