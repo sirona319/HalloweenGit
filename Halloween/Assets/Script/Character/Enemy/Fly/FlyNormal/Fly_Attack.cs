@@ -12,7 +12,7 @@ public class Fly_Attack : StateChildBase
     {
 
         base.Initialize(stateType);
-        GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().enemyData.AtkIntervalMax;
+        GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
     }
 
     public override void OnEnter()
@@ -47,7 +47,7 @@ public class Fly_Attack : StateChildBase
 
         if (stateTime > GetComponent<FlyScr>().AtkInterval)
         {
-            GetComponent<FlyScr>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
+            GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
             //GetComponent<FlyScr>().IsAttack = false;
             return GetComponent<FlyScr>().FlyReturnStateType(StateType);
         }

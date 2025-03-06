@@ -484,6 +484,7 @@ MonoBehaviour:
     movePointsSet:
     - childArray:
       - {fileID: 0}
+  CountIndex: 0
 --- !u!4 &167761570
 Transform:
   m_ObjectHideFlags: 0
@@ -7258,6 +7259,7 @@ MonoBehaviour:
     - childArray:
       - {fileID: 1153563073}
       - {fileID: 1368663333}
+  CountIndex: 0
 --- !u!114 &1419099719
 MonoBehaviour:
   m_ObjectHideFlags: 0

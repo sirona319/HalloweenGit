@@ -26,7 +26,6 @@ public class PumpkinBoss_Fall : StateChildBase
 
         pumpkinsArray[0].GetComponent<PumpkinChild>().Initialize();
 
-
     }
 
     public override void OnExit()

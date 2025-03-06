@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using UnityEngine;
-using static EnemyData;
+//using static EnemyData;
 
 [DisallowMultipleComponent]
 public class PumpkinBossScr : MonoBehaviour, IHaveText
@@ -75,54 +75,6 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
         stateController.Initialize((int)PumpkinBossCtr.State.PumpkinBoss_Wait);
 
     }
-
-    protected virtual void Init()
-    {
-        ////スクリプタルオブジェクトのデータを取得
-        //enemyData = EnemyManager.I.GetEnemyData(findName);
-
-        ////enemyDataのnullチェック
-        //if (enemyData == null)
-        //    throw new System.Exception(gameObject.name + "　Data null");
-
-        //ステータスの初期化
-       // Hp = enemyData.HpMax;
-
-
-        //baseMagazine初期化
-        //for (int i = 0; i < (int)enemyData.attackType.Length; i++)
-        //{
-        //    Type typeClass = Type.GetType(enemyData.attackType[i].ToString());
-
-        //    if (typeClass != null)
-        //        baseMagazine.Add((BaseMagazine)gameObject.AddComponent(typeClass));
-
-        //}
-
-        //foreach (var magazine in baseMagazine)
-        //    magazine.Initialize();
-
-
-        //baseMove初期化
-        //for (int i = 0; i < (int)enemyData.moveType.Length; i++)
-        //{
-        //    Type typeClass = Type.GetType(enemyData.moveType[i].ToString());
-
-        //    if (typeClass != null)
-        //        baseMove.Add((BaseMove)gameObject.AddComponent(typeClass));
-
-        //}
-
-        //foreach (var move in baseMove)
-        //    move.Initialize();
-
-
-
-
-        //enemyData.movePointsSet = movePointsInit;
-
-    }
-
 
     void Update()
     {

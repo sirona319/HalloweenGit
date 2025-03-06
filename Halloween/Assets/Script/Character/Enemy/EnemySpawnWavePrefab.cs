@@ -85,9 +85,10 @@ public class EnemySpawnWavePrefab : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         var obj = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
-
-        SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
-
+        var bMove = obj.GetComponent<EnemyBase>().baseMove[0];
+        bMove.Initialize();
+        //SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
+        SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0], movePoint, obj);
     }
 
 
@@ -103,13 +104,13 @@ public class EnemySpawnWavePrefab : MonoBehaviour
     //}
 
     //ムーブ設定
-    void SelectCreateMoveJerry(string moveType, Transform[] movePoint, GameObject go)
+    void SelectCreateMoveJerry(BaseMove moveType, Transform[] movePoint, GameObject go)
     {
         switch (moveType)
         {
-            case "PlayerAttackPointMove":
+            case PlayerAttackPointMove:
 
-                go.GetComponent<PlayerAttackPointMove>().Initialize();
+                //go.GetComponent<PlayerAttackPointMove>().Initialize();
 
                 go.GetComponent<PlayerAttackPointMove>().point.movePointSet(movePoint);
 
@@ -119,7 +120,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
 
            
             default:
-                go.GetComponent<EnemyBase>().baseMove[0].Initialize();
+                //go.GetComponent<EnemyBase>().baseMove[0].Initialize();
 
                 //Debug.Log("MoveTypeDEFAULT");
                 break;

@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using static CreateBullet;
-using static EnemyData;
+//using static EnemyData;
 
 public abstract class BaseMagazine : MonoBehaviour
 {

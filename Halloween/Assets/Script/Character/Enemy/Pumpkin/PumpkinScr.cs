@@ -32,7 +32,6 @@ public class PumpkinScr : EnemyBase
     void Start()
     {
         base.StartInit();
-        base.Init();
 
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);
 

@@ -4,24 +4,17 @@ using Random = UnityEngine.Random;
 
 public class RandomMove : BaseMove
 {
-    //[NonSerialized] public Vector3 basePosition = Vector3.zero;
 
-    //[SerializeField] float MOVEXY = 100;
     [SerializeField] Vector3[] movePos;
     [SerializeField] Vector3 targetPos;
 
     float moveRangeXZ = 3;
     const float ENDMOVELEN = 1f;
 
-    const float INTERPOLANT = 5f;
+    float speed = 4;
     public override void Initialize()
     {
         base.Initialize();
-
-        //basePosition = transform.position;
-        //var bPos = transform.position;
-
-        //MOVEXY = moveRangeXZ;
 
 
         movePos = new Vector3[4];
@@ -44,19 +37,9 @@ public class RandomMove : BaseMove
     public override void MoveUpdate()
     {
 
-        Vector2 movement = transform.up * Time.deltaTime * GetComponent<EnemyBase>().enemyData.Speed;
+        Vector2 movement = transform.up * Time.deltaTime * speed;
 
         rb2.MovePosition(rb2.position + movement);
-
-
-        ////回転
-        //Vector3 targetDirection = targetPos - transform.position;
-
-        ////2D　Vector3.forward→Vector3.up
-        //Quaternion targetRotation = Quaternion.FromToRotation(Vector3.up, targetDirection.normalized);
-
-        //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, INTERPOLANT * Time.deltaTime);
-
 
         transform.rotation = MyLib.TargetRotation2D(targetPos, transform);
 

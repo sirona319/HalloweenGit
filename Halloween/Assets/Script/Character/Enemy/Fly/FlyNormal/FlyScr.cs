@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlyScr : EnemyBase
 {
-    //public float MaxAtkInterval = 1f;
+    public float MaxAtkInterval = 1f;
     public float AtkInterval =1;
     void Start()
     {
         base.StartInit();
-        base.Init();
-
-
 
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);
     }
@@ -21,39 +15,9 @@ public class FlyScr : EnemyBase
     {
         AttackTimeUpdate();
 
-        //if (transform.position.z != 0f)
-        //{
-        //    var tr = transform.position;
-        //    tr.z = 0f;
-        //    transform.position = tr;
-        //}
-
         stateController.UpdateSequence();
 
-        //ResetPos2DZ();
     }
-
-    void ResetPos2DZ()
-    {
-        if (transform.position.z == 0f)
-            return;
-
-        var tr = transform.position;
-        tr.z = 0f;
-        transform.position = tr;
-        
-    }
-
-    //private void FixedUpdate()
-    //{
-    //    if(transform.position.z!=0f)
-    //    {
-    //        var tr = transform.position;
-    //        tr.z = 0f;
-    //        transform.position = tr;
-    //    }
-    //}
-
 
     void AttackTimeUpdate()
     {
@@ -61,11 +25,7 @@ public class FlyScr : EnemyBase
 
         AtkInterval -= Time.deltaTime;
 
-        //if(enemyData.AtkInterval<=0)
-
     }
-
-
 
     public int FlyReturnStateType(int stateType)
     {
@@ -80,33 +40,5 @@ public class FlyScr : EnemyBase
 
 
     }
-
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    Debug.Log("Test");
-    //    if (!other.gameObject.CompareTag("Player"))
-    //        return;
-
-    //    Debug.Log("ColPlayer");
-
-    //    //プレイヤーへのダメージ処理
-    //    other.gameObject.GetComponent<PlayerScr2D>().PlayerDamage(1);
-
-
-    //}
-
-    //private void OnCollisionEnter2D(Collider2D other)
-    //{
-
-    //    if (!other.transform.CompareTag("Player"))
-    //        return;
-
-    //    Debug.Log("ColPlayer");
-
-    //    //プレイヤーへのダメージ処理
-    //    other.transform.GetComponent<PlayerScr2D>().PlayerDamage(1);
-
-
-    //}
 
 }

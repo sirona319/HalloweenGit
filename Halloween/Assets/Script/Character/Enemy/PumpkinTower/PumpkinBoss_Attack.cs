@@ -112,15 +112,6 @@ public class PumpkinBoss_Attack : StateChildBase
 
     }
 
-    //public IEnumerator Lv3(Action action)
-    //{
-
-    //    yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5);//trueなら
-    //    //yield return new WaitWhile(条件);falseなら
-
-    //    action.Invoke();
-    //}
-
     public override void OnEnter()
     {
 

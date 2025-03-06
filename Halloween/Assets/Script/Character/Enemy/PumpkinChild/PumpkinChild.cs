@@ -6,8 +6,6 @@ public class PumpkinChild : MonoBehaviour
 {
     [SerializeField] bool isNoise;
     [SerializeField] float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
-    //[SerializeField] Transform[] warpPositions;
-    //public int childNo = 0;
 
     public bool isFall=false;
     public bool isAllFall = false;
@@ -34,18 +32,9 @@ public class PumpkinChild : MonoBehaviour
     [SerializeField] Transform fallPointRed;
     //
 
-    //public void movePointSet(Transform[] ts)
-    //{
-    //    moveTrans = ts;
-
-    //    if (moveTrans.Length <= 0)
-    //        throw new System.Exception(GetComponent<EnemyBase>().name + "ムーブポイント未設定");
-    //}
-
     public void Initialize()
     {
         GetComponent<RotModule>().enabled = true;
-
     }
 
     public void MoveEnter()
@@ -55,8 +44,6 @@ public class PumpkinChild : MonoBehaviour
 
     public void MoveUpdateNoRot()
     {
-        ////ENDMOVELENのような ROTSTARTLENを作成する？　挙動が不自然なため
-        ///transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
         if (isMoveEnd) return;
 
         if (isFall)
@@ -101,14 +88,11 @@ public class PumpkinChild : MonoBehaviour
 
         if (targetNo == moveTrans.Length - 1)
         {
-            //ここに処理を追加できるようにしたい
-            //IsPoint = true;
             var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
             var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
             eBase.Initialize();
             eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
             eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
-            //eBase.GetComponent<PumpkinScr>().warpPositions = warpPositions;
 
 
 
@@ -117,7 +101,7 @@ public class PumpkinChild : MonoBehaviour
 
 
             if (eBase.GetComponent<StraightForceMove>() != null)
-                eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);//
+                eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
 
 
 
