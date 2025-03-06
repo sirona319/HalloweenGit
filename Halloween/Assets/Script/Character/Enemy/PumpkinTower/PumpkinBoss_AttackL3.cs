@@ -18,7 +18,6 @@ public class PumpkinBoss_AttackL3 : StateChildBase
         //Lv1
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 16);//trueなら
 
-
         bossScr.pumpkinsLv3[0].GetComponent<PumpkinChild>().Initialize();
         bossScr.pumpkinsLv3[1].GetComponent<PumpkinChild>().Initialize();
         bossScr.pumpkinsLv3[3].GetComponent<PumpkinChild>().Initialize();
@@ -113,8 +112,8 @@ public class PumpkinBoss_AttackL3 : StateChildBase
 
         stateTime = 0f;
 
-        StartCoroutine(AtkEnable());
-        //StartCoroutine(DEBUGAtkEnable());
+        //StartCoroutine(AtkEnable());
+        StartCoroutine(DEBUGAtkEnable());
     }
 
     public override void OnExit()

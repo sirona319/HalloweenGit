@@ -10508,6 +10508,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PumpkinBOSS
       objectReference: {fileID: 0}
+    - target: {fileID: 1146293344694150746, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714785155093097550, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4809394584115230578, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.0481758
@@ -10550,7 +10558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: pumpkinChildDeadCount
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: 'timelineTexts.Array.data[0]'
