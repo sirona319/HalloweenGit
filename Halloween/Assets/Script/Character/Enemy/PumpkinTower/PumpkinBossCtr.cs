@@ -6,14 +6,11 @@ public class PumpkinBossCtr : StateControllerBase
     public enum State
     {
         PumpkinBoss_Wait,
-        //PumpkinBoss_Damage,
         PumpkinBoss_Dead,
         PumpkinBoss_Attack,
         PumpkinBoss_AttackL2,
         PumpkinBoss_AttackL3,
         PumpkinBoss_Fall,
-        //PumpkinBoss_Move,
-        //Pumpkin_Circle,
 
 
         NumStates

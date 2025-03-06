@@ -31,16 +31,8 @@ public class PumpkinBoss_Wait : StateChildBase
     public override int StateUpdate()
     {
 
-        //transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
-
-        //if (GetComponent<PumpkinBossScr>().IsDamage)
-        //    if (GetComponent<PumpkinBossScr>().ReturnStateTypeDead())
-        //        return (int)FlyCtr.State.Fly_Dead;
-
         stateTime += Time.deltaTime;
         if (!GetComponent<PumpkinBossScr>().startBattle) return StateType;
-
-
 
 
 
@@ -85,40 +77,17 @@ public class PumpkinBoss_Wait : StateChildBase
             else
             {
                 //フォールクラスの設定
-                //foreach (var go in bossScr.pumpkinsLv2List)
-                //{
-                    GetComponent<PumpkinBoss_Fall>().pumpkinsArray = bossScr.pumpkinsLv2;
-                    //GetComponent<PumpkinBoss_FallL2>().pumpkins = new List<GameObject>(bossScr.pumpkinsLv2List);
-                //}
+                GetComponent<PumpkinBoss_Fall>().pumpkinsArray = bossScr.pumpkinsLv2;
 
                 return (int)PumpkinBossCtr.State.PumpkinBoss_Fall;//かぼちゃを落とす
 
             }
         }
 
-        if (bossScr.pumpkinChildDeadCount == 0)
+        if (bossScr.pumpkinChildDeadCount <=5)
             return (int)PumpkinBossCtr.State.PumpkinBoss_Attack;
-        //if (GetComponent<PumpkinBossScr>().startBattle)
 
 
-        //return GetComponent<EnemyBase>().ReturnStateMoveTypeAttack(StateType);
-
-
-        //if (GetComponent<EnemyBase>().enemyData.attackType == EnemyData.AttackType.circle)
-        //    return (int)SlimeCtr.State.Slime_CircleAttack;
-        //else if (GetComponent<EnemyBase>().enemyData.attackType == EnemyData.AttackType.five)
-        //    return (int)SlimeCtr.State.Slime_FiveAttack;
-        //else
-        //    return (int)SlimeCtr.State.Slime_Attack;
-
-        //if (GetComponent<EnemyBase>().moveType == EnemyBase.MoveType.random)
-        //    return (int)SlimeCtr.State.Slime_CircleAttack;
-        //else if (GetComponent<EnemyBase>().moveType == EnemyBase.MoveType.point)
-        //    return (int)SlimeCtr.State.Slime_MovePoint;//　ポイントムーブ
-
-        return StateType;//GetComponent<PumpkinBossScr>().FlyReturnStateType(StateType);
-
-
-        //return StateType;
+        return StateType;
     }
 }

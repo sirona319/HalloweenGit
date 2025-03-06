@@ -8,7 +8,7 @@ public class RotModule : MonoBehaviour
     [SerializeField] bool y = false;
     [SerializeField] bool z = false;
 
-    [SerializeField] float SPEED = 30;
+    public float speed=0;
 
     [SerializeField] Transform target = null;
     //[SerializeField] float d=0;
@@ -30,16 +30,16 @@ public class RotModule : MonoBehaviour
         if (TargetRotIf())
             return;
 
-        float ROTVALUE = SPEED;
+        //float ROTVALUE = speed;
         float duration = 1f;
         // StartCoroutine(MyLib.LoopDelayCoroutine(1f, () =>
         // {
         if (y)
-            this.transform.DORotate(Vector3.up * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+            this.transform.DORotate(Vector3.up * speed, duration, RotateMode.LocalAxisAdd);
         else if (x)
-            this.transform.DORotate(Vector3.right * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+            this.transform.DORotate(Vector3.right * speed, duration, RotateMode.LocalAxisAdd);
         else if (z)
-            this.transform.DORotate(Vector3.forward * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+            this.transform.DORotate(Vector3.forward * speed, duration, RotateMode.LocalAxisAdd);
         //}));
 
         //const float ROLLSPEED = 7f;
@@ -52,16 +52,16 @@ public class RotModule : MonoBehaviour
     {
         if (target == null) return false;
 
-        float ROTVALUE = SPEED;
+        //float ROTVALUE = SPEED;
         float duration = 1f;
         // StartCoroutine(MyLib.LoopDelayCoroutine(1f, () =>
         // {
         if (y)
-            target.DORotate(Vector3.up * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+            target.DORotate(Vector3.up * speed, duration, RotateMode.LocalAxisAdd);
         else if (x)
-            target.DORotate(Vector3.right * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+            target.DORotate(Vector3.right * speed, duration, RotateMode.LocalAxisAdd);
         else if (z)
-            target.DORotate(Vector3.forward * ROTVALUE, duration, RotateMode.LocalAxisAdd);
+            target.DORotate(Vector3.forward * speed, duration, RotateMode.LocalAxisAdd);
 
         return true;
 

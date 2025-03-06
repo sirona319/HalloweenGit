@@ -20,33 +20,19 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     [NonSerialized] public bool IsAttack = true;
     [NonSerialized] public bool IsMove = true;
 
-    //public EnemyData enemyData;//スクリプタルオブジェクト　リスト
-    //public string findName;
-
-    //[NonSerialized] public List<BaseMagazine> baseMagazine=new ();
-    //public List<BaseMove> baseMove = new();
-
-
-    //public Transform[] movePointsDatas;
-
-    //public int MaxHp = 1;
-    //public int Hp = 0;
-    //public float MaxAtkInterval = 1f;
-    //public float AtkInterval = 1;
-
 
     public bool startBattle = false;
 
     public int pumpkinChildDeadCount = 0;
 
-
+    [SerializeField] float rotSpeedPumpkin1 = 0;
+    [SerializeField] float rotSpeedPumpkin2 = 0;
+    [SerializeField] float rotSpeedPumpkin3 = 0;
     public GameObject[] pumpkins; //主に攻撃に使用
     public GameObject[] pumpkinsLv2;
-    //public List<GameObject> pumpkinsLv2List = new List<GameObject> { };
-    //public GameObject[] pumpkinsLv3;
     public GameObject[] pumpkinsLv3;
 
-    public GameObject[][] pumpkinsDEBUG;
+    //public GameObject[][] pumpkinsDEBUG;
     //SerializeField] SerializedDictionary<PumpkinChild, bool> pumpkinDicLv3;
 
     public TimelineControl[] timelineTexts;
@@ -63,8 +49,7 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
         timelineTexts[0].GetComponentInChildren<BossCollisionTrigger>().BossCollisionOff();
-        //timelineTexts[timelineNo];
-        //timelineNo++;
+
     }
 
     public void BattleStart(bool f)
@@ -72,59 +57,23 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
         startBattle = f;
     }
 
-    //const int ATKVAL = 1;
-
-    //呼び出し先でキャストして使用する
-    //public BaseMove MoveTypeSelect(MoveType mt)
-    //{
-    //    foreach (var move in baseMove)
-    //    {
-
-    //        if (move.GetType().FullName == mt.ToString())
-    //            return move;
-    //    }
-
-
-    //    return null;
-    //}
-
-    //public void AttackMagazineUpdate(AttackType atkType)
-    //{
-
-    //    foreach (var magazine in baseMagazine)
-    //        if (magazine.GetType().FullName == atkType.ToString())
-    //            magazine.MagazineUpdate();
-
-    //}
-    //public void AttackMagazineUpdateAll()
-    //{
-    //    foreach (var magazine in baseMagazine)
-    //        magazine.MagazineUpdate();
-    //}
-
-
-    //protected virtual void StartInit()
-    //{
-    //    //スクリプタルオブジェクトのデータを取得
-    //    enemyData = EnemyManager.I.GetEnemyData(findName);
-
-    //    //enemyDataのnullチェック
-    //    if (enemyData == null)
-    //        throw new System.Exception(gameObject.name + "　Data null");
-
-
-
-    //    // if((int)enemyData.attackType.Length<=0)
-    //    //    throw new System.Exception(gameObject.name + "　スクリプタルオブジェクトattackType　空");
-
-    //    //if ((int)enemyData.moveType.Length <= 0)
-    //    //    throw new System.Exception(gameObject.name + "スクリプタルオブジェクト　moveType 空");
-    //}
-
-
     void Start()
     {
+        foreach (var go in pumpkins)
+        {
+            go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;
+        }
+        foreach (var go in pumpkinsLv2)
+        {
+            go.GetComponent<RotModule>().speed = rotSpeedPumpkin2;
+        }
+        foreach (var go in pumpkinsLv3)
+        {
+            go.GetComponent<RotModule>().speed = rotSpeedPumpkin3;
+        }
+
         stateController.Initialize((int)PumpkinBossCtr.State.PumpkinBoss_Wait);
+
     }
 
     protected virtual void Init()
@@ -174,90 +123,12 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     }
 
-    #region アニメーションイベント
-
-    //public void OnEnemyAttack()
-    //{
-
-    //    Debug.Log("OnEnemyAttack");
-    //    //攻撃コリジョンを有効にする
-    //    //HitCol.enabled = true;
-
-    //}
-
-    //public void OffEnemyAttack()
-    //{
-    //    Debug.Log("OffEnemyAttack");
-
-    //    //HitCol.enabled = false;
-
-    //}
-    #endregion
-
-    //public virtual void EnemyDamage(int damage)
-    //{
-
-    //    if (IsDead) return;
-
-    //    Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
-    //    Hp -= damage;        //HP減少処理
-
-    //    IsDamage = true;
-
-    //    if (Hp <= 0)
-    //        IsDead = true;
-    //}
-
-    //public int ReturnStateMoveType(int stateType)
-    //{
-    //    if (IsAttack)
-    //        return (int)FlyCtr.State.Fly_Attack;
-
-    //    else if (IsMove)
-    //        return (int)FlyCtr.State.Fly_Move;
-
-
-
-    //    return stateType;
-    //}
 
     void Update()
     {
-        //AttackTimeUpdate();
-
-        //if (transform.position.z != 0f)
-        //{
-        //    var tr = transform.position;
-        //    tr.z = 0f;
-        //    transform.position = tr;
-        //}
 
         stateController.UpdateSequence();
 
-        //ResetPos2DZ();
     }
 
-    void ResetPos2DZ()
-    {
-        if (transform.position.z == 0f)
-            return;
-
-        var tr = transform.position;
-        tr.z = 0f;
-        transform.position = tr;
-
-    }
-
-
-    //public int FlyReturnStateType(int stateType)
-    //{
-    //    if (AtkInterval <= 0)
-    //        return (int)FlyCtr.State.Fly_Attack;
-    //    else if (IsMove)
-    //        return (int)FlyCtr.State.Fly_Move;
-
-    //    else
-    //        return (int)FlyCtr.State.Fly_Wait;
-
-    //}
 }

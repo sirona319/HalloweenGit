@@ -3,23 +3,16 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class PumpkinBoss_Attack : StateChildBase
 {
-    //bool isAtkLife = true;
-
-    //int atkCountLv0 = 6; //6 10 15
-    //int atkCountLv1 = 10; //6 10 15
-    //int atkCountLv2 = 15; //6 10 15
-
-
-    //int isAtkLv = 0;
 
     PumpkinBossScr bossScr;
 
-    const float Lv1LimitTime = 10f;
-    const float Lv2LimitTime = 22f;
-    //const float Lv3LimitTime = 10f;
+    public override void Initialize(int stateType)
+    {
+        base.Initialize(stateType);
+        bossScr = GetComponent<PumpkinBossScr>();
+        //GetComponent<PumpkinScr>().AtkInterval = GetComponent<PumpkinScr>().enemyData.AtkIntervalMax;
+    }
 
-    //public bool isTest = false;
-    //bool isShake = false;
     public IEnumerator AtkEnable()
     {
 
@@ -72,7 +65,7 @@ public class PumpkinBoss_Attack : StateChildBase
         anim.SetBool("Shake", true);
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5&& 
-                                        bossScr.pumpkins[5].GetComponent<PumpkinChildRed>().isShakeEnd);
+                                        bossScr.pumpkins[5].GetComponent<PumpkinChild>().isShakeEnd);
 
         bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
         ////ボスかぼちゃ　ピンボール        //Lv3
@@ -99,7 +92,7 @@ public class PumpkinBoss_Attack : StateChildBase
         anim.SetBool("Shake", true);
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5 &&
-                                        bossScr.pumpkins[5].GetComponent<PumpkinChildRed>().isShakeEnd);
+                                        bossScr.pumpkins[5].GetComponent<PumpkinChild>().isShakeEnd);
 
         //bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
         ////ボスかぼちゃ　ピンボール        //Lv3
@@ -127,13 +120,6 @@ public class PumpkinBoss_Attack : StateChildBase
 
     //    action.Invoke();
     //}
-
-    public override void Initialize(int stateType)
-    {
-        base.Initialize(stateType);
-        bossScr = GetComponent<PumpkinBossScr>();
-        //GetComponent<PumpkinScr>().AtkInterval = GetComponent<PumpkinScr>().enemyData.AtkIntervalMax;
-    }
 
     public override void OnEnter()
     {

@@ -5,8 +5,6 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 {
     PumpkinBossScr bossScr;
 
-    //public bool isTest = false;
-
     public IEnumerator AtkEnable()
     {
 
@@ -94,10 +92,9 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15 &&
                                         bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().isShakeEnd);
-        //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15);//trueなら
+
 
         bossScr.pumpkinsLv2[9].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().Initialize();
 
         StartCoroutine(MyLib.LoopDelayCoroutine(0,() =>
         {

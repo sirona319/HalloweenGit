@@ -5,7 +5,6 @@ public class PumpkinBoss_AttackL3 : StateChildBase
 {
     PumpkinBossScr bossScr;
 
-    //public bool isTest = false;
     const int lastNo = 14;
     const int lastDesdCount = 30;
 
@@ -109,8 +108,6 @@ public class PumpkinBoss_AttackL3 : StateChildBase
             }
 
         }));
-
-
 
     }
 

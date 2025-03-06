@@ -80,7 +80,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &1328503747827500907
 MonoBehaviour:
@@ -107,6 +107,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &7264524829903390385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -176,7 +177,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8903360131009757031
 Transform:
@@ -187,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 460288486386476683}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.27, y: -16, z: 0}
+  m_LocalPosition: {x: 2.27, y: -11.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242,7 +243,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &8415891028389488296
 MonoBehaviour:
@@ -269,6 +270,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &6394703410339530464
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -364,6 +366,7 @@ Transform:
   - {fileID: 8414615853710522412}
   - {fileID: 8717601480166172309}
   - {fileID: 7364465092173990502}
+  - {fileID: 8340046356662949874}
   - {fileID: 564858273963042989}
   - {fileID: 5844728792950602692}
   - {fileID: 8138833283945322969}
@@ -384,6 +387,9 @@ MonoBehaviour:
   stateController: {fileID: 8097683888208118477}
   startBattle: 0
   pumpkinChildDeadCount: 16
+  rotSpeedPumpkin1: 40
+  rotSpeedPumpkin2: 38
+  rotSpeedPumpkin3: 39
   pumpkins:
   - {fileID: 5504779963356559243}
   - {fileID: 9013457822140044443}
@@ -514,7 +520,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &5471454147200567423
 MonoBehaviour:
@@ -541,6 +547,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &5477949549373092230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -696,7 +703,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &8136998030852574625
 MonoBehaviour:
@@ -723,6 +730,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &477553903526938753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -792,7 +800,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4742050460161465517
 Transform:
@@ -803,7 +811,7 @@ Transform:
   m_GameObject: {fileID: 1394532810420800155}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -15, z: 0}
+  m_LocalPosition: {x: 1.5, y: -10.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -858,7 +866,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 1
   target: {fileID: 9214476552589061881}
 --- !u!114 &8828537021342900586
 MonoBehaviour:
@@ -885,6 +893,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &9110259785784165261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -940,6 +949,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1600233584538304958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8340046356662949874}
+  m_Layer: 0
+  m_Name: groundMiddle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8340046356662949874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600233584538304958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4809394584115230578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602959413946432709
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1026,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7467739327782478090
 Transform:
@@ -997,7 +1037,7 @@ Transform:
   m_GameObject: {fileID: 1621851592567083592}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -17, z: 0}
+  m_LocalPosition: {x: -1.5, y: -12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1052,7 +1092,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &359624107361375745
 MonoBehaviour:
@@ -1079,6 +1119,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &3720031617355296098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1183,7 +1224,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &7013681695509322093
 MonoBehaviour:
@@ -1210,6 +1251,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &3280773899491018414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1290,7 +1332,7 @@ Transform:
   m_GameObject: {fileID: 1845454353004558394}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6, y: -11.54, z: 0}
+  m_LocalPosition: {x: -1.6, y: -12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1310,7 +1352,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4963839549974343515
 Transform:
@@ -1321,7 +1363,7 @@ Transform:
   m_GameObject: {fileID: 1856615315517500460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -14, z: 0}
+  m_LocalPosition: {x: 1, y: -9.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1376,7 +1418,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &4020221420001134705
 MonoBehaviour:
@@ -1403,6 +1445,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &191231517572120039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1483,7 +1526,7 @@ Transform:
   m_GameObject: {fileID: 1913435366777939824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.95, z: 0}
+  m_LocalPosition: {x: 0, y: 11.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1544,7 +1587,7 @@ Transform:
   m_GameObject: {fileID: 1978780848257159748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -10.54, z: 0}
+  m_LocalPosition: {x: -1, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1627,7 +1670,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5978698899641939903
 Transform:
@@ -1638,7 +1681,7 @@ Transform:
   m_GameObject: {fileID: 2377165555747615596}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -15, z: 0}
+  m_LocalPosition: {x: 0, y: -10.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1755,7 +1798,7 @@ Transform:
   m_GameObject: {fileID: 2567404073795761344}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.31, y: -12.54, z: 0}
+  m_LocalPosition: {x: 2.31, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1813,7 +1856,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &2370294367913447581
 MonoBehaviour:
@@ -1827,11 +1870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 8
   isFall: 0
   isAllFall: 0
-  spawnObj: {fileID: 6205204080456637428, guid: 86d318383912d9c48aef5606a696063a, type: 3}
+  spawnObj: {fileID: 6205204080456637428, guid: 8107fe5c1c773cd478af0d19ccc23ec1, type: 3}
   moveTrans:
   - {fileID: 6700590147694504829}
   - {fileID: 354566583560433198}
@@ -1840,6 +1883,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 3736433971542901824}
   fallPtR: {fileID: 3755716144532304893}
+  fallPointRed: {fileID: 8340046356662949874}
 --- !u!95 &2741432882618187311
 Animator:
   serializedVersion: 7
@@ -1905,7 +1949,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 353610973
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 4842590130733673965, guid: 6bb98b2f98c155e4b979248f734fb7ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1942,7 +1986,7 @@ Transform:
   m_GameObject: {fileID: 3182479224331047687}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.54, z: 0}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1962,7 +2006,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7461225515708031044
 Transform:
@@ -1973,7 +2017,7 @@ Transform:
   m_GameObject: {fileID: 3432771703724260567}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -17, z: 0}
+  m_LocalPosition: {x: 0, y: -12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2028,7 +2072,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &1852767022313621424
 MonoBehaviour:
@@ -2055,6 +2099,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &973562744380831606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2159,7 +2204,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &1260969477745340748
 MonoBehaviour:
@@ -2186,6 +2231,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &8331030426345120137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2327,7 +2373,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &4260116721270460740
 MonoBehaviour:
@@ -2354,6 +2400,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &1307404193311954707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2466,7 +2513,7 @@ Transform:
   m_GameObject: {fileID: 4161422506274634505}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.4, y: -12.54, z: 0}
+  m_LocalPosition: {x: -2.4, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2486,7 +2533,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8530249101431387077
 Transform:
@@ -2497,7 +2544,7 @@ Transform:
   m_GameObject: {fileID: 4228349893448975366}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.23, y: -16, z: 0}
+  m_LocalPosition: {x: -2.23, y: -11.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2552,7 +2599,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &8172913489904882813
 MonoBehaviour:
@@ -2579,6 +2626,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &6564631858769748929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2690,7 +2738,7 @@ Transform:
   m_GameObject: {fileID: 4703372793847766684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8, y: -12.54, z: 0}
+  m_LocalPosition: {x: -0.8, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2745,7 +2793,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &1615755557654724814
 MonoBehaviour:
@@ -2772,6 +2820,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &1236783832341009026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2876,7 +2925,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: -30
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &8569727116388138609
 MonoBehaviour:
@@ -2897,10 +2946,12 @@ MonoBehaviour:
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 7159319313664494269}
-  movePointLists: []
+  movePointLists:
+  - {fileID: 7364465092173990502}
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &8732060254650057163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3056,7 +3107,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2963863375305284822
 Transform:
@@ -3067,7 +3118,7 @@ Transform:
   m_GameObject: {fileID: 4960989457825326729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -13, z: 0}
+  m_LocalPosition: {x: 0, y: -8.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3122,7 +3173,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &6625501128277696646
 MonoBehaviour:
@@ -3149,6 +3200,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &8677497416033439762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3229,7 +3281,7 @@ Transform:
   m_GameObject: {fileID: 5275032952432506531}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.54, z: 0}
+  m_LocalPosition: {x: 0, y: -12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3260,7 +3312,7 @@ Transform:
   m_GameObject: {fileID: 5289354599435104248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: -12.54, z: 0}
+  m_LocalPosition: {x: 0.8, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3280,7 +3332,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7729526154669608774
 Transform:
@@ -3291,7 +3343,7 @@ Transform:
   m_GameObject: {fileID: 5360313365602168077}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -17, z: 0}
+  m_LocalPosition: {x: -3, y: -12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3346,7 +3398,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &1602746365330833707
 MonoBehaviour:
@@ -3373,6 +3425,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &6042504955779778603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3477,7 +3530,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: -30
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &3047839941965178527
 MonoBehaviour:
@@ -3498,10 +3551,12 @@ MonoBehaviour:
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 4667248850588145462}
-  movePointLists: []
+  movePointLists:
+  - {fileID: 8937839125099228917}
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &4249141961773391957
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3582,7 +3637,7 @@ Transform:
   m_GameObject: {fileID: 5527511720341171624}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -10.54, z: 0}
+  m_LocalPosition: {x: 1, y: -11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3602,7 +3657,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4098902435502711392
 Transform:
@@ -3613,7 +3668,7 @@ Transform:
   m_GameObject: {fileID: 5728687522617967228}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -15, z: 0}
+  m_LocalPosition: {x: -1.5, y: -10.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3633,7 +3688,7 @@ GameObject:
   - component: {fileID: 3028818467906650823}
   - component: {fileID: 7038354698248908969}
   m_Layer: 0
-  m_Name: RED
+  m_Name: RED1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3671,7 +3726,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &8626066315508768641
 MonoBehaviour:
@@ -3689,13 +3744,15 @@ MonoBehaviour:
   noiseTiming: 1.5
   isFall: 1
   isAllFall: 0
-  spawnObj: {fileID: 6205204080456637428, guid: d7a114cb1d8f71646a7900a95a544b61, type: 3}
+  spawnObj: {fileID: 6205204080456637428, guid: af601677a95423f459646bf93a54d092, type: 3}
   moveTrans:
-  - {fileID: 4152855284318463721}
-  movePointLists: []
+  - {fileID: 354566583560433198}
+  movePointLists:
+  - {fileID: 2012875155274127001}
   isShakeEnd: 0
   fallPtL: {fileID: 5328344944690297628}
   fallPtR: {fileID: 7349828405487312573}
+  fallPointRed: {fileID: 8340046356662949874}
 --- !u!95 &3028818467906650823
 Animator:
   serializedVersion: 7
@@ -3761,7 +3818,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 353610973
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 4842590130733673965, guid: 6bb98b2f98c155e4b979248f734fb7ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3787,7 +3844,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7748202900955096658
 Transform:
@@ -3798,7 +3855,7 @@ Transform:
   m_GameObject: {fileID: 5807991811201028017}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -17, z: 0}
+  m_LocalPosition: {x: 1.5, y: -12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3818,7 +3875,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2437662971872069976
 Transform:
@@ -3829,7 +3886,7 @@ Transform:
   m_GameObject: {fileID: 6022119247212528350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -14, z: 0}
+  m_LocalPosition: {x: -1, y: -9.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3849,7 +3906,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &461379221595417550
 Transform:
@@ -3860,7 +3917,7 @@ Transform:
   m_GameObject: {fileID: 6050893500552264981}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -16, z: 0}
+  m_LocalPosition: {x: -0.7, y: -11.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3891,7 +3948,7 @@ Transform:
   m_GameObject: {fileID: 6150735566182399755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.6, y: -11.54, z: 0}
+  m_LocalPosition: {x: 1.6, y: -12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3946,7 +4003,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &7654173239549513326
 MonoBehaviour:
@@ -3973,6 +4030,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &5903147043453980827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4077,7 +4135,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &2088074999362213154
 MonoBehaviour:
@@ -4098,10 +4156,12 @@ MonoBehaviour:
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 4152855284318463721}
-  movePointLists: []
+  movePointLists:
+  - {fileID: 4987172901707719243}
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &4897007804088327556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4206,7 +4266,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &5772052864540862111
 MonoBehaviour:
@@ -4227,10 +4287,12 @@ MonoBehaviour:
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 8414615853710522412}
-  movePointLists: []
+  movePointLists:
+  - {fileID: 8717601480166172309}
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &7923911511257038734
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4370,7 +4432,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &7660979802747389560
 MonoBehaviour:
@@ -4384,11 +4446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 8
   isFall: 0
   isAllFall: 0
-  spawnObj: {fileID: 6205204080456637428, guid: 86d318383912d9c48aef5606a696063a, type: 3}
+  spawnObj: {fileID: 6205204080456637428, guid: bb2aec7d59d9af5469f71be7651b56f6, type: 3}
   moveTrans:
   - {fileID: 2963863375305284822}
   - {fileID: 354566583560433198}
@@ -4397,6 +4459,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 2429799853563441199}
   fallPtR: {fileID: 423415442553481202}
+  fallPointRed: {fileID: 8340046356662949874}
 --- !u!95 &1410803238353619784
 Animator:
   serializedVersion: 7
@@ -4462,7 +4525,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 353610973
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 4842590130733673965, guid: 6bb98b2f98c155e4b979248f734fb7ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4523,7 +4586,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &3389697304917763348
 MonoBehaviour:
@@ -4550,6 +4613,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &6038877020540020724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4705,7 +4769,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5441744287350142601
 Transform:
@@ -4716,7 +4780,7 @@ Transform:
   m_GameObject: {fileID: 6946426204484156333}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -16, z: 0}
+  m_LocalPosition: {x: 0.75, y: -11.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4736,7 +4800,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3723561835541354879
 Transform:
@@ -4747,7 +4811,7 @@ Transform:
   m_GameObject: {fileID: 7083334538569918565}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: -17, z: 0}
+  m_LocalPosition: {x: 3, y: -12.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4802,7 +4866,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &4356044558922463461
 MonoBehaviour:
@@ -4829,6 +4893,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &2248921117665399137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4965,7 +5030,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &5339857589418719549
 MonoBehaviour:
@@ -4992,6 +5057,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &1923641024863614619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5096,7 +5162,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &6645873147657673965
 MonoBehaviour:
@@ -5123,6 +5189,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &2852327863472513513
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5376,7 +5443,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 9161641852311762585}
 --- !u!114 &6215648732408680440
 MonoBehaviour:
@@ -5403,6 +5470,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &170728189549117651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5507,7 +5575,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &9072396882461895053
 MonoBehaviour:
@@ -5534,6 +5602,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &8407540826729602469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5638,7 +5707,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &6961998763454619247
 MonoBehaviour:
@@ -5659,10 +5728,12 @@ MonoBehaviour:
   spawnObj: {fileID: 6205204080456637428, guid: cac1c17ec814ad946914a8a99fcd8d4e, type: 3}
   moveTrans:
   - {fileID: 8937839125099228917}
-  movePointLists: []
+  movePointLists:
+  - {fileID: 4667248850588145462}
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &1413401737471426902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5767,7 +5838,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 36.5
+  speed: 0
   target: {fileID: 0}
 --- !u!114 &4351871481425865512
 MonoBehaviour:
@@ -5794,6 +5865,7 @@ MonoBehaviour:
   isShakeEnd: 0
   fallPtL: {fileID: 0}
   fallPtR: {fileID: 0}
+  fallPointRed: {fileID: 0}
 --- !u!212 &3734988390635217337
 SpriteRenderer:
   m_ObjectHideFlags: 0

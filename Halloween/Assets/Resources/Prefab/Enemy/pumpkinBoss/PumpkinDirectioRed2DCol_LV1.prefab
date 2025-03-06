@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 8457151718029861398}
   - component: {fileID: 530132563322007067}
   m_Layer: 10
-  m_Name: PumpkinDirectioRed2DCol LV2 test
+  m_Name: PumpkinDirectioRed2DCol_LV1
   m_TagString: EnemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &3389971620290101742
 MonoBehaviour:
@@ -393,8 +393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb3: {fileID: 0}
-  rb2: {fileID: 0}
+  rb2: {fileID: 7962176103443069363}
   IsMove: 1
-  speed: 15
+  speed: 8
   targets: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}

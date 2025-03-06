@@ -14,8 +14,6 @@ public class PumpkinBoss_Dead : StateChildBase
     public override void Initialize(int stateNo)
     {
         base.Initialize(stateNo);
-
-
         //deadParticle = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/Flash_star_ellow_green");
     }
 

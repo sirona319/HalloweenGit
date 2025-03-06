@@ -39,8 +39,6 @@ public class EnemyBase : MonoBehaviour, IDamage
     //public float MaxAtkInterval = 1f;
     //public float AtkInterval =1;
 
-    //bool isDraw = false;
-
     public BaseMove GetBaseMove(int no)
     {
         if (baseMove[no] == null)

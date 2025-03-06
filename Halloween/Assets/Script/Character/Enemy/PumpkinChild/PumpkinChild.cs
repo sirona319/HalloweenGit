@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PumpkinChild : MonoBehaviour
@@ -29,6 +30,8 @@ public class PumpkinChild : MonoBehaviour
 
     [SerializeField] GameObject fallPtL;
     [SerializeField] GameObject fallPtR;
+
+    [SerializeField] Transform fallPointRed;
     //
 
     //public void movePointSet(Transform[] ts)
@@ -52,6 +55,8 @@ public class PumpkinChild : MonoBehaviour
 
     public void MoveUpdateNoRot()
     {
+        ////ENDMOVELENのような ROTSTARTLENを作成する？　挙動が不自然なため
+        ///transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
         if (isMoveEnd) return;
 
         if (isFall)
@@ -59,8 +64,8 @@ public class PumpkinChild : MonoBehaviour
             if(isAllFall)
                 PumpkinMove();
             
-            ////ENDMOVELENのような ROTSTARTLENを作成する？　挙動が不自然なため
-            /////transform.GetChild(0).rotation = MyLib.GetAngleRotationFuncs((transform.GetChild(0).position + Vector3.up), transform.GetChild(0), 5f);
+            //////ENDMOVELENのような ROTSTARTLENを作成する？　挙動が不自然なため
+            //transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
             return;
         }
 
@@ -131,22 +136,32 @@ public class PumpkinChild : MonoBehaviour
     #region　アニメーションイベント
     public void EventShake()
     {
-        fallPtL.SetActive(false);
-        fallPtR.SetActive(false);
+        const float duration = 1f;
+        transform.DOMove(fallPointRed.position, duration);
 
-        GetComponent<Animator>().enabled = false;
-
-        //揺らす長さ
-        const float shakeLength = 0.15f;
-        //揺らす力
-        const float power = 0.3f;
-
-        StartCoroutine(MyLib.DoShake(shakeLength, power, transform));
-
-        StartCoroutine(MyLib.DelayCoroutine(shakeLength + 0.5f, () =>
+        StartCoroutine(MyLib.DelayCoroutine(duration, () =>
         {
-            isShakeEnd = true;
+
+            fallPtL.SetActive(false);
+            fallPtR.SetActive(false);
+
+            GetComponent<Animator>().enabled = false;
+
+            //揺らす長さ
+            const float shakeLength = 0.15f;
+            //揺らす力
+            const float power = 0.3f;
+
+            StartCoroutine(MyLib.DoShake(shakeLength, power, transform));
+
+            StartCoroutine(MyLib.DelayCoroutine(shakeLength + 0.5f, () =>
+            {
+                isShakeEnd = true;
+            }));
+
+
         }));
+
     }
 
     public void EventPtActive()
