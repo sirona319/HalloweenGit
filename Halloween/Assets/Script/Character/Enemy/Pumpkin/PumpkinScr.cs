@@ -6,8 +6,6 @@ public class PumpkinScr : EnemyBase
 {
     public bool isBoss = false;
     public SpriteRenderer sprite;
-    //public float AtkInterval = 1;
-
 
     //ノイズ　瞬間移動
     public bool isNoise;
@@ -26,7 +24,6 @@ public class PumpkinScr : EnemyBase
 
     //赤かぼちゃのみ
     const float noiseTimingDefaultRed = 8f;
-    //StraightForceMove sMove;
 
     //
     void Start()
@@ -37,16 +34,8 @@ public class PumpkinScr : EnemyBase
 
         randTime = Random.Range(randTimeMin, randTimeMax);
         pTrans = GameObject.FindWithTag("Player").transform;
-        //sMove = baseMove[0].GetComponent<StraightForceMove>();
 
         warpPositions = GameObject.FindGameObjectsWithTag("PumpkinWorp");
-
-
-        //warpPositions;
-        //foreach(var t in objs)
-        //{
-        //    warpPositions.ad = t.transform;
-        //}
 
     }
 
@@ -170,7 +159,7 @@ public class PumpkinScr : EnemyBase
     }
 
     // <summary>
-    // カメラに写っている間常に呼ばれる SpriteRendererの関係で不具合が起こる
+    // カメラに写っている間常に呼ばれる SpriteRendererの関係で不具合が起こる**
     // </summary>
     private void OnWillRenderObject()
     {

@@ -9,7 +9,7 @@ public class PumpkinBoss_Fall : StateChildBase
     int pNo = 0;
     public int maxCountPumpkin = 9;
 
-    public GameObject[] pumpkinsArray = new GameObject[] { };
+    public GameObject[] pumpkinsArray;
 
     public override void Initialize(int stateNo)
     {

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -104,10 +104,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 8717601480166172309}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &7264524829903390385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -267,10 +263,6 @@ MonoBehaviour:
   - {fileID: 8937839125099228917}
   movePointLists:
   - {fileID: 4667248850588145462}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &6394703410339530464
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -387,7 +379,6 @@ MonoBehaviour:
   stateController: {fileID: 8097683888208118477}
   startBattle: 0
   pumpkinChildDeadCount: 16
-  rotSpeedPumpkin1: 40
   rotSpeedPumpkin2: 38
   rotSpeedPumpkin3: 39
   pumpkins:
@@ -544,10 +535,6 @@ MonoBehaviour:
   - {fileID: 4667248850588145462}
   movePointLists:
   - {fileID: 8526126341931758972}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &5477949549373092230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -717,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -727,10 +714,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 8717601480166172309}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &477553903526938753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -880,7 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -890,10 +873,6 @@ MonoBehaviour:
   - {fileID: 4667248850588145462}
   movePointLists:
   - {fileID: 8937839125099228917}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &9110259785784165261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1116,10 +1095,6 @@ MonoBehaviour:
   - {fileID: 8937839125099228917}
   movePointLists:
   - {fileID: 8526126341931758972}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &3720031617355296098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1238,7 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1.3
   isFall: 0
   isAllFall: 0
@@ -1248,10 +1223,6 @@ MonoBehaviour:
   - {fileID: 4152855284318463721}
   movePointLists:
   - {fileID: 6043614381920256345}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &3280773899491018414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1442,10 +1413,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 2015214192438351233}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &191231517572120039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1814,11 +1781,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7073980362980716867}
   - component: {fileID: 2075912055758443668}
-  - component: {fileID: 2370294367913447581}
   - component: {fileID: 2741432882618187311}
   - component: {fileID: 7450013665922569355}
+  - component: {fileID: 6996004353338329221}
   m_Layer: 0
-  m_Name: 9RED
+  m_Name: RED2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1858,32 +1825,6 @@ MonoBehaviour:
   z: 1
   speed: 0
   target: {fileID: 0}
---- !u!114 &2370294367913447581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956006357891709424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isNoise: 0
-  noiseTiming: 8
-  isFall: 0
-  isAllFall: 0
-  spawnObj: {fileID: 6205204080456637428, guid: 8107fe5c1c773cd478af0d19ccc23ec1, type: 3}
-  moveTrans:
-  - {fileID: 6700590147694504829}
-  - {fileID: 354566583560433198}
-  movePointLists:
-  - {fileID: 7073980362980716867}
-  isShakeEnd: 0
-  fallPtL: {fileID: 3736433971542901824}
-  fallPtR: {fileID: 3755716144532304893}
-  fallPointRed: {fileID: 8340046356662949874}
 --- !u!95 &2741432882618187311
 Animator:
   serializedVersion: 7
@@ -1961,6 +1902,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6996004353338329221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956006357891709424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e5a735aac035e4ebfc9a4aa308299f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1
+  isFall: 0
+  isAllFall: 0
+  spawnObj: {fileID: 6205204080456637428, guid: 8107fe5c1c773cd478af0d19ccc23ec1, type: 3}
+  moveTrans:
+  - {fileID: 6700590147694504829}
+  - {fileID: 354566583560433198}
+  movePointLists:
+  - {fileID: 7073980362980716867}
+  isShakeEnd: 0
+  fallPtL: {fileID: 3736433971542901824}
+  fallPtR: {fileID: 3755716144532304893}
+  fallPointRed: {fileID: 8340046356662949874}
 --- !u!1 &3182479224331047687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,10 +2063,6 @@ MonoBehaviour:
   - {fileID: 7159319313664494269}
   movePointLists:
   - {fileID: 7364465092173990502}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &973562744380831606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2218,7 +2181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1.3
   isFall: 0
   isAllFall: 0
@@ -2228,10 +2191,6 @@ MonoBehaviour:
   - {fileID: 4152855284318463721}
   movePointLists:
   - {fileID: 8942931092242786195}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &8331030426345120137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2397,10 +2356,6 @@ MonoBehaviour:
   - {fileID: 7159319313664494269}
   movePointLists:
   - {fileID: 8810557672278881453}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &1307404193311954707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2623,10 +2578,6 @@ MonoBehaviour:
   - {fileID: 8937839125099228917}
   movePointLists:
   - {fileID: 4667248850588145462}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &6564631858769748929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2807,7 +2758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -2817,10 +2768,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 8717601480166172309}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &1236783832341009026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2925,7 +2872,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &8569727116388138609
 MonoBehaviour:
@@ -2948,10 +2895,6 @@ MonoBehaviour:
   - {fileID: 7159319313664494269}
   movePointLists:
   - {fileID: 7364465092173990502}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &8732060254650057163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3187,7 +3130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -3197,10 +3140,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 8717601480166172309}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &8677497416033439762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3412,7 +3351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -3422,10 +3361,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 8717601480166172309}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &6042504955779778603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3530,7 +3465,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &3047839941965178527
 MonoBehaviour:
@@ -3553,10 +3488,6 @@ MonoBehaviour:
   - {fileID: 4667248850588145462}
   movePointLists:
   - {fileID: 8937839125099228917}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &4249141961773391957
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3684,9 +3615,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2012875155274127001}
   - component: {fileID: 3681821262400589445}
-  - component: {fileID: 8626066315508768641}
   - component: {fileID: 3028818467906650823}
   - component: {fileID: 7038354698248908969}
+  - component: {fileID: 7508886653727808523}
   m_Layer: 0
   m_Name: RED1
   m_TagString: Untagged
@@ -3726,33 +3657,8 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 30
   target: {fileID: 0}
---- !u!114 &8626066315508768641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5737965350239889561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isNoise: 0
-  noiseTiming: 1.5
-  isFall: 1
-  isAllFall: 0
-  spawnObj: {fileID: 6205204080456637428, guid: af601677a95423f459646bf93a54d092, type: 3}
-  moveTrans:
-  - {fileID: 354566583560433198}
-  movePointLists:
-  - {fileID: 2012875155274127001}
-  isShakeEnd: 0
-  fallPtL: {fileID: 5328344944690297628}
-  fallPtR: {fileID: 7349828405487312573}
-  fallPointRed: {fileID: 8340046356662949874}
 --- !u!95 &3028818467906650823
 Animator:
   serializedVersion: 7
@@ -3830,6 +3736,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7508886653727808523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737965350239889561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e5a735aac035e4ebfc9a4aa308299f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1
+  isFall: 0
+  isAllFall: 0
+  spawnObj: {fileID: 6205204080456637428, guid: af601677a95423f459646bf93a54d092, type: 3}
+  moveTrans:
+  - {fileID: 354566583560433198}
+  movePointLists:
+  - {fileID: 2012875155274127001}
+  isShakeEnd: 0
+  fallPtL: {fileID: 5328344944690297628}
+  fallPtR: {fileID: 7349828405487312573}
+  fallPointRed: {fileID: 8340046356662949874}
 --- !u!1 &5807991811201028017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,10 +3958,6 @@ MonoBehaviour:
   - {fileID: 4667248850588145462}
   movePointLists:
   - {fileID: 8526126341931758972}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &5903147043453980827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4135,7 +4062,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &2088074999362213154
 MonoBehaviour:
@@ -4158,10 +4085,6 @@ MonoBehaviour:
   - {fileID: 4152855284318463721}
   movePointLists:
   - {fileID: 4987172901707719243}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &4897007804088327556
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4266,7 +4189,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &5772052864540862111
 MonoBehaviour:
@@ -4289,10 +4212,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 8717601480166172309}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &7923911511257038734
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4390,11 +4309,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5511682621882261841}
   - component: {fileID: 8710706056448843599}
-  - component: {fileID: 7660979802747389560}
   - component: {fileID: 1410803238353619784}
   - component: {fileID: 7934404761124085802}
+  - component: {fileID: 6363559005246674549}
   m_Layer: 0
-  m_Name: 9RED
+  m_Name: RED3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4434,32 +4353,6 @@ MonoBehaviour:
   z: 1
   speed: 0
   target: {fileID: 0}
---- !u!114 &7660979802747389560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6686292338881054922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isNoise: 0
-  noiseTiming: 8
-  isFall: 0
-  isAllFall: 0
-  spawnObj: {fileID: 6205204080456637428, guid: bb2aec7d59d9af5469f71be7651b56f6, type: 3}
-  moveTrans:
-  - {fileID: 2963863375305284822}
-  - {fileID: 354566583560433198}
-  movePointLists:
-  - {fileID: 5511682621882261841}
-  isShakeEnd: 0
-  fallPtL: {fileID: 2429799853563441199}
-  fallPtR: {fileID: 423415442553481202}
-  fallPointRed: {fileID: 8340046356662949874}
 --- !u!95 &1410803238353619784
 Animator:
   serializedVersion: 7
@@ -4537,6 +4430,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6363559005246674549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686292338881054922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e5a735aac035e4ebfc9a4aa308299f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNoise: 0
+  noiseTiming: 1
+  isFall: 0
+  isAllFall: 0
+  spawnObj: {fileID: 6205204080456637428, guid: bb2aec7d59d9af5469f71be7651b56f6, type: 3}
+  moveTrans:
+  - {fileID: 2963863375305284822}
+  - {fileID: 354566583560433198}
+  movePointLists:
+  - {fileID: 5511682621882261841}
+  isShakeEnd: 0
+  fallPtL: {fileID: 2429799853563441199}
+  fallPtR: {fileID: 423415442553481202}
+  fallPointRed: {fileID: 8340046356662949874}
 --- !u!1 &6731248574026342348
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,7 +4519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1.3
   isFall: 0
   isAllFall: 0
@@ -4610,10 +4529,6 @@ MonoBehaviour:
   - {fileID: 4152855284318463721}
   movePointLists:
   - {fileID: 4171741002045432289}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &6038877020540020724
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4890,10 +4805,6 @@ MonoBehaviour:
   - {fileID: 8414615853710522412}
   movePointLists:
   - {fileID: 1458425890074472198}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &2248921117665399137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5054,10 +4965,6 @@ MonoBehaviour:
   - {fileID: 7159319313664494269}
   movePointLists:
   - {fileID: 7364465092173990502}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &1923641024863614619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5176,7 +5083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -5186,10 +5093,6 @@ MonoBehaviour:
   - {fileID: 4667248850588145462}
   movePointLists:
   - {fileID: 8937839125099228917}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &2852327863472513513
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5457,7 +5360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1
   isFall: 0
   isAllFall: 0
@@ -5467,10 +5370,6 @@ MonoBehaviour:
   - {fileID: 4667248850588145462}
   movePointLists:
   - {fileID: 8937839125099228917}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &170728189549117651
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5599,10 +5498,6 @@ MonoBehaviour:
   - {fileID: 8937839125099228917}
   movePointLists:
   - {fileID: 8526126341931758972}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &8407540826729602469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5707,7 +5602,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &6961998763454619247
 MonoBehaviour:
@@ -5730,10 +5625,6 @@ MonoBehaviour:
   - {fileID: 8937839125099228917}
   movePointLists:
   - {fileID: 4667248850588145462}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &1413401737471426902
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5852,7 +5743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279c1fad49e707a41a5bf79e0e117c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoise: 1
+  isNoise: 0
   noiseTiming: 1.3
   isFall: 0
   isAllFall: 0
@@ -5862,10 +5753,6 @@ MonoBehaviour:
   - {fileID: 4152855284318463721}
   movePointLists:
   - {fileID: 1346220201064625326}
-  isShakeEnd: 0
-  fallPtL: {fileID: 0}
-  fallPtR: {fileID: 0}
-  fallPointRed: {fileID: 0}
 --- !u!212 &3734988390635217337
 SpriteRenderer:
   m_ObjectHideFlags: 0

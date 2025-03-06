@@ -473,18 +473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f0a57a35150db4fb070fa2f3bb275e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnData:
-  - DataName: Fly
-    enemyCount: 0
-    spawnTime:
-    - 0
-    LoadObj: 
-    spawnLocations:
-    - {fileID: 167761570}
-    movePointsSet:
-    - childArray:
-      - {fileID: 0}
-  CountIndex: 0
 --- !u!4 &167761570
 Transform:
   m_ObjectHideFlags: 0
@@ -612,7 +600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &171116505
 Transform:
   m_ObjectHideFlags: 0
@@ -7247,19 +7235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f0a57a35150db4fb070fa2f3bb275e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnData:
-  - DataName: Fly
-    enemyCount: 0
-    spawnTime:
-    - 0
-    LoadObj: 
-    spawnLocations:
-    - {fileID: 1419099717}
-    movePointsSet:
-    - childArray:
-      - {fileID: 1153563073}
-      - {fileID: 1368663333}
-  CountIndex: 0
 --- !u!114 &1419099719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10571,6 +10546,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809394584115230578, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: pumpkinChildDeadCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}

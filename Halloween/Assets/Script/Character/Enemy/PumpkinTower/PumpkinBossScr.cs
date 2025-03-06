@@ -25,7 +25,7 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     public int pumpkinChildDeadCount = 0;
 
-    [SerializeField] float rotSpeedPumpkin1 = 0;
+    //[SerializeField] float rotSpeedPumpkin1 = 0;
     [SerializeField] float rotSpeedPumpkin2 = 0;
     [SerializeField] float rotSpeedPumpkin3 = 0;
     public GameObject[] pumpkins; //主に攻撃に使用
@@ -59,10 +59,10 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     void Start()
     {
-        foreach (var go in pumpkins)
-        {
-            go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;
-        }
+        //foreach (var go in pumpkins)
+        //{
+        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;
+        //}
         foreach (var go in pumpkinsLv2)
         {
             go.GetComponent<RotModule>().speed = rotSpeedPumpkin2;

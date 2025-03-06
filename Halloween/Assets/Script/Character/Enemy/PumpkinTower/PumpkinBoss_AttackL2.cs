@@ -1,10 +1,12 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 [DisallowMultipleComponent]
 public class PumpkinBoss_AttackL2 : StateChildBase
 {
     PumpkinBossScr bossScr;
 
+    List<PumpkinChild> childList = new List<PumpkinChild>();
     public IEnumerator AtkEnable()
     {
 
@@ -17,17 +19,10 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         bossScr.pumpkinsLv2[2].GetComponent<RotModule>().enabled = true;
         bossScr.pumpkinsLv2[3].GetComponent<RotModule>().enabled = true;
 
-        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
-        {
-            if (bossScr.pumpkinsLv2[0] != null)
-            {
-                bossScr.pumpkinsLv2[0].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[1].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[2].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[3].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-            }
-
-        }));
+        childList.Add(bossScr.pumpkins[0].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[1].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[2].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[3].GetComponent<PumpkinChild>());
 
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 10);//trueなら
@@ -40,44 +35,24 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         bossScr.pumpkinsLv2[7].GetComponent<PumpkinChild>().Initialize();
         bossScr.pumpkinsLv2[8].GetComponent<PumpkinChild>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutine(0, () => 
-        { 
-            if (bossScr.pumpkinsLv2[4] != null&&
-            bossScr.pumpkinsLv2[5] != null&&
-            bossScr.pumpkinsLv2[6] != null&&
-            bossScr.pumpkinsLv2[7] != null&&
-            bossScr.pumpkinsLv2[8] != null
-            )
-            {
-                bossScr.pumpkinsLv2[4].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[5].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[6].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[7].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-                bossScr.pumpkinsLv2[8].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-            }
-
-        }));
+        childList.Add(bossScr.pumpkins[4].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[5].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[6].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[7].GetComponent<PumpkinChild>());
+        childList.Add(bossScr.pumpkins[8].GetComponent<PumpkinChild>());
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15);
-        //赤かぼちゃアニメーションなど
 
+        //赤かぼちゃアニメーションなど
         var anim = bossScr.pumpkinsLv2[9].GetComponent<Animator>();
         anim.SetBool("Shake", true);
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15 &&
-                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().isShakeEnd);
-        //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15);//trueなら
+                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildRed>().isShakeEnd);
 
         bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().Initialize();
 
-        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
-        {
-            if (bossScr.pumpkinsLv2[9] != null)
-            {
-                bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().MoveUpdateNoRot();
-            }
-
-        }));
+        childList.Add(bossScr.pumpkins[9].GetComponent<PumpkinChild>());
 
     }
 
@@ -91,7 +66,7 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         anim.SetBool("Shake", true);
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 15 &&
-                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChild>().isShakeEnd);
+                                        bossScr.pumpkinsLv2[9].GetComponent<PumpkinChildRed>().isShakeEnd);
 
 
         bossScr.pumpkinsLv2[9].GetComponent<RotModule>().enabled = true;
@@ -121,19 +96,24 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
         stateTime = 0f;
 
-        //StartCoroutine(AtkEnable());
-        StartCoroutine(DEBUGAtkEnable());
+        StartCoroutine(AtkEnable());
+        //StartCoroutine(DEBUGAtkEnable());
     }
 
     public override void OnExit()
     {
-
+        childList.Clear();
     }
 
     public override int StateUpdate()
     {
 
         stateTime += Time.deltaTime;
+
+        foreach (var p in childList)
+        {
+            p.MoveUpdateNoRot();
+        }
 
         if (bossScr.pumpkinChildDeadCount == 16)
             return (int)PumpkinBossCtr.State.PumpkinBoss_Wait;
