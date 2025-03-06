@@ -111,9 +111,8 @@ public class PumpkinBoss_AttackL2 : StateChildBase
         stateTime += Time.deltaTime;
 
         foreach (var p in childList)
-        {
             p.MoveUpdateNoRot();
-        }
+        
 
         if (bossScr.pumpkinChildDeadCount == 16)
             return (int)PumpkinBossCtr.State.PumpkinBoss_Wait;

@@ -16,21 +16,18 @@ public class PumpkinBoss_Attack : StateChildBase
 
     public IEnumerator AtkEnable()
     {
-
+        //Lv1
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 0);//trueなら
 
-        //Lv1
         bossScr.pumpkins[0].GetComponent<RotModule>().enabled = true;
         bossScr.pumpkins[1].GetComponent<RotModule>().enabled = true;
 
         childList.Add(bossScr.pumpkins[0].GetComponent<PumpkinChild>());
         childList.Add(bossScr.pumpkins[1].GetComponent<PumpkinChild>());
 
-
-        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 2);//trueなら
-                                                                             //                                                                     //yield return new WaitWhile(条件);falseなら
-
-        ////上　ななめ　攻撃        //Lv2
+        //Lv2
+        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 2);
+                                                                                                                                                //yield return new WaitWhile(条件);falseなら
         bossScr.pumpkins[2].GetComponent<RotModule>().enabled = true;
         bossScr.pumpkins[3].GetComponent<RotModule>().enabled = true;
         bossScr.pumpkins[4].GetComponent<RotModule>().enabled = true;
@@ -39,6 +36,7 @@ public class PumpkinBoss_Attack : StateChildBase
         childList.Add(bossScr.pumpkins[3].GetComponent<PumpkinChild>());
         childList.Add(bossScr.pumpkins[4].GetComponent<PumpkinChild>());
 
+        //Lv3
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5);
         //赤かぼちゃアニメーションなど
 
@@ -49,12 +47,8 @@ public class PumpkinBoss_Attack : StateChildBase
                                         bossScr.pumpkins[5].GetComponent<PumpkinChildRed>().isShakeEnd);
 
         bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
-        ////ボスかぼちゃ　ピンボール        //Lv3
-        ///
+
         childList.Add(bossScr.pumpkins[5].GetComponent<PumpkinChild>());
-
-
-
 
     }
 
@@ -68,21 +62,9 @@ public class PumpkinBoss_Attack : StateChildBase
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5 &&
                                         bossScr.pumpkins[5].GetComponent<PumpkinChildRed>().isShakeEnd);
 
-        //bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
-        ////ボスかぼちゃ　ピンボール        //Lv3
-        ///
-        bossScr.pumpkins[5].GetComponent<PumpkinChild>().Initialize();
+        bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
 
-        StartCoroutine(MyLib.LoopDelayCoroutine(0, () =>
-        {
-            if (bossScr.pumpkins[5] != null)
-            {
-                bossScr.pumpkins[5].GetComponent<PumpkinChild>().MoveUpdateNoRotisFall();
-            }
-
-        }));
-
-
+        childList.Add(bossScr.pumpkins[5].GetComponent<PumpkinChild>());
 
     }
 
@@ -106,9 +88,8 @@ public class PumpkinBoss_Attack : StateChildBase
         stateTime += Time.deltaTime;
 
         foreach (var p in childList)
-        {
             p.MoveUpdateNoRotisFall();
-        }
+        
 
         if (bossScr.pumpkinChildDeadCount == 6)
             return (int)PumpkinBossCtr.State.PumpkinBoss_Wait;
