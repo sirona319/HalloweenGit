@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 public class BossCollisionTrigger : MonoBehaviour
 {
     public float cameraDuration;
     public Vector3 cameraBossPos;
+
+    public BoxCollider2D[] boxs2D;
 
     public BoxCollider2D ereaCol; 
 
@@ -47,17 +50,20 @@ public class BossCollisionTrigger : MonoBehaviour
         if (isBossBattle) return;
         if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
+            foreach(var i in boxs2D)
+            {
+                foreach(var j in i.GetComponents<BoxCollider2D>())
+                {
+                    j.enabled = true;
+                }
+            }
+            //ereaCol.enabled = true;
+            //box2DLeft.enabled = true;
+            //box2DRight.enabled = true;
+            //box2DUp.enabled = true;
+            //box2DDown.enabled = true;
 
-            ereaCol.enabled = true;
-            box2DLeft.enabled = true;
-            box2DRight.enabled = true;
-            box2DUp.enabled = true;
-            box2DDown.enabled = true;
 
-            //box3DLeft.enabled = true;
-            //box3DRight.enabled = true;
-            //box3DUp.enabled = true;
-            //box3DDown.enabled = true;
 
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
@@ -70,26 +76,30 @@ public class BossCollisionTrigger : MonoBehaviour
             DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
         }
 
-
     }
 
     //
     public void BossCollisionOff()
     {
-        ereaCol.enabled = false;
+        foreach (var i in boxs2D)
+        {
+            foreach (var j in i.GetComponents<BoxCollider2D>())
+            {
+                j.enabled = false;
+            }
+        }
 
-        box2DLeft.enabled = false;
-        box2DRight.enabled = false;
-        box2DUp.enabled = false;
-        box2DDown.enabled = false;
+        //ereaCol.enabled = false;
+
+        //box2DLeft.enabled = false;
+        //box2DRight.enabled = false;
+        //box2DUp.enabled = false;
+        //box2DDown.enabled = false;
 
         var readText = haveTextObject.GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();
-        //box3DLeft.enabled = false;
-        //box3DRight.enabled = false;
-        //box3DUp.enabled = false;
-        //box3DDown.enabled = false;
+
         Camera.main.GetComponent<CameraControl>().isEventCamera = false;
     }
 

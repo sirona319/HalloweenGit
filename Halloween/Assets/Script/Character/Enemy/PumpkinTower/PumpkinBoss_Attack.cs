@@ -7,6 +7,14 @@ public class PumpkinBoss_Attack : StateChildBase
 
     PumpkinBossScr bossScr;
     List<PumpkinChild> childList = new List<PumpkinChild>();
+
+    void SetPumpkinChild(int n)
+    {
+        const float atkRotSpd = 30f;
+        bossScr.pumpkins[n].GetComponent<RotModule>().speed = atkRotSpd;
+        bossScr.pumpkins[n].GetComponent<RotModule>().enabled = true;
+        childList.Add(bossScr.pumpkins[n].GetComponent<PumpkinChild>());
+    }
     public override void Initialize(int stateType)
     {
         base.Initialize(stateType);
@@ -18,23 +26,15 @@ public class PumpkinBoss_Attack : StateChildBase
     {
         //Lv1
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 0);//trueなら
-
-        bossScr.pumpkins[0].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkins[1].GetComponent<RotModule>().enabled = true;
-
-        childList.Add(bossScr.pumpkins[0].GetComponent<PumpkinChild>());
-        childList.Add(bossScr.pumpkins[1].GetComponent<PumpkinChild>());
+        SetPumpkinChild(0);
+        SetPumpkinChild(1);
 
         //Lv2
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 2);
                                                                                                                                                 //yield return new WaitWhile(条件);falseなら
-        bossScr.pumpkins[2].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkins[3].GetComponent<RotModule>().enabled = true;
-        bossScr.pumpkins[4].GetComponent<RotModule>().enabled = true;
-
-        childList.Add(bossScr.pumpkins[2].GetComponent<PumpkinChild>());
-        childList.Add(bossScr.pumpkins[3].GetComponent<PumpkinChild>());
-        childList.Add(bossScr.pumpkins[4].GetComponent<PumpkinChild>());
+        SetPumpkinChild(2);
+        SetPumpkinChild(3);
+        SetPumpkinChild(4);
 
         //Lv3
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5);
@@ -46,9 +46,7 @@ public class PumpkinBoss_Attack : StateChildBase
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5&& 
                                         bossScr.pumpkins[5].GetComponent<PumpkinChildRed>().isShakeEnd);
 
-        bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
-
-        childList.Add(bossScr.pumpkins[5].GetComponent<PumpkinChild>());
+        SetPumpkinChild(5);
 
     }
 
@@ -61,10 +59,7 @@ public class PumpkinBoss_Attack : StateChildBase
 
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == 5 &&
                                         bossScr.pumpkins[5].GetComponent<PumpkinChildRed>().isShakeEnd);
-
-        bossScr.pumpkins[5].GetComponent<RotModule>().enabled = true;
-
-        childList.Add(bossScr.pumpkins[5].GetComponent<PumpkinChild>());
+        SetPumpkinChild(5);
 
     }
 

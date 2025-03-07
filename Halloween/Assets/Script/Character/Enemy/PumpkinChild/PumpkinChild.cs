@@ -22,7 +22,7 @@ public class PumpkinChild : MonoBehaviour
     int targetNo = 0;
     bool isMoveEnd = false;
 
-
+    [SerializeField] float sPointSpeed=7f;
     ////赤かぼちゃ用　継承する？
     //public bool isShakeEnd = false;
 
@@ -97,11 +97,18 @@ public class PumpkinChild : MonoBehaviour
 
 
             if (eBase.GetComponent<StraightPointMove>() != null)
+            {
+                eBase.GetComponent<StraightPointMove>().speed = sPointSpeed;
                 eBase.GetComponent<StraightPointMove>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
+
+            }
 
 
             if (eBase.GetComponent<StraightForceMove>() != null)
+            {
                 eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
+            }
+
 
 
 

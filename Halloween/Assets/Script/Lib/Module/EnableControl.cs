@@ -3,28 +3,29 @@ using UnityEngine;
 
 public class EnableControl : MonoBehaviour
 {
-    public bool startEnable;
+    //開始時に有効にするか無効にするか
+    public bool enableTrueOrFalse;
+
+    //それぞれのコンポーネントに対応 (デバッグ用など)
     public bool isSprite;
     public bool isBox2Col;
     public bool isBox3Col;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        if(isSprite)
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        if (isSprite)
+            foreach (var c in gameObject.GetComponents<SpriteRenderer>())
+                c.enabled = enableTrueOrFalse;
 
         if(isBox2Col)
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            foreach (var c in gameObject.GetComponents<BoxCollider2D>())
+                c.enabled = enableTrueOrFalse;
 
         if (isBox3Col)
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            foreach (var c in gameObject.GetComponents<BoxCollider>())
+                c.enabled = enableTrueOrFalse;
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

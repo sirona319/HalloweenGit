@@ -254,7 +254,7 @@ public class PlayerScr2D : MonoBehaviour
        // Debug.Log("Test");
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            //Debug.Log("ColPlayer");
+            Debug.Log("ColPlayer");
             //Destroy(this);
             //プレイヤーへのダメージ処理
             PlayerDamage(1);

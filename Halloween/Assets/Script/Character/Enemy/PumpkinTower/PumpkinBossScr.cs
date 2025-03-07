@@ -39,6 +39,8 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     int timelineNo = 0;
 
     public EnemyDamage eDamage;
+
+    public bool isDEBUG=true;
     public void TextReadPlus()
     {
         timelineTexts[timelineNo].isPlayTrigger = true;

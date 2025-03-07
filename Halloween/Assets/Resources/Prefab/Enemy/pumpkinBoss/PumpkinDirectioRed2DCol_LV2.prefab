@@ -288,14 +288,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
   eDamage: {fileID: 5259147308363892619}
-  enemyData:
-    Id: 
-    moveType: 
-    attackType: 
-    Speed: 0
-    HpMax: 0
-    AtkIntervalMax: 1
-  findName: Pumpkin
   baseMove:
   - {fileID: 530132563322007067}
   Hp: 1
@@ -320,7 +312,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 35
+  speed: 55
   target: {fileID: 0}
 --- !u!114 &3389971620290101742
 MonoBehaviour:

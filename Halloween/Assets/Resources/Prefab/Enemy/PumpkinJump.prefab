@@ -194,20 +194,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
   eDamage: {fileID: 6045209402796862328}
-  enemyData:
-    Id: 
-    moveType: 
-    attackType: 
-    Speed: 0
-    HpMax: 0
-    AtkIntervalMax: 1
-  findName: Pumpkin
   baseMove:
   - {fileID: 3751133012385811689}
   Hp: 0
   isBoss: 0
   sprite: {fileID: 8687611365685043167}
-  AtkInterval: 1
+  isNoise: 0
+  noiseTiming: 1
+  noiseTime: 0
+  randTime: 0
 --- !u!114 &3751133012385811689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ef11c8ea80b354c9675a806d6a29e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb3: {fileID: 0}
+  rb2: {fileID: 0}
   IsMove: 1
+  isFirstDirX: 0
   forceUpR: {x: 0, y: 0, z: 0}
   forceUpL: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
@@ -244,7 +242,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 30
   target: {fileID: 0}
 --- !u!114 &3389971620290101742
 MonoBehaviour:

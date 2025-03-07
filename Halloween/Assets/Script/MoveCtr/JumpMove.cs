@@ -8,7 +8,8 @@ public class JumpMove : BaseMove
 
     //Vector3 targetsVec;
     //Vector2 targetDir;
-   // bool isGround = false;
+    // bool isGround = false;
+    public bool isFirstDirX = true;
 
     [SerializeField] Vector3 forceUpR;
     bool isRight = false;
@@ -58,8 +59,16 @@ public class JumpMove : BaseMove
 
         jumpInterval = maxJumpInterval;
 
-        isRight = true;
-        isLeft = false;
+        if(isFirstDirX)
+        {
+            isRight = true;
+            isLeft = false;
+        }
+        else
+        {
+            isRight = false;
+            isLeft = true;
+        }
     }
 
     public override void MoveEnter()
@@ -95,7 +104,6 @@ public class JumpMove : BaseMove
                 rb2.AddForce(forceUpR, ForceMode2D.Impulse);
             else if(isLeft)
                 rb2.AddForce(forceUpL, ForceMode2D.Impulse);
-
 
 
             jumpInterval = maxJumpInterval;

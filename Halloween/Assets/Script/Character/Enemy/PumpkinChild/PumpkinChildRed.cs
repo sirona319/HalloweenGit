@@ -49,6 +49,9 @@ public class PumpkinChildRed : PumpkinChild
             StartCoroutine(MyLib.DelayCoroutine(shakeLength + 0.5f, () =>
             {
                 isShakeEnd = true;
+
+
+
             }));
 
 

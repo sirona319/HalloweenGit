@@ -24,6 +24,7 @@ public class PumpkinBoss_Fall : StateChildBase
         fallTime = 0f;
         pNo = 0;
 
+        //回転速度の設定ができる
         pumpkinsArray[0].GetComponent<PumpkinChild>().Initialize();
 
     }
@@ -75,7 +76,7 @@ public class PumpkinBoss_Fall : StateChildBase
             if (pNo >= pumpkinsArray.Length - 1)
                 return StateType;
 
-
+            //回転速度の設定ができる
             pumpkinsArray[stayNo+1].GetComponent<PumpkinChild>().Initialize();
 
             fallTime = 0;
