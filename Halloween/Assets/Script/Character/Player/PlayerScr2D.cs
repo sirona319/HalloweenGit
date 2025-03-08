@@ -7,31 +7,42 @@ using UnityEngine.EventSystems;
 
 public class PlayerScr2D : MonoBehaviour
 {
+    # region デバッグ
     public float debugmoveX = 0;
     public bool DEBUGNoDamage = false;
+    #endregion
 
-
+    #region 移動
     Rigidbody2D m_rb;      //剛体
     [SerializeField] Vector2 m_movement;
     public float maxMoveSpeed;
     public float moveSpeed;   //移動速度
-
     public bool isGround = true;
     public bool isLimitMove = true;    //アニメーション中などの移動制限
-    public bool isDamage = false;
-    bool isDead = false;
+
     public bool isJump = false;
+    [SerializeField] float jumpHeight; //1.8
+    float keepPosY;
+    #endregion
 
-    public float jumpHeight; //1.8
-
+    #region 攻撃
     readonly float MAXATKINTERVAL = 1;
     float atkInterval = 0;
+    TargetMagazine nMag;     //ナイフ
+    #endregion
+
+    # region ダメージ
+    bool isDead = false;
+
+    public bool isDamage = false;
+    [SerializeField] readonly float damageTimeMax = 1f;
+    [SerializeField] float damageTime = 0;
+    const float duration = 0.07f;
+    Color32 startColor = new(255, 255, 255, 255);
+    Color32 endColor = new(255, 255, 255, 0);
+    #endregion
 
     Animator m_animator;
-
-    TargetMagazine nMag;     //ナイフ
-
-    float keepPosY;
 
     //const float ROTSPEED = 3f;
     //Vector2 m_targetDirection;
@@ -65,13 +76,28 @@ public class PlayerScr2D : MonoBehaviour
         if(atkInterval > 0) 
             atkInterval-=Time.deltaTime;
 
+        if (damageTime > 0)
+        {
+            GetComponent<SpriteRenderer>().material.color =
+                Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, damageTimeMax));
+
+            damageTime -= Time.deltaTime;
+
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().material.color = startColor;
+        }
+
         //if (atkInterval<=0)
         //{
         //    atkInterval = 1;
         //}
 
+
+
         //MoveControl();     //移動用関数
-        if (Input.GetKeyDown(KeyCode.F)&& atkInterval<=0)
+        if (Input.GetKeyDown(KeyCode.F) && atkInterval <= 0)
         {
             //nMag.targetPos = (transform.position + Vector3.up) - transform.position;
             nMag.MagazineEnter();
@@ -220,7 +246,8 @@ public class PlayerScr2D : MonoBehaviour
         if (isDamage) return;
         //if (m_isDash) return;　ダッシュ時無敵
 
-
+        //isDamage = true;
+        damageTime = damageTimeMax;
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
 
@@ -234,7 +261,7 @@ public class PlayerScr2D : MonoBehaviour
 
         #endregion
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
         return;
     }
 
@@ -254,10 +281,14 @@ public class PlayerScr2D : MonoBehaviour
        // Debug.Log("Test");
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            if (damageTime > 0)
+                return;
+
             Debug.Log("ColPlayer");
             //Destroy(this);
             //プレイヤーへのダメージ処理
             PlayerDamage(1);
+
         }
 
         //if (collision.gameObject.CompareTag("EnemyBoss"))

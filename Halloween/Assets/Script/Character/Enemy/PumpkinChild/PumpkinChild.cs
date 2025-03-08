@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PumpkinChild : MonoBehaviour
 {
-    [SerializeField] bool isNoise;
-    [SerializeField] float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
+    [SerializeField] protected bool isNoise;
+    [SerializeField] protected float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
 
     public bool isFall=false;
     public bool isAllFall = false;
 
-    [SerializeField] GameObject spawnObj;
+    [SerializeField] protected GameObject spawnObj;
 
     [SerializeField] public Transform[] moveTrans;
 
@@ -19,10 +19,10 @@ public class PumpkinChild : MonoBehaviour
 
     [HideInInspector] float speed = 5f;
     const float ENDMOVELEN = 0.2f;
-    int targetNo = 0;
-    bool isMoveEnd = false;
+    protected int targetNo = 0;
+    protected bool isMoveEnd = false;
 
-    [SerializeField] float sPointSpeed=7f;
+    [SerializeField] protected float sPointSpeed=7f;
     ////赤かぼちゃ用　継承する？
     //public bool isShakeEnd = false;
 
@@ -88,33 +88,7 @@ public class PumpkinChild : MonoBehaviour
 
         if (targetNo == moveTrans.Length - 1)
         {
-            var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
-            var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
-            eBase.Initialize();
-            eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
-            eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
-
-
-
-            if (eBase.GetComponent<StraightPointMove>() != null)
-            {
-                eBase.GetComponent<StraightPointMove>().speed = sPointSpeed;
-                eBase.GetComponent<StraightPointMove>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
-
-            }
-
-
-            if (eBase.GetComponent<StraightForceMove>() != null)
-            {
-                eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
-            }
-
-
-
-
-            gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
-
-            isMoveEnd = true;
+            Spawn();
         }
         else
         {
@@ -122,6 +96,40 @@ public class PumpkinChild : MonoBehaviour
 
         }
 
+    }
+
+    public virtual void Spawn()
+    {
+        var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
+        var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
+        eBase.Initialize();
+        eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
+        eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
+
+
+
+        //if (eBase.GetComponent<StraightPointMove>() != null)
+        //{
+            eBase.GetComponent<StraightPointMove>().speed = sPointSpeed;
+            eBase.GetComponent<StraightPointMove>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
+
+        if(this.GetComponent<LineRenderModule>()!=null)
+        {
+            this.GetComponent<LineRenderModule>().LineDraw();
+            this.GetComponent<LineRenderModule>().SetOffTimer(6f);
+        }
+
+
+        //}
+
+
+        //if (eBase.GetComponent<StraightForceMove>() != null)
+        //{
+        //    eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
+        //}
+        gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
+        isMoveEnd = true;
     }
 
     //#region　アニメーションイベント

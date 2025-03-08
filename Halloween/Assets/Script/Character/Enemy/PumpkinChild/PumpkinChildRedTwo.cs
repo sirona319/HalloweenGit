@@ -1,7 +1,9 @@
 ﻿using DG.Tweening;
+using Unity.Mathematics;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class PumpkinChildRed : PumpkinChild
+public class PumpkinChildRedTwo : PumpkinChild
 {
     //赤かぼちゃ用　継承する？
     public bool isShakeEnd = false;
@@ -10,28 +12,36 @@ public class PumpkinChildRed : PumpkinChild
     [SerializeField] GameObject fallPtR;
 
     [SerializeField] Transform fallPointRed;
+    //
 
     public override void Spawn()
     {
         var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
+        var obj2 = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
+
         var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
         eBase.Initialize();
         eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
         eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
 
+        var eBase2 = obj2.GetComponent<EnemyBase>().baseMove[0];
+        eBase2.Initialize();
+        eBase2.GetComponent<PumpkinScr>().isNoise = isNoise;
+        eBase2.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
 
-        if (eBase.GetComponent<StraightForceMove>() != null)
-        {
+        //if (eBase.GetComponent<StraightForceMove>() != null)
+        //{
+            eBase.GetComponent<StraightForceMove>().speed = sPointSpeed;
+            eBase2.GetComponent<StraightForceMove>().speed = sPointSpeed;
             eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
-        }
-
-
-
+            eBase2.GetComponent<StraightForceMove>().SetTarget(movePointLists[1]);
+        //}
 
         gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
 
         isMoveEnd = true;
     }
+
 
     #region　アニメーションイベント
     public void EventShake()

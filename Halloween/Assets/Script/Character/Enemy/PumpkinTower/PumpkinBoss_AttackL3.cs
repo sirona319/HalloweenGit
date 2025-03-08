@@ -49,14 +49,16 @@ public class PumpkinBoss_AttackL3 : StateChildBase
         SetPumpkinChild(13);
 
         //LV4
-        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= lastDesdCount);
+        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= lastDesdCount);//30
         //赤かぼちゃアニメーションなど
 
         var anim = bossScr.pumpkinsLv3[lastNo].GetComponent<Animator>();
         anim.SetBool("Shake", true);
 
+        //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == lastDesdCount &&
+        //                                bossScr.pumpkinsLv3[lastNo].GetComponent<PumpkinChildRed>().isShakeEnd);
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount == lastDesdCount &&
-                                        bossScr.pumpkinsLv3[lastNo].GetComponent<PumpkinChildRed>().isShakeEnd);
+                                bossScr.pumpkinsLv3[lastNo].GetComponent<PumpkinChildRedTwo>().isShakeEnd);
 
         SetPumpkinChild(lastNo);
     }
