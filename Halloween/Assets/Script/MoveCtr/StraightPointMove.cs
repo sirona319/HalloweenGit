@@ -24,6 +24,7 @@ public class StraightPointMove : BaseMove
         
     }
 
+    //ノイズ（バグ演出）の時の敵攻撃用
     public void ReTarget(Transform t)
     {
         //movePointLists.Clear();

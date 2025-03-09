@@ -88,6 +88,7 @@ public class PumpkinChild : MonoBehaviour
         if (targetNo == moveTrans.Length - 1)
         {
             Spawn();
+
         }
         else
         {
@@ -114,8 +115,16 @@ public class PumpkinChild : MonoBehaviour
 
         if(this.GetComponent<LineRenderModule>()!=null)
         {
+            this.GetComponent<LineRenderModule>().LineCreate(transform);
             this.GetComponent<LineRenderModule>().LineDraw();
             this.GetComponent<LineRenderModule>().SetOffTimer(6f);
+            StartCoroutine(MyLib.DelayCoroutine(6f, () =>
+            {
+                gameObject.SetActive(false);
+                //Destroy(gameObject);　エラー
+
+            }));
+            //Destroy(gameObject,10f);
         }
 
 

@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 //https://gomafrontier.com/unity/1585
 public class CameraControl : MonoBehaviour
 {
-    Tween tween = null;
+    //Tween tween = null;
 
     [SerializeField] public bool isEventCamera=false;
     Vector3 eventTargetPos = Vector3.zero;
@@ -149,7 +149,8 @@ public class CameraControl : MonoBehaviour
         }
 
 
-        tween = transform.DOMove(eventTargetPos, cameraDuration).SetEase(Ease.OutSine);
+        //tween = 
+            transform.DOMove(eventTargetPos, cameraDuration).SetEase(Ease.OutSine);
 
     }
 
@@ -165,12 +166,12 @@ public class CameraControl : MonoBehaviour
         isEventCamera = false;
     }
 
-    private void OnDisable()
-    {
-        // Tween破棄
-        if (DOTween.instance != null)
-        {
-            tween?.Kill();
-        }
-    }
+    //private void OnDisable()
+    //{
+    //    // Tween破棄
+    //    if (DOTween.instance != null)
+    //    {
+    //        tween?.Kill();
+    //    }
+    //}
 }

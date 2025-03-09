@@ -8,23 +8,23 @@ public class BossCollisionTrigger : MonoBehaviour
 
     public BoxCollider2D[] boxs2D;
 
-    public BoxCollider2D ereaCol; 
+    //public BoxCollider2D ereaCol; 
 
-    public BoxCollider2D box2DLeft;
-    public BoxCollider2D box2DRight;
-    public BoxCollider2D box2DUp;
-    public BoxCollider2D box2DDown;
+    //public BoxCollider2D box2DLeft;
+    //public BoxCollider2D box2DRight;
+    //public BoxCollider2D box2DUp;
+    //public BoxCollider2D box2DDown;
 
     //public BoxCollider box3DLeft;
     //public BoxCollider box3DRight;
     //public BoxCollider box3DUp;
     //public BoxCollider box3DDown;
 
-    public GameObject haveTextObject;
+    public GameObject bossPumpkin;
 
     public bool isBossBattle = false;
 
-    public GameObject DEBUGBOSSFLG;
+    //public GameObject DEBUGBOSSFLG;
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
@@ -47,7 +47,7 @@ public class BossCollisionTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (isBossBattle) return;
+        //if (isBossBattle) return;
         if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             foreach(var i in boxs2D)
@@ -67,13 +67,13 @@ public class BossCollisionTrigger : MonoBehaviour
 
             Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
-            //var readText = haveTextObject.GetComponent<IHaveText>();
+            //var readText = bossPumpkin.GetComponent<IHaveText>();
             //if (readText != null)
             //    readText.TextReadPlus();
 
-            isBossBattle = true;
+            //isBossBattle = true;
 
-            DEBUGBOSSFLG.GetComponent<PumpkinBossScr>().BattleStart(true);
+            bossPumpkin.GetComponent<PumpkinBossScr>().BattleStart(true);
         }
 
     }
@@ -96,7 +96,7 @@ public class BossCollisionTrigger : MonoBehaviour
         //box2DUp.enabled = false;
         //box2DDown.enabled = false;
 
-        var readText = haveTextObject.GetComponent<IHaveText>();
+        var readText = bossPumpkin.GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();
 

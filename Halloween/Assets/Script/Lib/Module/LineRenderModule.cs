@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class LineRenderModule : MonoBehaviour
 {
-    public Transform start;
+    //public Transform start;
     public Transform[] targets;
     public GameObject lineRenderer;
+    public Material mat;
 
     LineRenderer lineObj;
 
@@ -15,8 +16,8 @@ public class LineRenderModule : MonoBehaviour
 
     void Start()
     {
-        lineObj = Instantiate(lineRenderer.gameObject, transform.position, Quaternion.identity).GetComponent<LineRenderer>();
-        lineObj.GetComponent<LineRenderer>().enabled = false;
+        //lineObj = Instantiate(lineRenderer.gameObject, transform.position, Quaternion.identity).GetComponent<LineRenderer>();
+        //lineObj.GetComponent<LineRenderer>().enabled = false;
     }
 
     void Update()
@@ -29,7 +30,8 @@ public class LineRenderModule : MonoBehaviour
         {
             lineObj.enabled = false;
             isTimer = false;
-            Destroy(this);
+            //transform.gameObject.SetActive(false);
+            //Destroy(gameObject);
         }
     }
 
@@ -37,6 +39,13 @@ public class LineRenderModule : MonoBehaviour
     {
         isTimer = true;
         offTiming = t;
+    }
+
+    public void LineCreate(Transform t)
+    {
+        lineObj = Instantiate(lineRenderer.gameObject, transform.position, Quaternion.identity, t).GetComponent<LineRenderer>();
+        lineObj.enabled = false;
+        lineObj.material = mat;
     }
 
     public void LineDraw()
@@ -55,4 +64,9 @@ public class LineRenderModule : MonoBehaviour
         lineObj.SetPositions(arrayPos);
 
     }
+
+    //private void OnDestroy()
+    //{
+    //    Destroy(gameObject);
+    //}
 }
