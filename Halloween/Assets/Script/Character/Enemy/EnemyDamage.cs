@@ -13,7 +13,7 @@ public class EnemyDamage : MonoBehaviour,IDamage
     public void Damage(int damage)
     {
 
-        if (eBase.IsDead) return;
+        if (eBase.isDead) return;
 
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
@@ -30,10 +30,10 @@ public class EnemyDamage : MonoBehaviour,IDamage
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         eBase.Hp -= damage;        //HP減少処理
 
-        eBase.IsDamage = true;
+        eBase.isDamage = true;
 
         if (eBase.Hp <= 0)
-            eBase.IsDead = true;
+            eBase.isDead = true;
     }
 
     public void Damage(int damage, bool deadSound)

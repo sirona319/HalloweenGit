@@ -33,7 +33,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         //mainCamera = Camera.main.gameObject;
-        pTrans = GameObject.FindGameObjectWithTag("Player").transform;
+        pTrans = GameObject.FindGameObjectWithTag(TagName.Player).transform;
     }
 
     void Update()

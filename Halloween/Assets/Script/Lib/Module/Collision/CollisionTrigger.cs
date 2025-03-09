@@ -14,7 +14,7 @@ public class CollisionTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             isActiveTrigger = true;
             // SetTimeline(true);
@@ -26,7 +26,7 @@ public class CollisionTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player) /*|| other.transform.CompareTag("PlayerAI")*/)
         {
             isActiveTrigger = false;
            /// SetTimeline(false);
@@ -36,7 +36,7 @@ public class CollisionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             isActiveTrigger = true;
             Debug.Log(other.name);
@@ -49,7 +49,7 @@ public class CollisionTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player) /*|| other.transform.CompareTag("PlayerAI")*/)
         {
             isActiveTrigger = false;
             // SetTimeline(false);

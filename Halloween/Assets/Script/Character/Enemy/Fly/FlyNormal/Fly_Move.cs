@@ -44,7 +44,7 @@ public class Fly_Move : StateChildBase
         //moveSaveTime += Time.deltaTime;
 
 
-        if (GetComponent<EnemyBase>().IsDamage)
+        if (GetComponent<EnemyBase>().isDamage)
             if (GetComponent<EnemyBase>().ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 
@@ -53,15 +53,15 @@ public class Fly_Move : StateChildBase
         foreach (var move in GetComponent<FlyScr>().baseMove)
         {
             move.MoveUpdate();
-            //GetComponent<FlyScr>().IsMove = move.IsMove;
+            //GetComponent<FlyScr>().isMove = move.isMove;
         }
 
         //マガジンの更新
 
 
 
-        if (!GetComponent<FlyScr>().IsMove)
-            GetComponent<FlyScr>().IsAttack = true;
+        if (!GetComponent<FlyScr>().isMove)
+            GetComponent<FlyScr>().isAttack = true;
 
         //GetComponent<FlyScr>().AttackMagazineUpdateAll();
 

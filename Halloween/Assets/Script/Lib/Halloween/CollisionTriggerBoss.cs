@@ -27,7 +27,7 @@ public class BossCollisionTrigger : MonoBehaviour
     public GameObject DEBUGBOSSFLG;
     //private void OnTriggerEnter(Collider other)
     //{
-    //    if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+    //    if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
     //    {
     //        Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
 
@@ -37,7 +37,7 @@ public class BossCollisionTrigger : MonoBehaviour
 
     //private void OnTriggerExit(Collider other)
     //{
-    //    if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+    //    if (other.transform.CompareTag(TagName.Player) /*|| other.transform.CompareTag("PlayerAI")*/)
     //    {
 
     //    }
@@ -48,7 +48,7 @@ public class BossCollisionTrigger : MonoBehaviour
     {
 
         if (isBossBattle) return;
-        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             foreach(var i in boxs2D)
             {
@@ -105,7 +105,7 @@ public class BossCollisionTrigger : MonoBehaviour
 
     //private void OnTriggerExit2D(Collider2D other)
     //{
-    //    if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+    //    if (other.transform.CompareTag(TagName.Player) /*|| other.transform.CompareTag("PlayerAI")*/)
     //    {
 
     //    }

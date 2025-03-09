@@ -72,8 +72,8 @@ public class StraightForceMove : BaseMove
     //{
 
     //    var m_rb3 = GetComponent<Rigidbody>();
-    //    //if (other.gameObject.tag == "Player")
-    //     //   Debug.Log("Player");
+    //    //if (other.gameObject.tag == TagName.Player)
+    //     //   Debug.Log(TagName.Player);
 
     //    const int BlockReflect = 23;
     //    if (other.gameObject.layer == BlockReflect)

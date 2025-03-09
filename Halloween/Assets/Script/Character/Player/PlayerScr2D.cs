@@ -1,11 +1,6 @@
-﻿using Cysharp.Threading.Tasks.Triggers;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
-public class PlayerScr2D : MonoBehaviour
+public class PlayerScr2D : MonoBehaviour,IDamage
 {
     # region デバッグ
     public float debugmoveX = 0;
@@ -20,6 +15,7 @@ public class PlayerScr2D : MonoBehaviour
     public bool isGround = true;
     public bool isLimitMove = true;    //アニメーション中などの移動制限
 
+    //ジャンプ
     public bool isJump = false;
     [SerializeField] float jumpHeight; //1.8
     float keepPosY;
@@ -31,18 +27,12 @@ public class PlayerScr2D : MonoBehaviour
     TargetMagazine nMag;     //ナイフ
     #endregion
 
-    # region ダメージ
-    bool isDead = false;
-
-    public bool isDamage = false;
-    [SerializeField] readonly float damageTimeMax = 1f;
-    [SerializeField] float damageTime = 0;
-    const float duration = 0.07f;
-    Color32 startColor = new(255, 255, 255, 255);
-    Color32 endColor = new(255, 255, 255, 0);
-    #endregion
-
     Animator m_animator;
+    public bool isDamage = false;
+    public bool isDead = false;
+    public int hp = 3;
+
+    [SerializeField] PlayerDamage pDamage;
 
     //const float ROTSPEED = 3f;
     //Vector2 m_targetDirection;
@@ -60,6 +50,9 @@ public class PlayerScr2D : MonoBehaviour
     {
         moveSpeed = maxMoveSpeed;
 
+        if(GetComponent<PlayerDamage>()!=null)
+            pDamage = GetComponent<PlayerDamage>();
+
         nMag = GetComponent<TargetMagazine>();
         m_rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
@@ -71,30 +64,8 @@ public class PlayerScr2D : MonoBehaviour
     {
 
         if (isDead) return;
-        //if (isLimitMove) return;
-
         if(atkInterval > 0) 
             atkInterval-=Time.deltaTime;
-
-        if (damageTime > 0)
-        {
-            GetComponent<SpriteRenderer>().material.color =
-                Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, damageTimeMax));
-
-            damageTime -= Time.deltaTime;
-
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().material.color = startColor;
-        }
-
-        //if (atkInterval<=0)
-        //{
-        //    atkInterval = 1;
-        //}
-
-
 
         //MoveControl();     //移動用関数
         if (Input.GetKeyDown(KeyCode.F) && atkInterval <= 0)
@@ -106,6 +77,8 @@ public class PlayerScr2D : MonoBehaviour
             //ビーム砲チャージ
             //MyLib.MyPlayOneSound("Sound/SE/PlayerNormalShot", gameObject.GetComponent<AudioSource>());
         }
+
+
         // 入力の取得
         m_movement.x = Input.GetAxis("Horizontal");
         m_movement.y = 0f;//Input.GetAxis("Vertical");
@@ -237,32 +210,15 @@ public class PlayerScr2D : MonoBehaviour
         //}
     }
 
-    public void PlayerDamage(int damage)
+    public void Damage(int damage)
     {
         if (DEBUGNoDamage) return;
         //回避の実行中なら無効またはダメージ中なら無効　無敵
-
         if (isDead) return;
         if (isDamage) return;
-        //if (m_isDash) return;　ダッシュ時無敵
+        ////if (m_isDash) return;　ダッシュ時無敵
+        pDamage.Damage(damage);
 
-        //isDamage = true;
-        damageTime = damageTimeMax;
-        #region カメラシェイク
-        //https://baba-s.hatenablog.com/entry/2018/03/14/170400
-
-        ////揺らす長さ
-        //const float shakeLength = 0.3f;
-        ////揺らす力
-        //const float power = 0.3f;
-
-        //StartCoroutine(MyLib.DoShake(shakeLength, power, transform));
-
-
-        #endregion
-
-        //Destroy(this.gameObject);
-        return;
     }
 
     #region　アニメーションイベント　プレイヤー
@@ -279,15 +235,14 @@ public class PlayerScr2D : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
        // Debug.Log("Test");
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag(TagName.Enemy))
         {
-            if (damageTime > 0)
-                return;
+            if (isDamage == false)return;
 
             Debug.Log("ColPlayer");
             //Destroy(this);
             //プレイヤーへのダメージ処理
-            PlayerDamage(1);
+            Damage(1);
 
         }
 

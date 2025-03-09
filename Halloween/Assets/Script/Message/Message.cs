@@ -211,7 +211,7 @@ public class Message : MonoBehaviour
         TextBack.DOColor(tColor, Time.deltaTime * fadeSpeed).SetEase(Ease.Linear);
 
         //プレイヤーの移動制限解除
-        var p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScr2D>();
+        var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerScr2D>();
         p.isLimitMove = false;
         p.moveSpeed = p.maxMoveSpeed;
 

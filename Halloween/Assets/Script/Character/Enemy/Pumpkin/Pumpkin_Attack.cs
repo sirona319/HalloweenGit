@@ -33,7 +33,7 @@ public class Pumpkin_Attack : StateChildBase
         stateTime += Time.deltaTime;
 
 
-        if (GetComponent<EnemyBase>().IsDamage)
+        if (GetComponent<EnemyBase>().isDamage)
             if (GetComponent<EnemyBase>().ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 
@@ -47,7 +47,7 @@ public class Pumpkin_Attack : StateChildBase
         //if (stateTime > GetComponent<PumpkinScr>().AtkInterval)
         //{
         //    GetComponent<PumpkinScr>().AtkInterval = GetComponent<EnemyBase>().enemyData.AtkIntervalMax;
-        //    //GetComponent<FlyScr>().IsAttack = false;
+        //    //GetComponent<FlyScr>().isAttack = false;
         //    return GetComponent<PumpkinScr>().FlyReturnStateType(StateType);
         //}
 

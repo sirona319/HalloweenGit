@@ -33,7 +33,7 @@ public class Pumpkin_Wait : StateChildBase
         transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
 
 
-        if (GetComponent<EnemyBase>().IsDamage)
+        if (GetComponent<EnemyBase>().isDamage)
             if (GetComponent<EnemyBase>().ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 

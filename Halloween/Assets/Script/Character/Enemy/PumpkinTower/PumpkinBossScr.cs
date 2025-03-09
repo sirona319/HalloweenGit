@@ -15,10 +15,10 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     }
     #endregion
 
-    [NonSerialized] public bool IsDead = false;
-    [NonSerialized] public bool IsDamage = false;
-    [NonSerialized] public bool IsAttack = true;
-    [NonSerialized] public bool IsMove = true;
+    [NonSerialized] public bool isDead = false;
+    [NonSerialized] public bool isDamage = false;
+    [NonSerialized] public bool isAttack = true;
+    [NonSerialized] public bool isMove = true;
 
 
     public bool startBattle = false;

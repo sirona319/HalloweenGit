@@ -2,22 +2,28 @@
 
 public class PlayerGroundCollider : MonoBehaviour
 {
+    PlayerScr2D pScr;
+    void Start()
+    {
+        pScr = transform.parent.GetComponent<PlayerScr2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            transform.parent.GetComponent<PlayerScr2D>().isGround = true;
+            pScr.isGround = true;
             //Debug.Log("GROUND TRUE");
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (transform.parent.GetComponent<PlayerScr2D>().isGround) return;
+        if (pScr.isGround) return;
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            transform.parent.GetComponent<PlayerScr2D>().isGround = true;
+            pScr.isGround = true;
             //Debug.Log("GROUND TRUE");
         }
     }
@@ -28,7 +34,7 @@ public class PlayerGroundCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
 
-            transform.parent.GetComponent<PlayerScr2D>().isGround = false;
+            pScr.isGround = false;
             //Debug.Log("GROUND FALSE");
         }
     }

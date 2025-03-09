@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,7 +13,7 @@ public class MobileExtraAction : MonoBehaviour
         var entry = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
         var exit = new EventTrigger.Entry { eventID = EventTriggerType.PointerUp };
 
-        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScr2D>();
+        var player = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerScr2D>();
         //entry.callback.AddListener((eventData) => { player.MobileExtraControl(); });
         //exit.callback.AddListener((eventData) => { player.MobileExtraControl(); });
 

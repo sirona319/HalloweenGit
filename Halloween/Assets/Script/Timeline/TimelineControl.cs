@@ -14,7 +14,7 @@ public class TimelineControl : MonoBehaviour
     //public void TimelineEnd()
     //{
     //   // isEnd = true;
-    //    //var p = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScr2D>();
+    //    //var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerScr2D>();
     //    //p.m_isLimitMove = false;
     //    //p.moveSpeed = p.MAXMOVESPEED;
     //}

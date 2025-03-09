@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Fly_Damage : StateChildBase
@@ -22,16 +22,16 @@ public class Fly_Damage : StateChildBase
     {
         damageTime = 0f;
         stateTime = 0f;
-        //ƒIƒuƒWƒFƒNƒg‚ğ—h‚ç‚µƒIƒ“
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æºã‚‰ã—ã‚ªãƒ³
         StartCoroutine(MyLib.DoShake(0.25f, 0.1f, transform));
 
-        //€‚ñ‚Å‚¢‚½‚ç
-        //if (gameObject.GetComponent<EnemyBase>().IsDead) return;
+        //æ­»ã‚“ã§ã„ãŸã‚‰
+        //if (gameObject.GetComponent<EnemyBase>().isDead) return;
 
 
         //if (GetComponent<EnemyBase>().HitCol.enabled)
         //{
-        //    Debug.Log("ƒ_ƒ[ƒWƒAƒjƒŠJn@“G‚ÌUŒ‚”»’è‚ğØ‚é");
+        //    Debug.Log("ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚¢ãƒ‹ãƒ¡é–‹å§‹ã€€æ•µã®æ”»æ’ƒåˆ¤å®šã‚’åˆ‡ã‚‹");
         //    GetComponent<EnemyBase>().HitCol.enabled = false;
         //}
 
@@ -39,7 +39,7 @@ public class Fly_Damage : StateChildBase
          //   m_anim.SetBool("DamageB", true);
 
         damageTime = DAMAGETIMEMAX;
-        //ƒRƒ‹[ƒ`ƒ“‚Ì‹N“®
+        //ã‚³ãƒ«ãƒ¼ãƒãƒ³ã®èµ·å‹•
        // StartCoroutine(MyLib.DelayCoroutine(damageTime, () =>
         //{
            // m_anim.SetBool("DamageB", false);
@@ -49,7 +49,7 @@ public class Fly_Damage : StateChildBase
 
     public override void OnExit()
     {
-        gameObject.GetComponent<EnemyBase>().IsDamage = false;
+        gameObject.GetComponent<EnemyBase>().isDamage = false;
         //gameObject.GetComponent<Animator>().SetBool("DamageB", false);
     }
 
@@ -57,7 +57,7 @@ public class Fly_Damage : StateChildBase
     {
         stateTime += Time.deltaTime;
 
-        if (gameObject.GetComponent<EnemyBase>().IsDead)
+        if (gameObject.GetComponent<EnemyBase>().isDead)
         {
             const int DEAD = 2;
             return DEAD;

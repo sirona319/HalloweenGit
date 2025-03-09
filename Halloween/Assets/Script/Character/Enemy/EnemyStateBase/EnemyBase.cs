@@ -15,10 +15,10 @@ public class EnemyBase : MonoBehaviour, IDamage
     }
     #endregion
 
-    [NonSerialized] public bool IsDead = false;
-    [NonSerialized] public bool IsDamage = false;
-    [NonSerialized] public bool IsAttack = true;
-    [NonSerialized] public bool IsMove = true;
+    [NonSerialized] public bool isDead = false;
+    [NonSerialized] public bool isDamage = false;
+    [NonSerialized] public bool isAttack = true;
+    [NonSerialized] public bool isMove = true;
 
     [SerializeField] EnemyDamage eDamage;
 
@@ -48,17 +48,17 @@ public class EnemyBase : MonoBehaviour, IDamage
 
     public bool ReturnStateTypeDead()
     {
-        if (IsDead) return true;
+        if (isDead) return true;
 
         return false;
     }
 
     public int ReturnStateMoveType(int stateType)
     {
-        if (IsAttack)
+        if (isAttack)
             return (int)FlyCtr.State.Fly_Attack;
 
-        else if (IsMove)
+        else if (isMove)
             return (int)FlyCtr.State.Fly_Move;
 
 

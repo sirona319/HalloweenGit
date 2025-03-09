@@ -29,7 +29,7 @@ public class PlayerAttackPointMove : BaseMove
 
         atkTime = atkTimeMax;
 
-        //playerT = GameObject.FindGameObjectWithTag("Player").transform;
+        //playerT = GameObject.FindGameObjectWithTag(TagName.Player).transform;
     }
 
     public override void MoveEnter()
@@ -81,7 +81,7 @@ public class PlayerAttackPointMove : BaseMove
 
         playerAttack.MoveUpdate();
 
-        if (playerAttack.IsAttackEnd)
+        if (playerAttack.isAttackEnd)
         {
             Debug.Log("移動へ切り替え");
             IsAtkMode = false;

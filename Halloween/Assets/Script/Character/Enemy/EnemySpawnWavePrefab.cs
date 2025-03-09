@@ -114,7 +114,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
 
                 go.GetComponent<PlayerAttackPointMove>().point.movePointSet(movePoint);
 
-                go.GetComponent<PlayerAttackPointMove>().playerAttack.TargetSet(GameObject.FindGameObjectWithTag("Player").transform);
+                go.GetComponent<PlayerAttackPointMove>().playerAttack.TargetSet(GameObject.FindGameObjectWithTag(TagName.Player).transform);
 
                 break;
 

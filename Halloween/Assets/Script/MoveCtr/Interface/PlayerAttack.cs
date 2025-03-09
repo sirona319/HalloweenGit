@@ -9,7 +9,7 @@
 //    int targetNo = 0;
 //    const float ENDMOVELEN = 0.5f;
 
-//    bool IsAttackEnd = false;
+//    bool isAttackEnd = false;
 
 //    public virtual void TargetSet(Transform t)
 //    {
@@ -30,12 +30,12 @@
 //    {
 //        moveVecter[0] = transform.position;
 //        moveVecter[1] = targetTrans.position;
-//        IsAttackEnd = false;
+//        isAttackEnd = false;
 //    }
 
 //    public void MoveUpdate()
 //    {
-//        //if (!IsMove)
+//        //if (!isMove)
 //        //    return;
 
 //        //var moveSpd = GetComponent<EnemyBase>().enemyData.Speed;
@@ -56,7 +56,7 @@
 //                //ここに処理を追加できるようにしたい
 //                //IsPoint = true;
 
-//                IsAttackEnd = true;
+//                isAttackEnd = true;
 //                targetNo = 0;
 //            }
 

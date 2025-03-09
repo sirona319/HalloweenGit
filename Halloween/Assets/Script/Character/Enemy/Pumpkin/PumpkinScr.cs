@@ -33,7 +33,7 @@ public class PumpkinScr : EnemyBase
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);
 
         randTime = Random.Range(randTimeMin, randTimeMax);
-        pTrans = GameObject.FindWithTag("Player").transform;
+        pTrans = GameObject.FindWithTag(TagName.Player).transform;
 
         warpPositions = GameObject.FindGameObjectsWithTag("PumpkinWorp");
 
@@ -79,7 +79,7 @@ public class PumpkinScr : EnemyBase
 
     void AttackTimeUpdate()
     {
-        if (!IsAttack) return;
+        if (!isAttack) return;
 
         //AtkInterval -= Time.deltaTime;
 
@@ -94,7 +94,7 @@ public class PumpkinScr : EnemyBase
         //if (AtkInterval <= 0)
         //    return (int)FlyCtr.State.Fly_Attack;
         //else 
-        if (IsMove)
+        if (isMove)
             return (int)FlyCtr.State.Fly_Move;
 
         else
@@ -105,7 +105,7 @@ public class PumpkinScr : EnemyBase
     //private void OnCollisionEnter2D(Collision2D other)
     //{
     //    Debug.Log("Test");
-    //    if (!other.gameObject.CompareTag("Player"))
+    //    if (!other.gameObject.CompareTag(TagName.Player))
     //        return;
 
     //    Debug.Log("ColPlayer");
@@ -119,7 +119,7 @@ public class PumpkinScr : EnemyBase
     //private void OnCollisionEnter2D(Collider2D other)
     //{
 
-    //    if (!other.transform.CompareTag("Player"))
+    //    if (!other.transform.CompareTag(TagName.Player))
     //        return;
 
     //    Debug.Log("ColPlayer");

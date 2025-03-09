@@ -2,24 +2,18 @@
 
 public class PlayerGroundColliderTop : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    PlayerScr2D pScr;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        pScr = transform.parent.GetComponent<PlayerScr2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            if (transform.parent.GetComponent<PlayerScr2D>().isJump)
-                transform.parent.GetComponent<PlayerScr2D>().isJump = false;
+            if (pScr.isJump)
+                pScr.isJump = false;
             //Debug.Log("GROUND TRUE");
         }
     }
@@ -28,8 +22,8 @@ public class PlayerGroundColliderTop : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            if (transform.parent.GetComponent<PlayerScr2D>().isJump)
-                transform.parent.GetComponent<PlayerScr2D>().isJump = false;
+            if (pScr.isJump)
+                pScr.isJump = false;
         }
 
     }

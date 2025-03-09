@@ -9,7 +9,7 @@ public class PlayerAttackMove : BaseMove
     int targetNo = 0;
     const float ENDMOVELEN = 0.5f;
 
-    public bool IsAttackEnd = false;
+    public bool isAttackEnd = false;
     float speed = 4f;
     public void TargetSet(Transform t)
     {
@@ -31,7 +31,7 @@ public class PlayerAttackMove : BaseMove
     {
         moveVecter[0] = transform.position;
         moveVecter[1] = targetTrans.position;
-        IsAttackEnd = false;
+        isAttackEnd = false;
     }
 
     public override void MoveUpdate()
@@ -52,7 +52,7 @@ public class PlayerAttackMove : BaseMove
                 //ここに処理を追加できるようにしたい
                 //IsPoint = true;
 
-                IsAttackEnd = true;
+                isAttackEnd = true;
                 targetNo = 0;
             }
 

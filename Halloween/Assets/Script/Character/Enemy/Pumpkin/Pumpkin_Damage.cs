@@ -29,7 +29,7 @@ public class Pumpkin_Damage : StateChildBase
         StartCoroutine(MyLib.DoShake(0.25f, 0.1f, transform));
 
         //死んでいたら
-        //if (gameObject.GetComponent<EnemyBase>().IsDead) return;
+        //if (gameObject.GetComponent<EnemyBase>().isDead) return;
 
         //if (GetComponent<EnemyBase>().HitCol.enabled)
         //{
@@ -51,19 +51,19 @@ public class Pumpkin_Damage : StateChildBase
 
     public override void OnExit()
     {
-        gameObject.GetComponent<EnemyBase>().IsDamage = false;
+        gameObject.GetComponent<EnemyBase>().isDamage = false;
         gameObject.GetComponent<PumpkinScr>().sprite.material.color = startColor;
     }
 
     public override int StateUpdate()
     {
-        if (gameObject.GetComponent<EnemyBase>().IsDead)
+        if (gameObject.GetComponent<EnemyBase>().isDead)
         {
             const int DEAD = 2;
             return DEAD;
         }
 
-        if (gameObject.GetComponent<EnemyBase>().IsDamage)
+        if (gameObject.GetComponent<EnemyBase>().isDamage)
             gameObject.GetComponent<PumpkinScr>().sprite.material.color = 
                 Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, DAMAGETIMEMAX));
 

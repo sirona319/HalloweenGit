@@ -8,7 +8,7 @@ public abstract class BaseMove : MonoBehaviour
     public Rigidbody rb3;
 
     public Rigidbody2D rb2;
-    public bool IsMove = true;
+    public bool isMove = true;
 
     //public Vector3 GetRb()
     //{

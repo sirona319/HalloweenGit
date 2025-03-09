@@ -376,7 +376,7 @@ public static class MyLib
     /// <returns></returns>
     public static int EnemyNum()
     {
-        var Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
         if (Enemys.Length == 0)
             return 0;
 
@@ -391,7 +391,7 @@ public static class MyLib
     /// <returns>一番近い敵の座標を返す</returns>
     public static Vector3 EnemysNearVec(Vector3 pos)
     {
-        var Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
         if (Enemys.Length == 0)
             return Vector3.zero;
 
@@ -413,7 +413,7 @@ public static class MyLib
     /// 一番近い敵を返す
     public static EnemyBase EnemysNearScr(Vector3 pos)
     {
-        var Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
         if (Enemys.Length == 0)
             return null;
 

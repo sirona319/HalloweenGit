@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PointCircleMove : BaseMove
 {
@@ -26,7 +26,7 @@ public class PointCircleMove : BaseMove
 
     public override void MoveUpdate()
     {
-        if (!point.IsMove)
+        if (!point.isMove)
         {
             circle.MoveUpdate();
 
@@ -35,12 +35,12 @@ public class PointCircleMove : BaseMove
 
         point.MoveUpdate();
 
-        if (!point.IsMove)
+        if (!point.isMove)
         {
-            GetComponent<FlyScr>().IsAttack = true;
-            //IsMove = point.IsMove;
+            GetComponent<FlyScr>().isAttack = true;
+            //isMove = point.isMove;
             Destroy(point);
-            //point.enabled = false;//ƒ|ƒCƒ“ƒgˆÚ“®‚ğI—¹
+            //point.enabled = false;//ãƒã‚¤ãƒ³ãƒˆç§»å‹•ã‚’çµ‚äº†
             circle.MoveEnter();
         }
     }

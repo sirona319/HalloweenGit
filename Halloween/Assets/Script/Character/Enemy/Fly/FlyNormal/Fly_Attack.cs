@@ -34,7 +34,7 @@ public class Fly_Attack : StateChildBase
         stateTime += Time.deltaTime;
 
 
-        if (GetComponent<EnemyBase>().IsDamage)
+        if (GetComponent<EnemyBase>().isDamage)
             if (GetComponent<EnemyBase>().ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 
@@ -48,7 +48,7 @@ public class Fly_Attack : StateChildBase
         if (stateTime > GetComponent<FlyScr>().AtkInterval)
         {
             GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
-            //GetComponent<FlyScr>().IsAttack = false;
+            //GetComponent<FlyScr>().isAttack = false;
             return GetComponent<FlyScr>().FlyReturnStateType(StateType);
         }
 

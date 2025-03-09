@@ -12,7 +12,7 @@ public class TimelineCollsionTrigger : MonoBehaviour
 
     //private void OnTriggerEnter(Collider other)
     //{
-    //    if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+    //    if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
     //    {
 
     //        SetTimeline(true);
@@ -24,7 +24,7 @@ public class TimelineCollsionTrigger : MonoBehaviour
 
     //private void OnTriggerExit(Collider other)
     //{
-    //    if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+    //    if (other.transform.CompareTag(TagName.Player) /*|| other.transform.CompareTag("PlayerAI")*/)
     //    {
     //        SetTimeline(false);
     //    }
@@ -33,7 +33,7 @@ public class TimelineCollsionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
 
             SetTimeline(true);
@@ -44,7 +44,7 @@ public class TimelineCollsionTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.CompareTag("Player") /*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag(TagName.Player) /*|| other.transform.CompareTag("PlayerAI")*/)
         {
             SetTimeline(false);
         }

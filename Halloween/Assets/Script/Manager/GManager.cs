@@ -291,11 +291,11 @@ public class GManager : Singleton<GManager>
     {
         //StartCoroutine(MyLib.DelayCoroutine(0.3f, () =>
         //{
-        //GameObject.FindGameObjectWithTag("Player").transform.position = target;
+        //GameObject.FindGameObjectWithTag(TagName.Player).transform.position = target;
         var fade = GameObject.Find("FadeCanvas").GetComponent<Fade>();
         fade.FadeIn(1f, () =>
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = target;
+            GameObject.FindGameObjectWithTag(TagName.Player).transform.position = target;
 
             fade.FadeOut(5f);
         });

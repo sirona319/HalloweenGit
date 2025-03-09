@@ -10946,6 +10946,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1667447455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1817642780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8882433819604259064, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+  m_PrefabInstance: {fileID: 9119227265713347129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817642791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817642780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ad94ae958ee9845b3c0ec5785662cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pScr: {fileID: 0}
+  damageTimeMax: 1
+  damageTime: 0
 --- !u!1 &1820696179
 GameObject:
   m_ObjectHideFlags: 0
@@ -12794,7 +12814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: pumpkinChildDeadCount
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: 'timelineTexts.Array.data[0]'
@@ -12950,6 +12970,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+      propertyPath: pDamage
+      value: 
+      objectReference: {fileID: 1817642791}
+    - target: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: DEBUGNoDamage
       value: 0
       objectReference: {fileID: 0}
@@ -12963,7 +12987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760443076855171432, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_Mass
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5760443076855171432, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_Material
@@ -12975,7 +12999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760443076855171432, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_GravityScale
-      value: 20
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5760443076855171432, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_CollisionDetection
@@ -13028,7 +13052,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8882433819604259064, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1817642791}
   m_SourcePrefab: {fileID: 100100000, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

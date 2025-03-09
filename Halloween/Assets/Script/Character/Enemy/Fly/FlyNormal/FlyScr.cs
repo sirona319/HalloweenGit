@@ -21,7 +21,7 @@ public class FlyScr : EnemyBase
 
     void AttackTimeUpdate()
     {
-        if (!IsAttack) return;
+        if (!isAttack) return;
 
         AtkInterval -= Time.deltaTime;
 
@@ -31,7 +31,7 @@ public class FlyScr : EnemyBase
     {
         if (AtkInterval <= 0)
             return (int)FlyCtr.State.Fly_Attack;
-        else if (IsMove)
+        else if (isMove)
             return (int)FlyCtr.State.Fly_Move;
 
         else

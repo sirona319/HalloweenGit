@@ -17,7 +17,7 @@ public class CollisionExitErase : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(TagName.Enemy))
         {
             var iDamage = other.transform.GetComponent<IDamage>();
             if (iDamage != null)
@@ -37,7 +37,7 @@ public class CollisionExitErase : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(TagName.Enemy))
         {
             //var iDamage = other.transform.GetComponent<IDamage>();
             //if (iDamage != null)
