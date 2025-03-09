@@ -16,20 +16,27 @@ public class PlayerDamage : MonoBehaviour,IDamage
     const float duration = 0.07f;
     Color32 startColor = new(255, 255, 255, 255);
     Color32 endColor = new(255, 255, 255, 0);
+
+    SpriteRenderer sptite;
     #endregion
 
     void Start()
     {
         if (GetComponent<PlayerScr2D>() != null)
             pScr = GetComponent<PlayerScr2D>();
+
+        if (GetComponent<SpriteRenderer>() != null)
+            sptite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        if (pScr.isDamage == false) return;
+
         //点滅処理
         if (damageTime > 0)
         {
-            GetComponent<SpriteRenderer>().material.color =
+            sptite.material.color =
                 Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, damageTimeMax));
 
             damageTime -= Time.deltaTime;
@@ -37,7 +44,7 @@ public class PlayerDamage : MonoBehaviour,IDamage
         }
         else
         {
-            GetComponent<SpriteRenderer>().material.color = startColor;
+            sptite.material.color = startColor;
             pScr.isDamage = false;
         }
     }
@@ -61,9 +68,13 @@ public class PlayerDamage : MonoBehaviour,IDamage
         pScr.hp -= damage;        //HP減少処理
 
         pScr.isDamage = true;
+        damageTime = damageTimeMax;
 
         if (pScr.hp <= 0)
+        {
             pScr.isDead = true;
+            Destroy(gameObject);
+        }
 
 
         #region サウンド

@@ -29,6 +29,7 @@ public class LineRenderModule : MonoBehaviour
         {
             lineObj.enabled = false;
             isTimer = false;
+            Destroy(this);
         }
     }
 

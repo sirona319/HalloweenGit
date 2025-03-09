@@ -10963,9 +10963,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ad94ae958ee9845b3c0ec5785662cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pScr: {fileID: 0}
+  pScr: {fileID: 1817642796}
   damageTimeMax: 1
   damageTime: 0
+--- !u!114 &1817642796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+  m_PrefabInstance: {fileID: 9119227265713347129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817642780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0923b745e88f1a643b08e1165844c29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820696179
 GameObject:
   m_ObjectHideFlags: 0
@@ -12814,7 +12825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: pumpkinChildDeadCount
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: 'timelineTexts.Array.data[0]'
@@ -12970,9 +12981,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+      propertyPath: hp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: pDamage
       value: 
       objectReference: {fileID: 1817642791}
+    - target: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+      propertyPath: debugmoveX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 272199160259630696, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: DEBUGNoDamage
       value: 0
@@ -13054,7 +13073,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8882433819604259064, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
-      insertIndex: -1
+      insertIndex: 6
       addedObject: {fileID: 1817642791}
   m_SourcePrefab: {fileID: 100100000, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
 --- !u!1660057539 &9223372036854775807
