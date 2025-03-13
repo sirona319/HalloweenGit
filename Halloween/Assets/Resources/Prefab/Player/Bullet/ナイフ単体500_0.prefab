@@ -160,7 +160,8 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  SPEED: 30
+  speed: 30
+  target: {fileID: 0}
 --- !u!61 &-6010305915658794038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1288
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 4096

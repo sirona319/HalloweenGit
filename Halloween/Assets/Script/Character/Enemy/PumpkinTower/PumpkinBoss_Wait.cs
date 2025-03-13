@@ -35,14 +35,7 @@ public class PumpkinBoss_Wait : StateChildBase
         if (!GetComponent<PumpkinBossScr>().startBattle) return StateType;
 
 
-        //if(GetComponent<PumpkinBossScr>().isDEBUG)
-        //{
-
-        //    return
-        //}
-
-
-        if (bossScr.pumpkinChildDeadCount == 31)
+        if (bossScr.pumpkinChildDeadCount == 32)
         {
             GetComponent<PumpkinBossScr>().startBattle = false;
             GetComponent<PumpkinBossScr>().BattleEnd();

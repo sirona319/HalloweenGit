@@ -10,12 +10,15 @@ using Transform = UnityEngine.Transform;
 //utility
 public static class MyLib
 {
-    public enum TagList
-    {
-
-    }
 
     #region　便利な関数まとめ
+
+    #region デバッグ
+    public static void DebugInfo(GameObject go)
+    {
+        Debug.Log(go.name + " " + go.tag + " " + go.layer+ "\n"+ go.GetType().FullName);
+    }
+    #endregion
 
     #region  sin移動
 

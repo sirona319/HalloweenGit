@@ -40,38 +40,37 @@ public class PlayerAttackPointMove : BaseMove
     public override void MoveUpdate()
     {
 
-        if(atkTime<=0)
-        {
-            atkTime = atkTimeMax;
-            if (playerAttack.targetTrans == null)
-                return;
-
-            Vector2 p = playerAttack.targetTrans.position;
-            Vector2 t = transform.position;
-            len = Vector2.Distance(p, t);
-            //プレイヤーが離れていたら無し
-            if (len < attackLengeMax)
-            {
-                IsAtkMode = true;
-                Debug.Log("攻撃" + gameObject.name);
-            }
-            else
-            {
-                IsAtkMode = false;
-                Debug.Log("攻撃なし"+gameObject.name);
-
-            }
-
-
-            playerAttack.MoveEnter();
-
-
-        }
-
 
         AttackMode();
 
         MoveMode();
+
+        if (atkTime > 0)
+            return;
+
+        atkTime = atkTimeMax;
+        if (playerAttack.targetTrans == null)
+            return;
+
+        Vector2 p = playerAttack.targetTrans.position;
+        Vector2 t = transform.position;
+        len = Vector2.Distance(p, t);
+        //プレイヤーが離れていたら無し
+        if (len < attackLengeMax)
+        {
+            IsAtkMode = true;
+            Debug.Log("攻撃" + gameObject.name);
+        }
+        else
+        {
+            IsAtkMode = false;
+            Debug.Log("攻撃なし"+gameObject.name);
+
+        }
+
+
+        playerAttack.MoveEnter();
+
 
     }
 

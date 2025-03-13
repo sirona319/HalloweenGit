@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using UniRx;
+using Unity.Burst;
+using UnityEngine;
 
 public class PlayerScr2D : MonoBehaviour,IDamage
 {
@@ -8,17 +10,28 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     #endregion
 
     #region 移動
-    Rigidbody2D m_rb;      //剛体
+    Rigidbody2D m_rb;                   //剛体
     [SerializeField] Vector2 m_movement;
     public float maxMoveSpeed;
-    public float moveSpeed;   //移動速度
-    public bool isGround = true;
-    public bool isLimitMove = true;    //アニメーション中などの移動制限
+    public float moveSpeed;             //移動速度
+    [SerializeField] ReactiveProperty<bool> isGround /*{ get; set; }*/ = new ReactiveProperty<bool>(true);
+    //public bool IsGround => isGround.Value;
+    public bool IsGround
+    {
+        get => isGround.Value;
+        set => isGround.Value = value;
+    }
+
+    //public bool isGround = true;
+    public bool isLimitMove = true;     //アニメーション中などの移動制限
+    [SerializeField] float skyGravity=16;
+    [SerializeField] float groundGravity = 1;
 
     //ジャンプ
     public bool isJump = false;
     [SerializeField] float jumpHeight; //1.8
     float keepPosY;
+    const  float upSpd = 4f;
     #endregion
 
     #region 攻撃
@@ -54,10 +67,23 @@ public class PlayerScr2D : MonoBehaviour,IDamage
             pDamage = GetComponent<PlayerDamage>();
 
         nMag = GetComponent<TargetMagazine>();
+        nMag.TargetSet(nMag, nMag.bulletTarget, this.gameObject);
+
         m_rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
 
-        nMag.TargetSet(nMag, nMag.bulletTarget, this.gameObject);
+
+
+        //pMove.IsPointMoveEnd.Skip(1).Subscribe(count => Debug.Log(count));
+        //関数がここで一度呼び出されるpMove.IsPointMoveEnd.Skip(1)初回をスキップする
+        isGround.Skip(1).Subscribe(ground =>
+        {
+            if (ground == false)
+                m_rb.gravityScale = skyGravity;
+            else
+                m_rb.gravityScale = groundGravity;
+        }
+        );
     }
 
     void Update()
@@ -88,10 +114,10 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         debugmoveX= Input.GetAxis("Horizontal");
 
 
-        if (Input.GetKeyDown(KeyCode.Space)&&isGround)
+        if (Input.GetKeyDown(KeyCode.Space)&&isGround.Value)
         {
             isJump = true;
-            isGround = false;
+            isGround.Value = false;
             keepPosY =transform.position.y;
           
             //m_movement.y += 20.0f;
@@ -99,8 +125,9 @@ public class PlayerScr2D : MonoBehaviour,IDamage
 
         JumpControl();
 
-        //アニメーションの設定
-        if (AbsX>0.3f)
+        const float walkAnimSpd = 0.3f;
+        //速度が一定を超えたら　アニメーションの設定
+        if (AbsX> walkAnimSpd)
             m_animator.SetBool("walk", true);
         else
             m_animator.SetBool("walk", false);
@@ -114,12 +141,16 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     void JumpControl()
     {
         if (!isJump) return;
-        m_movement.y += 4f;
+            m_movement.y += upSpd;
 
         if(transform.position.y>keepPosY+jumpHeight)
         {
             isJump = false;
         }
+
+        //地面にいるとき　真上にオブジェクトがあるときのジャンプ対策　両方がtrueの時
+        if (IsGround)
+            isJump = false;
     }
 
 //    void MoveControl()
@@ -237,6 +268,7 @@ public class PlayerScr2D : MonoBehaviour,IDamage
        // Debug.Log("Test");
         if (collision.gameObject.CompareTag(TagName.Enemy))
         {
+            MyLib.DebugInfo(gameObject);
             //プレイヤーへのダメージ処理
             Damage(1);
 

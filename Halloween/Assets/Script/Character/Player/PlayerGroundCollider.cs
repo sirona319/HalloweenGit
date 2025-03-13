@@ -12,18 +12,18 @@ public class PlayerGroundCollider : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            pScr.isGround = true;
+            pScr.IsGround = true;
             //Debug.Log("GROUND TRUE");
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (pScr.isGround) return;
+        if (pScr.IsGround) return;
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            pScr.isGround = true;
+            pScr.IsGround = true;
             //Debug.Log("GROUND TRUE");
         }
     }
@@ -34,7 +34,7 @@ public class PlayerGroundCollider : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
 
-            pScr.isGround = false;
+            pScr.IsGround = false;
             //Debug.Log("GROUND FALSE");
         }
     }

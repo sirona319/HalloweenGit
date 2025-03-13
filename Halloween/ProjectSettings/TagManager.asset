@@ -20,13 +20,13 @@ TagManager:
   - 
   - ExitErea
   - 
-  - BossEnemy
+  - EnemyBoss
   - 
   - Knife
   - 
   - 
   - SceneObject
-  - 
+  - Ground
   - 
   - 
   - 
@@ -40,8 +40,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - NoPost
+  - post
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -63,3 +63,4 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - Layer 1

@@ -24,19 +24,19 @@ public class PumpkinBoss_AttackL3 : StateChildBase
         //Lv1
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 16);//trueなら
 
-        //SetPumpkinChild(0);
-        //SetPumpkinChild(1);
-        //SetPumpkinChild(3);
-        //SetPumpkinChild(4);
+        SetPumpkinChild(0);
+        SetPumpkinChild(1);
+        SetPumpkinChild(3);
+        SetPumpkinChild(4);
 
         //LV2
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 20);//trueなら
 
-        //SetPumpkinChild(2);
-        //SetPumpkinChild(5);
-        //SetPumpkinChild(6);
-        //SetPumpkinChild(7);
-        //SetPumpkinChild(8);
+        SetPumpkinChild(2);
+        SetPumpkinChild(5);
+        SetPumpkinChild(6);
+        SetPumpkinChild(7);
+        SetPumpkinChild(8);
 
         //LV3
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 25);//trueなら
@@ -117,7 +117,7 @@ public class PumpkinBoss_AttackL3 : StateChildBase
         foreach (var p in childList)
             p.MoveUpdateNoRot();
 
-        if (bossScr.pumpkinChildDeadCount == 31)
+        if (bossScr.pumpkinChildDeadCount == 32)
             return (int)PumpkinBossCtr.State.PumpkinBoss_Wait;
 
         return (int)StateType;

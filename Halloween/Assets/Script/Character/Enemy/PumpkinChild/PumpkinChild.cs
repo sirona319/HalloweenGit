@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PumpkinChild : MonoBehaviour
@@ -17,11 +20,15 @@ public class PumpkinChild : MonoBehaviour
     [SerializeField] public List<Transform> movePointLists=new();
 
     [HideInInspector] float speed = 5f;
+
     const float ENDMOVELEN = 0.2f;
     protected int targetNo = 0;
     protected bool isMoveEnd = false;
 
     [SerializeField] protected float sPointSpeed=7f;
+
+
+    [SerializeField] float spdSetTiming;
     ////赤かぼちゃ用　継承する？
     //public bool isShakeEnd = false;
 
@@ -108,22 +115,24 @@ public class PumpkinChild : MonoBehaviour
 
 
 
-        //if (eBase.GetComponent<StraightPointMove>() != null)
-        //{
-            eBase.GetComponent<StraightPointMove>().speed = sPointSpeed;
+        if (eBase.GetComponent<StraightPointMove>() != null)
+        {
+            eBase.GetComponent<StraightPointMove>().SetSpeed(sPointSpeed, spdSetTiming);
             eBase.GetComponent<StraightPointMove>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
+        }
 
         if(this.GetComponent<LineRenderModule>()!=null)
         {
             this.GetComponent<LineRenderModule>().LineCreate(transform);
             this.GetComponent<LineRenderModule>().LineDraw();
-            this.GetComponent<LineRenderModule>().SetOffTimer(6f);
-            StartCoroutine(MyLib.DelayCoroutine(6f, () =>
-            {
-                gameObject.SetActive(false);
-                //Destroy(gameObject);　エラー
 
-            }));
+            StartCoroutine(DelayOff(obj));
+            //{
+            //    //yield return new WaitUntil(() =>0 == 0);//trueなら
+            //    gameObject.SetActive(false);
+            //    //Destroy(gameObject);　エラー
+
+            //}));
             //Destroy(gameObject,10f);
         }
 
@@ -138,6 +147,17 @@ public class PumpkinChild : MonoBehaviour
         gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
 
         isMoveEnd = true;
+    }
+
+    public IEnumerator DelayOff(GameObject go)
+    {
+        const float offLen = 0.3f;
+        var v = movePointLists[movePointLists.Count - 1].position;
+        //yield return new WaitForSeconds(seconds);
+        yield return new WaitUntil(() => Vector3.Distance(v, go.transform.position)< offLen);//trueなら
+
+        this.GetComponent<LineRenderModule>().SetOffTimer(0f);
+        gameObject.SetActive(false);
     }
 
     //#region　アニメーションイベント

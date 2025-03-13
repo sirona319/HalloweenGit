@@ -49,7 +49,7 @@ BoxCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8426815
+    m_Bits: 4294967295
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -229,10 +229,10 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: 55a057a6b9dcf8d48bdc809484b007a7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 8388608
+    m_Bits: 8392704
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 3221325183
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb3: {fileID: 0}
   rb2: {fileID: 7962176103443069363}
-  IsMove: 1
+  isMove: 1
   speed: 12
   targets: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}

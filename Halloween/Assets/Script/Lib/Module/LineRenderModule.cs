@@ -45,7 +45,8 @@ public class LineRenderModule : MonoBehaviour
     {
         lineObj = Instantiate(lineRenderer.gameObject, transform.position, Quaternion.identity, t).GetComponent<LineRenderer>();
         lineObj.enabled = false;
-        lineObj.material = mat;
+        if (mat == null) return;
+            lineObj.material = mat;
     }
 
     public void LineDraw()

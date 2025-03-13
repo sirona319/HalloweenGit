@@ -171,7 +171,7 @@ public class JumpMove : BaseMove
             rb2.freezeRotation = true;
             if (GetComponent<RotModule>())
                 GetComponent<RotModule>().enabled = false;
-            Debug.Log("地面hit"+this.gameObject.name);
+            //Debug.Log("地面hit"+this.gameObject.name);
             //PoolDestroy();
             return;
         }
@@ -201,7 +201,7 @@ public class JumpMove : BaseMove
                 GetComponent<RotModule>().enabled = true;
             //m_rb.linearVelocity = new Vector2(0f, 0f);
 
-            Debug.Log("地面から離れた" + this.gameObject.name);
+            //Debug.Log("地面から離れた" + this.gameObject.name);
             //PoolDestroy();
             return;
         }

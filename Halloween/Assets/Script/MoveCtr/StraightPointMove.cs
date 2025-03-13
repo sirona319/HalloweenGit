@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 public class StraightPointMove : BaseMove
 {
     const float ENDMOVELEN = 0.8f;
-    public float speed = 7f;
+    [SerializeField]float speed = 0f;
 
     //[SerializeField]Transform[] targets;// = new List<Vector3>();
     public List<Transform> movePointLists = new ();
@@ -22,6 +22,14 @@ public class StraightPointMove : BaseMove
         movePointLists = t;
         direction = movePointLists[0].position - transform.position;
         
+    }
+
+    public void SetSpeed(float spd,float timing)
+    {
+        StartCoroutine(MyLib.DelayCoroutine(timing, () =>
+        {
+            speed = spd;
+        }));
     }
 
     //ノイズ（バグ演出）の時の敵攻撃用
@@ -53,21 +61,22 @@ public class StraightPointMove : BaseMove
        
         float len = Vector3.Distance(transform.position, movePointLists[targetNo].position);
 
-        if (len < ENDMOVELEN)
+        if (len > ENDMOVELEN)
+            return;
+
+        //最後の移動地点へ到着したら
+        if (targetNo == movePointLists.Count-1)
+            IsLastPointMoveEnd.Value = true;
+        else
         {
-            //最後の移動地点へ到着したら
-            if (targetNo == movePointLists.Count-1)
-                IsLastPointMoveEnd.Value = true;
-            else
-            {
-                targetNo++;
-                direction = movePointLists[targetNo].position - transform.position;
-            }
-
-           // Debug.Log("目標へ到着");
-            //IsPointMoveEnd.Value = true;
-
+            targetNo++;
+            direction = movePointLists[targetNo].position - transform.position;
         }
+
+        // Debug.Log("目標へ到着");
+        //IsPointMoveEnd.Value = true;
+
+        
 
         //m_rb.MovePosition(m_rb.position + (Vector2)transform.up * speed * Time.deltaTime);
 

@@ -312,7 +312,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6205204080456637428}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb3: {fileID: 0}
   rb2: {fileID: 0}
-  IsMove: 1
+  isMove: 1
   speed: 7
   movePointLists: []
   IsLastPointMoveEnd:
@@ -475,7 +475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5175cac4769011c4b8f7bde35ff9a030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 0}
   targets: []
   lineRenderer: {fileID: 0}
-  lineObj: {fileID: 0}
+  mat: {fileID: 0}

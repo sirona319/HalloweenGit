@@ -23,7 +23,7 @@ public class CollisionExitErase : MonoBehaviour
             if (iDamage != null)
             {
                 iDamage.Damage(1, false);
-                //Debug.Log(other.tag + " " + other.gameObject.layer);
+                //MyLib.DebugInfo(other.gameObject);
             }
             else
                 //Debug.Log(other.tag + " " + other.gameObject.layer);
