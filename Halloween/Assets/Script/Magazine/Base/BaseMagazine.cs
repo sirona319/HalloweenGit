@@ -72,6 +72,11 @@ public abstract class BaseMagazine : MonoBehaviour
             case BulletTarget.Down:
                 it.Target = go.transform.Find("Down").gameObject.transform;
                 break;
+            case BulletTarget.Target://子階層のtargetオブジェクトを参照
+                it.Target = go.transform.Find("target").gameObject.transform;
+                break;
+            case BulletTarget.None:
+                break;
             default:
                 Debug.Log("TargetDEFAULT");
                 break;

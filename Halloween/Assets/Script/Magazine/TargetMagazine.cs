@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
-public class TargetMagazine : BaseMagazine, ITarget
+public class TargetMagazine : BaseMagazine,ITarget
 {
 
-    [SerializeField]public Transform Target { get; set; }
-
+    public Transform Target { get; set; }
 
 
     public override void MagazineEnter()

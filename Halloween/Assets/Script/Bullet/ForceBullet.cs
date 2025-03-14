@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
+//弾のほうへ付けるスクリプト
 public class ForceBullet : BaseBullet
 {
-    [SerializeField] Vector3 force;
-
+    //[SerializeField] Vector3 force;
+    [SerializeField] Vector3 tForceX;
+    [SerializeField] Vector3 tForceXInv;
     Rigidbody2D rb;
 
 
@@ -16,11 +18,23 @@ public class ForceBullet : BaseBullet
     //  2
     private void OnEnable()
     {
-        rb.AddForce(force, ForceMode2D.Impulse);
+        //プレイヤーのフリップの方向で反対へ　X方向　プレイヤーのtargetを取得する　座標 Start
+        var p = GameObject.FindGameObjectWithTag(TagName.Player);
+        if (p.GetComponent<SpriteRenderer>().flipX)
+            rb.AddForce(tForceX, ForceMode2D.Impulse);
+        else
+            rb.AddForce(tForceXInv, ForceMode2D.Impulse);
 
+
+
+
+        //没　毎回切り替わる
+        //////////var p = tForce.position;
+        //////////p.x *= -1;
+        //////////tForce.position = p;
     }
     //  3
-    private void Start()
+    void Start()
     {
         //rb=GetComponent<Rigidbody2D>();
 

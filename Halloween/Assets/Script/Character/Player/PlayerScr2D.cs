@@ -1,5 +1,7 @@
-﻿using UniRx;
+﻿using AIE2D;
+using UniRx;
 using Unity.Burst;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerScr2D : MonoBehaviour,IDamage
@@ -37,8 +39,14 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     #region 攻撃
     readonly float MAXATKINTERVAL = 1;
     float atkInterval = 0;
-    TargetMagazine nMag;     //ナイフ
+    TargetMagazine tMag;     //ナイフ
     #endregion
+
+    //ダッシュ
+    bool isDash = false;
+    bool isSkyDash = false;
+    [SerializeField] float dashLen = 0f;//10
+    [SerializeField] float dashStopTime = 0f;//0.3f
 
     Animator m_animator;
     public bool isDamage = false;
@@ -46,6 +54,11 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     public int hp = 3;
 
     [SerializeField] PlayerDamage pDamage;
+
+
+
+
+    //[SerializeField] float g;
 
     //const float ROTSPEED = 3f;
     //Vector2 m_targetDirection;
@@ -61,13 +74,15 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     // #endregion
     void Start()
     {
+        GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
+
         moveSpeed = maxMoveSpeed;
 
         if(GetComponent<PlayerDamage>()!=null)
             pDamage = GetComponent<PlayerDamage>();
 
-        nMag = GetComponent<TargetMagazine>();
-        nMag.TargetSet(nMag, nMag.bulletTarget, this.gameObject);
+        tMag = GetComponent<TargetMagazine>();
+        tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
 
         m_rb = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
@@ -81,7 +96,10 @@ public class PlayerScr2D : MonoBehaviour,IDamage
             if (ground == false)
                 m_rb.gravityScale = skyGravity;
             else
+            {
                 m_rb.gravityScale = groundGravity;
+                isSkyDash = false;
+            }
         }
         );
     }
@@ -97,45 +115,72 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         if (Input.GetKeyDown(KeyCode.F) && atkInterval <= 0)
         {
             //nMag.targetPos = (transform.position + Vector3.up) - transform.position;
-            nMag.MagazineEnter();
+            tMag.MagazineEnter();
             atkInterval = MAXATKINTERVAL;
 
             //ビーム砲チャージ
             //MyLib.MyPlayOneSound("Sound/SE/PlayerNormalShot", gameObject.GetComponent<AudioSource>());
         }
+        Dash();
 
+        MoveControl();
+        //m_rb.MovePosition(m_rb.position + m_movement * moveSpeed * Time.fixedDeltaTime);
 
-        // 入力の取得
-        m_movement.x = Input.GetAxis("Horizontal");
-        m_movement.y = 0f;//Input.GetAxis("Vertical");
-
-        var AbsX = Mathf.Abs(m_movement.x);
-
-        debugmoveX= Input.GetAxis("Horizontal");
-
-
-        if (Input.GetKeyDown(KeyCode.Space)&&isGround.Value)
-        {
-            isJump = true;
-            isGround.Value = false;
-            keepPosY =transform.position.y;
-          
-            //m_movement.y += 20.0f;
-        }
-
-        JumpControl();
-
-        const float walkAnimSpd = 0.3f;
-        //速度が一定を超えたら　アニメーションの設定
-        if (AbsX> walkAnimSpd)
-            m_animator.SetBool("walk", true);
-        else
-            m_animator.SetBool("walk", false);
     }
 
     void FixedUpdate()
     {
+        if (isDash) return;
         m_rb.MovePosition(m_rb.position + m_movement * moveSpeed * Time.fixedDeltaTime);
+
+    }
+
+    void Dash()
+    {
+        //g = m_rb.gravityScale;
+        if (isDash) return;
+        if (isSkyDash) return;
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isDash = true;
+            GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(true);
+
+            if(!IsGround)
+            {
+                m_rb.gravityScale = 0;
+                isSkyDash = true;
+            }
+
+
+            if (GetComponent<SpriteRenderer>().flipX)
+                m_rb.AddForce(((Vector2.right * dashLen)), ForceMode2D.Impulse);
+            else
+                m_rb.AddForce(((-Vector2.right) * dashLen), ForceMode2D.Impulse);
+
+
+            StartCoroutine(MyLib.DelayCoroutine(dashStopTime, () =>
+            {
+                GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
+
+
+                if (IsGround)
+                {
+                    isSkyDash = false;
+                    m_rb.gravityScale = groundGravity;
+
+                }
+                else
+                {
+                    m_rb.gravityScale = skyGravity;
+                }
+
+                m_rb.linearVelocity = Vector2.zero;
+                isDash = false;
+                Debug.Log("DASHOFF");
+            }));
+        }
+
+
     }
 
     void JumpControl()
@@ -151,6 +196,44 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         //地面にいるとき　真上にオブジェクトがあるときのジャンプ対策　両方がtrueの時
         if (IsGround)
             isJump = false;
+    }
+
+    void MoveControl()
+    {
+        // 入力の取得
+        m_movement.x = Input.GetAxis("Horizontal");
+        m_movement.y = 0f;//Input.GetAxis("Vertical");
+
+        var AbsX = Mathf.Abs(m_movement.x);
+
+        debugmoveX = Input.GetAxis("Horizontal");
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGround.Value)
+        {
+            isJump = true;
+            isGround.Value = false;
+            keepPosY = transform.position.y;
+
+            //m_movement.y += 20.0f;
+        }
+
+        JumpControl();
+
+
+
+        const float walkAnimSpd = 0.3f;
+        if (m_movement.x >= walkAnimSpd)
+            GetComponent<SpriteRenderer>().flipX = true;
+        if (m_movement.x <= -walkAnimSpd)
+            GetComponent<SpriteRenderer>().flipX = false;
+
+
+        //速度が一定を超えたら　アニメーションの設定
+        if (AbsX > walkAnimSpd)
+            m_animator.SetBool("walk", true);
+        else
+            m_animator.SetBool("walk", false);
     }
 
 //    void MoveControl()
@@ -257,7 +340,7 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     public void StartAnimEnd()
     {
         //フラグをオフ
-        isLimitMove = false;
+        //isLimitMove = false;
         //Debug.Log("isLimitMove = false;");
     }
     #endregion

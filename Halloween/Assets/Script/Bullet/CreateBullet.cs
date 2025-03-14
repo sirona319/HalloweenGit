@@ -14,6 +14,8 @@ public class CreateBullet : MonoBehaviour
         Left,
         Down,
 
+        Target,
+        None,
         //斜め　四つ　
         //一番近いエネミーなど？　遠い敵　レーザー
 

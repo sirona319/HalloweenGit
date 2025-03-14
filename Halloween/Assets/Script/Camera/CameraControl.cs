@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField] float cameraYPos = 0f;
 
 
-    private Transform pTrans;
+    [SerializeField] Transform cameraTarget;
     //public GameObject mainCamera;
     private const float rotate_speed = 2f;
 
@@ -33,7 +33,7 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         //mainCamera = Camera.main.gameObject;
-        pTrans = GameObject.FindGameObjectWithTag(TagName.Player).transform;
+        //pTrans = GameObject.FindGameObjectWithTag(TagName.Player).transform.Find();
     }
 
     void Update()
@@ -116,22 +116,35 @@ public class CameraControl : MonoBehaviour
 //        transform.eulerAngles += new Vector3(-angle.y, angle.x,0f);
 //    }
 
+    //void CameraTarget2DInit()
+    //{
+    //    const float camaraPosZ = 10f;
+    //    var pos = transform.position;
+
+    //    pos = pTrans.position;
+
+
+    //    pos.z = -camaraPosZ;
+    //    pos.y = cameraYPos;
+
+    //    transform.position = pos;
+    //}
 
     void CameraTarget2DUpdate()
     {
         if (isEventCamera) return;
 
-        if(pTrans==null)return;
+        if(cameraTarget==null)return;
 
         GetComponent<Camera>().orthographicSize = cameraZRange;
 
         var pos = transform.position;
 
-        pos = pTrans.position;
+        pos = cameraTarget.position;
 
         const float camaraPosZ = 10f;
         pos.z = -camaraPosZ;
-        pos.y = cameraYPos;
+        //pos.y = cameraYPos;
 
         transform.position = pos;
     }

@@ -144,7 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879c522cbf9c18c4c9f4429cecb857c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 0, y: 10, z: 0}
+  tForceX: {x: 2.5, y: 6, z: 0}
+  tForceXInv: {x: -2.5, y: 6, z: 0}
 --- !u!114 &-8021869746627226537
 MonoBehaviour:
   m_ObjectHideFlags: 0
