@@ -12,6 +12,8 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     #endregion
 
     #region 移動
+    Animator m_animator;
+
     Rigidbody2D m_rb;                   //剛体
     [SerializeField] Vector2 m_movement;
     public float maxMoveSpeed;
@@ -24,7 +26,6 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         set => isGround.Value = value;
     }
 
-    //public bool isGround = true;
     public bool isLimitMove = true;     //アニメーション中などの移動制限
     [SerializeField] float skyGravity=16;
     [SerializeField] float groundGravity = 1;
@@ -48,32 +49,13 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     TargetMagazine tMag;     //ナイフ
     #endregion
 
-
-
-    Animator m_animator;
+    //HP
     public bool isDamage = false;
     public bool isDead = false;
     public int hp = 3;
 
     [SerializeField] PlayerDamage pDamage;
 
-
-
-
-    //[SerializeField] float g;
-
-    //const float ROTSPEED = 3f;
-    //Vector2 m_targetDirection;
-    //public bool IsDash { get; private set; } = false;
-
-    //public void StopMove()
-    //{
-    //    m_rb.MovePosition(m_rb.position+new Vector2(0,0));
-    //    m_rb.angularVelocity = 0;
-    //    //m_rb.linearVelocity= new Vector2(0, 0);
-    //}
-
-    // #endregion
     void Start()
     {
         GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
@@ -90,9 +72,6 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         m_animator = GetComponent<Animator>();
 
 
-
-        //pMove.IsPointMoveEnd.Skip(1).Subscribe(count => Debug.Log(count));
-        //関数がここで一度呼び出されるpMove.IsPointMoveEnd.Skip(1)初回をスキップする
         isGround.Skip(1).Subscribe(ground =>
         {
             if (ground == false)
@@ -113,20 +92,17 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         if(atkInterval > 0) 
             atkInterval-=Time.deltaTime;
 
-        //MoveControl();     //移動用関数
         if (Input.GetKeyDown(KeyCode.F) && atkInterval <= 0)
         {
             //nMag.targetPos = (transform.position + Vector3.up) - transform.position;
             tMag.MagazineEnter();
             atkInterval = MAXATKINTERVAL;
 
-            //ビーム砲チャージ
-            //MyLib.MyPlayOneSound("Sound/SE/PlayerNormalShot", gameObject.GetComponent<AudioSource>());
         }
+
         Dash();
 
         MoveControl();
-        //m_rb.MovePosition(m_rb.position + m_movement * moveSpeed * Time.fixedDeltaTime);
 
     }
 
@@ -142,48 +118,48 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         //g = m_rb.gravityScale;
         if (isDash) return;
         if (isSkyDash) return;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (!Input.GetKeyDown(KeyCode.LeftShift)) return;
+        
+        isDash = true;
+        GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(true);
+
+        if(!IsGround)
         {
-            isDash = true;
-            GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(true);
+            m_rb.gravityScale = 0;
+            isSkyDash = true;
 
-            if(!IsGround)
+            isJump = false;
+            //m_movement.y = 0f;
+        }
+
+
+        if (GetComponent<SpriteRenderer>().flipX)
+            m_rb.AddForce(((Vector2.right * dashLen)), ForceMode2D.Impulse);
+        else
+            m_rb.AddForce(((-Vector2.right) * dashLen), ForceMode2D.Impulse);
+
+
+        StartCoroutine(MyLib.DelayCoroutine(dashStopTime, () =>
+        {
+            GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
+
+
+            if (IsGround)
             {
-                m_rb.gravityScale = 0;
-                isSkyDash = true;
+                isSkyDash = false;
+                m_rb.gravityScale = groundGravity;
 
-                isJump = false;
-                //m_movement.y = 0f;
+            }
+            else
+            {
+                m_rb.gravityScale = skyGravity;
             }
 
-
-            if (GetComponent<SpriteRenderer>().flipX)
-                m_rb.AddForce(((Vector2.right * dashLen)), ForceMode2D.Impulse);
-            else
-                m_rb.AddForce(((-Vector2.right) * dashLen), ForceMode2D.Impulse);
-
-
-            StartCoroutine(MyLib.DelayCoroutine(dashStopTime, () =>
-            {
-                GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
-
-
-                if (IsGround)
-                {
-                    isSkyDash = false;
-                    m_rb.gravityScale = groundGravity;
-
-                }
-                else
-                {
-                    m_rb.gravityScale = skyGravity;
-                }
-
-                m_rb.linearVelocity = Vector2.zero;
-                isDash = false;
-                Debug.Log("DASHOFF");
-            }));
-        }
+            m_rb.linearVelocity = Vector2.zero;
+            isDash = false;
+            Debug.Log("DASHOFF");
+        }));
+        
 
 
     }
