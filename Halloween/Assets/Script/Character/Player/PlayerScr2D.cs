@@ -53,7 +53,6 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     public bool isDamage = false;
     public bool isDead = false;
     public int hp = 3;
-
     [SerializeField] PlayerDamage pDamage;
 
     void Start()
@@ -157,7 +156,7 @@ public class PlayerScr2D : MonoBehaviour,IDamage
 
             m_rb.linearVelocity = Vector2.zero;
             isDash = false;
-            Debug.Log("DASHOFF");
+            //Debug.Log("DASHOFF");
         }));
         
 
