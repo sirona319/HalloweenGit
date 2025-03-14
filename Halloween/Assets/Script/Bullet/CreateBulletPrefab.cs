@@ -75,12 +75,12 @@ public class CreateBulletPrefab : MonoBehaviour
             bullet.GetComponent<NormalBullet>().BulletInit();
         }
 
-        if(bullet.GetComponent<ForceBullet>() != null)
-        {
-            //bullet.GetComponent<ForceBullet>().speed = bulletSpeed;
-            //bullet.GetComponent<ForceBullet>().angle = angle;
-            bullet.GetComponent<ForceBullet>().BulletInit();
-        }
+        //if(bullet.GetComponent<ForceBullet>() != null)
+        //{
+        //    //bullet.GetComponent<ForceBullet>().speed = bulletSpeed;
+        //    //bullet.GetComponent<ForceBullet>().angle = angle;
+        //    bullet.GetComponent<ForceBullet>().BulletInit();
+        //}
 
 
         var destroyer = bullet.GetComponent<ReleaseDestroyer>();

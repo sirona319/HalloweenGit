@@ -12,7 +12,6 @@ public class CameraControl : MonoBehaviour
 
     [SerializeField] Transform cameraTarget;
     [SerializeField] float cameraSpd = 0.08f;
-    [SerializeField] float cameraScope = 0.1f;
 
     void Start()
     {
