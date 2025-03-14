@@ -34,6 +34,12 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     [SerializeField] float jumpHeight; //1.8
     float keepPosY;
     const  float upSpd = 4f;
+
+    //ダッシュ
+    bool isDash = false;
+    bool isSkyDash = false;
+    [SerializeField] float dashLen = 0f;//10
+    [SerializeField] float dashStopTime = 0f;//0.3f
     #endregion
 
     #region 攻撃
@@ -42,11 +48,7 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     TargetMagazine tMag;     //ナイフ
     #endregion
 
-    //ダッシュ
-    bool isDash = false;
-    bool isSkyDash = false;
-    [SerializeField] float dashLen = 0f;//10
-    [SerializeField] float dashStopTime = 0f;//0.3f
+
 
     Animator m_animator;
     public bool isDamage = false;
@@ -149,6 +151,9 @@ public class PlayerScr2D : MonoBehaviour,IDamage
             {
                 m_rb.gravityScale = 0;
                 isSkyDash = true;
+
+                isJump = false;
+                //m_movement.y = 0f;
             }
 
 
@@ -188,6 +193,7 @@ public class PlayerScr2D : MonoBehaviour,IDamage
         if (!isJump) return;
             m_movement.y += upSpd;
 
+        //現在の高さからジャンプ高度へ到達したら終了
         if(transform.position.y>keepPosY+jumpHeight)
         {
             isJump = false;
