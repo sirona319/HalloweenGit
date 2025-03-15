@@ -4,7 +4,7 @@ using Unity.Burst;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerScr2D : MonoBehaviour,IDamage
+public class PlayerScr2D : MonoBehaviour
 {
     # region デバッグ
     public float debugmoveX = 0;
@@ -31,10 +31,11 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     [SerializeField] float groundGravity = 1;
 
     //ジャンプ
+    const float upSpd = 4f;
     public bool isJump = false;
     [SerializeField] float jumpHeight; //1.8
     float keepPosY;
-    const  float upSpd = 4f;
+
 
     //ダッシュ
     bool isDash = false;
@@ -50,19 +51,18 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     #endregion
 
     //HP
-    public bool isDamage = false;
     public bool isDead = false;
-    public int hp = 3;
-    [SerializeField] PlayerDamage pDamage;
+
 
     void Start()
     {
+        //ダッシュ残像のオフ
         GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
 
         moveSpeed = maxMoveSpeed;
 
-        if(GetComponent<PlayerDamage>()!=null)
-            pDamage = GetComponent<PlayerDamage>();
+        //if(GetComponent<PlayerDamage>()!=null)
+        //    pDamage = GetComponent<PlayerDamage>();
 
         tMag = GetComponent<TargetMagazine>();
         tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
@@ -195,13 +195,9 @@ public class PlayerScr2D : MonoBehaviour,IDamage
             isJump = true;
             isGround.Value = false;
             keepPosY = transform.position.y;
-
-            //m_movement.y += 20.0f;
         }
 
         JumpControl();
-
-
 
         const float walkAnimSpd = 0.3f;
         if (m_movement.x >= walkAnimSpd)
@@ -305,16 +301,16 @@ public class PlayerScr2D : MonoBehaviour,IDamage
 //        //}
 //    }
 
-    public void Damage(int damage)
-    {
-        //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
-        if (DEBUGNoDamage) return;
-        if (isDead) return;
-        if (isDamage) return;
-        ////if (m_isDash) return;　ダッシュ時無敵
-        pDamage.Damage(damage);
+    //public void Damage(int damage)
+    //{
+    //    //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
+    //    if (DEBUGNoDamage) return;
+    //    if (isDead) return;
+    //    if (isDamage) return;
+    //    ////if (m_isDash) return;　ダッシュ時無敵
+    //    pDamage.Damage(damage);
 
-    }
+    //}
 
     #region　アニメーションイベント　プレイヤー
 
@@ -327,25 +323,25 @@ public class PlayerScr2D : MonoBehaviour,IDamage
     #endregion
 
     #region　剛体関連
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       // Debug.Log("Test");
-        if (collision.gameObject.CompareTag(TagName.Enemy))
-        {
-            MyLib.DebugInfo(gameObject);
-            //プレイヤーへのダメージ処理
-            Damage(1);
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //   // Debug.Log("Test");
+    //    if (collision.gameObject.CompareTag(TagName.Enemy))
+    //    {
+    //        MyLib.DebugInfo(gameObject);
+    //        //プレイヤーへのダメージ処理
+    //        Damage(1);
 
-        }
+    //    }
 
-        //if (collision.gameObject.CompareTag("EnemyBoss"))
-        //{
-        //    //Debug.Log("ColPlayer");
-        //    Destroy(this);
-        //    //プレイヤーへのダメージ処理
-        //    PlayerDamage(1);
-        //}
-    }
+    //    //if (collision.gameObject.CompareTag("EnemyBoss"))
+    //    //{
+    //    //    //Debug.Log("ColPlayer");
+    //    //    Destroy(this);
+    //    //    //プレイヤーへのダメージ処理
+    //    //    PlayerDamage(1);
+    //    //}
+    //}
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{

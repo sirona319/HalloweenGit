@@ -1,24 +1,41 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerDamage : MonoBehaviour,IDamage
 {
     [SerializeField] PlayerScr2D pScr;
 
+    //const int LIMITHP = 10;
 
+    [Range(1, 10)]
+    [SerializeField] public int MAXHP = 3;
     #region ダメージ
-    //bool isDead = false;
-
-    //public bool isDamage = false;
     [SerializeField] float damageTimeMax = 1f;
     [SerializeField] float damageTime = 0;
+
+
+    SpriteRenderer pSprite;
+    [SerializeField] Image[] lifeImage;
+
+    public int hp;
 
     //点滅処理
     const float duration = 0.07f;
     Color32 startColor = new(255, 255, 255, 255);
     Color32 endColor = new(255, 255, 255, 0);
-
-    SpriteRenderer sptite;
     #endregion
+
+    bool isDamage = false;
+
+    bool IsDeadHp()
+    {
+        return hp <= 0;
+    }
+
+    public bool IsHpMax()
+    {
+        return hp >= MAXHP;
+    }
 
     void Start()
     {
@@ -26,17 +43,26 @@ public class PlayerDamage : MonoBehaviour,IDamage
             pScr = GetComponent<PlayerScr2D>();
 
         if (GetComponent<SpriteRenderer>() != null)
-            sptite = GetComponent<SpriteRenderer>();
+            pSprite = GetComponent<SpriteRenderer>();
+
+        //ロード用？
+        //for (int i = LIMITHP - 1; i > hp - 1; i--)
+        //{
+        //    if (i < hp - 1) break;
+
+        //    lifeImage[i].enabled = false;
+        //    //hp--;
+        //}
     }
 
     void Update()
     {
-        if (pScr.isDamage == false) return;
+        if (isDamage == false) return;
 
         //点滅処理
         if (damageTime > 0)
         {
-            sptite.material.color =
+            pSprite.material.color =
                 Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, damageTimeMax));
 
             damageTime -= Time.deltaTime;
@@ -44,14 +70,29 @@ public class PlayerDamage : MonoBehaviour,IDamage
         }
         else
         {
-            sptite.material.color = startColor;
-            pScr.isDamage = false;
+            pSprite.material.color = startColor;
+            isDamage = false;
         }
     }
 
+
+    //public void Damage(int damage)
+    //{
+    //    //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
+    //    if (DEBUGNoDamage) return;
+    //    if (isDead) return;
+    //    if (isDamage) return;
+    //    ////if (m_isDash) return;　ダッシュ時無敵
+    //    pDamage.Damage(damage);
+
+    //}
+
     public void Damage(int damage)
     {
-
+        //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
+        if (pScr.DEBUGNoDamage) return;
+        if (pScr.isDead) return;
+        if (isDamage) return;
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
 
@@ -65,12 +106,13 @@ public class PlayerDamage : MonoBehaviour,IDamage
 
         #endregion
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
-        pScr.hp -= damage;        //HP減少処理
+        //hp -= damage;        //HP減少処理
+        DamageUpdate(damage);
 
-        pScr.isDamage = true;
+        isDamage = true;
         damageTime = damageTimeMax;
 
-        if (pScr.hp <= 0)
+        if (hp <= 0)
         {
             pScr.isDead = true;
             Destroy(gameObject);
@@ -83,8 +125,6 @@ public class PlayerDamage : MonoBehaviour,IDamage
         //var soundAtk = (AudioClip)Resources.Load("SE/" + "小パンチ");
         //audioSource.PlayOneShot(soundAtk, volumeAtk);
         #endregion
-
-        ////  m_hpSkin[m_hp].enabled = false;        //HPUIの非表示
 
         #region シーン遷移
 
@@ -127,9 +167,68 @@ public class PlayerDamage : MonoBehaviour,IDamage
         #endregion
     }
 
+    void DamageUpdate(int damage)
+    {
+        for (int i = hp - 1; damage > 0; damage--, i--)
+        {
+            if (i < 0) break;
+
+            lifeImage[i].enabled = false;
+            hp--;
+        }
+
+        //if (!IsDeadHp()) return;
+        //player.PlayerDead();
+    }
+
     //public void Damage(int damage, bool deadSound)
     //{
     //    Damage(damage);
     //    pScr.GetComponent<CreateDeadSound>().IsSoundEnable = deadSound;
     //}
+
+    //HPのダメージ表現
+    public void DamageLife(int damage)
+    {
+
+        int saveValue = damage;
+
+        const float DAMAGETIME = 0.3f;
+
+        for (int i = hp - 1/*,j = 0*/; damage > 0; damage--, i--)
+        {
+            if (i < 0) break;
+
+
+            const float POW = 5f;
+            StartCoroutine(MyLib.DoShake(DAMAGETIME, POW, lifeImage[i].transform));
+
+        }
+
+        //成功
+        StartCoroutine(MyLib.DelayCoroutine(DAMAGETIME, () =>
+        {
+            DamageUpdate(saveValue);
+        }));
+
+    }
+
+
+
+    public void HealLife(int heal)
+    {
+
+        for (int i = hp; heal > 0; heal--, i++)
+        {
+            if (i > MAXHP - 1) break;
+
+            lifeImage[i].enabled = true;
+
+            if (hp < MAXHP)
+                hp++;
+
+        }
+
+
+    }
 }
