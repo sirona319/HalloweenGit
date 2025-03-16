@@ -45,7 +45,7 @@ public class CollisionTriggerDamage : MonoBehaviour
             var iDamage = other.GetComponent<IDamage>();
             if (iDamage != null)
             {
-                iDamage.Damage(1);
+                iDamage.Damage(2);
                 //isActiveTrigger = true;
                 // SetTimeline(true);
                 //Debug.Log(other.name);

@@ -1,1 +1,82 @@
-aaaaaaaaaa
+    
+           reviveText.DOFade(endValue: 1f, duration: 1f);
+
+
+    ////////////パーティクル関係
+    private void OnParticleSystemStopped()
+    {
+        print("パーティクルの再生が終了したよ！");
+        注意点としては、必ずパーティクルオブジェクト自体にスクリプトがアタッチされている必要があり、
+        子階層オブジェクトにアタッチされてもメッセージが送信されません。
+    }
+
+
+
+
+    /////////////レンダー関係
+
+    private void OnBecameVisible()
+    {
+        //GetComponent<NoiseEnable>().enabled = true;
+
+        //idRend = true;
+        //Debug.Log("OnBecameVisible");
+        //this.GetComponent<Renderer>().material.color = Color.red;
+    }
+
+    /// <summary>
+    /// Rendererがカメラから見えなくなると呼び出される
+    /// </summary>
+    private void OnBecameInvisible()
+    {
+        //GetComponent<NoiseEnable>().enabled = false;
+
+        //Debug.Log("OnBecameInvisible");
+        //this.GetComponent<Renderer>().material.color = Color.blue;
+    }
+
+    // <summary>
+    // カメラに写っている間常に呼ばれる SpriteRendererの関係で不具合が起こる**
+    // </summary>
+    private void OnWillRenderObject()
+    {
+        if (!isNoise) return;
+        if (noiseTime >= (noiseTiming + randTime) + noiseLength) return;
+
+        noiseTime += Time.deltaTime;
+
+
+        if (noiseTime > noiseTiming + randTime && GetComponent<NoiseEnable>().enabled == false)
+        {
+            WorpPositionSelect();
+
+            //ノイズを有効に
+            GetComponent<NoiseEnable>().enabled = true;
+
+        }
+
+        if (noiseTime >= (noiseTiming + randTime) + noiseLength && GetComponent<NoiseEnable>().enabled == true)
+        {
+
+            //赤かぼちゃのみ
+            if (transform.name.Contains("Red"))
+            {
+                //乱数の再計算　大きめにする？
+                //タイミングの加算
+                randTime = Random.Range(randTimeMin, randTimeMax + 1);
+
+                noiseTiming += noiseTimingDefaultRed;
+            }
+
+            GetComponent<NoiseEnable>().enabled = false;
+
+        }
+
+
+#if UNITY_EDITOR
+
+        //if (Camera.current.name != "Main Camera" && Camera.current.name != "Preview Camera")
+            //Debug.Log("OnWillRenderOject");
+        //Camera.current.transform;
+#endif
+    }

@@ -26,8 +26,6 @@ public class ForceBullet : BaseBullet
             rb.AddForce(tForceXInv, ForceMode2D.Impulse);
 
 
-
-
         //没　毎回切り替わる
         //////////var p = tForce.position;
         //////////p.x *= -1;
@@ -48,8 +46,6 @@ public class ForceBullet : BaseBullet
     //{
     //    BulletUpdate();
     //}
-
-
 
     public override void BulletInit()
     {

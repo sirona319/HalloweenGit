@@ -1,11 +1,30 @@
 ﻿using AIE2D;
+using DG.Tweening;
+using TMPro;
 using UniRx;
 using Unity.Burst;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScr2D : MonoBehaviour
 {
+    //移動させる画像
+    public Image eyeImageUp;
+    public Image eyeImageDown;
+    //
+
+    public Image closeEyeImageUp1;
+    public Image closeEyeImageDown1;
+    public Image closeEyeImageUp2;
+    public Image closeEyeImageDown2;
+    public Image closeEyeImageUp0;
+    public Image closeEyeImageDown0;
+    public TextMeshProUGUI reviveText;
+
+    //HP
+    public bool isDead = false;
+
     # region デバッグ
     public float debugmoveX = 0;
     public bool DEBUGNoDamage = false;
@@ -50,9 +69,12 @@ public class PlayerScr2D : MonoBehaviour
     TargetMagazine tMag;     //ナイフ
     #endregion
 
-    //HP
-    public bool isDead = false;
 
+    public void PlayerDead()
+    {
+        isDead = true;
+        m_animator.SetBool("dead", true);
+    }
 
     void Start()
     {
@@ -84,9 +106,10 @@ public class PlayerScr2D : MonoBehaviour
         );
     }
 
+    [SerializeField]GameObject deadKnife;
     void Update()
     {
-        if (isDead) return;
+        if (isDead)return;
 
         if(atkInterval > 0) 
             atkInterval-=Time.deltaTime;
@@ -317,8 +340,43 @@ public class PlayerScr2D : MonoBehaviour
     public void StartAnimEnd()
     {
         //フラグをオフ
-        //isLimitMove = false;
+        isLimitMove = false;
         //Debug.Log("isLimitMove = false;");
+    }
+
+    public void CloseEye1()
+    {
+        eyeImageUp.transform.DOMove(closeEyeImageUp1.transform.position, 1f);
+        eyeImageDown.transform.DOMove(closeEyeImageDown1.transform.position, 1f);
+    }
+
+    public void CloseEye2()
+    {
+        eyeImageUp.transform.DOMove(closeEyeImageUp2.transform.position, 1f);
+        eyeImageDown.transform.DOMove(closeEyeImageDown2.transform.position, 1f);
+
+        reviveText.DOFade(endValue: 1f, duration: 1f);
+    }
+
+
+    public void OpenEye0()
+    {
+        eyeImageUp.transform.DOMove(closeEyeImageUp0.transform.position, 1f);
+        eyeImageDown.transform.DOMove(closeEyeImageDown0.transform.position, 1f);
+    }
+
+    public void OpenEye1()
+    {
+        eyeImageUp.transform.DOMove(closeEyeImageUp1.transform.position, 1f);
+        eyeImageDown.transform.DOMove(closeEyeImageDown1.transform.position, 1f);
+    }
+
+    public void OpenEye2()
+    {
+        eyeImageUp.transform.DOMove(closeEyeImageUp2.transform.position, 1f);
+        eyeImageDown.transform.DOMove(closeEyeImageDown2.transform.position, 1f);
+
+        reviveText.DOFade(endValue: 0f, duration: 1f);
     }
     #endregion
 

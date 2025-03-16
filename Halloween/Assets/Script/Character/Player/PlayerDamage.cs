@@ -57,6 +57,25 @@ public class PlayerDamage : MonoBehaviour,IDamage
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
+            if (pScr.DEBUGNoDamage) return;
+            if (pScr.isDead) return;
+            if (isDamage) return;
+
+            DamageLife(4);
+
+            isDamage = true;
+            damageTime = damageTimeMax;
+
+            if (hp <= 0)
+            {
+                pScr.PlayerDead();
+                //Destroy(gameObject);
+            }
+        }
+
         if (isDamage == false) return;
 
         //点滅処理
@@ -107,15 +126,15 @@ public class PlayerDamage : MonoBehaviour,IDamage
         #endregion
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         //hp -= damage;        //HP減少処理
-        DamageUpdate(damage);
+        DamageLife(damage);
 
         isDamage = true;
         damageTime = damageTimeMax;
 
         if (hp <= 0)
         {
-            pScr.isDead = true;
-            Destroy(gameObject);
+            pScr.PlayerDead();
+            //Destroy(gameObject);
         }
 
 
@@ -188,7 +207,7 @@ public class PlayerDamage : MonoBehaviour,IDamage
     //}
 
     //HPのダメージ表現
-    public void DamageLife(int damage)
+    void DamageLife(int damage)
     {
 
         int saveValue = damage;
@@ -214,7 +233,7 @@ public class PlayerDamage : MonoBehaviour,IDamage
     }
 
 
-
+    //回復
     public void HealLife(int heal)
     {
 

@@ -29,7 +29,7 @@ public abstract class BaseMagazine : MonoBehaviour
         CircleMagazine,
     }
 
-    public float shotTime = 0;
+    //public float shotTime = 0;
 
     public CreateBullet createBullet;
 

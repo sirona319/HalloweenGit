@@ -15,7 +15,7 @@ public class CircleMagazine : BaseMagazine
     //逆回り作る
     public override void Initialize()
     {
-        shotTime = BULLETTIMEMAX;
+        //shotTime = BULLETTIMEMAX;
     }
 
     public override void MagazineEnter()
@@ -32,7 +32,6 @@ public class CircleMagazine : BaseMagazine
     {
         // 前フレームからの時間の差を加算
         timeCount += Time.deltaTime;
-
 
         // 0.1秒を超えているか
         if (timeCount > shotTiming)
