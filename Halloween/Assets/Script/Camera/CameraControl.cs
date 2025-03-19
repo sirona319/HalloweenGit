@@ -15,7 +15,10 @@ public class CameraControl : MonoBehaviour
 
     void Start()
     {
-
+        var t = transform.position;
+        t.x = cameraTarget.position.x;
+        t.y = cameraTarget.position.y;
+        transform.position = t;
     }
 
     void Update()

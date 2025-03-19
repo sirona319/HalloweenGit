@@ -51,7 +51,7 @@ public class TimelineControl : MonoBehaviour
             playableDirector.Play();
             isPlay = true;
 
-            var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerScr2D>();
+            var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
             p.isLimitMove = true;
             p.moveSpeed = 0f;
             //Debug.Log("再生開始"+ GetType().FullName);

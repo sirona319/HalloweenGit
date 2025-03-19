@@ -2,10 +2,10 @@
 
 public class PlayerGroundColliderTop : MonoBehaviour
 {
-    PlayerScr2D pScr;
+    PlayerMove pScr;
     void Start()
     {
-        pScr = transform.parent.GetComponent<PlayerScr2D>();
+        pScr = transform.parent.GetComponent<PlayerMove>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,5 +26,18 @@ public class PlayerGroundColliderTop : MonoBehaviour
                 pScr.isJump = false;
         }
 
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (pScr.IsGround) return;
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+
+            if (pScr.isJump)
+                pScr.isJump = false;
+            //Debug.Log("GROUND TRUE");
+        }
     }
 }

@@ -2,10 +2,10 @@
 
 public class PlayerGroundCollider : MonoBehaviour
 {
-    PlayerScr2D pScr;
+    PlayerMove pScr;
     void Start()
     {
-        pScr = transform.parent.GetComponent<PlayerScr2D>();
+        pScr = transform.parent.GetComponent<PlayerMove>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
