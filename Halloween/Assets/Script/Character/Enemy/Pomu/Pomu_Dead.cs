@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Fly_Dead : StateChildBase
+public class Pomu_Dead : StateChildBase
 {
     const float DEADTIME = 0.1f;
 
@@ -34,26 +34,6 @@ public class Fly_Dead : StateChildBase
         Instantiate(deadParticleB, transform.position, Quaternion.identity);
 
         gameObject.SetActive(false);
-       
-
-        //StartCoroutine(MyLib.DelayCoroutine(DEADTIME, () =>
-        //{
-        //    //GameObject spawn = GameObject.Find("WaveSpawn");
-        //    //spawn.GetComponent<EnemySpawnWave>().UpdateCount();
-
-        //    if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
-        //        GameSceneControl.I.UpdateEnemyCount();
-
-        //    gameObject.SetActive(false);
-        //    //Destroy(gameObject);
-
-        //}));
-
-        //クリアチェック　スコア加算　
-        //if (SceneManager.GetActiveScene().name.Contains(GManager.SceneNameType.NormalScene.ToString()))
-        //{
-        //    //GameSceneControl.I.UpdateEnemyCount();
-        //}
 
     }
 
@@ -66,24 +46,8 @@ public class Fly_Dead : StateChildBase
     {
         stateTime += Time.deltaTime;
 
-        //if (stateTime > DEADTIME)
-        //{
-        //    Instantiate(deadParticle, transform.position, Quaternion.identity);
-
-        //    gameObject.SetActive(false);
-        //}
-
-
         return (int)StateType;
 
     }
 
-    //public override void OnEnter()
-    //{
-    //    //var anim = gameObject.GetComponent<Animator>();
-    //    //anim.SetBool("DamageB", false);
-    //    //anim.SetTrigger("DeadT");
-
-    //    base.OnEnter();
-    //}
 }

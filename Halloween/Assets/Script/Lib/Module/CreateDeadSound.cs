@@ -7,9 +7,14 @@ public class CreateDeadSound : MonoBehaviour
 
     public bool IsSoundEnable = true;
 
-    [SerializeField] AudioSource audioSe;
+    AudioSource audioSe;
 
     //[SerializeField] AudioResource audioSe;
+
+    private void Start()
+    {
+        audioSe= MyLib.GetComponentLoad<AudioSource>("prefab/Sound/DestroySound");
+    }
 
 
     public bool Create()

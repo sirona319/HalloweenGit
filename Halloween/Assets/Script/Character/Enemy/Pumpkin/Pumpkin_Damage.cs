@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 public class Pumpkin_Damage : StateChildBase
 {
     const float DAMAGETIMEMAX = 0.4f;

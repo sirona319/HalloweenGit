@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 [DisallowMultipleComponent]
 public class PumpkinBoss_Wait : StateChildBase
 {

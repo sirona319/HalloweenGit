@@ -36,12 +36,14 @@ public class RandomMove : BaseMove
 
     public override void MoveUpdate()
     {
+        Vector2 movement = targetPos.normalized * speed * Time.deltaTime;
 
-        Vector2 movement = transform.up * Time.deltaTime * speed;
+        //Vector2 movement = transform.up * Time.deltaTime * speed;
 
         rb2.MovePosition(rb2.position + movement);
 
-        transform.rotation = MyLib.TargetRotation2D(targetPos, transform);
+        //transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
+        
 
 
         float len = Vector3.Distance(transform.position, targetPos);
@@ -50,6 +52,7 @@ public class RandomMove : BaseMove
         
     }
 
+    //時間でリセットするようにもする？
     void MoveRandomSet()
     {
         var moveRandomValue = Random.Range(0, movePos.Length);

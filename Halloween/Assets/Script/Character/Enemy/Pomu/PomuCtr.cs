@@ -1,15 +1,16 @@
 ﻿using System;
+using UnityEngine;
 
-public class FlyCtr : StateControllerBase
+public class PomuCtr : StateControllerBase
 {
     public enum State
     {
-        Fly_Wait,
-        Fly_Damage,
-        Fly_Dead,
-        Fly_Attack,
-        Fly_Move,
-        //Fly_Circle,
+        Pomu_Wait,
+        Pomu_Damage,
+        Pomu_Dead,
+        //Pomu_Attack,
+        Pomu_Move,
+        //Pumpkin_Circle,
 
 
         NumStates
@@ -27,7 +28,7 @@ public class FlyCtr : StateControllerBase
             if (typeClass != null)
             {
                 var state = (StateChildBase)gameObject.AddComponent(typeClass);
-                
+
                 stateDic[i] = state;
                 state.Initialize(i);
 
@@ -38,11 +39,4 @@ public class FlyCtr : StateControllerBase
         CurrentState = initializeStateType;
         stateDic[CurrentState].OnEnter();
     }
-
-    //protected void BaseFlyStateSet(State enemyState)
-    //{
-    //    AutoStateTransitionSequence((int)enemyState);
-    //}
 }
-
-//public class BaseFly_Move : EnemyStateChildBaseMove2D{}

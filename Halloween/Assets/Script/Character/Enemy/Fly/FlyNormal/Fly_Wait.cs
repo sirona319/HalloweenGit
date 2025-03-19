@@ -1,10 +1,4 @@
-﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using static EnemyBase;
-using static UnityEngine.GraphicsBuffer;
+﻿using UnityEngine;
 
 
 public class Fly_Wait : StateChildBase
