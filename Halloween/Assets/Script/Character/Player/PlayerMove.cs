@@ -110,6 +110,29 @@ public class PlayerMove : MonoBehaviour
         // Debug.Log("MovePosition");
     }
 
+
+
+    void MoveControl()
+    {
+        debugmoveX = Input.GetAxis("Horizontal");
+        // 入力の取得
+        m_movement.x = Input.GetAxis("Horizontal");
+        m_movement.y = 0f;//Input.GetAxis("Vertical");
+
+        const float walkAnimSpd = 0.3f;
+        if (m_movement.x >= walkAnimSpd)
+            GetComponent<SpriteRenderer>().flipX = true;
+        if (m_movement.x <= -walkAnimSpd)
+            GetComponent<SpriteRenderer>().flipX = false;
+
+        var absX = Mathf.Abs(m_movement.x);
+        //速度が一定を超えたら　アニメーションの設定
+        if (absX > walkAnimSpd)
+            m_animator.SetBool("walk", true);
+        else
+            m_animator.SetBool("walk", false);
+    }
+
     void Dash()
     {
         //g = m_rb.gravityScale;
@@ -157,27 +180,6 @@ public class PlayerMove : MonoBehaviour
             isDash = false;
         }));
 
-    }
-
-    void MoveControl()
-    {
-        debugmoveX = Input.GetAxis("Horizontal");
-        // 入力の取得
-        m_movement.x = Input.GetAxis("Horizontal");
-        m_movement.y = 0f;//Input.GetAxis("Vertical");
-
-        const float walkAnimSpd = 0.3f;
-        if (m_movement.x >= walkAnimSpd)
-            GetComponent<SpriteRenderer>().flipX = true;
-        if (m_movement.x <= -walkAnimSpd)
-            GetComponent<SpriteRenderer>().flipX = false;
-
-        var AbsX = Mathf.Abs(m_movement.x);
-        //速度が一定を超えたら　アニメーションの設定
-        if (AbsX > walkAnimSpd)
-            m_animator.SetBool("walk", true);
-        else
-            m_animator.SetBool("walk", false);
     }
 
     void JumpControl()

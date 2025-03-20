@@ -189,6 +189,24 @@ public class PlayerHp : MonoBehaviour,IDamage
         #endregion
     }
 
+    public void AbsDamage(int damage)
+    {
+        //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
+        //if (pScr.DEBUGNoDamage) return;
+        if (pScr.isDead) return;
+        //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
+        //hp -= damage;        //HP減少処理
+        DamageLife(damage);
+
+        isDamage = true;
+        damageTime = damageTimeMax;
+
+        //if (hp <= 0)
+        //    pScr.PlayerDead();
+
+
+    }
+
     void DamageUpdate(int damage)
     {
         for (int i = hp - 1; damage > 0; damage--, i--)
