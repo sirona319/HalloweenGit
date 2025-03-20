@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4412166862163149242
 Transform:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6188250136296986284}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -86,11 +86,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6188250136296986284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f29173456605c084aae12aac2301fa86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageVal: 1
 --- !u!1 &6205204080456637428
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +110,8 @@ GameObject:
   - component: {fileID: 3751133012385811689}
   - component: {fileID: 3389971620290101742}
   - component: {fileID: 6045209402796862328}
+  - component: {fileID: -8853910818297857426}
+  - component: {fileID: 7216542074282882628}
   m_Layer: 3
   m_Name: PumpkinJumpL
   m_TagString: Enemy
@@ -305,7 +308,7 @@ MonoBehaviour:
   eDamage: {fileID: 6045209402796862328}
   baseMove:
   - {fileID: 3751133012385811689}
-  Hp: 0
+  Hp: 1
   isBoss: 1
   sprite: {fileID: 8687611365685043167}
   isNoise: 0
@@ -349,7 +352,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
-  audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
 --- !u!114 &6045209402796862328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,3 +365,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eBase: {fileID: 8694150602881707665}
+--- !u!114 &-8853910818297857426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f29173456605c084aae12aac2301fa86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageVal: 1
+--- !u!61 &7216542074282882628
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 320
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.0025591552, y: -0.005118251}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.42, y: 0.97}
+    newSize: {x: 1.42, y: 0.97}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.8049466, y: 0.5062151}
+  m_EdgeRadius: 0

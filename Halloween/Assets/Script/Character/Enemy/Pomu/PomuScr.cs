@@ -35,7 +35,5 @@ public class PomuScr : EnemyBase
         else
             return (int)PomuCtr.State.Pomu_Wait;
 
-
-
     }
 }

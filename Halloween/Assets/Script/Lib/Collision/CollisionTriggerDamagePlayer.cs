@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CollisionTriggerDamage : MonoBehaviour
+public class CollisionTriggerDamagePlayer : MonoBehaviour
 {
     [SerializeField] int damageVal = 1;
     //public IDamage damage;

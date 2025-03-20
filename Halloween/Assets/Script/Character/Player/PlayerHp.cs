@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour,IDamage
 {
+    [SerializeField] int DEBUGDMG = 1;
+
     [SerializeField] PlayerScr2D pScr;
 
     //const int LIMITHP = 10;
@@ -64,7 +66,7 @@ public class PlayerHp : MonoBehaviour,IDamage
             if (pScr.isDead) return;
             if (isDamage) return;
 
-            Damage(3);
+            Damage(DEBUGDMG);
 
             //isDamage = true;
             //damageTime = damageTimeMax;

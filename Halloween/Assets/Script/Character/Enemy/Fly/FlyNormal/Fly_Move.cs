@@ -60,8 +60,8 @@ public class Fly_Move : StateChildBase
 
 
 
-        if (!GetComponent<FlyScr>().isMove)
-            GetComponent<FlyScr>().isAttack = true;
+        //if (!GetComponent<FlyScr>().isMove)
+        //    GetComponent<FlyScr>().isAttack = true;
 
         //GetComponent<FlyScr>().AttackMagazineUpdateAll();
 

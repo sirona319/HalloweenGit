@@ -1,9 +1,11 @@
-﻿using System;
+﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public class RandomMove : BaseMove
 {
+    [SerializeField] TilemapCollider2D tileCol;
 
     [SerializeField] Vector3[] movePos;
     [SerializeField] Vector3 targetPos;
@@ -62,6 +64,22 @@ public class RandomMove : BaseMove
         (Random.Range(-moveRangeXZ, moveRangeXZ),
         Random.Range(-moveRangeXZ, moveRangeXZ),
         0);
+
+        //GroundOutCheck(targetPos);
+    }
+
+    void GroundOutCheck(Vector3 pos)
+    {
+        if(Physics.OverlapSphere(pos, 0).Any(col => col == tileCol))
+        {
+            // コライダーの中にある
+            Debug.Log("コライダー内");
+        }
+        else
+        {
+            // コライダーの外にある
+            Debug.Log("外");
+        }
     }
 
 
