@@ -5,7 +5,7 @@ public class PomuCtr : StateControllerBase
 {
     public enum State
     {
-        Pomu_Wait,
+        //Pomu_Wait,
         Pomu_Damage,
         Pomu_Dead,
         //Pomu_Attack,

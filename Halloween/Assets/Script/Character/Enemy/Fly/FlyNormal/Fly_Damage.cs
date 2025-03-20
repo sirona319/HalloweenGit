@@ -4,7 +4,7 @@ using UnityEngine;
 public class Fly_Damage : StateChildBase
 {
     const float DAMAGETIMEMAX = 0.4f;
-    float damageTime = 0f;
+    //float damageTime = 0f;
 
     //Animator m_anim;
 
@@ -20,7 +20,7 @@ public class Fly_Damage : StateChildBase
     }
     public override void OnEnter()
     {
-        damageTime = 0f;
+        //damageTime = 0f;
         stateTime = 0f;
         //オブジェクトを揺らしオン
         StartCoroutine(MyLib.DoShake(0.25f, 0.1f, transform));
@@ -38,7 +38,7 @@ public class Fly_Damage : StateChildBase
         //if (!m_anim.GetBool("DamageB"))
          //   m_anim.SetBool("DamageB", true);
 
-        damageTime = DAMAGETIMEMAX;
+        //damageTime = DAMAGETIMEMAX;
         //コルーチンの起動
        // StartCoroutine(MyLib.DelayCoroutine(damageTime, () =>
         //{
@@ -63,7 +63,7 @@ public class Fly_Damage : StateChildBase
             return DEAD;
         }
 
-        if (stateTime >= damageTime)
+        if (stateTime >= DAMAGETIMEMAX)
         {
 
             return GetComponent<EnemyBase>().ReturnStateMoveType(StateType);

@@ -27,13 +27,12 @@ public class Pomu_Wait : StateChildBase
 
 
         if (GetComponent<EnemyBase>().isDamage)
-            if (GetComponent<EnemyBase>().ReturnStateTypeDead())
-                return (int)PomuCtr.State.Pomu_Dead;
+            return GetComponent<PomuScr>().DamageCheck();
 
         stateTime += Time.deltaTime;
 
-
-        return GetComponent<PomuScr>().ReturnStateType(StateType);
+        return StateType;
+        //return GetComponent<PomuScr>().ReturnStateType(StateType);
 
     }
 

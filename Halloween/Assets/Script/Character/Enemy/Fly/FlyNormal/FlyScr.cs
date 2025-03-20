@@ -6,7 +6,7 @@ public class FlyScr : EnemyBase
     public float AtkInterval =1;
     void Start()
     {
-        base.StartInit();
+        //base.StartInit();
 
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);
     }

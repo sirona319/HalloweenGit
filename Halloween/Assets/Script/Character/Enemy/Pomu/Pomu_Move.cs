@@ -30,9 +30,7 @@ public class Pomu_Move : StateChildBase
         //moveSaveTime += Time.deltaTime;
 
         if (GetComponent<EnemyBase>().isDamage)
-        {
-            return (int)PomuCtr.State.Pomu_Damage;
-        }
+            return GetComponent<PomuScr>().DamageCheck();
 
 
         //移動の更新

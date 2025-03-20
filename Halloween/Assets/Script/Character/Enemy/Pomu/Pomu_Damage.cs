@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 public class Pomu_Damage : StateChildBase
 {
     const float DAMAGETIMEMAX = 0.4f;
-    float damageTime = 0f;
+    //float damageTime = 0f;
 
     public override void Initialize(int stateType)
     {
@@ -12,12 +10,12 @@ public class Pomu_Damage : StateChildBase
     }
     public override void OnEnter()
     {
-        damageTime = 0f;
+       // damageTime = 0f;
         stateTime = 0f;
         //オブジェクトを揺らしオン
         StartCoroutine(MyLib.DoShake(0.25f, 0.1f, transform));
 
-        damageTime = DAMAGETIMEMAX;
+       // damageTime = DAMAGETIMEMAX;
 
     }
 
@@ -36,7 +34,7 @@ public class Pomu_Damage : StateChildBase
             return DEAD;
         }
 
-        if (stateTime >= damageTime)
+        if (stateTime >= DAMAGETIMEMAX)
         {
 
             return GetComponent<EnemyBase>().ReturnStateMoveType(StateType);

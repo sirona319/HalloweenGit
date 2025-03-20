@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 
-public class EnemyBase : MonoBehaviour, IDamage
+public class EnemyBase : MonoBehaviour
 {
     #region ステートコントローラー
     [SerializeField] protected StateControllerBase stateController = default;
@@ -24,27 +24,27 @@ public class EnemyBase : MonoBehaviour, IDamage
 
     public List<BaseMove> baseMove = new ();
 
-    public int Hp = 0;
+    //public int Hp = 0;
 
-    protected virtual void StartInit()
-    {
-        if(GetComponent<EnemyDamage>()!=null)
-            eDamage = GetComponent<EnemyDamage>();
+    //protected virtual void StartInit()
+    //{
+    //    //if(GetComponent<EnemyDamage>()!=null)
+    //    //    eDamage = GetComponent<EnemyDamage>();
 
-        if (eDamage == null)
-            Debug.Log("ダメージクラスが設定されていない");
+    //    //if (eDamage == null)
+    //    //    Debug.Log("ダメージクラスが設定されていない");
 
-    }
+    //}
 
-    public void Damage(int damage)
-    {
-        eDamage.Damage(damage);
-    }
+    //public void Damage(int damage)
+    //{
+    //    eDamage.Damage(damage);
+    //}
 
-    public void Damage(int damage,bool isSound)
-    {
-        eDamage.Damage(damage, isSound);
-    }
+    //public void Damage(int damage,bool isSound)
+    //{
+    //    eDamage.Damage(damage, isSound);
+    //}
 
     public bool ReturnStateTypeDead()
     {

@@ -6,9 +6,9 @@ public class PomuScr : EnemyBase
     //public float AtkInterval = 1;
     void Start()
     {
-        base.StartInit();
+        //base.StartInit();
 
-        stateController.Initialize((int)FlyCtr.State.Fly_Wait);
+        stateController.Initialize((int)PomuCtr.State.Pomu_Move);
     }
 
     void Update()
@@ -27,13 +27,24 @@ public class PomuScr : EnemyBase
 
     //}
 
-    public int ReturnStateType(int stateType)
-    {
-        if (isMove)
-            return (int)PomuCtr.State.Pomu_Move;
+    //public int ReturnStateType(int stateType)
+    //{
+    //    if (isMove)
+    //        return (int)PomuCtr.State.Pomu_Move;
 
+    //    else
+    //        return (int)PomuCtr.State.Pomu_Wait;
+
+    //}
+
+    public int DamageCheck()
+    {
+
+        //if (GetComponent<EnemyBase>().isDamage)
+        if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+            return (int)PomuCtr.State.Pomu_Dead;
         else
-            return (int)PomuCtr.State.Pomu_Wait;
+            return (int)PomuCtr.State.Pomu_Damage;
 
     }
 }

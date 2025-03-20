@@ -2,8 +2,8 @@
 
 public class EnemyDamage : MonoBehaviour,IDamage
 {
-    [SerializeField]EnemyBase eBase;
-
+    [SerializeField] EnemyBase eBase;
+    [SerializeField] int Hp = 1;
     void Start()
     {
         if (GetComponent<EnemyBase>() != null)
@@ -12,7 +12,6 @@ public class EnemyDamage : MonoBehaviour,IDamage
 
     public void Damage(int damage)
     {
-
         if (eBase.isDead) return;
 
         #region カメラシェイク
@@ -28,11 +27,11 @@ public class EnemyDamage : MonoBehaviour,IDamage
 
         #endregion
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
-        eBase.Hp -= damage;        //HP減少処理
+        Hp -= damage;        //HP減少処理
 
         eBase.isDamage = true;
 
-        if (eBase.Hp <= 0)
+        if (Hp <= 0)
             eBase.isDead = true;
     }
 

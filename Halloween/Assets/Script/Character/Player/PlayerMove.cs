@@ -117,7 +117,7 @@ public class PlayerMove : MonoBehaviour
         if (isSkyDash) return;
         if (!Input.GetKeyDown(KeyCode.LeftShift)) return;
 
-        Debug.Log("ダッシュ");
+        //Debug.Log("ダッシュ");
 
         isDash = true;
         GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(true);
@@ -153,7 +153,7 @@ public class PlayerMove : MonoBehaviour
             }
 
             m_rb.linearVelocity = Vector2.zero;
-            Debug.Log("DASHOFF");
+            //Debug.Log("DASHOFF");
             isDash = false;
         }));
 
@@ -161,23 +161,10 @@ public class PlayerMove : MonoBehaviour
 
     void MoveControl()
     {
+        debugmoveX = Input.GetAxis("Horizontal");
         // 入力の取得
         m_movement.x = Input.GetAxis("Horizontal");
         m_movement.y = 0f;//Input.GetAxis("Vertical");
-
-        var AbsX = Mathf.Abs(m_movement.x);
-
-        debugmoveX = Input.GetAxis("Horizontal");
-
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGround.Value)
-        {
-            isJump = true;
-            isGround.Value = false;
-            keepPosY = transform.position.y;
-        }
-
-        //JumpControl();
 
         const float walkAnimSpd = 0.3f;
         if (m_movement.x >= walkAnimSpd)
@@ -185,7 +172,7 @@ public class PlayerMove : MonoBehaviour
         if (m_movement.x <= -walkAnimSpd)
             GetComponent<SpriteRenderer>().flipX = false;
 
-
+        var AbsX = Mathf.Abs(m_movement.x);
         //速度が一定を超えたら　アニメーションの設定
         if (AbsX > walkAnimSpd)
             m_animator.SetBool("walk", true);

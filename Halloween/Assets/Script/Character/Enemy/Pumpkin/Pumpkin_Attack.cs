@@ -29,8 +29,7 @@ public class Pumpkin_Attack : StateChildBase
 
 
         if (GetComponent<EnemyBase>().isDamage)
-            if (GetComponent<EnemyBase>().ReturnStateTypeDead())
-                return (int)FlyCtr.State.Fly_Dead;
+            return GetComponent<PumpkinScr>().DamageCheck();
 
 
 

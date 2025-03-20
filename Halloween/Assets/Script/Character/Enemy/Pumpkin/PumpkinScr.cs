@@ -28,7 +28,7 @@ public class PumpkinScr : EnemyBase
     //
     void Start()
     {
-        base.StartInit();
+        //base.StartInit();
 
         stateController.Initialize((int)FlyCtr.State.Fly_Wait);
 
@@ -258,5 +258,14 @@ public class PumpkinScr : EnemyBase
     }
 
 
+    public int DamageCheck()
+    {
 
+        //if (GetComponent<EnemyBase>().isDamage)
+        if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+            return (int)PumpkinCtr.State.Pumpkin_Dead;
+        else
+            return (int)PumpkinCtr.State.Pumpkin_Damage;
+
+    }
 }

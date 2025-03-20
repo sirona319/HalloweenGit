@@ -1,4 +1,22 @@
     
+           
+           
+           
+    private void OnJointBreak(float breakForce)
+    {
+        
+    }
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
            reviveText.DOFade(endValue: 1f, duration: 1f);
 
 

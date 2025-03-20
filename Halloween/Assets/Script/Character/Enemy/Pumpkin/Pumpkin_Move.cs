@@ -30,12 +30,8 @@ public class Pumpkin_Move : StateChildBase
         //moveSaveTime += Time.deltaTime;
 
         if (GetComponent<EnemyBase>().isDamage)
-        {
-            return (int)PumpkinCtr.State.Pumpkin_Damage;
-        }
-            //if (GetComponent<EnemyBase>().isDamage)
-            //    if (GetComponent<EnemyBase>().ReturnStateTypeDead())
-            //        return (int)FlyCtr.State.Fly_Dead;
+            return GetComponent<PumpkinScr>().DamageCheck();
+
 
 
         //移動の更新
