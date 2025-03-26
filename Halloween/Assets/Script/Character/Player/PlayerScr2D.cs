@@ -19,11 +19,13 @@ public class PlayerScr2D : MonoBehaviour
     //public Image closeEyeImageDown0;
     //public TextMeshProUGUI reviveText;
 
-    #region 攻撃
-    readonly float MAXATKINTERVAL = 1;
-    float atkInterval = 0;
-    TargetMagazine tMag;     //ナイフ
-    #endregion
+    //#region 攻撃
+    //readonly float MAXATKINTERVAL = 1;
+    //float atkInterval = 0;
+    //PlayerMagazine tMag;     //ナイフ
+    //#endregion
+
+    PlayerMagazine mag;
 
     Animator m_animator;
     public bool isDead = false;
@@ -42,8 +44,8 @@ public class PlayerScr2D : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
 
-        tMag = GetComponent<TargetMagazine>();
-        tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
+        mag = GetComponent<PlayerMagazine>();
+        //tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
     }
 
     private void Update()
@@ -51,21 +53,11 @@ public class PlayerScr2D : MonoBehaviour
         if (GetComponent<PlayerScr2D>().isDead) return;
 
         //攻撃
-        if (atkInterval > 0)
-            atkInterval -= Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.F) && atkInterval <= 0)
-        {
-            //nMag.targetPos = (transform.position + Vector3.up) - transform.position;
-            tMag.MagazineEnter();
-            atkInterval = MAXATKINTERVAL;
-
-        }
-        //
+        mag.MagazineUpdate();
 
 
         //一時停止
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0f;
             timeText.enabled = true;

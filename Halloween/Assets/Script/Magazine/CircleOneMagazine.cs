@@ -6,12 +6,12 @@ public class CircleOneMagazine : BaseMagazine
 
     //Transform targetTrans;
 
-    const float BULLETTIMEMAX = 4f;
-
+    //const float BULLETTIMEMAX = 4f;
+    CreateBullet createBullet;
     //逆回り作る
     public override void Initialize()
     {
-
+        createBullet=GetComponent<CreateBullet>();
     }
 
     public override void MagazineEnter()

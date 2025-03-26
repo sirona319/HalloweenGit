@@ -7,13 +7,11 @@ public class TwoCarveMagazine : BaseMagazine,ITarget
     const float ONEWEYLENGTH = 7f;
     //const float TWOWEYLENGTH = 30f;
 
+    CreateBullet createBullet;
+    //逆回り作る
     public override void Initialize()
     {
-
-        //var player = GameObject.FindGameObjectWithTag(TagName.Player);
-        //targetTrans = player.transform;
-
-        //bulletInterval = MAXBULLETINTERVAL;
+        createBullet = GetComponent<CreateBullet>();
     }
 
     public override void MagazineEnter()

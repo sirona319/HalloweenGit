@@ -58,7 +58,7 @@ public class PlayerAttackPointMove : BaseMove
         //プレイヤーが離れていたら無し
         if (len < attackLengeMax)
         {
-            IsAtkMode = true;
+            //IsAtkMode = true;
             Debug.Log("攻撃" + gameObject.name);
         }
         else

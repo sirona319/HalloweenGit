@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3347138721328680430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.02, y: -0.37000012, z: 0}
+  m_LocalPosition: {x: 5.73, y: -0.37000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,17 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 2134192767689481326}
   eDamage: {fileID: 0}
-  enemyData:
-    Id: 
-    moveType: 
-    attackType: 
-    Speed: 0
-    HpMax: 0
-    AtkIntervalMax: 1
-  findName: Fly
   baseMove:
   - {fileID: 2466869346531362125}
-  Hp: 0
+  MaxAtkInterval: 1
   AtkInterval: 1
 --- !u!114 &2134192767689481326
 MonoBehaviour:
@@ -306,7 +298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e028ce4b0e36666449ce22364848330f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsMove: 1
+  rb3: {fileID: 0}
+  rb2: {fileID: 0}
+  isMove: 1
   playerAttack: {fileID: -6898568745677087848}
   point: {fileID: 3353146902859642005}
   len: 0
@@ -323,7 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b851bd31e521521448df412bb51a09b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsMove: 1
+  rb3: {fileID: 0}
+  rb2: {fileID: 0}
+  isMove: 1
   moveTrans:
   - {fileID: 3458569494149335512}
   - {fileID: 8212117310601560576}
@@ -340,9 +336,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef18999b172ea9847a6a21b87a877cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsMove: 1
+  rb3: {fileID: 0}
+  rb2: {fileID: 0}
+  isMove: 1
   targetTrans: {fileID: 0}
-  IsAttackEnd: 0
+  isAttackEnd: 0
 --- !u!114 &-1688240844712754749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,7 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
-  audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
 --- !u!114 &836253347083890156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,3 +367,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eBase: {fileID: 0}
+  Hp: 1

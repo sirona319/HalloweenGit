@@ -106,7 +106,7 @@ public static class MyLib
     //    {
     //    MyLib.DoShakeUpdate2D(power, transform);
     //}));
-    public static void DoShakeUpdate2D(float magnitude, Transform trans)
+    public static void DoShakeUpdate2D(float magnitude, Transform trans,float zPos=0f)
     {
 
         var pos = trans.localPosition;
@@ -115,7 +115,7 @@ public static class MyLib
         var x = pos.x + Random.Range(-1f, 1f) * magnitude;
         var y = pos.y + Random.Range(-1f, 1f) * magnitude;
 
-        trans.localPosition = new Vector3(x, y, 0f);
+        trans.localPosition = new Vector3(x, y, zPos);
 
 
     }
@@ -599,6 +599,21 @@ public static class MyLib
         var audioSource = obj.GetComponent<AudioSource>();
         var sound = (AudioClip)Resources.Load(name);
         audioSource.PlayOneShot(sound, volume);
+
+        return audioSource;
+    }
+
+    /// <summary>
+    /// ボリューム調整あり
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="volume"></param>
+    /// <param name="obj"></param>
+    public static AudioSource MyPlaySound(string name, float volume, GameObject obj)
+    {
+        var audioSource = obj.GetComponent<AudioSource>();
+        audioSource.clip = (AudioClip)Resources.Load(name);
+        audioSource.Play();
 
         return audioSource;
     }

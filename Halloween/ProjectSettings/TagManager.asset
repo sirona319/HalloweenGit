@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - EnemyBoss
   - PumpkinWorp
+  - GroundRight
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - 
   - SceneObject
   - Ground
-  - 
+  - GroundRight
   - 
   - 
   - 

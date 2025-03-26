@@ -96,6 +96,8 @@ public class PlayerMove : MonoBehaviour
             isJump = true;
             isGround.Value = false;
             keepPosY = transform.position.y;
+
+            MyLib.MyPlayOneSound("Sound/SE/wave/パンチ素振り", 1f, gameObject);
         }
 
         JumpControl();
@@ -194,8 +196,8 @@ public class PlayerMove : MonoBehaviour
         }
 
         //地面にいるとき　真上にオブジェクトがあるときのジャンプ対策　両方がtrueの時
-        if (IsGround)
-            isJump = false;
+        //if (IsGround)
+        //    isJump = false;
     }
 
 

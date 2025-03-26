@@ -10,12 +10,14 @@ public class CircleMagazine : BaseMagazine
     float timeCount = 0;
     float shotAngle = 0;
 
-    const float BULLETTIMEMAX = 4f;
+    //const float BULLETTIMEMAX = 4f;
 
+    //逆回り作る
+    CreateBullet createBullet;
     //逆回り作る
     public override void Initialize()
     {
-        //shotTime = BULLETTIMEMAX;
+        createBullet = GetComponent<CreateBullet>();
     }
 
     public override void MagazineEnter()

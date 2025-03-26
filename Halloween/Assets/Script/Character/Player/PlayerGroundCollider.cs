@@ -2,6 +2,7 @@
 
 public class PlayerGroundCollider : MonoBehaviour
 {
+
     PlayerMove pScr;
     void Start()
     {
@@ -10,7 +11,8 @@ public class PlayerGroundCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag(TagName.Ground)||
+            collision.gameObject.CompareTag(TagName.GroundRight))
         {
             pScr.IsGround = true;
             //Debug.Log("GROUND TRUE");
@@ -21,7 +23,8 @@ public class PlayerGroundCollider : MonoBehaviour
     {
         if (pScr.IsGround) return;
 
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag(TagName.Ground)||
+            collision.gameObject.CompareTag(TagName.GroundRight))
         {
             pScr.IsGround = true;
             //Debug.Log("GROUND TRUE");
@@ -31,7 +34,8 @@ public class PlayerGroundCollider : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag(TagName.Ground)
+            || collision.gameObject.CompareTag(TagName.GroundRight))
         {
 
             pScr.IsGround = false;

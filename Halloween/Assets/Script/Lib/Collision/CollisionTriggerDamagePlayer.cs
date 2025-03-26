@@ -47,6 +47,8 @@ public class CollisionTriggerDamagePlayer : MonoBehaviour
             if (iDamage != null)
             {
                 iDamage.Damage(damageVal);
+
+                MyLib.MyPlayOneSound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
                 //isActiveTrigger = true;
                 // SetTimeline(true);
                 //Debug.Log(other.name);

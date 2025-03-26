@@ -15,4 +15,5 @@ public static class TagName
 	public const string Ground = "Ground";
 	public const string EnemyBoss = "EnemyBoss";
 	public const string PumpkinWorp = "PumpkinWorp";
+	public const string GroundRight = "GroundRight";
 }

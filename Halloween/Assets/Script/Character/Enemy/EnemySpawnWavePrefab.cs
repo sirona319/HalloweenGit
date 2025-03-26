@@ -56,8 +56,8 @@ public class EnemySpawnWavePrefab : MonoBehaviour
                 
                 spawnData[No].LoadState[spawnData[No].enemyCount],//敵の種類
 
-                spawnData[No].spawnLocations[spawnData[No].enemyCount],//生成座標
-                spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
+                spawnData[No].spawnLocations[spawnData[No].enemyCount]//生成座標
+                //spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
                 ));
 
 
@@ -80,7 +80,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
     }
 
 
-    public IEnumerator DelaySpawnWave(float seconds, GameObject loadState, Transform spawnTrans, Transform[] movePoint)
+    public IEnumerator DelaySpawnWave(float seconds, GameObject loadState, Transform spawnTrans/*, Transform[] movePoint*/)
     {
         yield return new WaitForSeconds(seconds);
 
@@ -88,7 +88,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
         var bMove = obj.GetComponent<EnemyBase>().baseMove[0];
         bMove.Initialize();
         //SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
-        SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0], movePoint, obj);
+        SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0], obj);
     }
 
 
@@ -104,7 +104,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
     //}
 
     //ムーブ設定
-    void SelectCreateMoveJerry(BaseMove moveType, Transform[] movePoint, GameObject go)
+    void SelectCreateMoveJerry(BaseMove moveType, GameObject go)
     {
         switch (moveType)
         {
@@ -112,7 +112,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
 
                 //go.GetComponent<PlayerAttackPointMove>().Initialize();
 
-                go.GetComponent<PlayerAttackPointMove>().point.movePointSet(movePoint);
+               // go.GetComponent<PlayerAttackPointMove>().point.movePointSet(movePoint);
 
                 go.GetComponent<PlayerAttackPointMove>().playerAttack.TargetSet(GameObject.FindGameObjectWithTag(TagName.Player).transform);
 

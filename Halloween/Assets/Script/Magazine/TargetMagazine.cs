@@ -5,7 +5,12 @@ public class TargetMagazine : BaseMagazine,ITarget
 
     public Transform Target { get; set; }
 
-
+    CreateBullet createBullet;
+    //逆回り作る
+    public override void Initialize()
+    {
+        createBullet = GetComponent<CreateBullet>();
+    }
     public override void MagazineEnter()
     {
         //if (targetTrans == null) return;

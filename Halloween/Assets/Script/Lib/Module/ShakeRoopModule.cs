@@ -3,6 +3,9 @@
 //[DisallowMultipleComponent]
 public sealed class ShakeLoopModule : MonoBehaviour
 {
+    [SerializeField] float zPos = 0f;
+    [SerializeField] float power = 0.03f;
+    [SerializeField] int frame = 25;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,11 +20,11 @@ public sealed class ShakeLoopModule : MonoBehaviour
 
     private void OnEnable()
     {
-        const float power = 0.03f;            //揺らす力
-        const int frame = 25;            //揺らすタイミング
+        //const float power = 0.03f;            //揺らす力
+        //const int frame = 25;            //揺らすタイミング
         StartCoroutine(MyLib.LoopDelayCoroutine(Time.deltaTime * frame, () =>
         {
-            MyLib.DoShakeUpdate2D(power, transform);
+            MyLib.DoShakeUpdate2D(power, transform,zPos);
         }));
 
     }

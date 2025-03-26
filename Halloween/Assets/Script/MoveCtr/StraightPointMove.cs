@@ -5,11 +5,12 @@ using static UnityEngine.GraphicsBuffer;
 
 public class StraightPointMove : BaseMove
 {
+    public List<Transform> movePointLists = new();
     const float ENDMOVELEN = 0.8f;
     [SerializeField]float speed = 0f;
 
     //[SerializeField]Transform[] targets;// = new List<Vector3>();
-    public List<Transform> movePointLists = new ();
+
     int targetNo = 0;
 
     Vector3 direction;
@@ -20,7 +21,7 @@ public class StraightPointMove : BaseMove
     public void SetTarget(List<Transform> t)
     {
         movePointLists = t;
-        direction = movePointLists[0].position - transform.position;
+        direction = (movePointLists[0].position - transform.position).normalized;
         
     }
 
@@ -38,7 +39,7 @@ public class StraightPointMove : BaseMove
         //movePointLists.Clear();
         movePointLists.Add(t);
         targetNo++;
-        direction = movePointLists[targetNo].position - transform.position;
+        direction = (movePointLists[targetNo].position - transform.position).normalized;
 
     }
 
@@ -56,7 +57,7 @@ public class StraightPointMove : BaseMove
     public override void MoveUpdate()
     {
         //指定ポイント方向へ進み続ける（停止しない）
-        transform.position += direction.normalized * speed * Time.deltaTime;
+        transform.position += direction * speed * Time.deltaTime;
 
        
         float len = Vector3.Distance(transform.position, movePointLists[targetNo].position);
@@ -70,7 +71,7 @@ public class StraightPointMove : BaseMove
         else
         {
             targetNo++;
-            direction = movePointLists[targetNo].position - transform.position;
+            direction = (movePointLists[targetNo].position - transform.position).normalized;
         }
 
         // Debug.Log("目標へ到着");
