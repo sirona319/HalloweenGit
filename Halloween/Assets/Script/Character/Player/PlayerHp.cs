@@ -109,12 +109,12 @@ public class PlayerHp : MonoBehaviour,IDamage
 
     //}
 
-    public void Damage(int damage)
+    public bool Damage(int damage)
     {
         //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
         //if (pScr.DEBUGNoDamage) return;
-        if (pScr.isDead) return;
-        if (isDamage) return;
+        if (pScr.isDead) return false;
+        if (isDamage) return false;
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
 
@@ -130,7 +130,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         //hp -= damage;        //HP減少処理
         DamageLife(damage);
-        //MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
+        MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
 
         isDamage = true;
         damageTime = damageTimeMax;
@@ -140,7 +140,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         //    pScr.PlayerDead();
         //    //Destroy(gameObject);
         //}
-
+        return true;
 
         #region サウンド
         //const float volumeAtk = 0.1f;

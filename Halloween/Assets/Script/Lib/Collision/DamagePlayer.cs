@@ -3,6 +3,24 @@
 public class DamagePlayer : MonoBehaviour
 {
     [SerializeField] int damageVal = 1;
+    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag(TagName.Player))return;
+        
+        var iDamage = other.GetComponent<IDamage>();
+        if (iDamage != null)
+        {
+            iDamage.Damage(damageVal);
+
+            //isActiveTrigger = true;
+            // SetTimeline(true);
+            //Debug.Log(other.name);
+        }
+
+    }
+
     //public IDamage damage;
     //public bool isActiveTrigger = false;
 
@@ -38,26 +56,6 @@ public class DamagePlayer : MonoBehaviour
     //    }
 
     //}
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag(TagName.Player))return;
-        
-        var iDamage = other.GetComponent<IDamage>();
-        if (iDamage != null)
-        {
-            iDamage.Damage(damageVal);
-            MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
-
-            //MyLib.MyPlayOneSound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
-            //isActiveTrigger = true;
-            // SetTimeline(true);
-            //Debug.Log(other.name);
-        }
-
-        
-
-    }
 
     //private void OnTriggerExit2D(Collider2D other)
     //{

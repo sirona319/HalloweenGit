@@ -10,9 +10,9 @@ public class EnemyDamage : MonoBehaviour,IDamage
             eBase = GetComponent<EnemyBase>();
     }
 
-    public void Damage(int damage)
+    public bool Damage(int damage)
     {
-        if (eBase.isDead) return;
+        if (eBase.isDead) return false;
 
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
@@ -33,6 +33,8 @@ public class EnemyDamage : MonoBehaviour,IDamage
 
         if (Hp <= 0)
             eBase.isDead = true;
+
+        return true;
     }
 
     public void Damage(int damage, bool deadSound)
