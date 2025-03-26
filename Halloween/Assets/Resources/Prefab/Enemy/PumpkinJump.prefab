@@ -185,7 +185,7 @@ BoxCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -243,7 +243,6 @@ MonoBehaviour:
   eDamage: {fileID: 6045209402796862328}
   baseMove:
   - {fileID: 3751133012385811689}
-  Hp: 0
   isBoss: 0
   sprite: {fileID: 8687611365685043167}
   isNoise: 0
@@ -304,7 +303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
-  audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
 --- !u!114 &6045209402796862328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,3 +316,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eBase: {fileID: 0}
+  Hp: 0

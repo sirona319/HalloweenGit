@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CollisionTriggerDamagePlayer : MonoBehaviour
+public class DamagePlayer : MonoBehaviour
 {
     [SerializeField] int damageVal = 1;
     //public IDamage damage;
@@ -41,20 +41,21 @@ public class CollisionTriggerDamagePlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (!other.CompareTag(TagName.Player))return;
+        
+        var iDamage = other.GetComponent<IDamage>();
+        if (iDamage != null)
         {
-            var iDamage = other.GetComponent<IDamage>();
-            if (iDamage != null)
-            {
-                iDamage.Damage(damageVal);
+            iDamage.Damage(damageVal);
+            MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
 
-                MyLib.MyPlayOneSound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
-                //isActiveTrigger = true;
-                // SetTimeline(true);
-                //Debug.Log(other.name);
-            }
-
+            //MyLib.MyPlayOneSound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
+            //isActiveTrigger = true;
+            // SetTimeline(true);
+            //Debug.Log(other.name);
         }
+
+        
 
     }
 

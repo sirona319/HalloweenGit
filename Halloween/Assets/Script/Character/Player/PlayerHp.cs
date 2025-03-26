@@ -130,6 +130,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         //hp -= damage;        //HP減少処理
         DamageLife(damage);
+        //MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
 
         isDamage = true;
         damageTime = damageTimeMax;

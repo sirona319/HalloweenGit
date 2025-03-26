@@ -167,7 +167,7 @@ BoxCollider2D:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -266,7 +266,6 @@ MonoBehaviour:
   eDamage: {fileID: 3627144842158201365}
   baseMove:
   - {fileID: 9025772394010269942}
-  Hp: 0
 --- !u!114 &8796450538056874082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eBase: {fileID: 3676364550083006289}
+  Hp: 0
 --- !u!114 &9025772394010269942
 MonoBehaviour:
   m_ObjectHideFlags: 0
