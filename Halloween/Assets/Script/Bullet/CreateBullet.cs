@@ -5,41 +5,61 @@ using static BaseBullet;
 
 public class CreateBullet : MonoBehaviour
 {
-    public enum BulletTarget
+    //public enum BulletTarget
+    //{
+    //    Player,
+    //    LeftMiddle,
+    //    Up,
+    //    Right,
+    //    Left,
+    //    Down,
+
+    //    Target,
+    //    None,
+    //    //斜め　四つ　
+    //    //一番近いエネミーなど？　遠い敵　レーザー
+
+
+    //}
+    enum PoolType
     {
-        Player,
-        LeftMiddle,
-        Up,
-        Right,
-        Left,
-        Down,
-
-        Target,
-        None,
-        //斜め　四つ　
-        //一番近いエネミーなど？　遠い敵　レーザー
-
-
+        enemy,
+        player,
     }
 
+    [SerializeField] PoolType poolType;
 
-    [SerializeField] public float bulletSpeed = 5f;
+    [SerializeField] float bulletSpeed = 5f;
 
-    [SerializeField] BulletType[] bulletType;
+    //[SerializeField] BulletType[] bulletType;
 
     [SerializeField] GameObject bulletObj;
-    [SerializeField] public PoolControl poolManager;
+    [SerializeField] PoolControl poolCtr;
 
-
-    public void LoadPath(GameObject bullet)
+    private void Start()
     {
-        bulletObj = bullet;
+        if (poolCtr != null) return;
+
+        if (PoolType.enemy == poolType)
+        {
+            poolCtr = GameObject.Find("EnemyPoolMgr").GetComponent<PoolControl>();
+        }
+        else if (PoolType.player == poolType)
+        {
+            poolCtr = GameObject.Find("Player").GetComponent<PoolControl>();
+
+        }
     }
 
-    public void SetBulletType(BulletType[] bulletTypes)
-    {
-        bulletType = bulletTypes;
-    }
+    //public void LoadPath(GameObject bullet)
+    //{
+    //    bulletObj = bullet;
+    //}
+
+    //public void SetBulletType(BulletType[] bulletTypes)
+    //{
+    //    bulletType = bulletTypes;
+    //}
 
     public void AddBulletType(BaseBullet bullet, string bulletTypeName)
     {
@@ -53,21 +73,21 @@ public class CreateBullet : MonoBehaviour
     public GameObject BulletAtk(float angle,Vector3 pos,Quaternion rot)
     {
         //Debug.Log(poolManager);
-        var bullet = poolManager.GetGameObject(bulletObj, pos, rot);
+        var bullet = poolCtr.GetGameObject(bulletObj, pos, rot);
 
-        if (bulletType.Length > 0)
-        {
-            //return null;
+        //if (bulletType.Length > 0)
+        //{
+        //    //return null;
 
-            //バレットタイプを追加
-            for (int i = 0; i < (int)bulletType.Length; i++)
-            {
+        //    //バレットタイプを追加
+        //    for (int i = 0; i < (int)bulletType.Length; i++)
+        //    {
 
-                AddSetParamComponent(bulletType[i], bullet);
+        //        AddSetParamComponent(bulletType[i], bullet);
 
-            }
+        //    }
 
-        }
+        //}
 
         if (bullet.GetComponent<NormalBullet>() != null)
         {
@@ -86,7 +106,7 @@ public class CreateBullet : MonoBehaviour
 
 
         var destroyer = bullet.GetComponent<ReleaseDestroyer>();
-        destroyer.pool = poolManager;//キャラの種類ごとに分けるために引き渡し
+        destroyer.pool = poolCtr;//キャラの種類ごとに分けるために引き渡し
         destroyer.IsRelease = false;//二重リリース回避用フラグ
 
 

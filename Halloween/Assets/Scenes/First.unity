@@ -38581,6 +38581,10 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 704293890}
+    - target: {fileID: 1955295828361177465, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
+      propertyPath: poolType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2024737045797259910, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: 'lifeImage.Array.data[0]'
       value: 

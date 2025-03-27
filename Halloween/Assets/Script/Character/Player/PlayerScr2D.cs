@@ -6,24 +6,6 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class PlayerScr2D : MonoBehaviour
 {
-    ////移動させる画像
-    //public Image eyeImageUp;
-    //public Image eyeImageDown;
-    ////
-
-    //public Image closeEyeImageUp1;
-    //public Image closeEyeImageDown1;
-    //public Image closeEyeImageUp2;
-    //public Image closeEyeImageDown2;
-    //public Image closeEyeImageUp0;
-    //public Image closeEyeImageDown0;
-    //public TextMeshProUGUI reviveText;
-
-    //#region 攻撃
-    //readonly float MAXATKINTERVAL = 1;
-    //float atkInterval = 0;
-    //PlayerMagazine tMag;     //ナイフ
-    //#endregion
 
     PlayerMagazine mag;
 
