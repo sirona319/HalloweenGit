@@ -5,10 +5,10 @@ using UnityEngine;
 public abstract class BaseMove : MonoBehaviour
 {
 
-    public Rigidbody rb3;
+    //public Rigidbody rb3;
 
-    public Rigidbody2D rb2;
-    public bool isMove = true;
+    //public Rigidbody2D rb2;
+    //public bool isMove = true;
 
     //public Vector3 GetRb()
     //{
@@ -41,11 +41,11 @@ public abstract class BaseMove : MonoBehaviour
 
     public virtual void Initialize()
     {
-        if(GetComponent<Rigidbody2D>()!=null)
-            rb2 = GetComponent<Rigidbody2D>();
+        //if(GetComponent<Rigidbody2D>()!=null)
+        //    rb2 = GetComponent<Rigidbody2D>();
 
-        if (GetComponent<Rigidbody>() != null)
-            rb3 = GetComponent<Rigidbody>();
+        //if (GetComponent<Rigidbody>() != null)
+        //    rb3 = GetComponent<Rigidbody>();
     }
 
     public abstract void MoveEnter();

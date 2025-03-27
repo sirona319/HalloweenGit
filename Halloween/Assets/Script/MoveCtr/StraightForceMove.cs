@@ -10,7 +10,7 @@ public class StraightForceMove : BaseMove
 
     public Vector3 direction;
 
-    //public Rigidbody2D rb;
+    public Rigidbody2D rb2;
 
     public void SetTarget(Transform t)
     {

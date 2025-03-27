@@ -4,6 +4,8 @@ public class EnemyDamage : MonoBehaviour,IDamage
 {
     [SerializeField] EnemyBase eBase;
     [SerializeField] int Hp = 1;
+
+    public bool IsDamage { get; set; } = false;
     void Start()
     {
         if (GetComponent<EnemyBase>() != null)
@@ -13,7 +15,7 @@ public class EnemyDamage : MonoBehaviour,IDamage
     public bool Damage(int damage)
     {
         if (eBase.isDead) return false;
-
+        if (IsDamage) return false;
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
 
@@ -29,7 +31,7 @@ public class EnemyDamage : MonoBehaviour,IDamage
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         Hp -= damage;        //HP減少処理
 
-        eBase.isDamage = true;
+        IsDamage = true;
 
         if (Hp <= 0)
             eBase.isDead = true;
@@ -40,6 +42,6 @@ public class EnemyDamage : MonoBehaviour,IDamage
     public void Damage(int damage, bool deadSound)
     {
         Damage(damage);
-        eBase.GetComponent<CreateDeadSound>().IsSoundEnable = deadSound;
+        GetComponent<CreateDeadSound>().IsSoundEnable = deadSound;
     }
 }

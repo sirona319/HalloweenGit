@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 3494377684004272033}
   - component: {fileID: 6063229874700229298}
   - component: {fileID: 2134192767689481326}
-  - component: {fileID: 2466869346531362125}
   - component: {fileID: 3353146902859642005}
   - component: {fileID: -6898568745677087848}
   - component: {fileID: -1688240844712754749}
@@ -270,11 +269,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 2134192767689481326}
-  eDamage: {fileID: 0}
-  baseMove:
-  - {fileID: 2466869346531362125}
-  MaxAtkInterval: 1
-  AtkInterval: 1
+  isDead: 0
+  atkMove: {fileID: -6898568745677087848}
+  move: {fileID: 3353146902859642005}
+  isAttack: 0
+  isMove: 1
+  eDamage: {fileID: 836253347083890156}
 --- !u!114 &2134192767689481326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,25 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70f7ee64e7446e48bb6e798b1d78a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2466869346531362125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8993108005238923625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e028ce4b0e36666449ce22364848330f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 0}
-  isMove: 1
-  playerAttack: {fileID: -6898568745677087848}
-  point: {fileID: 3353146902859642005}
-  len: 0
-  attackLengeMax: 8
 --- !u!114 &3353146902859642005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,13 +299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b851bd31e521521448df412bb51a09b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 0}
-  isMove: 1
   moveTrans:
   - {fileID: 3458569494149335512}
   - {fileID: 8212117310601560576}
   moveVecs: []
+  isLoop: 1
   speed: 4
 --- !u!114 &-6898568745677087848
 MonoBehaviour:
@@ -338,9 +317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef18999b172ea9847a6a21b87a877cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 0}
-  isMove: 1
   targetTrans: {fileID: 0}
   isAttackEnd: 0
 --- !u!114 &-1688240844712754749

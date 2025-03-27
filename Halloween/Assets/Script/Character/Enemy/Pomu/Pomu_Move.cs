@@ -8,14 +8,15 @@ public class Pomu_Move : StateChildBase
         base.Initialize(stateNo);
 
         pScr = GetComponent<PomuScr>();
+        pScr.move.Initialize();
     }
 
     public override void OnEnter()
     {
         stateTime = 0f;
 
-        foreach (var move in pScr.baseMove)
-            move.MoveEnter();
+        //foreach (var move in pScr.baseMove)
+            GetComponent<PomuScr>().move.MoveEnter();
 
     }
 
@@ -29,15 +30,16 @@ public class Pomu_Move : StateChildBase
         stateTime += Time.deltaTime;
         //moveSaveTime += Time.deltaTime;
 
-        if (GetComponent<EnemyBase>().isDamage)
+        if (GetComponent<IDamage>().IsDamage)
+
             return GetComponent<PomuScr>().DamageCheck();
 
 
         //移動の更新
-        foreach (var move in pScr.baseMove)
-        {
-            move.MoveUpdate();
-        }
+        //foreach (var move in pScr.baseMove)
+        //{
+            GetComponent<PomuScr>().move.MoveUpdate();
+        //}
 
         //if (!pScr.isMove)
         //    pScr.isAttack = true;

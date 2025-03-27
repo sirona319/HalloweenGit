@@ -26,7 +26,7 @@ public class Pomu_Wait : StateChildBase
 
 
 
-        if (GetComponent<EnemyBase>().isDamage)
+        if (GetComponent<IDamage>().IsDamage)
             return GetComponent<PomuScr>().DamageCheck();
 
         stateTime += Time.deltaTime;

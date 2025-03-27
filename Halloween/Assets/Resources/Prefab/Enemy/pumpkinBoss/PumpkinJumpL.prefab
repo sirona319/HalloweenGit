@@ -306,9 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
   eDamage: {fileID: 6045209402796862328}
-  baseMove:
-  - {fileID: 3751133012385811689}
-  Hp: 1
+  move: {fileID: 3751133012385811689}
   isBoss: 1
   sprite: {fileID: 8687611365685043167}
   isNoise: 0
@@ -327,8 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ef11c8ea80b354c9675a806d6a29e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 2696936777909329388}
   isMove: 1
   isFirstDirX: 0
   forceUpR: {x: 0, y: 0, z: 0}
@@ -339,6 +335,7 @@ MonoBehaviour:
   jumpForceX: 7
   jumpForceY: 7
   moveEreaVal: 100
+  rb2: {fileID: 2696936777909329388}
 --- !u!114 &3389971620290101742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eBase: {fileID: 8694150602881707665}
+  Hp: 1
 --- !u!114 &-8853910818297857426
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: 919b8ef5180c8404297e0eb836820b82, type: 3}
       propertyPath: m_Name
-      value: Pomu
+      value: PomuJump
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 919b8ef5180c8404297e0eb836820b82, type: 3}
       propertyPath: m_Layer
@@ -268,8 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 8796450538056874082}
   eDamage: {fileID: 3627144842158201365}
-  baseMove:
-  - {fileID: 9025772394010269942}
+  move: {fileID: 9025772394010269942}
 --- !u!114 &8796450538056874082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +307,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c91b059335c69b44a3fe3099ae81889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 0}
   isMove: 1

@@ -2,8 +2,13 @@
 
 public class PomuScr : EnemyBase
 {
+    [SerializeField] EnemyDamage eDamage;
+    public bool isAttack = true;
+    public bool isMove = true;
+
     //public float MaxAtkInterval = 1f;
     //public float AtkInterval = 1;
+    public BaseMove move;
     void Start()
     {
         //base.StartInit();
@@ -41,10 +46,29 @@ public class PomuScr : EnemyBase
     {
 
         //if (GetComponent<EnemyBase>().isDamage)
-        if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+        if (ReturnStateTypeDead())
             return (int)PomuCtr.State.Pomu_Dead;
         else
             return (int)PomuCtr.State.Pomu_Damage;
 
+    }
+
+    public bool ReturnStateTypeDead()
+    {
+        if (isDead) return true;
+
+        return false;
+    }
+
+    public int ReturnStateType(int stateType)
+    {
+        if (isAttack)
+            return (int)FlyCtr.State.Fly_Attack;
+
+        else if (isMove)
+            return (int)FlyCtr.State.Fly_Move;
+
+
+        return stateType;
     }
 }

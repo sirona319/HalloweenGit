@@ -26,23 +26,23 @@ public class PointCircleMove : BaseMove
 
     public override void MoveUpdate()
     {
-        if (!point.isMove)
-        {
-            circle.MoveUpdate();
+        //if (!point.isMove)
+        //{
+        //    circle.MoveUpdate();
 
-            return;
-        }
+        //    return;
+        //}
 
-        point.MoveUpdate();
+        //point.MoveUpdate();
 
-        if (!point.isMove)
-        {
-            GetComponent<FlyScr>().isAttack = true;
-            //isMove = point.isMove;
-            Destroy(point);
-            //point.enabled = false;//ポイント移動を終了
-            circle.MoveEnter();
-        }
+        //if (!point.isMove)
+        //{
+        //    GetComponent<FlyScr>().isAttack = true;
+        //    //isMove = point.isMove;
+        //    Destroy(point);
+        //    //point.enabled = false;//ポイント移動を終了
+        //    circle.MoveEnter();
+        //}
     }
 
 

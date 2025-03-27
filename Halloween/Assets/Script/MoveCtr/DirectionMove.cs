@@ -10,6 +10,7 @@ public class DirectionMove : BaseMove
 
     //public bool isRot = true;
     //Vector2 targetDir;
+    [SerializeField] Rigidbody2D rb2;
 
     public void TargetSet(Vector3 t)
     {

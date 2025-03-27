@@ -14,15 +14,15 @@ public class PumpkinChildRed : PumpkinChild
     public override void Spawn()
     {
         var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
-        var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
-        eBase.Initialize();
-        eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
-        eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
+        //var eMove = obj.GetComponent<EnemyBase>().move;
+        //obj.GetComponent<EnemyBase>().Init();
+        obj.GetComponent<PumpkinScr>().isNoise = isNoise;
+        obj.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
 
 
-        if (eBase.GetComponent<StraightForceMove>() != null)
+        if (obj.GetComponent<StraightForceMove>() != null)
         {
-            eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
+            obj.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
         }
 
 

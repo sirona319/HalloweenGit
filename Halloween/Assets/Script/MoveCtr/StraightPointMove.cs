@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StraightPointMove : BaseMove
 {
-    public List<Transform> movePointLists = new();
+    [SerializeField] List<Transform> movePointLists = new();
     const float ENDMOVELEN = 0.8f;
     [SerializeField]float speed = 0f;
 
@@ -45,7 +45,7 @@ public class StraightPointMove : BaseMove
     public override void Initialize()
     {
         base.Initialize();
-
+        direction = (movePointLists[targetNo].position - transform.position).normalized;
     }
 
     public override void MoveEnter()

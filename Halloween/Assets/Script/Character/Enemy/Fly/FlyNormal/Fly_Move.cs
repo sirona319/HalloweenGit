@@ -12,6 +12,7 @@ public class Fly_Move : StateChildBase
 
     //Rigidbody m_rb;
 
+    FlyScr fScr;
 
     public override void Initialize(int stateNo)
     {
@@ -19,17 +20,16 @@ public class Fly_Move : StateChildBase
 
         //foreach (var move in GetComponent<FlyScr>().baseMove)
         //    move.Initialize();
-
-
-        //GetComponent<FlyScr>().baseMove.move
+        fScr = GetComponent<FlyScr>();
+        fScr.move.Initialize();
     }
 
     public override void OnEnter()
     {
         stateTime = 0f;
 
-        foreach (var move in GetComponent<FlyScr>().baseMove)
-            move.MoveEnter();
+        //foreach (var move in GetComponent<EnemyBase>().move)
+            fScr.move.MoveEnter();
 
     }
 
@@ -44,17 +44,17 @@ public class Fly_Move : StateChildBase
         //moveSaveTime += Time.deltaTime;
 
 
-        if (GetComponent<EnemyBase>().isDamage)
-            if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+        if (GetComponent<IDamage>().IsDamage)
+            if (fScr.ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 
 
         //移動の更新
-        foreach (var move in GetComponent<FlyScr>().baseMove)
-        {
-            move.MoveUpdate();
-            //GetComponent<FlyScr>().isMove = move.isMove;
-        }
+        //foreach (var move in GetComponent<FlyScr>().baseMove)
+        //{
+        fScr.move.MoveUpdate();
+        //GetComponent<FlyScr>().isMove = move.isMove;
+        /// }
 
         //マガジンの更新
 
@@ -66,7 +66,9 @@ public class Fly_Move : StateChildBase
         //GetComponent<FlyScr>().AttackMagazineUpdateAll();
 
         //return GetComponent<FlyScr>().FlyReturnStateType(StateType);
-
+        if (!fScr.isMove)
+            return (int)fScr.ReturnStateType(StateType);
+        
 
         return (int)StateType;
 

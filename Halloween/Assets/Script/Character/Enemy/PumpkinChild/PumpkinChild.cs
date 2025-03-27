@@ -108,7 +108,7 @@ public class PumpkinChild : MonoBehaviour
     public virtual void Spawn()
     {
         var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
-        var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
+        var eBase = obj.GetComponent<PumpkinScr>().move;
         eBase.Initialize();
         eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
         eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;

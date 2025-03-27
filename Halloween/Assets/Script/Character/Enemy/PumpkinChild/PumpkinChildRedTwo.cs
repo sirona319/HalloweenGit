@@ -19,22 +19,22 @@ public class PumpkinChildRedTwo : PumpkinChild
         var obj = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
         var obj2 = Instantiate(spawnObj, moveTrans[targetNo].position, Quaternion.identity);
 
-        var eBase = obj.GetComponent<EnemyBase>().baseMove[0];
-        eBase.Initialize();
-        eBase.GetComponent<PumpkinScr>().isNoise = isNoise;
-        eBase.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
+        var eMove = obj.GetComponent<PumpkinScr>().move;
+        eMove.Initialize();
+        obj.GetComponent<PumpkinScr>().isNoise = isNoise;
+        obj.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
 
-        var eBase2 = obj2.GetComponent<EnemyBase>().baseMove[0];
-        eBase2.Initialize();
-        eBase2.GetComponent<PumpkinScr>().isNoise = isNoise;
-        eBase2.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
+        var eMove2 = obj2.GetComponent<PumpkinScr>().move;
+        eMove2.Initialize();
+        obj2.GetComponent<PumpkinScr>().isNoise = isNoise;
+        obj2.GetComponent<PumpkinScr>().noiseTiming = noiseTiming;
 
         //if (eBase.GetComponent<StraightForceMove>() != null)
         //{
-            eBase.GetComponent<StraightForceMove>().speed = sPointSpeed;
-            eBase2.GetComponent<StraightForceMove>().speed = sPointSpeed;
-            eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
-            eBase2.GetComponent<StraightForceMove>().SetTarget(movePointLists[1]);
+        eMove.GetComponent<StraightForceMove>().speed = sPointSpeed;
+        eMove2.GetComponent<StraightForceMove>().speed = sPointSpeed;
+        eMove.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
+        eMove2.GetComponent<StraightForceMove>().SetTarget(movePointLists[1]);
         //}
 
         gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;

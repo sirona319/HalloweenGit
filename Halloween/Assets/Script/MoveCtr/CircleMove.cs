@@ -21,6 +21,8 @@ public class CircleMove : BaseMove
 
     Transform targetTrans;
 
+    [SerializeField] Rigidbody2D rb2;
+
     public override void Initialize()
     {
         base.Initialize();

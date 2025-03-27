@@ -85,10 +85,11 @@ public class EnemySpawnWavePrefab : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         var obj = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
-        var bMove = obj.GetComponent<EnemyBase>().baseMove[0];
-        bMove.Initialize();
+        //obj.GetComponent<EnemyBase>().Init();
+        //bMove.Initialize();
+
         //SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
-        SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0], obj);
+        //SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().move, obj);
     }
 
 

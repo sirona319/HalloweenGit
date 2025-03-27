@@ -14,8 +14,8 @@ public class Pumpkin_Move : StateChildBase
     {
         stateTime = 0f;
 
-        foreach (var move in pScr.baseMove)
-            move.MoveEnter();
+        // foreach (var move in pScr.baseMove)
+        pScr.move.MoveEnter();
 
     }
 
@@ -29,17 +29,17 @@ public class Pumpkin_Move : StateChildBase
         stateTime += Time.deltaTime;
         //moveSaveTime += Time.deltaTime;
 
-        if (GetComponent<EnemyBase>().isDamage)
-            return GetComponent<PumpkinScr>().DamageCheck();
+        if (GetComponent<IDamage>().IsDamage)
+            return pScr.DamageCheck();
 
 
 
         //移動の更新
-        foreach (var move in pScr.baseMove)
-        {
-            move.MoveUpdate();
+        //foreach (var move in pScr.baseMove)
+       // {
+            pScr.move.MoveUpdate();
             //GetComponent<FlyScr>().isMove = move.isMove;
-        }
+        //}
 
         if (!pScr.isMove)
             pScr.isAttack = true;

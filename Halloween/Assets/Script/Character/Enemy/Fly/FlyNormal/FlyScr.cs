@@ -2,8 +2,36 @@
 
 public class FlyScr : EnemyBase
 {
-    public float MaxAtkInterval = 1f;
-    public float AtkInterval =1;
+    //public float MaxAtkInterval = 1f;
+    //public float AtkInterval =1;
+
+    public BaseMove atkMove;
+    public BaseMove move;
+
+    public bool isAttack = true;
+    public bool isMove = true;
+
+    [SerializeField] EnemyDamage eDamage;
+
+    public bool ReturnStateTypeDead()
+    {
+        if (isDead) return true;
+
+        return false;
+    }
+
+    public int ReturnStateType(int stateType)
+    {
+        if (isAttack)
+            return (int)FlyCtr.State.Fly_Attack;
+
+        else if (isMove)
+            return (int)FlyCtr.State.Fly_Move;
+
+
+        return stateType;
+    }
+
     void Start()
     {
         //base.StartInit();
@@ -13,24 +41,25 @@ public class FlyScr : EnemyBase
 
     void Update()
     {
-        AttackTimeUpdate();
+        //AttackTimeUpdate();
 
         stateController.UpdateSequence();
 
     }
 
-    void AttackTimeUpdate()
-    {
-        if (!isAttack) return;
+    //void AttackTimeUpdate()
+    //{
+    //    if (!isAttack) return;
 
-        AtkInterval -= Time.deltaTime;
+    //    AtkInterval -= Time.deltaTime;
 
-    }
+    //}
 
     public int FlyReturnStateType(int stateType)
     {
-        if (AtkInterval <= 0)
+        if (isAttack)
             return (int)FlyCtr.State.Fly_Attack;
+
         else if (isMove)
             return (int)FlyCtr.State.Fly_Move;
 

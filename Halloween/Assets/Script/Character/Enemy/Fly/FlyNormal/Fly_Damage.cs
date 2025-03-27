@@ -49,7 +49,7 @@ public class Fly_Damage : StateChildBase
 
     public override void OnExit()
     {
-        gameObject.GetComponent<EnemyBase>().isDamage = false;
+        gameObject.GetComponent<IDamage>().IsDamage = false;
         //gameObject.GetComponent<Animator>().SetBool("DamageB", false);
     }
 
@@ -57,7 +57,7 @@ public class Fly_Damage : StateChildBase
     {
         stateTime += Time.deltaTime;
 
-        if (gameObject.GetComponent<EnemyBase>().isDead)
+        if (gameObject.GetComponent<FlyScr>().isDead)
         {
             const int DEAD = 2;
             return DEAD;
@@ -66,7 +66,7 @@ public class Fly_Damage : StateChildBase
         if (stateTime >= DAMAGETIMEMAX)
         {
 
-            return GetComponent<EnemyBase>().ReturnStateMoveType(StateType);
+            return GetComponent<FlyScr>().ReturnStateType(StateType);
         }
 
         return StateType;

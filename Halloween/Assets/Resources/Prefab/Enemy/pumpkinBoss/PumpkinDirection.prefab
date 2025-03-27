@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eBase: {fileID: 8694150602881707665}
+  Hp: 1
 --- !u!96 &4071347236257870106
 TrailRenderer:
   serializedVersion: 3
@@ -385,9 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
   eDamage: {fileID: 4129176815202890290}
-  baseMove:
-  - {fileID: 3139794090836340382}
-  Hp: 1
+  move: {fileID: 3139794090836340382}
   isBoss: 1
   sprite: {fileID: 8701814753559720864}
   isNoise: 0
@@ -424,7 +423,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSoundEnable: 1
-  audioSe: {fileID: 6847508142168106254, guid: 3410ad6b247399240b8a5cdf961e066c, type: 3}
 --- !u!114 &8035470208209194895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,10 +453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4232bf00c4f82624db6b11ef0e29ec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 0}
   isMove: 1
-  speed: 0
   movePointLists: []
+  speed: 0
   IsLastPointMoveEnd:
     value: 0

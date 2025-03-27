@@ -28,7 +28,7 @@ public class Pumpkin_Attack : StateChildBase
         stateTime += Time.deltaTime;
 
 
-        if (GetComponent<EnemyBase>().isDamage)
+        if (GetComponent<IDamage>().IsDamage)
             return GetComponent<PumpkinScr>().DamageCheck();
 
 

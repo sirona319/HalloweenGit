@@ -12,7 +12,7 @@ public class Fly_Attack : StateChildBase
     {
 
         base.Initialize(stateType);
-        GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
+        //GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
     }
 
     public override void OnEnter()
@@ -34,20 +34,20 @@ public class Fly_Attack : StateChildBase
         stateTime += Time.deltaTime;
 
 
-        if (GetComponent<EnemyBase>().isDamage)
-            if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+        if (GetComponent<IDamage>().IsDamage)
+            if (GetComponent<FlyScr>().ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 
 
 
         //マガジンの更新
         //GetComponent<FlyScr>().AttackMagazineUpdateAll();
+        GetComponent<FlyScr>().atkMove.MoveUpdate();
 
 
-
-        if (stateTime > GetComponent<FlyScr>().AtkInterval)
+        if (!GetComponent<FlyScr>().isAttack)
         {
-            GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
+            //GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
             //GetComponent<FlyScr>().isAttack = false;
             return GetComponent<FlyScr>().FlyReturnStateType(StateType);
         }

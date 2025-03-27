@@ -4,6 +4,13 @@ using Random = UnityEngine.Random;
 
 public class PumpkinScr : EnemyBase
 {
+    [SerializeField] EnemyDamage eDamage;
+
+    public bool isAttack = true;
+    public bool isMove = true;
+
+    public BaseMove move;
+
     public bool isBoss = false;
     public SpriteRenderer sprite;
 
@@ -24,8 +31,15 @@ public class PumpkinScr : EnemyBase
 
     //赤かぼちゃのみ
     const float noiseTimingDefaultRed = 8f;
-
     //
+
+    public bool ReturnStateTypeDead()
+    {
+        if (isDead) return true;
+
+        return false;
+    }
+
     void Start()
     {
         //base.StartInit();
@@ -228,7 +242,7 @@ public class PumpkinScr : EnemyBase
             {
                 if (transform.name.Contains("Red"))
                 {
-                    var sMove = baseMove[0].GetComponent<StraightForceMove>();
+                    var sMove = move.GetComponent<StraightForceMove>();
                     sMove.rb2.position = warpList[randInt];
                     var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
 
@@ -236,7 +250,7 @@ public class PumpkinScr : EnemyBase
                 }
                 else
                 {
-                    var sMove = baseMove[0].GetComponent<StraightPointMove>();
+                    var sMove = move.GetComponent<StraightPointMove>();
                     sMove.transform.position = warpList[randInt];
                     var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
 
@@ -262,7 +276,7 @@ public class PumpkinScr : EnemyBase
     {
 
         //if (GetComponent<EnemyBase>().isDamage)
-        if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+        if (ReturnStateTypeDead())
             return (int)PumpkinCtr.State.Pumpkin_Dead;
         else
             return (int)PumpkinCtr.State.Pumpkin_Damage;

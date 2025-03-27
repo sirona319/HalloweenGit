@@ -21,7 +21,7 @@ public class Pomu_Damage : StateChildBase
 
     public override void OnExit()
     {
-        gameObject.GetComponent<EnemyBase>().isDamage = false;
+        gameObject.GetComponent<IDamage>().IsDamage = false;
     }
 
     public override int StateUpdate()
@@ -37,7 +37,7 @@ public class Pomu_Damage : StateChildBase
         if (stateTime >= DAMAGETIMEMAX)
         {
 
-            return GetComponent<EnemyBase>().ReturnStateMoveType(StateType);
+            return GetComponent<PomuScr>().ReturnStateType(StateType);
         }
 
         return StateType;

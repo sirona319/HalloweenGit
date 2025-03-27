@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-//using static UnityEngine.RuleTile.TilingRuleOutput;
 
 
 public class PointMove : BaseMove
 {
     [SerializeField]Transform[] moveTrans;
+
     [SerializeField] List<Vector3> moveVecs=new();
 
-    int targetNo = 0;
-    const float ENDMOVELEN = 0.8f;
+    [SerializeField] bool isLoop = false;
+    [SerializeField] float speed = 4f;
 
-    [SerializeField]float speed = 4f;
+    const float ENDMOVELEN = 0.8f;
+    int targetNo = 0;
+
 
     //public void movePointSet(Transform[] ts)
     //{
@@ -58,7 +60,8 @@ public class PointMove : BaseMove
                 //ここに処理を追加できるようにしたい ループするか　終了するか
                 //IsPoint = true;
 
-                targetNo = 0;
+                if(isLoop)
+                    targetNo = 0;
             }
 
         }

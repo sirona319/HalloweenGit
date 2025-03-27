@@ -26,8 +26,8 @@ public class Fly_Wait : StateChildBase
 
 
 
-        if (GetComponent<EnemyBase>().isDamage)
-            if (GetComponent<EnemyBase>().ReturnStateTypeDead())
+        if (GetComponent<IDamage>().IsDamage)
+            if (GetComponent<FlyScr>().ReturnStateTypeDead())
                 return (int)FlyCtr.State.Fly_Dead;
 
         stateTime += Time.deltaTime;

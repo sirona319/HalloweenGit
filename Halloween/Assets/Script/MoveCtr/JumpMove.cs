@@ -31,6 +31,7 @@ public class JumpMove : BaseMove
     [SerializeField] float jumpForceY=1;
     [SerializeField] float moveEreaVal = 10;
 
+    [SerializeField] Rigidbody2D rb2;
 
     //public void TargetSet(Vector3 t)
     //{

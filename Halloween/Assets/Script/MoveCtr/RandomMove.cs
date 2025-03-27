@@ -14,6 +14,9 @@ public class RandomMove : BaseMove
     const float ENDMOVELEN = 1f;
 
     float speed = 4;
+
+    [SerializeField] Rigidbody2D rb2;
+
     public override void Initialize()
     {
         base.Initialize();

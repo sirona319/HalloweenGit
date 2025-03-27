@@ -15,54 +15,62 @@ public class EnemyBase : MonoBehaviour
     }
     #endregion
 
-    [NonSerialized] public bool isDead = false;
-    [NonSerialized] public bool isDamage = false;
-    [NonSerialized] public bool isAttack = true;
-    [NonSerialized] public bool isMove = true;
+    public bool isDead = false;
 
-    [SerializeField] EnemyDamage eDamage;
 
-    public List<BaseMove> baseMove = new ();
+    //[SerializeField] public bool isDamage = false;
+    //[SerializeField] public bool isAttack = true;
+    //[SerializeField] public bool isMove = true;
 
-    //public int Hp = 0;
+    //[SerializeField] EnemyDamage eDamage;
 
-    //protected virtual void StartInit()
+    ////public List<BaseMove> baseMove = new ();
+    ////public BaseMove move;
+
+    ////public int Hp = 0;
+
+    ////protected virtual void StartInit()
+    ////{
+    ////    //if(GetComponent<EnemyDamage>()!=null)
+    ////    //    eDamage = GetComponent<EnemyDamage>();
+
+    ////    //if (eDamage == null)
+    ////    //    Debug.Log("ダメージクラスが設定されていない");
+
+    ////}
+
+    ////public void Damage(int damage)
+    ////{
+    ////    eDamage.Damage(damage);
+    ////}
+
+    ////public void Damage(int damage,bool isSound)
+    ////{
+    ////    eDamage.Damage(damage, isSound);
+    ////}
+
+    //public void Init()
     //{
-    //    //if(GetComponent<EnemyDamage>()!=null)
-    //    //    eDamage = GetComponent<EnemyDamage>();
-
-    //    //if (eDamage == null)
-    //    //    Debug.Log("ダメージクラスが設定されていない");
 
     //}
 
-    //public void Damage(int damage)
+    //public bool ReturnStateTypeDead()
     //{
-    //    eDamage.Damage(damage);
+    //    if (isDead) return true;
+
+    //    return false;
     //}
 
-    //public void Damage(int damage,bool isSound)
+    //public int ReturnStateType(int stateType)
     //{
-    //    eDamage.Damage(damage, isSound);
+    //    if (isAttack)
+    //        return (int)FlyCtr.State.Fly_Attack;
+
+    //    else if (isMove)
+    //        return (int)FlyCtr.State.Fly_Move;
+
+
+    //    return stateType;
     //}
-
-    public bool ReturnStateTypeDead()
-    {
-        if (isDead) return true;
-
-        return false;
-    }
-
-    public int ReturnStateMoveType(int stateType)
-    {
-        if (isAttack)
-            return (int)FlyCtr.State.Fly_Attack;
-
-        else if (isMove)
-            return (int)FlyCtr.State.Fly_Move;
-
-
-        return stateType;
-    }
     
 }

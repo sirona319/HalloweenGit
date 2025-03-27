@@ -6,12 +6,13 @@ public class PlayerAttackPointMove : BaseMove
     public PlayerAttackMove playerAttack;
     public PointMove point;
 
-    const float atkTimeMax = 6f;
 
     bool IsAtkMode = false;
     float atkTime = atkTimeMax;
 
     [SerializeField] float len;
+
+    const float atkTimeMax = 6f;
 
     [SerializeField] float attackLengeMax = 8;
 

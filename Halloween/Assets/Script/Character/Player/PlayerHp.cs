@@ -27,7 +27,7 @@ public class PlayerHp : MonoBehaviour,IDamage
     Color32 endColor = new(255, 255, 255, 0);
     #endregion
 
-    bool isDamage = false;
+    public bool IsDamage { get; set; } = false;
 
     bool IsDeadHp()
     {
@@ -64,7 +64,7 @@ public class PlayerHp : MonoBehaviour,IDamage
             //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
             //if (pScr.DEBUGNoDamage) return;
             if (pScr.isDead) return;
-            if (isDamage) return;
+            if (IsDamage) return;
 
             Damage(DEBUGDMG);
 
@@ -79,7 +79,7 @@ public class PlayerHp : MonoBehaviour,IDamage
             //}
         }
 
-        if (isDamage == false) return;
+        if (IsDamage == false) return;
 
         //点滅処理
         if (damageTime > 0)
@@ -93,7 +93,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         else
         {
             pSprite.material.color = startColor;
-            isDamage = false;
+            IsDamage = false;
         }
     }
 
@@ -114,7 +114,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
         //if (pScr.DEBUGNoDamage) return;
         if (pScr.isDead) return false;
-        if (isDamage) return false;
+        if (IsDamage) return false;
         #region カメラシェイク
         //https://baba-s.hatenablog.com/entry/2018/03/14/170400
 
@@ -132,7 +132,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         DamageLife(damage);
         MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
 
-        isDamage = true;
+        IsDamage = true;
         damageTime = damageTimeMax;
 
         //if (hp <= 0)
@@ -199,7 +199,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         //hp -= damage;        //HP減少処理
         DamageLife(damage);
 
-        isDamage = true;
+        IsDamage = true;
         damageTime = damageTimeMax;
 
         //if (hp <= 0)
