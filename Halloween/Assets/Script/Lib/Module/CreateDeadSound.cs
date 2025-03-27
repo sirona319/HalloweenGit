@@ -13,7 +13,7 @@ public class CreateDeadSound : MonoBehaviour
 
     private void Start()
     {
-        audioSe= MyLib.GetComponentLoad<AudioSource>("prefab/Sound/DestroySound");
+        audioSe= MyLib.GetComponentLoad<AudioSource>("Prefab/Sound/DestroySound");
     }
 
 

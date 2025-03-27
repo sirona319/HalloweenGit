@@ -5,16 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Save : Singleton<Save>
 {
-    public bool isLoad;//タイトル画面でロードを選択し場合trueにする
-    //お金
-    //アイテム
-    //ステージNo
-    //HP
-    //MAXHP
-    //プレイ時間の保存
-
-    int stageNo = 0;
-
     //int playerItemNum = 0;
 
 
@@ -124,7 +114,15 @@ public class Save : Singleton<Save>
 
     //    PlayerPrefs.SetInt("PLAYEITEMNUM", playerItemNum);
     //}
+    //アイテム
+    //ステージNo
+    //HP
+    //MAXHP
+    //プレイ時間の保存
 
+    public bool isLoad;//タイトル画面でロードを選択し場合trueにする
+
+    int stageNo = 0;
 
     public void PlayerSave(Vector3 pos)
     {
@@ -161,7 +159,6 @@ public class Save : Singleton<Save>
 
     public void SceneNameSave(string sceneName)
     {
-
 
         PlayerPrefs.SetString("SCENENAME", sceneName);
         //セーブ処理
