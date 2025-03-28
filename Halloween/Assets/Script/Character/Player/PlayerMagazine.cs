@@ -5,18 +5,18 @@ public class PlayerMagazine : BaseMagazine
 {
     CreateBullet createBullet;
 
-    TargetSet targetSet;
-    Transform target;
+    //TargetSet targetSet;
+    [SerializeField] Transform target;
 
-    [SerializeField] float intervalTime = 0f;
+    float intervalTime = 0f;
     [SerializeField] float intervalTimeMax = 1f;
 
     void Start()
     {
         createBullet = GetComponent<CreateBullet>();
-        targetSet = GetComponent<TargetSet>();
+        //targetSet = GetComponent<TargetSet>();
 
-        target = targetSet.Set(TargetName.Bullet);
+        //target = targetSet.Set();
 
         intervalTime = intervalTimeMax;
     }
@@ -26,6 +26,7 @@ public class PlayerMagazine : BaseMagazine
     {
 
     }
+
     public override void MagazineUpdate()
     {
 
@@ -34,13 +35,13 @@ public class PlayerMagazine : BaseMagazine
         {
             intervalTime = intervalTimeMax;
 
-            NormalShot();
+            Shot();
 
             MyLib.MyPlayOneSound("Sound/SE/wave/刀を鞘にしまう1",0.1f, gameObject);
         }
     }
 
-    void NormalShot()
+    void Shot()
     {
 
         Vector2 direction = target.position - transform.position;

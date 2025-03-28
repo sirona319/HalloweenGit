@@ -2,7 +2,7 @@
 
 public class PlayerAttackMove : BaseMove
 {
-    public Transform targetTrans;
+    [SerializeField] Transform targetTrans;
 
     Vector3[] moveVecter;
 
@@ -11,18 +11,21 @@ public class PlayerAttackMove : BaseMove
 
     public bool isAttackEnd = false;
     float speed = 4f;
-    public void TargetSet(Transform t)
-    {
-        targetTrans = t;
 
-        if (moveVecter.Length <= 0)
-            throw new System.Exception(GetComponent<EnemyBase>().name + "ムーブポイント未設定");
-    }
+    TargetSet targetSet;
+    //public void TargetSet(Transform t)
+    //{
+    //    targetTrans = t;
+
+    //    if (moveVecter.Length <= 0)
+    //        throw new System.Exception(GetComponent<EnemyBase>().name + "ムーブポイント未設定");
+    //}
 
     public override void Initialize()
     {
         base.Initialize();
 
+        targetSet= GetComponent<TargetSet>();
         moveVecter = new Vector3[2];
 
     }
@@ -30,7 +33,7 @@ public class PlayerAttackMove : BaseMove
     public override void MoveEnter()
     {
         moveVecter[0] = transform.position;
-        moveVecter[1] = targetTrans.position;
+        moveVecter[1] = targetSet.SetVec(targetTrans).position;
         isAttackEnd = false;
     }
 

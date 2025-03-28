@@ -13,6 +13,9 @@ public class Fly_Attack : StateChildBase
 
         base.Initialize(stateType);
         //GetComponent<FlyScr>().AtkInterval = GetComponent<FlyScr>().MaxAtkInterval;
+
+        //GetComponent<FlyScr>().AttackMagazineUpdateAll();
+        GetComponent<FlyScr>().atkMove.Initialize();
     }
 
     public override void OnEnter()
@@ -21,6 +24,8 @@ public class Fly_Attack : StateChildBase
         stateTime = 0f;
         //foreach (var magazine in GetComponent<FlyScr>().baseMagazine)
         //    magazine.MagazineEnter();
+
+        GetComponent<FlyScr>().atkMove.MoveEnter();
     }
 
     public override void OnExit()

@@ -66,7 +66,7 @@ public class Fly_Damage : StateChildBase
         if (stateTime >= DAMAGETIMEMAX)
         {
 
-            return GetComponent<FlyScr>().ReturnStateType(StateType);
+            return GetComponent<FlyScr>().FlyReturnStateType(StateType);
         }
 
         return StateType;

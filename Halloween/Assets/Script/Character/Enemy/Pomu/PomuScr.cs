@@ -3,7 +3,7 @@
 public class PomuScr : EnemyBase
 {
     [SerializeField] EnemyDamage eDamage;
-    public bool isAttack = true;
+    //public bool isAttack = true;
     public bool isMove = true;
 
     //public float MaxAtkInterval = 1f;
@@ -62,10 +62,11 @@ public class PomuScr : EnemyBase
 
     public int ReturnStateType(int stateType)
     {
-        if (isAttack)
-            return (int)FlyCtr.State.Fly_Attack;
+        //if (isAttack)
+        //    return (int)FlyCtr.State.Fly_Attack;
 
-        else if (isMove)
+        //else
+        if (isMove)
             return (int)FlyCtr.State.Fly_Move;
 
 

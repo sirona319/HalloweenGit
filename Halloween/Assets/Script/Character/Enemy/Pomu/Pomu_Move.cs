@@ -44,6 +44,9 @@ public class Pomu_Move : StateChildBase
         //if (!pScr.isMove)
         //    pScr.isAttack = true;
 
+        if (!pScr.isMove)
+            return (int)pScr.ReturnStateType(StateType);
+
         return (int)StateType;
 
     }

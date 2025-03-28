@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 3389971620290101742}
   - component: {fileID: 8035470208209194895}
   - component: {fileID: 3139794090836340382}
+  - component: {fileID: 2399627595262179340}
   m_Layer: 10
   m_Name: PumpkinDirection
   m_TagString: Enemy
@@ -385,7 +386,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
+  isDead: 0
   eDamage: {fileID: 4129176815202890290}
+  isAttack: 0
+  isMove: 1
   move: {fileID: 3139794090836340382}
   isBoss: 1
   sprite: {fileID: 8701814753559720864}
@@ -453,8 +457,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4232bf00c4f82624db6b11ef0e29ec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMove: 1
   movePointLists: []
   speed: 0
   IsLastPointMoveEnd:
     value: 0
+--- !u!114 &2399627595262179340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047e83a254ec21a47bd1825a5081a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

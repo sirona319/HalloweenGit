@@ -20,17 +20,17 @@ public class FlyScr : EnemyBase
         return false;
     }
 
-    public int ReturnStateType(int stateType)
-    {
-        if (isAttack)
-            return (int)FlyCtr.State.Fly_Attack;
+    //public int ReturnStateType(int stateType)
+    //{
+    //    if (isAttack)
+    //        return (int)FlyCtr.State.Fly_Attack;
 
-        else if (isMove)
-            return (int)FlyCtr.State.Fly_Move;
+    //    else if (isMove)
+    //        return (int)FlyCtr.State.Fly_Move;
 
 
-        return stateType;
-    }
+    //    return stateType;
+    //}
 
     void Start()
     {
@@ -66,8 +66,18 @@ public class FlyScr : EnemyBase
         else
             return (int)FlyCtr.State.Fly_Wait;
 
+    }
 
+    public void SetAttack()
+    {
+        isAttack = true;
+        isMove = false;
+    }
 
+    public void SetMove()
+    {
+        isAttack = false;
+        isMove = true;
     }
 
 }

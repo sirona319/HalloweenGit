@@ -28,6 +28,7 @@ public class PlayerScr2D : MonoBehaviour
 
         mag = GetComponent<PlayerMagazine>();
         //tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
+        mag.MagazineEnter();
     }
 
     private void Update()

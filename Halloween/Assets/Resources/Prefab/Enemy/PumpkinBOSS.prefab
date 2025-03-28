@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 8097683888208118477}
   startBattle: 0
-  pumpkinChildDeadCount: 16
+  pumpkinChildDeadCount: 0
   rotSpeedPumpkin2: 38
   rotSpeedPumpkin3: 39
   pumpkins:
@@ -849,7 +849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5844728792950602692
 Transform:
   m_ObjectHideFlags: 0
@@ -2930,7 +2930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &564858273963042989
 Transform:
   m_ObjectHideFlags: 0

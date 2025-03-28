@@ -67,7 +67,7 @@ public class Fly_Move : StateChildBase
 
         //return GetComponent<FlyScr>().FlyReturnStateType(StateType);
         if (!fScr.isMove)
-            return (int)fScr.ReturnStateType(StateType);
+            return (int)fScr.FlyReturnStateType(StateType);
         
 
         return (int)StateType;

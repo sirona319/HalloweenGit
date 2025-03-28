@@ -17,7 +17,7 @@ public class TargetSet : MonoBehaviour
         Down,
 
         LocalTarget,
-        Vec
+        Vec,
         //斜め　四つ　
         //一番近いエネミーなど？　遠い敵　レーザー
 
@@ -29,58 +29,70 @@ public class TargetSet : MonoBehaviour
         Bullet,
         Circle,
         Point,
+        Atk,
         //PointArray,
     }
 
+    //Transform pTarget;
 
-    public void Init()
-    {
-        //playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+    //public void PlayerTargetSet()
+    //{
+    //    playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
+    //}
 
     //バレット　サークル　単体
-    public Transform Set(TargetName name)
+    //public Transform Set()
+    //{
+    //    //var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
+
+    //    Transform t = null;
+
+    //    //foreach (var tChild in tArrayChild)
+    //    //{
+    //    //    if (tChild.GetComponent<TargetPoint>().tName == name)
+    //    //        t = tChild.transform;
+
+    //    //}
+
+    //    return TargetSelect(t.GetComponent<TargetPoint>().target, t);
+
+    //}
+
+    public Transform SetVec(Transform target)
     {
-        var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
+        //var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
 
-        Transform t = null;
-
-        foreach (var tChild in tArrayChild)
-        {
-            if (tChild.GetComponent<TargetPoint>().tName == name)
-                t = tChild.transform;
-
-        }
-
-        return TargetSelect(t.GetComponent<TargetPoint>().target, t);
+        return TargetSelect(target.GetComponent<TargetPoint>().target, target);
 
     }
 
-    public void SetPointArray(List<float> lengthList,List<Transform> pointList)
+    public void SetPointArray(List<Transform> pointList)
     {
 
-        var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
-        List<Transform> tArrayPoints = new();
+        //var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
+        //List<Transform> tArrayPoints = new();
 
-        foreach (var tChild in tArrayChild)
+        //foreach (var tChild in pointList)
+        //{
+        //    // 自分自身の場合は処理をスキップする
+        //    //if (tChild.gameObject == gameObject)
+        //    //    continue;
+
+        //    if (tChild.GetComponent<TargetPoint>().tName == TargetName.Point)
+        //    {
+        //        lengthList.Add(tChild.GetComponent<TargetPoint>().pointLength);
+        //        //tArrayPoints.Add(tChild.transform);
+
+        //    }
+
+        //}
+
+        foreach (var tChild in pointList)
         {
-            // 自分自身の場合は処理をスキップする
-            if (tChild.gameObject == gameObject)
-                continue;
+            if (tChild.GetComponent<TargetPoint>() == null) break;
 
-            if (tChild.GetComponent<TargetPoint>().tName == TargetName.Point)
-            {
-                lengthList.Add(tChild.GetComponent<TargetPoint>().pointLength);
-                tArrayPoints.Add(tChild.transform);
-
-            }
-
-        }
-
-        foreach (var tChild in tArrayPoints)
-        {
             var target = TargetSelect(tChild.GetComponent<TargetPoint>().target, tChild);
-            pointList.Add(target);
+            //pointList.Add(target);
 
         }
 
@@ -142,7 +154,9 @@ public class TargetSet : MonoBehaviour
                 Debug.Log("ターゲット未設定");
                 break;
         }
+
         return t;
+
     }
 
 

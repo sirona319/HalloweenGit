@@ -41,8 +41,8 @@ public class Pumpkin_Move : StateChildBase
             //GetComponent<FlyScr>().isMove = move.isMove;
         //}
 
-        if (!pScr.isMove)
-            pScr.isAttack = true;
+        //if (!pScr.isMove)
+        //    pScr.isAttack = true;
 
         return (int)StateType;
 

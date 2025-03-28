@@ -5,8 +5,8 @@ using UnityEngine;
 public class StraightPointMove : BaseMove
 {
     [SerializeField] List<Transform> movePointLists = new();
-    const float ENDMOVELEN = 0.8f;
-    [SerializeField]float speed = 0f;
+    const float ENDMOVELEN = 0.3f;
+    [SerializeField]float speed = 4f;
 
     //[SerializeField]Transform[] targets;// = new List<Vector3>();
 
@@ -16,6 +16,9 @@ public class StraightPointMove : BaseMove
 
     public ReactiveProperty<bool> IsLastPointMoveEnd = new ReactiveProperty<bool>(false);
     //public ReactiveProperty<bool[]> IsPointMoveEnd = new ReactiveProperty<bool[]>(new bool[] {false,false });
+
+    TargetSet targetSet;
+
 
     public void SetTarget(List<Transform> t)
     {
@@ -45,7 +48,13 @@ public class StraightPointMove : BaseMove
     public override void Initialize()
     {
         base.Initialize();
+
+        targetSet = GetComponent<TargetSet>();
+        targetSet.SetPointArray(movePointLists);
+
         direction = (movePointLists[targetNo].position - transform.position).normalized;
+
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
     }
 
     public override void MoveEnter()

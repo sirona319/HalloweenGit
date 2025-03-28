@@ -105,28 +105,28 @@ public class EnemySpawnWavePrefab : MonoBehaviour
     //}
 
     //ムーブ設定
-    void SelectCreateMoveJerry(BaseMove moveType, GameObject go)
-    {
-        switch (moveType)
-        {
-            case PlayerAttackPointMove:
+    //void SelectCreateMoveJerry(BaseMove moveType, GameObject go)
+    //{
+    //    switch (moveType)
+    //    {
+    //        case PlayerAttackPointMove:
 
-                //go.GetComponent<PlayerAttackPointMove>().Initialize();
+    //            //go.GetComponent<PlayerAttackPointMove>().Initialize();
 
-               // go.GetComponent<PlayerAttackPointMove>().point.movePointSet(movePoint);
+    //           // go.GetComponent<PlayerAttackPointMove>().point.movePointSet(movePoint);
 
-                go.GetComponent<PlayerAttackPointMove>().playerAttack.TargetSet(GameObject.FindGameObjectWithTag(TagName.Player).transform);
+    //            go.GetComponent<PlayerAttackPointMove>().playerAttack.TargetSet(GameObject.FindGameObjectWithTag(TagName.Player).transform);
 
-                break;
+    //            break;
 
            
-            default:
-                //go.GetComponent<EnemyBase>().baseMove[0].Initialize();
+    //        default:
+    //            //go.GetComponent<EnemyBase>().baseMove[0].Initialize();
 
-                //Debug.Log("MoveTypeDEFAULT");
-                break;
-        }
+    //            //Debug.Log("MoveTypeDEFAULT");
+    //            break;
+    //    }
 
-    }
+    //}
 
 }
