@@ -5,13 +5,13 @@ using Random = UnityEngine.Random;
 public class PumpkinScr : EnemyBase
 {
     [SerializeField] EnemyDamage eDamage;
-
-    public bool isAttack = true;
-    public bool isMove = true;
-
     public BaseMove move;
 
+    //public bool isAttack = true;
+    public bool isMove = true;
+
     public bool isBoss = false;
+
     public SpriteRenderer sprite;
 
     //ノイズ　瞬間移動
@@ -19,7 +19,6 @@ public class PumpkinScr : EnemyBase
     public float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
     float noiseLength = 0.5f;
     [SerializeField] float noiseTime = 0f;
-
 
     GameObject[] warpPositions;
     [SerializeField] float randTime = 0f;
@@ -55,7 +54,7 @@ public class PumpkinScr : EnemyBase
 
     void Update()
     {
-        AttackTimeUpdate();
+        //AttackTimeUpdate();
 
         //if (transform.position.z != 0f)
         //{
@@ -91,15 +90,15 @@ public class PumpkinScr : EnemyBase
     //}
 
 
-    void AttackTimeUpdate()
-    {
-        if (!isAttack) return;
+    //void AttackTimeUpdate()
+    //{
+    //    if (!isAttack) return;
 
-        //AtkInterval -= Time.deltaTime;
+    //    //AtkInterval -= Time.deltaTime;
 
-        //if(enemyData.AtkInterval<=0)
+    //    //if(enemyData.AtkInterval<=0)
 
-    }
+    //}
 
 
 
@@ -113,6 +112,17 @@ public class PumpkinScr : EnemyBase
 
         else
             return (int)FlyCtr.State.Fly_Wait;
+
+    }
+
+    public int DamageCheck()
+    {
+
+        //if (GetComponent<EnemyBase>().isDamage)
+        if (ReturnStateTypeDead())
+            return (int)PumpkinCtr.State.Pumpkin_Dead;
+        else
+            return (int)PumpkinCtr.State.Pumpkin_Damage;
 
     }
 
@@ -250,7 +260,7 @@ public class PumpkinScr : EnemyBase
                 }
                 else
                 {
-                    var sMove = move.GetComponent<StraightPointMove>();
+                    var sMove = move.GetComponent<SPointMovePumpkin>();
                     sMove.transform.position = warpList[randInt];
                     var dir = (Vector2)pTrans.position - (Vector2)warpList[randInt];
 
@@ -272,14 +282,5 @@ public class PumpkinScr : EnemyBase
     }
 
 
-    public int DamageCheck()
-    {
 
-        //if (GetComponent<EnemyBase>().isDamage)
-        if (ReturnStateTypeDead())
-            return (int)PumpkinCtr.State.Pumpkin_Dead;
-        else
-            return (int)PumpkinCtr.State.Pumpkin_Damage;
-
-    }
 }

@@ -21,22 +21,23 @@ public class PumpkinBoss_AttackL3 : StateChildBase
     }
     public IEnumerator AtkEnable()
     {
-        //Lv1
-        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 16);//trueなら
 
-        SetPumpkinChild(0);
-        SetPumpkinChild(1);
-        SetPumpkinChild(3);
-        SetPumpkinChild(4);
+        ////Lv1
+        //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 16);//trueなら
 
-        //LV2
-        yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 20);//trueなら
+        //SetPumpkinChild(0);
+        //SetPumpkinChild(1);
+        //SetPumpkinChild(3);
+        //SetPumpkinChild(4);
 
-        SetPumpkinChild(2);
-        SetPumpkinChild(5);
-        SetPumpkinChild(6);
-        SetPumpkinChild(7);
-        SetPumpkinChild(8);
+        ////LV2
+        //yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 20);//trueなら
+
+        //SetPumpkinChild(2);
+        //SetPumpkinChild(5);
+        //SetPumpkinChild(6);
+        //SetPumpkinChild(7);
+        //SetPumpkinChild(8);
 
         //LV3
         yield return new WaitUntil(() => bossScr.pumpkinChildDeadCount >= 25);//trueなら

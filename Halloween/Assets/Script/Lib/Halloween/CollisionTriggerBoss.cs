@@ -4,7 +4,8 @@ using UnityEngine.Audio;
 public class BossCollisionTrigger : MonoBehaviour
 {
     public float cameraDuration;
-    public Vector3 cameraBossPos;
+    [SerializeField] Transform cameraSetTrans;
+     //Vector3 cameraBossPos;
 
     public BoxCollider2D[] boxs2D;
 
@@ -28,7 +29,7 @@ public class BossCollisionTrigger : MonoBehaviour
 
 
 
-            Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraBossPos, cameraDuration);
+            Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraSetTrans.position, cameraDuration);
 
             //var readText = bossPumpkin.GetComponent<IHaveText>();
             //if (readText != null)

@@ -52,6 +52,8 @@ public class PlayerMove : MonoBehaviour
     //    m_animator.SetBool("dead", true);
     //}
 
+    public bool isNoise = false;
+
     void Start()
     {
         //ダッシュ残像のオフ
@@ -122,7 +124,7 @@ public class PlayerMove : MonoBehaviour
         m_movement.y = 0f;//Input.GetAxis("Vertical");
 
         const float walkAnimSpd = 0.3f;
-        if (m_movement.x >= walkAnimSpd)
+        if (m_movement.x >= walkAnimSpd&&!isNoise)
             GetComponent<SpriteRenderer>().flipX = true;
         if (m_movement.x <= -walkAnimSpd)
             GetComponent<SpriteRenderer>().flipX = false;

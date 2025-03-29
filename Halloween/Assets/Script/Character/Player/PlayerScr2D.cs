@@ -6,13 +6,13 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public class PlayerScr2D : MonoBehaviour
 {
-
+    public bool DEBUGNoDamage = false;
     PlayerMagazine mag;
 
     Animator m_animator;
     public bool isDead = false;
 
-    public TextMeshProUGUI timeText;//一時停止テキスト
+    [SerializeField] TextMeshProUGUI timeText;//一時停止テキスト
     public void PlayerDead()
     {
         //GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
@@ -38,7 +38,12 @@ public class PlayerScr2D : MonoBehaviour
         //攻撃
         mag.MagazineUpdate();
 
+        Pause();
 
+    }
+
+    void Pause()
+    {
         //一時停止
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -54,6 +59,11 @@ public class PlayerScr2D : MonoBehaviour
         }
         //
     }
+
+    //private void OnApplicationPause(bool pause)
+    //{
+    //    )
+    //}
 
     #region　剛体関連
     //private void OnTriggerEnter2D(Collider2D collision)

@@ -3,14 +3,12 @@
 public class StraightForceMove : BaseMove
 {
     public float speed = 7f;
-    //float rotSpeed = 10f;
-    //float rotStopTime = 3f;
-
-    public Transform targets;
-
-    public Vector3 direction;
 
     public Rigidbody2D rb2;
+
+    Transform targets;
+
+    Vector3 direction;
 
     public void SetTarget(Transform t)
     {

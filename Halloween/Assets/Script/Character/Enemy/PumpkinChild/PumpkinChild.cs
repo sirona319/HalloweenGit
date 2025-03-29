@@ -27,16 +27,8 @@ public class PumpkinChild : MonoBehaviour
 
     [SerializeField] protected float sPointSpeed=7f;
 
-
     [SerializeField] float spdSetTiming;
-    ////赤かぼちゃ用　継承する？
-    //public bool isShakeEnd = false;
 
-    //[SerializeField] GameObject fallPtL;
-    //[SerializeField] GameObject fallPtR;
-
-    //[SerializeField] Transform fallPointRed;
-    ////
 
     public void Initialize()
     {
@@ -94,6 +86,7 @@ public class PumpkinChild : MonoBehaviour
 
         if (targetNo == moveTrans.Length - 1)
         {
+            //if (isMoveEnd) return;
             Spawn();
 
         }
@@ -115,10 +108,10 @@ public class PumpkinChild : MonoBehaviour
 
 
 
-        if (eBase.GetComponent<StraightPointMove>() != null)
+        if (eBase.GetComponent<SPointMovePumpkin>() != null)
         {
-            eBase.GetComponent<StraightPointMove>().SetSpeed(sPointSpeed, spdSetTiming);
-            eBase.GetComponent<StraightPointMove>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
+            eBase.GetComponent<SPointMovePumpkin>().SetSpeed(sPointSpeed, spdSetTiming);
+            eBase.GetComponent<SPointMovePumpkin>().SetTarget(movePointLists);//spawnObjMovePoint[0].position;
         }
 
         if(this.GetComponent<LineRenderModule>()!=null)
@@ -127,24 +120,11 @@ public class PumpkinChild : MonoBehaviour
             this.GetComponent<LineRenderModule>().LineDraw();
 
             StartCoroutine(DelayOff(obj));
-            //{
-            //    //yield return new WaitUntil(() =>0 == 0);//trueなら
-            //    gameObject.SetActive(false);
-            //    //Destroy(gameObject);　エラー
 
-            //}));
-            //Destroy(gameObject,10f);
         }
 
 
-        //}
-
-
-        //if (eBase.GetComponent<StraightForceMove>() != null)
-        //{
-        //    eBase.GetComponent<StraightForceMove>().SetTarget(movePointLists[0]);
-        //}
-        gameObject.transform.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         isMoveEnd = true;
     }
@@ -153,7 +133,7 @@ public class PumpkinChild : MonoBehaviour
     {
         const float offLen = 0.3f;
         var v = movePointLists[movePointLists.Count - 1].position;
-        //yield return new WaitForSeconds(seconds);
+
         yield return new WaitUntil(() => Vector3.Distance(v, go.transform.position)< offLen);//trueなら
 
         this.GetComponent<LineRenderModule>().SetOffTimer(0f);

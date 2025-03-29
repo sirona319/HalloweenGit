@@ -4,53 +4,30 @@ using UnityEngine;
 
 public class StraightPointMove : BaseMove
 {
-    [SerializeField] List<Transform> movePointLists = new();
+    [SerializeField] protected List<Transform> movePointLists = new();
+    [SerializeField] protected float speed = 4f;
     const float ENDMOVELEN = 0.3f;
-    [SerializeField]float speed = 4f;
 
     //[SerializeField]Transform[] targets;// = new List<Vector3>();
 
-    int targetNo = 0;
+    protected int targetNo = 0;
 
-    Vector3 direction;
+    protected Vector3 direction;
 
-    public ReactiveProperty<bool> IsLastPointMoveEnd = new ReactiveProperty<bool>(false);
+    public ReactiveProperty<bool> IsMoveEnd = new ReactiveProperty<bool>(false);
     //public ReactiveProperty<bool[]> IsPointMoveEnd = new ReactiveProperty<bool[]>(new bool[] {false,false });
 
     TargetSet targetSet;
 
-
-    public void SetTarget(List<Transform> t)
-    {
-        movePointLists = t;
-        direction = (movePointLists[0].position - transform.position).normalized;
-        
-    }
-
-    public void SetSpeed(float spd,float timing)
-    {
-        StartCoroutine(MyLib.DelayCoroutine(timing, () =>
-        {
-            speed = spd;
-        }));
-    }
-
-    //ノイズ（バグ演出）の時の敵攻撃用
-    public void ReTarget(Transform t)
-    {
-        //movePointLists.Clear();
-        movePointLists.Add(t);
-        targetNo++;
-        direction = (movePointLists[targetNo].position - transform.position).normalized;
-
-    }
-
     public override void Initialize()
     {
-        base.Initialize();
+        //base.Initialize();
+        if (GetComponent<TargetSet>() == null)Debug.Log("TargetSetが未設定;");
 
         targetSet = GetComponent<TargetSet>();
         targetSet.SetPointArray(movePointLists);
+        
+
 
         direction = (movePointLists[targetNo].position - transform.position).normalized;
 
@@ -75,7 +52,7 @@ public class StraightPointMove : BaseMove
 
         //最後の移動地点へ到着したら
         if (targetNo == movePointLists.Count-1)
-            IsLastPointMoveEnd.Value = true;
+            IsMoveEnd.Value = true;
         else
         {
             targetNo++;

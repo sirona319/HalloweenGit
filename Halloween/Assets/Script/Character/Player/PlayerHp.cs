@@ -62,7 +62,7 @@ public class PlayerHp : MonoBehaviour,IDamage
         if (Input.GetKeyDown(KeyCode.R))
         {
             //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
-            //if (pScr.DEBUGNoDamage) return;
+            if (pScr.DEBUGNoDamage) return;
             if (pScr.isDead) return;
             if (IsDamage) return;
 
@@ -112,7 +112,7 @@ public class PlayerHp : MonoBehaviour,IDamage
     public bool Damage(int damage)
     {
         //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
-        //if (pScr.DEBUGNoDamage) return;
+        if (pScr.DEBUGNoDamage) return false; 
         if (pScr.isDead) return false;
         if (IsDamage) return false;
         #region カメラシェイク
