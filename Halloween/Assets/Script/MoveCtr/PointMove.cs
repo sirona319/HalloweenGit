@@ -152,7 +152,7 @@ public class PointMove : BaseMove
 
     public override void MoveEnter()
     {
-        //継承してここで設定　目標座標
+        //継承してここで設定　目標座標についた時の
     }
 
     public override void MoveUpdate()

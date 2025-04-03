@@ -2,27 +2,29 @@
 
 public class StraightForceMove : BaseMove
 {
-    public float speed = 7f;
+    [SerializeField] float speed = 7f;
 
-    public Rigidbody2D rb2;
+    Rigidbody2D rb2;
 
-    Transform targets;
+    [SerializeField]Transform targets;
 
     Vector3 direction;
 
-    public void SetTarget(Transform t)
-    {
-        targets = t;
-        direction = targets.position - transform.position;
-        //targetDir = (targetsVec - transform.position).normalized;
+    //public void SetTarget(Transform t)
+    //{
+    //    targets = t;
+    //    direction = targets.position - transform.position;
+    //    //targetDir = (targetsVec - transform.position).normalized;
 
-        //Debug.Log("SetTarget");
-    }
+    //    //Debug.Log("SetTarget");
+    //}
 
     public override void Initialize()
     {
         base.Initialize();
+        rb2 = GetComponent<Rigidbody2D>();
 
+        direction = targets.position - transform.position;
     }
 
     public override void MoveEnter()

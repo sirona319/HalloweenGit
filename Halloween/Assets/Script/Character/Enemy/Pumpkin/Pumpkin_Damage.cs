@@ -50,7 +50,7 @@ public class Pumpkin_Damage : StateChildBase
     public override void OnExit()
     {
         gameObject.GetComponent<IDamage>().IsDamage = false;
-        gameObject.GetComponent<PumpkinScr>().sprite.material.color = startColor;
+        GetComponent<SpriteRenderer>().material.color = startColor;
     }
 
     public override int StateUpdate()
@@ -62,7 +62,7 @@ public class Pumpkin_Damage : StateChildBase
         }
 
         if (gameObject.GetComponent<IDamage>().IsDamage)
-            gameObject.GetComponent<PumpkinScr>().sprite.material.color = 
+            GetComponent<SpriteRenderer>().material.color = 
                 Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, DAMAGETIMEMAX));
 
         stateTime += Time.deltaTime;

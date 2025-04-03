@@ -24,7 +24,7 @@ public class Pumpkin_Wait : StateChildBase
 
         //XYの回転がずれる　PUmpkinJump (Prefab)
         //////transform.rotation = MyLib.TargetRotation2D((transform.position + Vector3.up), transform, 5f);
-        transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
+        //transform.rotation = MyLib.GetAngleRotationFuncs((transform.position + Vector3.up), transform, 5f);
 
 
         if (GetComponent<IDamage>().IsDamage)

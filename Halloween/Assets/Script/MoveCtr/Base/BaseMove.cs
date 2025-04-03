@@ -49,10 +49,10 @@ public abstract class BaseMove : MonoBehaviour
     }
 
     public abstract void MoveEnter();
-    //public virtual void MoveExit()
-    //{
+    public virtual void MoveExit()
+    {
 
-    //}
+    }
 
 
     public abstract void MoveUpdate();
