@@ -9,7 +9,7 @@ public class SpawnPumpkinChild : StraightPointMove
 
     //[SerializeField] protected float noiseTiming = 1f;//ランダムで数字を足して　瞬間移動させる
 
-    [SerializeField] protected GameObject spawnObj;
+    [SerializeField] protected GameObject[] spawnObjs;
     //bool isSpawn = false;
     //[SerializeField] public Transform[] spawnObjMovePoints;
     //[SerializeField] List<Transform> spawnPointLists = new();//生成したオブジェクトに設定する移動座標
@@ -55,6 +55,7 @@ public class SpawnPumpkinChild : StraightPointMove
 
             //isSpawn = true;
             GetComponent<PumpkinBossChildScr>().isSpawnMove = false;
+            gameObject.SetActive(false);
             //Destroy(gameObject);
 
         }
@@ -78,10 +79,21 @@ public class SpawnPumpkinChild : StraightPointMove
 
     public virtual void Spawn()
     {
-        if (spawnObj == null)
+        if (spawnObjs == null)
             Debug.Log("Instantiate生成オブジェクトが設定されていない");
 
-        var obj = Instantiate(spawnObj, transform.position, Quaternion.identity);
+        foreach(var obj in spawnObjs)
+        {
+            Instantiate(obj, transform.position, Quaternion.identity);
+
+            //var spawnObjMovePoint = obj.GetComponent<SPointMovePumpkin>().movePointLists;
+            //spawnPointLists.AddRange(spawnObjMovePoint);
+            //obj.GetComponent<SPointMovePumpkin>().movePointLists = spawnPointLists;
+        }
+
+
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
         //var eBase = obj.GetComponent<PumpkinScr>().move;
         //eBase.Initialize();
 
@@ -100,7 +112,6 @@ public class SpawnPumpkinChild : StraightPointMove
 
         //}
 
-        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
     }
 
@@ -115,5 +126,5 @@ public class SpawnPumpkinChild : StraightPointMove
     //    gameObject.SetActive(false);
     //}
 
-   
+
 }

@@ -7,7 +7,7 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 {
     PumpkinBossScr bossScr;
 
-    List<PumpkinBossChildScr> childList = new ();
+    //List<PumpkinBossChildScr> childList = new ();
 
     void SetPumpkinChild(int n)
     {
@@ -83,7 +83,7 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
     public override void OnExit()
     {
-        childList.Clear();
+        //childList.Clear();
     }
 
     public override int StateUpdate()

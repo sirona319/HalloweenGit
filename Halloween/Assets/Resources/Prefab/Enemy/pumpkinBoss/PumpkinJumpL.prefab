@@ -112,6 +112,8 @@ GameObject:
   - component: {fileID: 6045209402796862328}
   - component: {fileID: -8853910818297857426}
   - component: {fileID: 7216542074282882628}
+  - component: {fileID: -7400844739218237166}
+  - component: {fileID: 3221191337343243137}
   m_Layer: 3
   m_Name: PumpkinJumpL
   m_TagString: Enemy
@@ -215,8 +217,8 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6205204080456637428}
-  m_BodyType: 0
-  m_Simulated: 1
+  m_BodyType: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -305,14 +307,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
+  isDead: 0
   eDamage: {fileID: 6045209402796862328}
-  move: {fileID: 3751133012385811689}
+  move: {fileID: 3221191337343243137}
+  isMove: 1
   isBoss: 1
-  sprite: {fileID: 8687611365685043167}
-  isNoise: 0
-  noiseTiming: 1
-  noiseTime: 0
-  randTime: 0
 --- !u!114 &3751133012385811689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,12 +319,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6205204080456637428}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13ef11c8ea80b354c9675a806d6a29e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMove: 1
   isFirstDirX: 0
   forceUpR: {x: 0, y: 0, z: 0}
   forceUpL: {x: 0, y: 0, z: 0}
@@ -335,7 +333,6 @@ MonoBehaviour:
   jumpForceX: 7
   jumpForceY: 7
   moveEreaVal: 100
-  rb2: {fileID: 2696936777909329388}
 --- !u!114 &3389971620290101742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,3 +419,35 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8049466, y: 0.5062151}
   m_EdgeRadius: 0
+--- !u!114 &-7400844739218237166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f49e3fba5da0a4a97b0536ab97b321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addH: -35
+  jumpCount: 4
+  dur: 3
+  power: 3
+--- !u!114 &3221191337343243137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205204080456637428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f49e3fba5da0a4a97b0536ab97b321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addH: -5
+  jumpCount: 1
+  dur: 1
+  power: 1

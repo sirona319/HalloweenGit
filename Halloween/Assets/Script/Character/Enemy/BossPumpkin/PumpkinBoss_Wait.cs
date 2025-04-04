@@ -39,6 +39,8 @@ public class PumpkinBoss_Wait : StateChildBase
             GetComponent<PumpkinBossScr>().startBattle = false;
             GetComponent<PumpkinBossScr>().BattleEnd();
             Debug.Log("戦闘終了");
+            gameObject.SetActive(false);
+            return StateType;
         }
 
         if (bossScr.pumpkinChildDeadCount >= 16)

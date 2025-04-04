@@ -447,7 +447,7 @@ MonoBehaviour:
   - {fileID: 382243530195596091}
   - {fileID: 3888526766356404691}
   - {fileID: 7415869169480535646}
-  speed: 5
+  speed: 6
 --- !u!114 &1051727321195948533
 MonoBehaviour:
   m_ObjectHideFlags: 0

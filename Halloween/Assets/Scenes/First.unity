@@ -1915,6 +1915,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &155031189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3736433971542901824, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+  m_PrefabInstance: {fileID: 5614009997357625118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &156381947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3720343897573294385, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
@@ -2317,7 +2322,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1520326057}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 7e89118e216b7af4186cee4e3307b215, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 7e89118e216b7af4186cee4e3307b215, type: 3}
 --- !u!114 &171370635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8138,7 +8144,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 156381947}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 380dad898d025e94d9a275a8f2b15ea7, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 380dad898d025e94d9a275a8f2b15ea7, type: 3}
 --- !u!114 &291307860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13502,7 +13509,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1553598361}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: a552b08b4c1afa642a09a9a63f52a958, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &319593935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13831,7 +13839,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1553598361}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: c0fbf44a2248d844f997c6b9d1886895, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: c0fbf44a2248d844f997c6b9d1886895, type: 3}
 --- !u!114 &347331236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19636,7 +19645,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 534701690}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 5cbf46a5076027542b523522f21d52d4, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 5cbf46a5076027542b523522f21d52d4, type: 3}
 --- !u!114 &431621278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19786,7 +19796,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 879266105}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 54efa33d2808839479050697375347ce, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 54efa33d2808839479050697375347ce, type: 3}
 --- !u!114 &447051262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25343,7 +25354,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.8, y: 0, z: -10}
+  m_LocalPosition: {x: 2.86, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25677,7 +25688,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 30994303}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: 6e6bf819db8dc5e48af8a3535260e58d, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: d3624b357bba4b24a9734c2a00c87337, type: 3}
 --- !u!114 &530241391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26537,7 +26549,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 30994303}
   speed: 5
-  spawnObj: {fileID: 6205204080456637428, guid: f0f68c64999e04d469bcbfffd3a86991, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: f0f68c64999e04d469bcbfffd3a86991, type: 3}
 --- !u!114 &583514007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27096,7 +27109,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 302229559}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: 500e9ea1a5172354aa870e98ccdbeba9, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: d580477e34d160b48b468eb3876a4d9d, type: 3}
 --- !u!114 &642875353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27330,7 +27344,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1977798022}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 4812c8ee952d05149be45bf1858115da, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 4812c8ee952d05149be45bf1858115da, type: 3}
 --- !u!114 &669703398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27396,7 +27411,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 30994303}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: cea33718e6bc2434db174846bbe0ecb1, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: cea33718e6bc2434db174846bbe0ecb1, type: 3}
 --- !u!114 &679741325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28424,7 +28440,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 259470077}
   speed: 5
-  spawnObj: {fileID: 6205204080456637428, guid: efdd375127ed4ee42a38d767570297ad, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: efdd375127ed4ee42a38d767570297ad, type: 3}
 --- !u!1 &741067177
 GameObject:
   m_ObjectHideFlags: 0
@@ -28945,7 +28962,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 2139815844}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: 6e6bf819db8dc5e48af8a3535260e58d, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: d3624b357bba4b24a9734c2a00c87337, type: 3}
 --- !u!114 &773946333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31542,7 +31560,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1938015040}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 56e259c04b37805469fc2d2a4e2975a2, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 56e259c04b37805469fc2d2a4e2975a2, type: 3}
 --- !u!114 &980693134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31809,7 +31828,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 368269046}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: a552b08b4c1afa642a09a9a63f52a958, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &1031607664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32203,9 +32223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePointLists:
-  - {fileID: 1606615921}
+  - {fileID: 653604706}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: bb2aec7d59d9af5469f71be7651b56f6, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: af8b90bf457d8044eb195e3e2aead853, type: 3}
+  - {fileID: 6205204080456637428, guid: eeaf9dfc64106a44bb520d9dc655cbc5, type: 3}
 --- !u!114 &1100131035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32245,7 +32267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05902ab48340f64cbdd476780277811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 0}
+  stateController: {fileID: 1100131036}
   isDead: 0
   isFallMove: 0
   isSpawnMove: 0
@@ -32287,7 +32309,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1441537534}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: a552b08b4c1afa642a09a9a63f52a958, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &1102076326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32445,7 +32468,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 368269046}
   speed: 5
-  spawnObj: {fileID: 6205204080456637428, guid: c13d11855e28c524cb5635b15087830e, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &1116588436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33082,7 +33106,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1553598361}
   speed: 5
-  spawnObj: {fileID: 6205204080456637428, guid: 71756d99742c4df40ab8241249d670d6, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &1231610068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33463,7 +33488,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1606615921}
   speed: 4
-  spawnObj: {fileID: 6205204080456637428, guid: 8815dc09a08031740952dbc54f7ad4c9, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: 8815dc09a08031740952dbc54f7ad4c9, type: 3}
 --- !u!114 &1256453156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33509,6 +33535,22 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 960538952}
   speed: 6
+--- !u!114 &1256453164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256453148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012e28a8011009247b19e29344e2b2d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShakeEnd: 0
+  fallPtL: {fileID: 155031189}
+  fallPtR: {fileID: 2056391556}
+  fallPointRed: {fileID: 1606615921}
 --- !u!1 &1257781070
 GameObject:
   m_ObjectHideFlags: 0
@@ -35026,7 +35068,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 879266105}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 2cd4d844858a83541b5298973b4544a5, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 2cd4d844858a83541b5298973b4544a5, type: 3}
 --- !u!114 &1408392627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35272,7 +35315,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 653604706}
   speed: 4
-  spawnObj: {fileID: 6205204080456637428, guid: c8161428e3cb1fb4baa48ce799929bb7, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: c8161428e3cb1fb4baa48ce799929bb7, type: 3}
 --- !u!114 &1424942480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40898,7 +40942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1565575023
 Transform:
   m_ObjectHideFlags: 0
@@ -40937,7 +40981,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1977798022}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 8c478bda6cc5f47448b021025d05c11a, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 8c478bda6cc5f47448b021025d05c11a, type: 3}
 --- !u!114 &1581577791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41203,7 +41248,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1441537534}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: a552b08b4c1afa642a09a9a63f52a958, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &1608363830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41228,7 +41274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05902ab48340f64cbdd476780277811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 0}
+  stateController: {fileID: 1608363830}
   isDead: 0
   isFallMove: 0
   isSpawnMove: 0
@@ -41532,7 +41578,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 259470077}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: efdd375127ed4ee42a38d767570297ad, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: efdd375127ed4ee42a38d767570297ad, type: 3}
 --- !u!114 &1633064807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41773,7 +41820,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 30994303}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: f0f68c64999e04d469bcbfffd3a86991, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: f0f68c64999e04d469bcbfffd3a86991, type: 3}
 --- !u!114 &1663498021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43797,7 +43845,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 259470077}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: 5cc3556ab2f74954fbf16d7b1dac7fca, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: 5cc3556ab2f74954fbf16d7b1dac7fca, type: 3}
 --- !u!114 &1799081902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49069,7 +49118,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 259470077}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: 500e9ea1a5172354aa870e98ccdbeba9, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: d580477e34d160b48b468eb3876a4d9d, type: 3}
 --- !u!114 &1866061301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49449,7 +49499,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1943295453}
   speed: 6
-  spawnObj: {fileID: 6509073088709276920, guid: 3673bd58b5a5fc740b215cbf18e4c45f, type: 3}
+  spawnObjs:
+  - {fileID: 6509073088709276920, guid: 3673bd58b5a5fc740b215cbf18e4c45f, type: 3}
 --- !u!114 &1903588223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60468,7 +60519,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 1441537534}
   speed: 5
-  spawnObj: {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!114 &2034985244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60728,6 +60780,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2056391556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3755716144532304893, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+  m_PrefabInstance: {fileID: 5614009997357625118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2060429178
 GameObject:
   m_ObjectHideFlags: 0
@@ -61124,7 +61181,8 @@ MonoBehaviour:
   movePointLists:
   - {fileID: 368269046}
   speed: 6
-  spawnObj: {fileID: 6205204080456637428, guid: c8ce8c68c8da3c8418b42f85cfa572ad, type: 3}
+  spawnObjs:
+  - {fileID: 6205204080456637428, guid: c8ce8c68c8da3c8418b42f85cfa572ad, type: 3}
 --- !u!114 &2105986560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61654,7 +61712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1146293344694150746, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1260969477745340748, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_Enabled
@@ -61714,7 +61772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3714785155093097550, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3781113271460966373, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 4020221420001134705, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_Enabled
@@ -61747,6 +61809,10 @@ PrefabInstance:
     - target: {fileID: 4469908622666467918, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667248850588145462, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 4809394584115230578, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_LocalPosition.x
@@ -61796,6 +61862,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5144816667137898654, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5339857589418719549, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -61826,7 +61896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: pumpkinChildDeadCount
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6618388350481236407, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: 'timelineTexts.Array.data[0]'
@@ -61911,6 +61981,10 @@ PrefabInstance:
     - target: {fileID: 8928065266553642871, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8937839125099228917, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8945169431333949135, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       propertyPath: m_Name
@@ -62119,6 +62193,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2956006357891709424, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1256453158}
+    - targetCorrespondingSourceObject: {fileID: 2956006357891709424, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1256453164}
     - targetCorrespondingSourceObject: {fileID: 7844162004823871963, guid: 5b5fee6dcbf6ee6419d07488d4d44e57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1866061303}
@@ -62518,7 +62595,7 @@ PrefabInstance:
       objectReference: {fileID: 1951081538}
     - target: {fileID: 6983425906397115818, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.83
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 6983425906397115818, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_LocalPosition.y

@@ -4,9 +4,9 @@ public class StraightForceMove : BaseMove
 {
     [SerializeField] float speed = 7f;
 
-    Rigidbody2D rb2;
+    [SerializeField] Transform targets;
 
-    [SerializeField]Transform targets;
+    Rigidbody2D rb2;
 
     Vector3 direction;
 

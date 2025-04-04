@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//使わない
 public class JumpMove : BaseMove
 {
     //public float speed = 7f;

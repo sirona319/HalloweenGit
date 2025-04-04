@@ -83,6 +83,7 @@ public class PumpkinBoss_Fall : StateChildBase
             //配列の上限超えていたら
             if (pNo > pumpkinsArray.Length - 1)
                 return StateType;
+
             pumpkinsArray[pNo++].GetComponent<PumpkinBossChildScr>().isFallMove = true;
             fallTime = 0;
 

@@ -6,14 +6,14 @@ public class PumpkinBoss_Attack : StateChildBase
 {
 
     PumpkinBossScr bossScr;
-    List<PumpkinBossChildScr> childList = new ();
+   // List<PumpkinBossChildScr> childList = new ();
 
     void SetPumpkinChild(int n)
     {
         const float atkRotSpd = 30f;
         bossScr.pumpkins[n].GetComponent<RotModule>().speed = atkRotSpd;
         //bossScr.pumpkins[n].GetComponent<RotModule>().enabled = true;
-        childList.Add(bossScr.pumpkins[n].GetComponent<PumpkinBossChildScr>());
+        //childList.Add(bossScr.pumpkins[n].GetComponent<PumpkinBossChildScr>());
 
         //bossScr.pumpkins[n].GetComponent<PumpkinBossChildScr>().isFallMove = false;
         bossScr.pumpkins[n].GetComponent<PumpkinBossChildScr>().isSpawnMove = true;
@@ -77,7 +77,7 @@ public class PumpkinBoss_Attack : StateChildBase
 
     public override void OnExit()
     {
-        childList.Clear();
+       // childList.Clear();
     }
 
     public override int StateUpdate()
