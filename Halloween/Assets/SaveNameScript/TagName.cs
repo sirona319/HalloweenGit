@@ -16,4 +16,7 @@ public static class TagName
 	public const string EnemyBoss = "EnemyBoss";
 	public const string PumpkinWorp = "PumpkinWorp";
 	public const string GroundRight = "GroundRight";
+	public const string FxTemporaire = "FxTemporaire";
+	public const string GroundBreak = "GroundBreak";
+	public const string Knife = "Knife";
 }

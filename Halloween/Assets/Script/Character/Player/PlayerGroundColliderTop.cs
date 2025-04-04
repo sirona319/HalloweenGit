@@ -10,7 +10,8 @@ public class PlayerGroundColliderTop : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag(TagName.Ground)
+                        || collision.gameObject.CompareTag(TagName.GroundBreak))
         {
             if (pScr.isJump)
                 pScr.isJump = false;
@@ -20,7 +21,9 @@ public class PlayerGroundColliderTop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag(TagName.Ground)
+                        || collision.gameObject.CompareTag(TagName.GroundBreak))
+
         {
             if (pScr.isJump)
                 pScr.isJump = false;
@@ -32,7 +35,8 @@ public class PlayerGroundColliderTop : MonoBehaviour
     {
         if (pScr.IsGround) return;
 
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag(TagName.Ground)
+                        || collision.gameObject.CompareTag(TagName.GroundBreak))
         {
 
             if (pScr.isJump)

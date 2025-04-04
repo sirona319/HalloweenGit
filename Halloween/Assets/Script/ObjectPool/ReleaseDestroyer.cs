@@ -5,7 +5,7 @@ public class ReleaseDestroyer : MonoBehaviour
 
     public PoolControl pool { get; set; }
 
-    const float DESTIME = 7f;
+    //const float DESTIME = 7f;
 
     public bool IsRelease = false;
 
@@ -32,64 +32,33 @@ public class ReleaseDestroyer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-
-        if (other.transform.CompareTag(TagName.Enemy))
-        {
-            var iDamage = other.transform.GetComponent<IDamage>();
-            if (iDamage != null)
-            {
-                MyLib.DebugInfo(other.gameObject);
-                iDamage.Damage(1);
-
-            }
-            else
-                Debug.Log("ダメージインターフェイスが無いよ！！"+TagName.Enemy);
-
-                //Debug.Log("攻撃が敵にHIT");
-            PoolDestroy();
-            return;
-        }
-
-        if (other.CompareTag(TagName.EnemyBoss))
-        {
-            var iDamage = other.GetComponent<IDamage>();
-            if (iDamage != null)
-                iDamage.Damage(1);
-            else
-                Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss"+TagName.EnemyBoss);
-
-            //Debug.Log("攻撃が敵にHITBOSS");
-            PoolDestroy();
-            return;
-        }
-
-    }
-
-    //private void OnCollisionEnter2D(Collision2D other)
+    //private void OnTriggerEnter2D(Collider2D other)
     //{
 
-    //    if (other.gameObject.CompareTag(TagName.Enemy))
+    //    if (other.transform.CompareTag(TagName.Enemy))
     //    {
-    //        var iDamage = other.gameObject.GetComponent<IDamage>();
+    //        var iDamage = other.transform.GetComponent<IDamage>();
     //        if (iDamage != null)
+    //        {
+    //            MyLib.DebugInfo(other.gameObject);
     //            iDamage.Damage(1);
-    //        else
-    //            Debug.Log("ダメージインターフェイスが無いよ！！" + TagName.Enemy);
 
-    //        //Debug.Log("攻撃が敵にHIT");
+    //        }
+    //        else
+    //            Debug.Log("ダメージインターフェイスが無いよ！！"+TagName.Enemy);
+
+    //            //Debug.Log("攻撃が敵にHIT");
     //        PoolDestroy();
     //        return;
     //    }
 
-    //    if (other.gameObject.CompareTag(TagName.EnemyBoss))
+    //    if (other.CompareTag(TagName.EnemyBoss))
     //    {
-    //        var iDamage = other.gameObject.GetComponent<IDamage>();
+    //        var iDamage = other.GetComponent<IDamage>();
     //        if (iDamage != null)
     //            iDamage.Damage(1);
     //        else
-    //            Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss" + TagName.EnemyBoss);
+    //            Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss"+TagName.EnemyBoss);
 
     //        //Debug.Log("攻撃が敵にHITBOSS");
     //        PoolDestroy();
@@ -98,14 +67,45 @@ public class ReleaseDestroyer : MonoBehaviour
 
     //}
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
+    ////private void OnCollisionEnter2D(Collision2D other)
+    ////{
 
-        if (other.CompareTag(TagName.ExitErea))
-        {
-            PoolDestroy();
-            return;
-        }
+    ////    if (other.gameObject.CompareTag(TagName.Enemy))
+    ////    {
+    ////        var iDamage = other.gameObject.GetComponent<IDamage>();
+    ////        if (iDamage != null)
+    ////            iDamage.Damage(1);
+    ////        else
+    ////            Debug.Log("ダメージインターフェイスが無いよ！！" + TagName.Enemy);
 
-    }
+    ////        //Debug.Log("攻撃が敵にHIT");
+    ////        PoolDestroy();
+    ////        return;
+    ////    }
+
+    ////    if (other.gameObject.CompareTag(TagName.EnemyBoss))
+    ////    {
+    ////        var iDamage = other.gameObject.GetComponent<IDamage>();
+    ////        if (iDamage != null)
+    ////            iDamage.Damage(1);
+    ////        else
+    ////            Debug.Log("ダメージインターフェイスが無いよ！！EnemyBoss" + TagName.EnemyBoss);
+
+    ////        //Debug.Log("攻撃が敵にHITBOSS");
+    ////        PoolDestroy();
+    ////        return;
+    ////    }
+
+    ////}
+
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+
+    //    if (other.CompareTag(TagName.ExitErea))
+    //    {
+    //        PoolDestroy();
+    //        return;
+    //    }
+
+    //}
 }

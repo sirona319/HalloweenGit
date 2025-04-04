@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+//GlitchEffectRandomTiming Shader
 public class NoiseEnable : MonoBehaviour
 {
     Material defaultMat;

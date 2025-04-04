@@ -10,6 +10,9 @@ TagManager:
   - EnemyBoss
   - PumpkinWorp
   - GroundRight
+  - FxTemporaire
+  - GroundBreak
+  - Knife
   layers:
   - Default
   - TransparentFX
@@ -29,7 +32,7 @@ TagManager:
   - SceneObject
   - Ground
   - GroundRight
-  - 
+  - GroundBreak
   - 
   - 
   - 

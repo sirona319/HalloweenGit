@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//スプライトUnlit Shader
 public class MosaicEnable : MonoBehaviour
 {
     Material defaultMat;
