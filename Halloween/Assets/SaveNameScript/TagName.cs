@@ -19,4 +19,5 @@ public static class TagName
 	public const string FxTemporaire = "FxTemporaire";
 	public const string GroundBreak = "GroundBreak";
 	public const string Knife = "Knife";
+	public const string MoveFloor = "MoveFloor";
 }

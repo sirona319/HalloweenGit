@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TileMapLightGround : MonoBehaviour
+public class DownGround : MonoBehaviour
 {
     bool playerFall = false;
 
@@ -12,13 +12,29 @@ public class TileMapLightGround : MonoBehaviour
     {
         if (!playerFall) return;
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.S) && GetComponent<TilemapCollider2D>()!=null)
         {
             GetComponent<TilemapCollider2D>().enabled = false;
 
             StartCoroutine(MyLib.DelayCoroutine(tileDisableTime, () =>
             {
                 GetComponent<TilemapCollider2D>().enabled = true;
+            }));
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) && GetComponents<BoxCollider2D>() != null)
+        {
+            foreach(var box in GetComponents<BoxCollider2D>())
+            {
+                box.enabled = false;
+            }
+
+            StartCoroutine(MyLib.DelayCoroutine(tileDisableTime, () =>
+            {
+                foreach (var box in GetComponents<BoxCollider2D>())
+                {
+                    box.enabled = true;
+                }
             }));
         }
     }
@@ -28,7 +44,7 @@ public class TileMapLightGround : MonoBehaviour
         if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             playerFall = true;
-            Debug.Log("LitghtGround");
+            Debug.Log("DownGroundEnter");
 
         }
 
@@ -39,7 +55,7 @@ public class TileMapLightGround : MonoBehaviour
         if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             playerFall = false;
-            Debug.Log("LitghtGround");
+            Debug.Log("DownGroundExit");
 
         }
 

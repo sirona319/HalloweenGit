@@ -130,7 +130,7 @@ public class PointMove : BaseMove
     [SerializeField] List<Transform> moveTrans;
     //[SerializeField] List<Vector3> moveVecs = new();
     [SerializeField] List<float> endLength;
-    [SerializeField] float speed = 4f;
+    //[SerializeField] float speed = 4f;
     const float rotSpeed = 5f;
 
     [SerializeField] bool isLoop = false;

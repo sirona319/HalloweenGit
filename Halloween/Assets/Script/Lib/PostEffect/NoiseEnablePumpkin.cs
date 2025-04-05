@@ -85,8 +85,8 @@ public class NoiseEnablePumpkin : MonoBehaviour
 
     void WorpPositionSelect()
     {
-        const float speed = 12f;
-        List<Vector2> warpList = new List<Vector2>();
+        //const float speed = 12f;
+        List<Vector2> warpList = new ();
 
         //var points = GameObject.FindGameObjectsWithTag("PumpkinWorp");
         foreach (var i in warpPositions)

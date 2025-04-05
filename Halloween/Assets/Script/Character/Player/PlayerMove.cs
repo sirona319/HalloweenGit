@@ -27,11 +27,12 @@ public class PlayerMove : MonoBehaviour
 
     public bool isLimitMove = false;     //アニメーション中などの移動制限
     [SerializeField] float skyGravity = 22;
-    [SerializeField] float groundGravity = 1;
+    [SerializeField] float groundGravity = 1; //ダッシュ対応のため1
 
     //ジャンプ
     const float upSpd = 4f;
     public bool isJump = false;
+    //bool isMove = false;
     [SerializeField] float jumpHeight=2f; //1.8
     float keepPosY;
 
@@ -53,6 +54,8 @@ public class PlayerMove : MonoBehaviour
     //}
 
     public bool isNoise = false;
+
+    [SerializeField]PlayerGroundCollider pGroundCol;
 
     void Start()
     {
@@ -103,33 +106,81 @@ public class PlayerMove : MonoBehaviour
         }
 
         JumpControl();
+
+
     }
 
     void FixedUpdate()
     {
+
         if (GetComponent<PlayerScr2D>().isDead) return;
         if (isDash) return;
+
+        //if (!isMove) return;
+
+        Vector2 addVelocity = Vector2.zero;
+
+        if (pGroundCol.moveObj != null)
+        {
+            Debug.Log("ADDVELO");
+            //m_movement += pGroundCol.moveObj.GetVelocity();
+            m_rb.MovePosition(((Vector2)transform.position + m_movement * moveSpeed * Time.fixedDeltaTime)
+                + pGroundCol.moveObj.GetVelocity());
+
+            return;
+            //m_rb.linearVelocity = (m_rb.position + m_movement * moveSpeed * Time.fixedDeltaTime);
+            //if(!isMove)
+            //{
+            //    if (m_rb.gravityScale!=skyGravity)
+            //    m_rb.gravityScale = 30f;
+
+            //}
+            //else
+            //    m_rb.gravityScale = groundGravity;
+            //addVelocity = pGroundCol.moveObj.GetVelocity();
+        }
+
+        //各種座標軸の速度を求める
+        //m_rb.linearVelocity = new Vector2(m_movement.x, m_movement.y) + addVelocity;
+
         //if (isSkyDash) return;
-        m_rb.MovePosition(m_rb.position + m_movement * moveSpeed * Time.fixedDeltaTime);
-        // Debug.Log("MovePosition");
+        //else
+        //    m_rb.linearVelocity = (m_movement * moveSpeed * Time.fixedDeltaTime);
+
+            m_rb.MovePosition((Vector2)transform.position + m_movement * moveSpeed * Time.fixedDeltaTime);
+
     }
 
 
 
     void MoveControl()
     {
+
+        //if (Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.A))
+        //{
+        //    isMove = true;
+        //}
         debugmoveX = Input.GetAxis("Horizontal");
         // 入力の取得
         m_movement.x = Input.GetAxis("Horizontal");
         m_movement.y = 0f;//Input.GetAxis("Vertical");
 
-        const float walkAnimSpd = 0.3f;
+        var absX = Mathf.Abs(m_movement.x);
+        var absY = Mathf.Abs(m_movement.y);
+        //if (absX == 0f && absY == 0f)
+        //{
+        //    isMove = false;
+        //    return;
+        //}
+        //else
+        //    isMove = true;
+
+            const float walkAnimSpd = 0.3f;
         if (m_movement.x >= walkAnimSpd&&!isNoise)
             GetComponent<SpriteRenderer>().flipX = true;
         if (m_movement.x <= -walkAnimSpd)
             GetComponent<SpriteRenderer>().flipX = false;
 
-        var absX = Mathf.Abs(m_movement.x);
         //速度が一定を超えたら　アニメーションの設定
         if (absX > walkAnimSpd)
             m_animator.SetBool("walk", true);
