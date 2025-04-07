@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     #region デバッグ
+
     public float debugmoveX = 0;
-    //public bool DEBUGNoDamage = false;
+
     #endregion
 
 
@@ -116,64 +117,35 @@ public class PlayerMove : MonoBehaviour
         if (GetComponent<PlayerScr2D>().isDead) return;
         if (isDash) return;
 
-        //if (!isMove) return;
+        //if (pGroundCol.moveObj != null)
+        //{
+        //    //Debug.Log("ADDvelocity");
 
-        Vector2 addVelocity = Vector2.zero;
+        //    m_rb.MovePosition(((Vector2)transform.position + m_movement * moveSpeed * Time.deltaTime)
+        //        + pGroundCol.moveObj.GetVelocity());
 
-        if (pGroundCol.moveObj != null)
-        {
-            Debug.Log("ADDVELO");
-            //m_movement += pGroundCol.moveObj.GetVelocity();
-            m_rb.MovePosition(((Vector2)transform.position + m_movement * moveSpeed * Time.fixedDeltaTime)
-                + pGroundCol.moveObj.GetVelocity());
+        //    return;
 
-            return;
-            //m_rb.linearVelocity = (m_rb.position + m_movement * moveSpeed * Time.fixedDeltaTime);
-            //if(!isMove)
-            //{
-            //    if (m_rb.gravityScale!=skyGravity)
-            //    m_rb.gravityScale = 30f;
+        //}
 
-            //}
-            //else
-            //    m_rb.gravityScale = groundGravity;
-            //addVelocity = pGroundCol.moveObj.GetVelocity();
-        }
-
-        //各種座標軸の速度を求める
-        //m_rb.linearVelocity = new Vector2(m_movement.x, m_movement.y) + addVelocity;
-
-        //if (isSkyDash) return;
-        //else
-        //    m_rb.linearVelocity = (m_movement * moveSpeed * Time.fixedDeltaTime);
-
-            m_rb.MovePosition((Vector2)transform.position + m_movement * moveSpeed * Time.fixedDeltaTime);
+        m_rb.MovePosition((Vector2)transform.position + m_movement * moveSpeed * Time.deltaTime);
 
     }
 
-
+    public void RideMove(Vector2 f)
+    {
+        m_rb.MovePosition(((Vector2)transform.position + m_movement * moveSpeed * Time.deltaTime)
+                + f);
+    }
 
     void MoveControl()
     {
-
-        //if (Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.A))
-        //{
-        //    isMove = true;
-        //}
+        //テスト用
         debugmoveX = Input.GetAxis("Horizontal");
         // 入力の取得
         m_movement.x = Input.GetAxis("Horizontal");
         m_movement.y = 0f;//Input.GetAxis("Vertical");
 
-        var absX = Mathf.Abs(m_movement.x);
-        var absY = Mathf.Abs(m_movement.y);
-        //if (absX == 0f && absY == 0f)
-        //{
-        //    isMove = false;
-        //    return;
-        //}
-        //else
-        //    isMove = true;
 
             const float walkAnimSpd = 0.3f;
         if (m_movement.x >= walkAnimSpd&&!isNoise)
@@ -181,6 +153,7 @@ public class PlayerMove : MonoBehaviour
         if (m_movement.x <= -walkAnimSpd)
             GetComponent<SpriteRenderer>().flipX = false;
 
+        var absX = Mathf.Abs(m_movement.x);
         //速度が一定を超えたら　アニメーションの設定
         if (absX > walkAnimSpd)
             m_animator.SetBool("walk", true);
@@ -265,6 +238,26 @@ public class PlayerMove : MonoBehaviour
 
 
     #endregion
+
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag(TagName.MoveFloor))
+    //    {
+    //        Debug.Log("MoveFloorExit Collision");
+    //        //動く床から離れた
+    //        pGroundCol.moveObj = null;
+    //    }
+    //}
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag(TagName.MoveFloor))
+    //    {
+    //        Debug.Log("MoveFlooENTER Collision");
+    //        pGroundCol.moveObj = collision.gameObject.GetComponent<MoveFloor2D>();
+    //    }
+    //}
 
 
     //#region デバッグ

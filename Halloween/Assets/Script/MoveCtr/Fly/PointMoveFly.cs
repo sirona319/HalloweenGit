@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PointMoveVecFly : PointVecMove
+public class PointMoveFly : PointMove
 {
     //ポイント移動を終了するタイミング
     [SerializeField] float endTimeMax = 6f;

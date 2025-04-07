@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿//using UnityEngine;
 
-public interface ITargets
-{
-    public Transform[] targets { get; set; }
-}
+//public interface ITargets
+//{
+//    public Transform[] targets { get; set; }
+//}

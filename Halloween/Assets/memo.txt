@@ -1,4 +1,9 @@
-    
+
+
+    //private void OnApplicationPause(bool pause)
+    //{
+    //    )
+    //}    
            
            
            
@@ -7,17 +12,9 @@
         
     }
            
+          
            
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           reviveText.DOFade(endValue: 1f, duration: 1f);
+        
 
 
     ////////////パーティクル関係

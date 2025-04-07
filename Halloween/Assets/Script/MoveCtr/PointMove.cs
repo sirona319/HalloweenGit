@@ -137,14 +137,14 @@ public class PointMove : BaseMove
     public ReactiveProperty<bool> isPointMoveEnd = new ReactiveProperty<bool>(false);//CreateMoveでSubscribe　エネミークラスなど？
 
     int targetNo = 0;
-    Rigidbody2D rb2;
+    //Rigidbody2D rb2;
 
     TargetSet targetSet;
 
 
     public override void Initialize()
     {
-        rb2 = GetComponent<Rigidbody2D>();
+        //rb2 = GetComponent<Rigidbody2D>();
 
         targetSet = GetComponent<TargetSet>();
         targetSet.SetPointArray(moveTrans);     //配列を作成

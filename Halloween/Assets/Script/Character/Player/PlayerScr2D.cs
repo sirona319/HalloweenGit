@@ -57,13 +57,10 @@ public class PlayerScr2D : MonoBehaviour
             Time.timeScale = 1f;
             timeText.enabled = false;
         }
-        //
+
     }
 
-    //private void OnApplicationPause(bool pause)
-    //{
-    //    )
-    //}
+
 
     #region　剛体関連
     //private void OnTriggerEnter2D(Collider2D collision)

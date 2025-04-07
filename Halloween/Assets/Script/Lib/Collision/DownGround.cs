@@ -5,8 +5,8 @@ public class DownGround : MonoBehaviour
 {
     bool playerFall = false;
 
-    [Tooltip("キャラクターと接触時 非アクティブ化する時間")]
-    [HeaderAttribute("キャラクターと接触時 非アクティブ化する時間")]
+    [Tooltip("Sキー入力時 非アクティブ化する時間")]
+    [HeaderAttribute("Sキー入力時 非アクティブ化する時間")]
     [SerializeField] float tileDisableTime = 0.3f;
     private void Update()
     {
@@ -44,7 +44,7 @@ public class DownGround : MonoBehaviour
         if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             playerFall = true;
-            Debug.Log("DownGroundEnter");
+            //Debug.Log("DownGroundEnter");
 
         }
 
@@ -55,7 +55,7 @@ public class DownGround : MonoBehaviour
         if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             playerFall = false;
-            Debug.Log("DownGroundExit");
+            //Debug.Log("DownGroundExit");
 
         }
 

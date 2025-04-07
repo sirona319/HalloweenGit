@@ -39,7 +39,7 @@ public class PlayerGroundCollider : MonoBehaviour
 
         if (collision.gameObject.CompareTag(TagName.MoveFloor))
         {
-
+            Debug.Log("MoveFloor2DEnter Trigger");
             //動く床から離れた
             moveObj = collision.gameObject.GetComponent<MoveFloor2D>();
         }
@@ -74,29 +74,29 @@ public class PlayerGroundCollider : MonoBehaviour
 
         if (collision.gameObject.CompareTag(TagName.MoveFloor))
         {
-            Debug.Log("MoveFloorExit");
+            Debug.Log("MoveFloorExit Trigger");
             //動く床から離れた
             moveObj = null;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag(TagName.MoveFloor))
-        {
-            Debug.Log("MoveFloorExit");
-            //動く床から離れた
-            moveObj = null;
-        }
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag(TagName.MoveFloor))
+    //    {
+    //        Debug.Log("MoveFloorExit Collision");
+    //        //動く床から離れた
+    //        moveObj = null;
+    //    }
+    //}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag(TagName.MoveFloor))
-        {
-            Debug.Log("MoveFlooENTER");
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag(TagName.MoveFloor))
+    //    {
+    //        Debug.Log("MoveFlooENTER Collision");
 
-            moveObj = collision.gameObject.GetComponent<MoveFloor2D>();
-        }
-    }
+    //        moveObj = collision.gameObject.GetComponent<MoveFloor2D>();
+    //    }
+    //}
 }
