@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//https://dkrevel.com/makegame-beginner/make-2d-action-move-and-fall-floor/
 public class MoveObject : MonoBehaviour
 {
     [Header("移動経路")] public GameObject[] movePoint;

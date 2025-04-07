@@ -15,7 +15,6 @@ public class PlayerScr2D : MonoBehaviour
     [SerializeField] TextMeshProUGUI timeText;//一時停止テキスト
     public void PlayerDead()
     {
-        //GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         GetComponent<PlayerScr2D>().isDead = true;
         m_animator.SetBool("dead", true);
 
