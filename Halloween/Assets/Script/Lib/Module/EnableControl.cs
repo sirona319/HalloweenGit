@@ -4,12 +4,12 @@ using UnityEngine;
 public class EnableControl : MonoBehaviour
 {
     //開始時に有効にするか無効にするか
-    public bool enableTrueOrFalse;
+    [SerializeField] bool enableTrueOrFalse;
 
     //それぞれのコンポーネントに対応 (デバッグ用など)
-    public bool isSprite;
-    public bool isBox2Col;
-    public bool isBox3Col;
+    [SerializeField] bool isSprite;
+    [SerializeField] bool isBox2Col;
+    [SerializeField] bool isBox3Col;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

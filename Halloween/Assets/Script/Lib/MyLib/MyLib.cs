@@ -75,6 +75,7 @@ public static class MyLib
     //{
     //    StartCoroutine(DoShake(duration, magnitude));
     //}
+    //https://baba-s.hatenablog.com/entry/2018/03/14/170400
     //オブジェクトを揺らし使い方
     /*StartCoroutine(MyLib.DoShake(0.25f, 0.1f, transform));*/
     public static IEnumerator DoShake(float duration, float magnitude, Transform trans)
@@ -90,6 +91,28 @@ public static class MyLib
 
             //カメラを揺らす際など　y座標を変更するようにしたりする現在変更していない
             trans.localPosition = new Vector3(x, pos.y, z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        trans.localPosition = pos;
+    }
+
+    public static IEnumerator DoShake2D(float duration, float magnitudeX, float magnitudeY, Transform trans, float zPos = 0f)
+    {
+        Vector2 pos = trans.localPosition;
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            var x = pos.x + Random.Range(-1f, 1f) * magnitudeX;
+            var y = pos.y + Random.Range(-1f, 1f) * magnitudeY;
+
+            //カメラを揺らす際など　y座標を変更するようにしたりする現在変更していない
+            trans.localPosition = new Vector3(x, pos.y, zPos);
 
             elapsed += Time.deltaTime;
 

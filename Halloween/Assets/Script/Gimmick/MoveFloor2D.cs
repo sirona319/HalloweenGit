@@ -19,12 +19,6 @@ public class MoveFloor2D : MonoBehaviour
     PlayerMove pMove;
     bool isRide = false;
 
-
-    public Vector2 GetVelocity()
-    {
-        return floorVelocity;
-    }
-
     void Start()
     {
         pMove = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
@@ -62,10 +56,10 @@ public class MoveFloor2D : MonoBehaviour
                 isMoveBack = false;
 
             }
-                moveDir = moveTrans[targetNo].position - transform.position;
+            moveDir = moveTrans[targetNo].position - transform.position;
 
 
-            
+
 
         }
 
