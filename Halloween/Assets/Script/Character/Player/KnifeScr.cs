@@ -48,8 +48,10 @@ public class KnifeScr : ReleaseDestroyer
 
     private void OnCollisionEnter2D(Collision2D ot)
     {
+
         if (ot.gameObject.CompareTag(TagName.GroundBreak))
         {
+            //https://qiita.com/kako_vail/items/57c574629fcaf4d9787f
             Debug.Log("KNIFE");
             //変数作って初期化
             Vector3 hitPos = Vector3.zero;
