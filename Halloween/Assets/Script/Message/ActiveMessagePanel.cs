@@ -27,7 +27,7 @@ public class ActiveMessagePanel : MonoBehaviour
     // float IntensityVal = 1;
     //const float TrailEndSpeed = 0.02f;
 
-    const float fadeSpeed = 300;
+    //const float fadeSpeed = 300;
 
     //public GameObject messagePanel;
 
@@ -40,8 +40,9 @@ public class ActiveMessagePanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //デバッグ用
         //右クリックでテスト用のメッセージを表示
-        if(Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
             if (messageNo >= messageAry.Length)
             {
@@ -61,6 +62,8 @@ public class ActiveMessagePanel : MonoBehaviour
             messageScript.SetMessagePanel(message);
         }
 
+
+        //デバッグ用
         if (Input.GetKey(KeyCode.F))
         {
             messageScript.transform.GetChild(0).gameObject.SetActive(true);
@@ -76,6 +79,7 @@ public class ActiveMessagePanel : MonoBehaviour
             messageScript.SetMessagePanel(message);
         }
 
+        //デバッグ用
 
         if (Input.GetKey(KeyCode.M))
         {
@@ -86,32 +90,32 @@ public class ActiveMessagePanel : MonoBehaviour
            
     }
 
-    public void MessageEnd()
-    {
-        messageScript.messageText.enabled = false;
+    //public void MessageEnd()
+    //{
+    //    messageScript.messageText.enabled = false;
 
 
-        const float targetAlpha = 0;
-        var tColor = TextBack.color;
-        tColor.a = targetAlpha;
+    //    const float targetAlpha = 0;
+    //    var tColor = TextBack.color;
+    //    tColor.a = targetAlpha;
 
-        //endValue　フェード目標カラー
-        TextBack.DOColor(tColor, Time.deltaTime * fadeSpeed).SetEase(Ease.Linear);
+    //    //endValue　フェード目標カラー
+    //    TextBack.DOColor(tColor, Time.deltaTime * fadeSpeed).SetEase(Ease.Linear);
 
-    }
+    //}
 
-    public void MessageStart()
-    {
-        messageScript.messageText.enabled = true;
-        TextBack.enabled = true;
+    //public void MessageStart()
+    //{
+    //    messageScript.messageText.enabled = true;
+    //    TextBack.enabled = true;
 
 
-        const float targetAlpha = 0.7f;
-        var tColor = TextBack.color;
-        tColor.a = targetAlpha;
+    //    const float targetAlpha = 0.7f;
+    //    var tColor = TextBack.color;
+    //    tColor.a = targetAlpha;
 
-        //endValue　フェード目標カラー
-        TextBack.DOColor(tColor, Time.deltaTime* fadeSpeed).SetEase(Ease.Linear);
+    //    //endValue　フェード目標カラー
+    //    TextBack.DOColor(tColor, Time.deltaTime* fadeSpeed).SetEase(Ease.Linear);
 
-    }
+    //}
 }

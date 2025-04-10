@@ -46,6 +46,7 @@ public class TimelineControl : MonoBehaviour
     {
         //if (isEnd) return;
 
+        //範囲内に入ったらプレイヤーを止めて　メッセージ再生
         if (isPlayTrigger && !isPlay)
         {
             playableDirector.Play();
@@ -63,8 +64,16 @@ public class TimelineControl : MonoBehaviour
 
 
         if (!isPlay) return;
+
+        const int LEFTMOUSE = 0;
+        if (Input.GetMouseButtonDown(LEFTMOUSE))
+            playableDirector.Resume();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //Resume　再開
+            playableDirector.Resume();
+
             //gameObject.GetComponent<PlayableDirector>().playableAsset.CreatePlayable();
             //    gameObject.GetComponent<PlayableDirector>().paused;
             // playable.GetGraph().GetRootPlayable(0).SetSpeed(1);
@@ -72,10 +81,9 @@ public class TimelineControl : MonoBehaviour
 
             //Debug.Log("SPACE成功");
 
-            //Resume　再開
-            playableDirector.Resume();
+
             //playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1.0f);
-           // Debug.Log("SPACE　再開 メッセージ送り");
+            // Debug.Log("SPACE　再開 メッセージ送り");
         }
         //playableDirector.state
 

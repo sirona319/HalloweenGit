@@ -11,7 +11,7 @@ using DG.Tweening;
 
 public class Message : MonoBehaviour
 {
-
+    #region 変数定義
     //　メッセージUI
     public TextMeshProUGUI messageText;
     //　表示するメッセージ
@@ -58,7 +58,8 @@ public class Message : MonoBehaviour
     //　メッセージをすべて表示したかどうか
     private bool isEndMessage = false;
 
-    const float fadeSpeed = 350;
+    const float fadeSpeed = 1;
+    #endregion
 
     void Start()
     {
@@ -195,6 +196,7 @@ public class Message : MonoBehaviour
     }
 
 
+    #region　アニメーションイベント
 
     public void MessageEnd()
     {
@@ -208,7 +210,7 @@ public class Message : MonoBehaviour
         tColor.a = targetAlpha;
 
         //endValue　フェード目標カラー
-        TextBack.DOColor(tColor, Time.deltaTime * fadeSpeed).SetEase(Ease.Linear);
+        TextBack.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
 
         //プレイヤーの移動制限解除
         var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
@@ -230,7 +232,11 @@ public class Message : MonoBehaviour
         tColor.a = targetAlpha;
 
         //endValue　フェード目標カラー
-        TextBack.DOColor(tColor, Time.deltaTime * fadeSpeed).SetEase(Ease.Linear);
+        TextBack.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
 
     }
+
+    #endregion
+
+
 }

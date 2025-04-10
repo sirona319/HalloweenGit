@@ -25,8 +25,8 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     public int pumpkinChildDeadCount = 0;
 
     //[SerializeField] float rotSpeedPumpkin1 = 0;
-    [SerializeField] float rotSpeedPumpkin2 = 0;
-    [SerializeField] float rotSpeedPumpkin3 = 0;
+    //[SerializeField] float rotSpeedPumpkin2 = 0;
+    //[SerializeField] float rotSpeedPumpkin3 = 0;
     public GameObject[] pumpkins; //主に攻撃に使用
     public GameObject[] pumpkinsLv2;
     public GameObject[] pumpkinsLv3;
@@ -39,13 +39,14 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     public EnemyDamage eDamage;
 
-    public bool isDEBUG=true;
+    //public bool isDEBUG=true;
     public void TextReadPlus()
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
         timelineNo++;
     }
 
+    #region シグナル
     public void BattleEnd()
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
@@ -58,20 +59,22 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
         startBattle = f;
     }
 
+    #endregion
+
     void Start()
     {
         //foreach (var go in pumpkins)
         //{
         //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;
         //}
-        foreach (var go in pumpkinsLv2)
-        {
-            go.GetComponent<RotModule>().speed = rotSpeedPumpkin2;
-        }
-        foreach (var go in pumpkinsLv3)
-        {
-            go.GetComponent<RotModule>().speed = rotSpeedPumpkin3;
-        }
+        //foreach (var go in pumpkinsLv2)
+        //{
+        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin2;
+        //}
+        //foreach (var go in pumpkinsLv3)
+        //{
+        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin3;
+        //}
 
         stateController.Initialize((int)PumpkinBossCtr.State.PumpkinBoss_Wait);
 

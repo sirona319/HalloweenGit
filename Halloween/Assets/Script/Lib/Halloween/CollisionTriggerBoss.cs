@@ -1,50 +1,53 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
 public class BossCollisionTrigger : MonoBehaviour
 {
-    public float cameraDuration;
+    [SerializeField] float cameraDuration;
     [SerializeField] Transform cameraSetTrans;
-     //Vector3 cameraBossPos;
 
-    public BoxCollider2D[] boxs2D;
+    [SerializeField] BoxCollider2D[] boxs2D;
 
-    public GameObject bossPumpkin;
-
-    public bool isBossBattle = false;
+    [SerializeField] GameObject bossPumpkin;
+    bool isBossBattle = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        //if (isBossBattle) return;
-        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (isBossBattle) return;
+
+        if (!other.transform.CompareTag(TagName.Player)) return;
+        
+        isBossBattle = true;
+
+
+        foreach (var i in boxs2D)
         {
-            foreach(var i in boxs2D)
+            foreach(var j in i.GetComponents<BoxCollider2D>())
             {
-                foreach(var j in i.GetComponents<BoxCollider2D>())
-                {
-                    j.enabled = true;
-                }
+                j.enabled = true;
             }
-
-
-
-            Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraSetTrans.position, cameraDuration);
-
-            //var readText = bossPumpkin.GetComponent<IHaveText>();
-            //if (readText != null)
-            //    readText.TextReadPlus();
-
-            //isBossBattle = true;
-
-            bossPumpkin.GetComponent<PumpkinBossScr>().BattleStart(true);
         }
+
+
+
+        Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraSetTrans.position, cameraDuration);
+
+        var readText = bossPumpkin.GetComponent<IHaveText>();
+        if (readText != null)
+            readText.TextReadPlus();
+
+
+        //デバッグ用 シグナルで呼んでいる　
+        //bossPumpkin.GetComponent<PumpkinBossScr>().BattleStart(true);
+        
 
     }
 
     //
     public void BossCollisionOff()
     {
+        isBossBattle = false;
+
         foreach (var i in boxs2D)
         {
             foreach (var j in i.GetComponents<BoxCollider2D>())

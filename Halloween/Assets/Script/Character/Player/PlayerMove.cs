@@ -92,6 +92,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         if (GetComponent<PlayerScr2D>().isDead) return;
+        if (isLimitMove) return;
 
         MoveControl();
         Dash();
