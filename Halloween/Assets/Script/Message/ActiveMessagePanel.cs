@@ -34,7 +34,8 @@ public class ActiveMessagePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // messageAry = new string[messageAry.Length];
+        Debug.Log(gameObject.name);
+        // messageAry = new string[messageAry.Length];
     }
 
     // Update is called once per frame

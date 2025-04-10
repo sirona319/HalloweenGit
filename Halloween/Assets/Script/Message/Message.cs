@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
-using UnityEditor.VersionControl;
 using TMPro;
-using DG.Tweening;
 
 //https://gametukurikata.com/program/rpgmessage　参考サイト
 
@@ -58,7 +54,7 @@ public class Message : MonoBehaviour
     //　メッセージをすべて表示したかどうか
     private bool isEndMessage = false;
 
-    const float fadeSpeed = 1;
+    //const float fadeSpeed = 1;
     #endregion
 
     void Start()
@@ -196,47 +192,47 @@ public class Message : MonoBehaviour
     }
 
 
-    #region　アニメーションイベント
+    //#region　アニメーションイベント
 
-    public void MessageEnd()
-    {
-        this.messageText.enabled = false;
-        clickIcon.enabled = false;
-        var TextBack = transform.GetChild(0).GetComponent<Image>();
-
-
-        const float targetAlpha = 0;
-        var tColor = TextBack.color;
-        tColor.a = targetAlpha;
-
-        //endValue　フェード目標カラー
-        TextBack.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
-
-        //プレイヤーの移動制限解除
-        var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
-        p.isLimitMove = false;
-        p.moveSpeed = p.maxMoveSpeed;
-
-    }
-
-    public void MessageStart()
-    {
-        this.messageText.enabled = true;
-        clickIcon.enabled = true;
-        var TextBack = transform.GetChild(0).GetComponent<Image>();
-        transform.GetChild(0).GetComponent<Image>().enabled = true;
+    //public void MessageEnd()
+    //{
+    //    //this.messageText.enabled = false;
+    //    clickIcon.enabled = false;
+    //    var TextBack = transform.GetChild(0).GetComponent<Image>();
 
 
-        const float targetAlpha = 0.7f;
-        var tColor = TextBack.color;
-        tColor.a = targetAlpha;
+    //    const float targetAlpha = 0;
+    //    var tColor = TextBack.color;
+    //    tColor.a = targetAlpha;
 
-        //endValue　フェード目標カラー
-        TextBack.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
+    //    //endValue　フェード目標カラー
+    //    TextBack.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
 
-    }
+    //    //プレイヤーの移動制限解除
+    //    var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
+    //    p.isLimitMove = false;
+    //    p.moveSpeed = p.maxMoveSpeed;
 
-    #endregion
+    //}
+
+    //public void MessageStart()
+    //{
+    //    this.messageText.enabled = true;
+    //    clickIcon.enabled = true;
+    //    var TextBack = transform.GetChild(0).GetComponent<Image>();
+    //    transform.GetChild(0).GetComponent<Image>().enabled = true;
+
+
+    //    const float targetAlpha = 0.7f;
+    //    var tColor = TextBack.color;
+    //    tColor.a = targetAlpha;
+
+    //    //endValue　フェード目標カラー
+    //    TextBack.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
+
+    //}
+
+    //#endregion
 
 
 }

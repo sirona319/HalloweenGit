@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,10 +21,10 @@ public class IgnoreRotation : MonoBehaviour
     //    ///////////////
     //    //Vector3 _parent = transform.parent.transform.localRotation.eulerAngles;
 
-    //    ////C³‰ÓŠ
+    //    ////ä¿®æ­£ç®‡æ‰€
     //    //transform.localRotation = Quaternion.Euler(def - _parent);
 
-    //    ////ƒƒO—p
+    //    ////ãƒ­ã‚°ç”¨
     //    //Vector3 result = transform.localRotation.eulerAngles;
     //    //Debug.Log("def=" + def + "     _parent=" + _parent + "     result=" + result);
     //}
@@ -32,13 +32,14 @@ public class IgnoreRotation : MonoBehaviour
 
     //https://teratail.com/questions/31074
 
-    //e‰ñ“]‚Ì‘ŠE
+    //è¦ªå›è»¢ã®ç›¸æ®º
 
     Quaternion m_DefaultRotation;
 
     // Use this for initialization
     void Start()
     {
+        Debug.Log("Start");
         m_DefaultRotation = transform.localRotation;
     }
 
