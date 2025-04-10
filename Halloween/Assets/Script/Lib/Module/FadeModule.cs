@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//使ってない
 public class FadeModule : MonoBehaviour
 {
 
@@ -12,6 +13,7 @@ public class FadeModule : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //Debug.Log("テスト");
         if(fadeIn)
         {
             alpha = GetComponent<SpriteRenderer>().material.color.a;

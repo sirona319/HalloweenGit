@@ -565,13 +565,15 @@ public static class MyLib
     //{
     //    yield return new WaitForSeconds(seconds);
 
-    //    yield return new WaitUntil(() => flg);//trueなら
+    //    yield return new WaitUntil(() => flg);//trueなら通る
     //    //yield return new WaitWhile(()=>flg);falseなら
 
     //    //yield return new WaitForSeconds(seconds);
 
     //    action?.Invoke();
     //}
+
+
 
     #endregion
 

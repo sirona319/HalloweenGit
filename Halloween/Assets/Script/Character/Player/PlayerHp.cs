@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour,IDamage
@@ -59,6 +62,7 @@ public class PlayerHp : MonoBehaviour,IDamage
 
     void Update()
     {
+        //デバッグ用
         if (Input.GetKeyDown(KeyCode.R))
         {
             //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
@@ -79,6 +83,11 @@ public class PlayerHp : MonoBehaviour,IDamage
             //}
         }
 
+        MatBlink();
+    }
+
+    void MatBlink()
+    {
         if (IsDamage == false) return;
 
         //点滅処理
@@ -96,18 +105,6 @@ public class PlayerHp : MonoBehaviour,IDamage
             IsDamage = false;
         }
     }
-
-
-    //public void Damage(int damage)
-    //{
-    //    //回避の実行中なら無効またはダメージ中なら無効　無敵 デバッグ用
-    //    if (DEBUGNoDamage) return;
-    //    if (isDead) return;
-    //    if (isDamage) return;
-    //    ////if (m_isDash) return;　ダッシュ時無敵
-    //    pDamage.Damage(damage);
-
-    //}
 
     public bool Damage(int damage)
     {
@@ -130,7 +127,9 @@ public class PlayerHp : MonoBehaviour,IDamage
         //Debug.Log(gameObject.name + "へのダメージ" + damage.ToString());
         //hp -= damage;        //HP減少処理
         DamageLife(damage);
-        MyLib.MyPlaySound("Sound/SE/wave/damaged1", 0.5f, SoundManager.I.transform.GetChild(0).gameObject);
+
+        const float volume = 0.5f;
+        MyLib.MyPlaySound("Sound/SE/wave/damaged1", volume, SoundManager.I.transform.GetChild(0).gameObject);
 
         IsDamage = true;
         damageTime = damageTimeMax;

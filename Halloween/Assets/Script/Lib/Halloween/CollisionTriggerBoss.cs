@@ -56,6 +56,7 @@ public class BossCollisionTrigger : MonoBehaviour
             }
         }
 
+        //ボスの死亡会話？
         var readText = bossPumpkin.GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();

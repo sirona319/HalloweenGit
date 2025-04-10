@@ -28,6 +28,8 @@ public class NarrationBehaviour : PlayableBehaviour
     //int testVal = 0;
     public string inputText { get; set; }
 
+    public Image readImage { get; set; }
+
     AudioSource textSe;
     //使えないStart関数
     void Start() { }
@@ -40,6 +42,8 @@ public class NarrationBehaviour : PlayableBehaviour
         //textBackImage.enabled = false;
         var textBackImage = GameObject.Find("TextPanel").gameObject.GetComponent<Image>();
         mTextUI = textBackImage.transform.Find("TalkText").GetComponent<TMP_Text>();
+        readImage = textBackImage.transform.Find("ReadImage").GetComponent<Image>();
+        readImage.GetComponent<BlinkImageMod>().enabled = true;
         textSe = mTextUI.GetComponent<AudioSource>();
        // mTextUI.enabled = false;
 
@@ -81,7 +85,7 @@ public class NarrationBehaviour : PlayableBehaviour
 
         textSe.Play();
         clipStart = true;
-
+        readImage.GetComponent<BlinkImageMod>().enabled = true;
     }
 
     //int NumPause = 0;
@@ -89,6 +93,8 @@ public class NarrationBehaviour : PlayableBehaviour
     {
         if (clipStart)
         {
+            readImage.GetComponent<BlinkImageMod>().enabled = false;
+            Debug.Log("OnBehaviourPause" + clipStart);
             textSe.Stop();
 
             director.Pause();
@@ -126,7 +132,6 @@ public class NarrationBehaviour : PlayableBehaviour
        // Debug.Log("OnGraphStop");
     }
 
-    //int NumDes = 0;
     public override void OnPlayableDestroy(Playable playable)
     {
         //mTextUI.text = "";
