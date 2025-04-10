@@ -44,14 +44,14 @@ public class MoveFloor2D : MonoBehaviour
 
             if (targetNo > moveTrans.Length - 1)
             {
-                Debug.Log("RETURN 00");
+                //Debug.Log("RETURN 00");
                 isMoveBack = true;
                 targetNo--;
 
             }
             else if (targetNo < 0)
             {
-                Debug.Log("RETURN 11");
+                //Debug.Log("RETURN 11");
                 targetNo++;
                 isMoveBack = false;
 
