@@ -1,4 +1,4 @@
-// #define SHOW_EXPORT_BUTTON
+﻿// #define SHOW_EXPORT_BUTTON
 
 using System;
 using System.Collections.Generic;
@@ -8,6 +8,8 @@ using System.Reflection;
 using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEditor.AssetImporters;
+
 #if UNITY_2020_2_OR_NEWER
 using UnityEditor.AssetImporters;
 #else

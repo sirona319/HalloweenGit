@@ -11,25 +11,25 @@ using Image = UnityEngine.UI.Image;
 public class NarrationBehaviour : PlayableBehaviour
 {
     //
-    PlayableDirector director;
     //public GameObject narrationGameObject { get; set; }
 
     //[SerializeField]
     //public bool boolValue = false;
 
-    bool clipStart = false;
     //bool messageWait = false;
-    public TMP_Text mTextUI { get; set; }
 
     //public Image textBackImage { get; set; }
 
     //bool pauseScheduled = true;
 
     //int testVal = 0;
+
+    PlayableDirector director;
+
+    bool clipStart = false;
+    public TMP_Text mTextUI { get; set; }
     public string inputText { get; set; }
-
     public Image readImage { get; set; }
-
     AudioSource textSe;
     //使えないStart関数
     void Start() { }
@@ -58,8 +58,10 @@ public class NarrationBehaviour : PlayableBehaviour
         //mTextUI.text = "PrepareFrame"+mTextUI.gameObject.name;
 
         mTextUI.text = inputText;// + mTextUI.gameObject.name;
+
+        //タイムラインからメッセージ長さを取得
         var progress = (float)(playable.GetTime() / playable.GetDuration());
-        var current=Mathf.Lerp(0f, mTextUI.text.Length, progress);
+        var current = Mathf.Lerp(0f, mTextUI.text.Length, progress);
         var count = Mathf.CeilToInt(current);
 
         mTextUI.maxVisibleCharacters = count;

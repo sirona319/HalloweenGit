@@ -7,11 +7,11 @@ public class LightCtr2D : MonoBehaviour
     [SerializeField] Light2D[] lights2D;
 
     [SerializeField] float targetValMax = 2f;
-    float targetVal = 0f;
     [SerializeField] float changeSpeed = 0f;
-    float diff = 0f;
 
     bool isLight = false;
+    float diff = 0f;
+    float targetVal = 0f;
 
 
     void Update()
