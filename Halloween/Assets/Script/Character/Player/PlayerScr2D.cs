@@ -37,7 +37,7 @@ public class PlayerScr2D : MonoBehaviour
         //攻撃
         mag.MagazineUpdate();
 
-        Pause();
+        //Pause();
 
     }
 
@@ -51,6 +51,7 @@ public class PlayerScr2D : MonoBehaviour
             //画面暗くして　TIME　UI表示
         }
 
+        //Return==Enter
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Time.timeScale = 1f;

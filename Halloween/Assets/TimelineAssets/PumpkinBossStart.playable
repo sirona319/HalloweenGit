@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ba7c4382a854348bf7faa73927c25b, type: 3}
   m_Name: NarrationAsset
   m_EditorClassIdentifier: 
-  TextErea: "\u30CF\u30ED\u30A6\u30A3\u30F3\u65B0\u898F\u30E1\u30F3\u30D0\u30FC"
+  TextErea: "\u304B\u307C\u3061\u3083\u30DC\u30B9\u6226\u30B9\u30BF\u30FC\u30C8\u4F1A\u8A71\u7D42\u4E86"
 --- !u!114 &-6058303494666286076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ba7c4382a854348bf7faa73927c25b, type: 3}
   m_Name: NarrationAsset
   m_EditorClassIdentifier: 
-  TextErea: "\u304B\u307C\u3061\u3083\u30BF\u30EF\u30FCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  TextErea: "\u304B\u307C\u3061\u3083\u30DC\u30B9\u6226"
 --- !u!114 &5942973228738948546
 MonoBehaviour:
   m_ObjectHideFlags: 1

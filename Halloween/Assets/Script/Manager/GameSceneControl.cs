@@ -9,11 +9,11 @@ public class GameSceneControl : Singleton<GameSceneControl>
         enemyAllCount += count;
     }
 
-    [SerializeField] GameObject player;
     //[SerializeField] Fade fade;
     void Start()
     {
-        player.GetComponent<Animator>().SetTrigger("tStart");
+
+        //タイムラインの最後？　シグナル？
         //GManager.I.FadeOut();
 
         //var fade = GameObject.Find("FadeCanvas").GetComponent<Fade>();

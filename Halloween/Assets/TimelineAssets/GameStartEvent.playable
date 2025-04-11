@@ -38,10 +38,10 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.65
+    m_Start: 2.0166666666666666
     m_ClipIn: 0
     m_Asset: {fileID: -7434577679722820603}
-    m_Duration: 0.4999999999999999
+    m_Duration: 0.9666666666666668
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7590569706399592724}
     m_EaseInDuration: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 5445534024474243425}
-    m_Duration: 0.5
+    m_Duration: 1.4833333333333334
     m_TimeScale: 1
     m_ParentTrack: {fileID: -7590569706399592724}
     m_EaseInDuration: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ba7c4382a854348bf7faa73927c25b, type: 3}
   m_Name: NarrationAsset
   m_EditorClassIdentifier: 
-  TextErea: "\u3089\u3059\u3068\u30FC"
+  TextErea: "\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8\u30C6\u30AD\u30B9\u30C8\n\u7D42\u4E86\u30C6\u30AD\u30B9\u30C8"
 --- !u!114 &-6058303494666286076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 1.5
+  m_Time: 3.6166666666666667
   m_Retroactive: 0
   m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 32c2cfd881366464da4b10168c6d79b1, type: 2}
+  m_Asset: {fileID: 11400000, guid: 5463e4ba68abee14abe126ae0de0ed7e, type: 2}
 --- !u!114 &-688321618333027344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: BossErea2
+  m_Name: GameStartEvent
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:
@@ -231,7 +231,8 @@ MonoBehaviour:
   m_Children: []
   m_Clips: []
   m_Markers:
-    m_Objects: []
+    m_Objects:
+    - {fileID: 5948354393812030247}
 --- !u!114 &1898154289824230641
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ba7c4382a854348bf7faa73927c25b, type: 3}
   m_Name: NarrationAsset
   m_EditorClassIdentifier: 
-  TextErea: "\u7B2C\u4E8C\u95A2\u9580"
+  TextErea: "\u30B2\u30FC\u30E0\u30B9\u30BF\u30FC\u30C8\u30C6\u30AD\u30B9\u30C8"
 --- !u!114 &5942973228738948546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,3 +326,19 @@ MonoBehaviour:
   m_Markers:
     m_Objects:
     - {fileID: -688321618333027344}
+--- !u!114 &5948354393812030247
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 0
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: a39a39a49f7fb0940a00eb7475537f57, type: 2}

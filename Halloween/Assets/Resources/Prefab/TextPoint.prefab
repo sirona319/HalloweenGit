@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 4380527883381896054}
   - component: {fileID: 4321106424000630326}
   - component: {fileID: 1549377653894422337}
+  - component: {fileID: 118215601040003408}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -178,6 +179,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &118215601040003408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2483460458096804439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffb49f48d1b3c84384eb64c16a56e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.4
+  moveY: 0.3
 --- !u!1 &3419162850191833499
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +204,7 @@ GameObject:
   - component: {fileID: 8120286849686308486}
   - component: {fileID: 7557510722382020307}
   - component: {fileID: 1291998534655266143}
+  - component: {fileID: 5175653257067164405}
   m_Layer: 0
   m_Name: TextPoint
   m_TagString: Untagged
@@ -314,6 +330,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.77, y: 3.7}
   m_EdgeRadius: 0
+--- !u!114 &5175653257067164405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419162850191833499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c4473fc164c28f4691f1a8a633cc6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7891522341405451450
 GameObject:
   m_ObjectHideFlags: 0
