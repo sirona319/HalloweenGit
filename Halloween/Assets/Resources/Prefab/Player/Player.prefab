@@ -271,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5171dabf142489b4881380c9b70c09dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveObj: {fileID: 0}
 --- !u!1 &4800276939397850500
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +506,7 @@ SpriteRenderer:
   m_SortingLayerID: -573303605
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -730150385049631772, guid: 793f24eacd533854492df04bab4a2ca8, type: 3}
+  m_Sprite: {fileID: -1368436950245636399, guid: 6e41732176140f1409683d49175474db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -578,10 +579,10 @@ EdgeCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 3221292041
+    m_Bits: 3229811721
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3229782390
+    m_Bits: 3221393782
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -620,7 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923b745e88f1a643b08e1165844c29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DEBUGNoDamage: 1
+  DEBUGNoDamage: 0
   isDead: 0
   timeText: {fileID: 0}
 --- !u!114 &2024737045797259910
@@ -720,6 +721,7 @@ MonoBehaviour:
   dashLen: 10
   dashStopTime: 0.3
   isNoise: 0
+  pGroundCol: {fileID: 273880916380781838}
 --- !u!114 &2290460390836339941
 MonoBehaviour:
   m_ObjectHideFlags: 0

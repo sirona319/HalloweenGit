@@ -59,6 +59,8 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        //アニメーションイベントで解除する
+        isLimitMove = true;
         //ダッシュ残像のオフ
         GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
 
