@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 //[RequireComponent(typeof(コンポーネント名))]
 [DisallowMultipleComponent]
@@ -18,6 +17,7 @@ public class PlayerScr2D : MonoBehaviour
         GetComponent<PlayerScr2D>().isDead = true;
         m_animator.SetBool("dead", true);
 
+        //イベントカメラが適用されていたら？
         Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
     }
 

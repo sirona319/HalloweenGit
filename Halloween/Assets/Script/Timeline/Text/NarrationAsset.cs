@@ -17,9 +17,9 @@ public class NarrationAsset : PlayableAsset
     {
         var playable = ScriptPlayable<NarrationBehaviour>.Create(graph, narration);
 
-        var behaviour = playable.GetBehaviour();
+        //var behaviour = playable.GetBehaviour();
 
-        behaviour.inputText = TextErea;
+        playable.GetBehaviour().inputText = TextErea;
        // behaviour.narrationGameObject = narrationGameObject.Resolve(graph.GetResolver());
 
         //behaviour.mTextUI = owner.GetComponent<TMP_Text>();

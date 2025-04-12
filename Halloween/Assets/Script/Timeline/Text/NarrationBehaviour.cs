@@ -45,10 +45,12 @@ public class NarrationBehaviour : PlayableBehaviour
 
     }
 
+
+    //Update Timeline再生中のみ
     public override void PrepareFrame(Playable playable, FrameData info)
     {
         if (mTextUI == null) return;
-
+        //Debug.Log("PrepareFrame");
 
         //mTextUI.gameObject.transform.parent.gameObject.SetActive(true);
         //mTextUI.text = "PrepareFrame"+mTextUI.gameObject.name;

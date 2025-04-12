@@ -7,6 +7,7 @@ public class CameraControl : MonoBehaviour
 {
 
     [SerializeField] public bool isEventCamera=false;
+    [SerializeField] Transform eventCameraTarget;
     Vector3 eventTargetPos = Vector3.zero;
     float cameraDuration = 1f;
 
@@ -56,6 +57,11 @@ public class CameraControl : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="targetPos"></param>位置
+    /// <param name="dur"></param>速度
     public void CameraEventTrigger(Vector3 targetPos,float dur)
     {
         isEventCamera = true;
