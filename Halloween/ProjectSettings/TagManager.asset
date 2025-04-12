@@ -69,6 +69,12 @@ TagManager:
   - name: UI
     uniqueID: 2490969859
     locked: 0
+  - name: Event
+    uniqueID: 4146025079
+    locked: 0
+  - name: Front
+    uniqueID: 2035511909
+    locked: 0
   m_RenderingLayers:
   - Default
   - Layer 1

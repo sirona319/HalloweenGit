@@ -45,16 +45,16 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
         timelineTexts[timelineNo].isPlayTrigger = true;
         timelineNo++;
     }
-
-    #region シグナル
     public void BattleEnd()
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
         timelineTexts[0].GetComponentInChildren<BossCollisionTrigger>().BossCollisionOff();
+        startBattle = false;
 
     }
+    #region シグナル
 
-    public void BattleStart(bool f)
+    public void SignalBattleState(bool f)
     {
         startBattle = f;
     }

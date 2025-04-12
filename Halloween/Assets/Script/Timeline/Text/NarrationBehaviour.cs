@@ -1,11 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.Playables;
-using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 using Image = UnityEngine.UI.Image;
 
 public class NarrationBehaviour : PlayableBehaviour
@@ -38,7 +33,7 @@ public class NarrationBehaviour : PlayableBehaviour
     {
         director = (playable.GetGraph().GetResolver() as PlayableDirector);
 
-
+        //Debug.Log("test");
         //textBackImage.enabled = false;
         var textBackImage = GameObject.Find("TextPanel").gameObject.GetComponent<Image>();
         mTextUI = textBackImage.transform.Find("TalkText").GetComponent<TMP_Text>();
@@ -97,7 +92,7 @@ public class NarrationBehaviour : PlayableBehaviour
         if (clipStart)
         {
             //Debug.Log("OnBehaviourPause" + clipStart);
-
+            
             readImage.enabled = false;
             textSe.Stop();
 
