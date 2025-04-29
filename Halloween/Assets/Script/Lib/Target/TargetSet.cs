@@ -109,40 +109,40 @@ public class TargetSet : MonoBehaviour
         return tArrayPoints;
     }
 
-    public void SetPointArrayVec(List<Transform> pointList, List<Vector3> tArrayPoints)
-    {
+    //public void SetPointArrayVec(List<Transform> pointList, List<Vector3> tArrayPoints)
+    //{
 
-        //var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
-        //List<Transform> tArrayPoints = new();
+    //    //var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
+    //    //List<Transform> tArrayPoints = new();
 
-        //foreach (var tChild in pointList)
-        //{
-        //    // 自分自身の場合は処理をスキップする
-        //    //if (tChild.gameObject == gameObject)
-        //    //    continue;
+    //    //foreach (var tChild in pointList)
+    //    //{
+    //    //    // 自分自身の場合は処理をスキップする
+    //    //    //if (tChild.gameObject == gameObject)
+    //    //    //    continue;
 
-        //    if (tChild.GetComponent<TargetPoint>().tName == TargetName.Point)
-        //    {
-        //        lengthList.Add(tChild.GetComponent<TargetPoint>().pointLength);
-        //        //tArrayPoints.Add(tChild.transform);
+    //    //    if (tChild.GetComponent<TargetPoint>().tName == TargetName.Point)
+    //    //    {
+    //    //        lengthList.Add(tChild.GetComponent<TargetPoint>().pointLength);
+    //    //        //tArrayPoints.Add(tChild.transform);
 
-        //    }
+    //    //    }
 
-        //}
+    //    //}
 
-        //使えない
+    //    //使えない
 
-        //List<Vector3> tArrayPoints = new();
-        foreach (var tChild in pointList)
-        {
-            if (tChild.GetComponent<TargetPoint>() == null) break;
+    //    //List<Vector3> tArrayPoints = new();
+    //    foreach (var tChild in pointList)
+    //    {
+    //        if (tChild.GetComponent<TargetPoint>() == null) break;
 
-            var t = TargetSelect(tChild.GetComponent<TargetPoint>().target, tChild).position;
-            tArrayPoints.Add(t);
+    //        var t = TargetSelect(tChild.GetComponent<TargetPoint>().target, tChild).position;
+    //        tArrayPoints.Add(t);
 
-        }
-        //return tArrayPoints;
-    }
+    //    }
+    //    //return tArrayPoints;
+    //}
 
     Transform TargetSelect(Target type,Transform t)
     {

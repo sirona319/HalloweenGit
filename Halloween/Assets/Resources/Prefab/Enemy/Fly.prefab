@@ -420,6 +420,7 @@ MonoBehaviour:
   endLength:
   - 0.2
   - 0.2
+  speed: 4
   isLoop: 1
   isPointMoveEnd:
     value: 0

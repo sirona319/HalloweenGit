@@ -6,6 +6,8 @@ public class Door : MonoBehaviour
 {
     //[SerializeField] SceneNameType SceneName;
     [SerializeField] Vector3 playerToPos;
+
+    [SerializeField] float isEnableTime=0f;
     //int playerHp = 0;
 
     bool isDoorOpen = false;
@@ -15,6 +17,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDisable) return;
         if (!isDoorOpen) return;
 
         if (!Input.GetKeyDown(KeyCode.W)) return;
@@ -34,6 +37,11 @@ public class Door : MonoBehaviour
         isDoorOpen = false;
 
         isDisable = true;
+
+        StartCoroutine(MyLib.DelayCoroutine(isEnableTime, () =>
+        {
+            isDisable = false;
+        }));
 
     }
 

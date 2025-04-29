@@ -130,7 +130,7 @@ public class PointMove : BaseMove
     [SerializeField] List<Transform> moveTrans;
     //[SerializeField] List<Vector3> moveVecs = new();
     [SerializeField] List<float> endLength;
-    //[SerializeField] float speed = 4f;
+    [SerializeField] float speed = 4f;
     const float rotSpeed = 5f;
 
     [SerializeField] bool isLoop = false;
@@ -147,7 +147,7 @@ public class PointMove : BaseMove
         //rb2 = GetComponent<Rigidbody2D>();
 
         targetSet = GetComponent<TargetSet>();
-        targetSet.SetPointArray(moveTrans);     //配列を作成
+        moveTrans = targetSet.SetPointArray(moveTrans);     //配列を作成
     }
 
     public override void MoveEnter()
@@ -168,6 +168,10 @@ public class PointMove : BaseMove
     //Vector2 velocity = Vector2.zero;
     void PointUpdate()
     {
+        //rb2.position + (Vector2)transform.up * speed * Time.deltaTime
+
+        transform.position += transform.up * speed * Time.deltaTime;
+
         float len = Vector3.Distance(transform.position, moveTrans[targetNo].position);
         if (len < endLength[targetNo])
         {
