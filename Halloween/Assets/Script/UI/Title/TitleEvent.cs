@@ -1,4 +1,4 @@
-using DG.Tweening;
+ï»¿using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class TitleEvent : MonoBehaviour
 {
-    [SerializeField] private GManager.SceneNameType sceneName;
+   // [SerializeField] private GManager.SceneNameType sceneName;
 
     [SerializeField] private TextMeshProUGUI textMeshPro;
 
@@ -40,7 +40,7 @@ public class TitleEvent : MonoBehaviour
         //    img = GetComponent<Image>();
 
 
-        ////ƒeƒLƒXƒgFî•ñ‚Ì•Û‘¶
+        ////ãƒ†ã‚­ã‚¹ãƒˆè‰²æƒ…å ±ã®ä¿å­˜
         //if (textMeshPro != null)
         //{
         //    textStartColor = textMeshPro.color;
@@ -48,7 +48,7 @@ public class TitleEvent : MonoBehaviour
         //    textEndColor.a = 64;
         //}
 
-        ////‰æ‘œFî•ñ‚Ì•Û‘¶
+        ////ç”»åƒè‰²æƒ…å ±ã®ä¿å­˜
         //if (img != null)
         //{
         //    imgStartColor = img.color;
@@ -61,7 +61,7 @@ public class TitleEvent : MonoBehaviour
        // var enterEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
        // //var exitEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
 
-        clickEvent.callback.AddListener((eventData) => { GManager.I.SceneChangeUseSoundTitle(sceneName.ToString()); });
+       // clickEvent.callback.AddListener((eventData) => { GManager.I.SceneChangeUseSoundTitle(sceneName.ToString()); });
         //clickEvent.callback.AddListener((eventData) => { TitleControl.I.MoveSelect(); });
         // enterEvent.callback.AddListener((eventData) => { PointerEnter(); });
         // exitEvent.callback.AddListener((eventData) => { PointerExit();});
@@ -78,8 +78,8 @@ public class TitleEvent : MonoBehaviour
     //    //if (m_islight)
     //    //{
     //    //    //https://johobase.com/csharp-null-operator/
-    //    //    //usomeObject.SomeProperty == nullv‚ªğŒ‚ğ”»’f‚·‚é®‚É‚È‚è‚Ü‚·Bu?v‚ÌŒã‚Ì’li®j‚ªğŒ‚ğ–‚½‚·ê‡‚ÉA
-    //    //    //u:v‚ÌŒã‚Ì’li®j‚ªğŒ‚ğ–‚½‚³‚È‚¢ê‡‚É•Ô‚·’li®j‚É‚È‚è‚Ü‚·B
+    //    //    //ã€ŒsomeObject.SomeProperty == nullã€ãŒæ¡ä»¶ã‚’åˆ¤æ–­ã™ã‚‹å¼ã«ãªã‚Šã¾ã™ã€‚ã€Œ?ã€ã®å¾Œã®å€¤ï¼ˆå¼ï¼‰ãŒæ¡ä»¶ã‚’æº€ãŸã™å ´åˆã«ã€
+    //    //    //ã€Œ:ã€ã®å¾Œã®å€¤ï¼ˆå¼ï¼‰ãŒæ¡ä»¶ã‚’æº€ãŸã•ãªã„å ´åˆã«è¿”ã™å€¤ï¼ˆå¼ï¼‰ã«ãªã‚Šã¾ã™ã€‚
     //    //    //textMeshPro.color = textMeshPro? Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f)) : Color.yellow;
 
 

@@ -20,4 +20,7 @@ public static class TagName
 	public const string GroundBreak = "GroundBreak";
 	public const string Knife = "Knife";
 	public const string MoveFloor = "MoveFloor";
+	public const string Fade = "Fade";
+	public const string SoundM = "SoundM";
+	public const string SaveM = "SaveM";
 }

@@ -64,16 +64,16 @@ public class ObjectSpawn : MonoBehaviour
 
     }
 
-    void Update()
-    {
+    //void Update()
+    //{
        
-    }
+    //}
 
-    public void ResetEnemySpawn()
-    {
-        //spawnData[0].enemyCount = 0;
-        //colTrigger.isActiveTrigger = false;
-    }
+    //public void ResetEnemySpawn()
+    //{
+    //    //spawnData[0].enemyCount = 0;
+    //    //colTrigger.isActiveTrigger = false;
+    //}
 
     public async UniTask DelaySpawnAsyncSceneObject(float seconds, GameObject loadObj, Vector3 spawnPos)
     {

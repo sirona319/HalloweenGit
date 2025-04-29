@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +10,9 @@ public class PlayerHp : MonoBehaviour,IDamage
 
     //const int LIMITHP = 10;
 
-    [Range(1, 10)]
+    [Range(1, 3)]
     [SerializeField] public int MAXHP = 3;
+
     #region ダメージ
     [SerializeField] float damageTimeMax = 1f;
     [SerializeField] float damageTime = 0;
@@ -22,6 +21,7 @@ public class PlayerHp : MonoBehaviour,IDamage
     SpriteRenderer pSprite;
     [SerializeField] Image[] lifeImage;
 
+    [Range(1, 3)]
     public int hp;
 
     //点滅処理
@@ -50,14 +50,21 @@ public class PlayerHp : MonoBehaviour,IDamage
         if (GetComponent<SpriteRenderer>() != null)
             pSprite = GetComponent<SpriteRenderer>();
 
-        //ロード用？
-        //for (int i = LIMITHP - 1; i > hp - 1; i--)
-        //{
-        //    if (i < hp - 1) break;
 
-        //    lifeImage[i].enabled = false;
-        //    //hp--;
-        //}
+
+        UpdateLifeImage();
+    }
+
+    public void UpdateLifeImage()
+    {
+        //ロード用？
+        for (int i = MAXHP - 1; i > hp - 1; i--)
+        {
+            if (i < hp - 1) break;
+
+            lifeImage[i].enabled = false;
+            //hp--;
+        }
     }
 
     void Update()
@@ -83,6 +90,7 @@ public class PlayerHp : MonoBehaviour,IDamage
             //}
         }
 
+        //マテリアル点滅
         MatBlink();
     }
 
@@ -129,7 +137,9 @@ public class PlayerHp : MonoBehaviour,IDamage
         DamageLife(damage);
 
         const float volume = 0.5f;
-        MyLib.MyPlaySound("Sound/SE/wave/damaged1", volume, SoundManager.I.transform.GetChild(0).gameObject);
+        //GameObject.FindGameObjectWithTag("SoundM").GetComponent<FadeScene>().FadeOut(1f);
+        MyLib.MyPlaySound("Sound/SE/wave/damaged1", volume, 
+            GameObject.FindGameObjectWithTag("SoundM").transform.GetChild(0).gameObject);
 
         IsDamage = true;
         damageTime = damageTimeMax;

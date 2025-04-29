@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerScr2D : MonoBehaviour
 {
     public bool DEBUGNoDamage = false;
+
+
     PlayerMagazine mag;
 
     Animator m_animator;
@@ -21,6 +23,12 @@ public class PlayerScr2D : MonoBehaviour
         Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
     }
 
+    private void Awake()
+    {
+        //DontDestroyOnLoad(this.gameObject);
+
+    }
+
     private void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -28,6 +36,20 @@ public class PlayerScr2D : MonoBehaviour
         mag = GetComponent<PlayerMagazine>();
         //tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
         mag.MagazineEnter();
+
+        var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GManager>();
+        if (gMgr.isChangePlayer)
+        {
+            transform.position = gMgr.playerPos;
+
+            var pHp = GetComponent<PlayerHp>();
+            pHp.hp = gMgr.playerHp;
+            pHp.UpdateLifeImage();
+
+            gMgr.isChangePlayer = false;
+            //return;
+        }
+
     }
 
     private void Update()

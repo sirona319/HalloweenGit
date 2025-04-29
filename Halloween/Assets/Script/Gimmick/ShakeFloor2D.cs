@@ -10,12 +10,12 @@ public class ShakeFloor2D : MonoBehaviour
     [SerializeField] float fallPoint = -8;
     bool isFall = false;
 
-    PlayerMove pMove;
+    [SerializeField] PlayerMove pMove;
     bool isRide = false;
 
     void Start()
     {
-        pMove = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
+        //pMove = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
         rb2 = GetComponent<Rigidbody2D>();
 
         returnPos = transform.position;

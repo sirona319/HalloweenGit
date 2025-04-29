@@ -21,11 +21,16 @@ public class NarrationBehaviour : PlayableBehaviour
 
     PlayableDirector director;
 
+
     bool clipStart = false;
+
+    public bool isTextPause = true;
+
     public TMP_Text mTextUI { get; set; }
     public string inputText { get; set; }
     public BlinkImageMod readImage { get; set; }
     AudioSource textSe;
+
     //使えないStart関数
     void Start() { }
 
@@ -72,6 +77,7 @@ public class NarrationBehaviour : PlayableBehaviour
 
         //    Debug.Log("SPACE成功");
         //}
+
     }
 
 
@@ -91,6 +97,18 @@ public class NarrationBehaviour : PlayableBehaviour
     //int NumPause = 0;
     public override void OnBehaviourPause(Playable playable, FrameData info)
     {
+        //テキストの最後に止めない
+        if(!isTextPause)
+        {
+            readImage.enabled = false;
+            textSe.Stop();
+
+            //director.Pause();
+
+            clipStart = false;
+            return;
+        }
+
         if (clipStart)
         {
             //Debug.Log("OnBehaviourPause" + clipStart);

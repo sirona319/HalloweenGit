@@ -5,13 +5,20 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     #region デバッグ
+    [SerializeField, HeaderAttribute("DEBUG")]
+    float debugmoveX = 0;
 
-    public float debugmoveX = 0;
+    [SerializeField] Transform startT;
+    public bool isStartPos= false;
 
+    [SerializeField] Transform bossT;
+    public bool isBossPos = false;
     #endregion
 
 
     #region 移動
+    [SerializeField, HeaderAttribute("MOVE")]
+
     Animator m_animator;
 
     Rigidbody2D m_rb;                   //剛体
@@ -26,7 +33,7 @@ public class PlayerMove : MonoBehaviour
         set => isGround.Value = value;
     }
 
-    public bool isLimitMove = false;     //アニメーション中などの移動制限
+    [SerializeField] bool isLimitMove = false;     //アニメーション中などの移動制限
     [SerializeField] float skyGravity = 22;
     [SerializeField] float groundGravity = 1; //ダッシュ対応のため1
 
@@ -57,10 +64,24 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField]PlayerGroundCollider pGroundCol;
 
+    void DebugSetPosition()
+    {
+        if (isStartPos)
+            this.transform.position = startT.position;
+
+        if (isBossPos)
+            this.transform.position = bossT.position;
+    }
     void Start()
     {
+        //デバッグ用　座標
+        DebugSetPosition();
+
+        //m_animator.SetBool("isStart", true);
+        //moveSpeed = maxMoveSpeed;
+
         //アニメーションイベントで解除する
-        isLimitMove = true;
+        //isLimitMove = true;
         //ダッシュ残像のオフ
         GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
 
@@ -81,13 +102,17 @@ public class PlayerMove : MonoBehaviour
             }
         });
 
-        if (Save.I.isLoad)
+
+        var SaveMgr = GameObject.FindGameObjectWithTag(TagName.SaveM).GetComponent<Save>();
+        if (SaveMgr.isLoad)
         {
             Vector3 loadPos;
             loadPos.x = PlayerPrefs.GetFloat("POSX");
             loadPos.y = PlayerPrefs.GetFloat("POSY");
             loadPos.z = PlayerPrefs.GetFloat("POSZ");
             transform.position = loadPos;
+
+            SaveMgr.isLoad = false;
         }
     }
 
@@ -218,13 +243,40 @@ public class PlayerMove : MonoBehaviour
     }
 
 
+    public void MoveStop()
+    {
+        isLimitMove = true;
+        moveSpeed = 0f;
+    }
+
+    public void MoveActive()
+    {
+        if(!m_animator.GetBool("isStart")) return;
+        isLimitMove = false;
+        moveSpeed = maxMoveSpeed;
+    }
+
+    #region タイムラインイベント
+
+    public void StartMoveActive()
+    {
+        //GetComponent<PlayerHp>().AbsDamage(100);
+        m_animator.SetBool("isStart", true);
+        //if (!m_animator.GetBool("isStart")) return;
+        //isLimitMove = false;
+        moveSpeed = maxMoveSpeed;
+    }
+
+    #endregion
+
+
     #region　アニメーションイベント　プレイヤー
 
     public void StartAnimEnd()
     {
         //フラグをオフ
         isLimitMove = false;
-        //Debug.Log("isLimitMove = false;");
+        Debug.Log("isLimitMove = false;");
     }
 
 

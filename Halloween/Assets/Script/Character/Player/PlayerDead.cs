@@ -77,4 +77,12 @@ public class PlayerDead : MonoBehaviour
 
         GetComponent<PlayerHp>().HealLife(3);
     }
+
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this);
+        //DOTween.KillAll();
+        Debug.Log("BounceDOTrans Destroy");
+    }
 }

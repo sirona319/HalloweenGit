@@ -50,9 +50,10 @@ public class TimelineControl : MonoBehaviour
             playableDirector.Play();
             isPlay = true;
 
-            var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
-            p.isLimitMove = true;
-            p.moveSpeed = 0f;
+            //GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>().MoveStop();
+            //p.isLimitMove = true;
+            //p.moveSpeed = 0f;
+            //Debug.Log("メッセージ終了TimelineControl" + GetType().FullName);
             //Debug.Log("再生開始"+ GetType().FullName);
         }
         //if (gameObject.GetComponent<PlayableDirector>().state == PlayState.Paused)

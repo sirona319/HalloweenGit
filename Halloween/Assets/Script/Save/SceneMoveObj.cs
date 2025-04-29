@@ -56,7 +56,7 @@ public class SceneMoveObj : MonoBehaviour
 
 
             Save.I.isLoad = true;
-            GManager.I.SceneChangeTimerSet(PlayerPrefs.GetString("SCENENAME"), 0.3f);
+            //GManager.I.SceneChangeTimerSet(PlayerPrefs.GetString("SCENENAME"), 0.3f);
 
             //const float volume = 0.1f;
             //MyLib.MyPlayOneSound("SE/Item/" + "02_Heal_02", volume, this.gameObject);

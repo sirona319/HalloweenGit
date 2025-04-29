@@ -6,20 +6,23 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
 
-    [SerializeField] public bool isEventCamera=false;
-    [SerializeField] Transform eventCameraTarget;
+    public bool isEventCamera=false;
+    //Transform eventCameraTarget;
     Vector3 eventTargetPos = Vector3.zero;
     float cameraDuration = 1f;
 
     [SerializeField] Transform cameraTarget;
     [SerializeField] float cameraSpd = 0.08f;
-
+    //[SerializeField] float cameraSize = 5f;
     void Start()
     {
         var t = transform.position;
         t.x = cameraTarget.position.x;
         t.y = cameraTarget.position.y;
         transform.position = t;
+
+        //Camera.main.orthographicSize = cameraSize;
+
     }
 
     void Update()
@@ -39,7 +42,7 @@ public class CameraControl : MonoBehaviour
 
         if(cameraTarget==null)return;
 
-        transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, cameraSpd*Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, cameraTarget.transform.position, cameraSpd * Time.deltaTime);
 
     }
 
@@ -72,6 +75,12 @@ public class CameraControl : MonoBehaviour
     public void CameraEventTriggerOff()
     {
         isEventCamera = false;
+    }
+
+
+    public void ChangePlayerPos()
+    {
+        transform.position = cameraTarget.transform.position;
     }
 
     //private void OnDisable()

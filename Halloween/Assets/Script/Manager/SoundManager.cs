@@ -1,5 +1,4 @@
-using DG.Tweening;
-using System;
+ï»¿using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -18,26 +17,31 @@ public class SoundManager : Singleton<SoundManager>
 
     [SerializeField] private AudioSource gameBGM;
     [SerializeField] private AudioSource titleBGM;
-
-    void Start()
+    [SerializeField] public AudioSource se;
+    private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
 
-        audioMixer = Resources.Load<AudioMixer>("AudioMixer");
+    }
+    void Start()
+    {
+        //DontDestroyOnLoad(this.gameObject);
+
+       audioMixer = Resources.Load<AudioMixer>("AudioMixer");
 
 
-        //ƒI[ƒfƒBƒIƒ~ƒLƒT[‚ÍResourcesƒtƒHƒ‹ƒ_‚Éì¬‚·‚é
+        //ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒŸã‚­ã‚µãƒ¼ã¯Resourcesãƒ•ã‚©ãƒ«ãƒ€ã«ä½œæˆã™ã‚‹
         //Debug.Log(audioMixer);
 
         if(!audioMixer)
-        Debug.Log("ƒI[ƒfƒBƒIƒ~ƒLƒT[‚ª‘¶İ‚µ‚È‚¢");
+        Debug.Log("ã‚ªãƒ¼ãƒ‡ã‚£ã‚ªãƒŸã‚­ã‚µãƒ¼ãŒå­˜åœ¨ã—ãªã„");
     }
 
     public void SetSoundMaster(float value)
     {
         // if (audioMixer == null) audioMixer = Resources.Load<AudioMixer>("AudioMixer");
 
-        //ƒtƒF[ƒh‹@”\‚ª—~‚µ‚¢
+        //ãƒ•ã‚§ãƒ¼ãƒ‰æ©Ÿèƒ½ãŒæ¬²ã—ã„
 
 
         //const float volumeMin = 80f;
@@ -50,7 +54,7 @@ public class SoundManager : Singleton<SoundManager>
         //    const float volumeMax = 0f;
         //    audioMixer.SetFloat("MasterVolume", -volumeMax);
         //    //isSoundOn = true;
-        //    Debug.Log("ƒTƒEƒ“ƒhƒIƒt");
+        //    Debug.Log("ã‚µã‚¦ãƒ³ãƒ‰ã‚ªãƒ•");
         //}
 
     }
@@ -74,7 +78,7 @@ public class SoundManager : Singleton<SoundManager>
 
     public void BgmChange(BGMType type)
     {
-        //ƒ{ƒŠƒ…[ƒ€‚ğ‰º‚°‚Ä‚¢‚Á‚Ä@Ø‚è‘Ö‚¦‚é
+        //ãƒœãƒªãƒ¥ãƒ¼ãƒ ã‚’ä¸‹ã’ã¦ã„ã£ã¦ã€€åˆ‡ã‚Šæ›¿ãˆã‚‹
 
         const float OUTTIME = 0.3f;
         const float INTIME = 2f;

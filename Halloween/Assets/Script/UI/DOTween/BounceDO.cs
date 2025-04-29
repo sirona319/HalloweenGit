@@ -22,4 +22,11 @@ public class BounceDO : MonoBehaviour
         .SetEase(Ease.OutQuad)
         .SetLoops(-1, LoopType.Yoyo);
     }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        //DOTween.KillAll();
+        Debug.Log("BounceDOTrans Destroy");
+    }
 }

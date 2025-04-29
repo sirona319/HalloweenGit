@@ -65,4 +65,11 @@ public class RotModule : MonoBehaviour
         return true;
 
     }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        //DOTween.KillAll();
+        Debug.Log("RotModule Destroy");
+    }
 }

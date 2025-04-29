@@ -9,7 +9,13 @@ public class BounceDOTrans : MonoBehaviour
     [SerializeField] float moveY = 20f;
     //[SerializeField] int loopTime = -1;
 
-    void Awake()
+    //void Awake()
+    //{
+    //    trans = GetComponent<Transform>();
+    //    StartNewRecordAnim();
+    //}
+
+    void Start()
     {
         trans = GetComponent<Transform>();
         StartNewRecordAnim();
@@ -21,5 +27,12 @@ public class BounceDOTrans : MonoBehaviour
         .SetRelative(true)
         .SetEase(Ease.OutQuad)
         .SetLoops(-1, LoopType.Yoyo);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        //DOTween.KillAll();
+        Debug.Log("BounceDOTrans Destroy");
     }
 }

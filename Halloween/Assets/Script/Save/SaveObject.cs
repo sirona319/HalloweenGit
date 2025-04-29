@@ -47,14 +47,17 @@ public class SaveObject : MonoBehaviour
             savePa.Play();
 
             //セーブ
-            Save.I.PlayerSave(savePos);
+            var SaveMgr = GameObject.FindGameObjectWithTag(TagName.SaveM).GetComponent<Save>();
+            SaveMgr.PlayerSave(savePos);
 
             const float volume = 0.1f;
             MyLib.MyPlayOneSound("SE/Item/" + "02_Heal_02", volume, this.gameObject);
 
+            const float fadeEndTime = 2f;
+            const float sceneChangeEndTime = 2f;//次の遷移が可能になるまで
             //転送位置があるかどうか
             if (movePoint != null)
-                GManager.I.PlayerMoveTarget(movePoint.position);
+                GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScene>().PlayerMoveTarget(movePoint.position, fadeEndTime, sceneChangeEndTime);
             //other.transform.position = movePoint.position;
         }
 
@@ -79,14 +82,18 @@ public class SaveObject : MonoBehaviour
                 savePa.Play();
 
             //セーブ
-            Save.I.PlayerSave(savePos);
+
+            var SaveMgr = GameObject.FindGameObjectWithTag(TagName.SaveM).GetComponent<Save>();
+            SaveMgr.PlayerSave(savePos);
 
             //const float volume = 0.1f;
             //MyLib.MyPlayOneSound("SE/Item/" + "02_Heal_02", volume, this.gameObject);
 
+            const float fadeEndTime = 2f;
+            const float sceneChangeEndTime = 2f;//次の遷移が可能になるまで
             //転送位置があるかどうか
             if (movePoint != null)
-                GManager.I.PlayerMoveTarget(movePoint.position);
+                GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScene>().PlayerMoveTarget(movePoint.position, fadeEndTime, sceneChangeEndTime);
             //other.transform.position = movePoint.position;
         }
 

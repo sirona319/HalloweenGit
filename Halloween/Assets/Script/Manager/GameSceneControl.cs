@@ -4,6 +4,8 @@ public class GameSceneControl : Singleton<GameSceneControl>
 {
     [SerializeField] int enemyAllCount;
 
+
+    //[SerializeField] GameObject startEvent;
     public void CountUp(int count)
     {
         enemyAllCount += count;
@@ -12,7 +14,13 @@ public class GameSceneControl : Singleton<GameSceneControl>
     //[SerializeField] Fade fade;
     void Start()
     {
+        if (GameObject.FindGameObjectWithTag("Fade") == null) return;
 
+
+
+        //プレイヤー座標を受け取る？
+
+        GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScene>().FadeOut(1f);
         //タイムラインの最後？　シグナル？
         //GManager.I.FadeOut();
 

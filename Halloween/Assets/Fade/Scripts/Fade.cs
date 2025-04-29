@@ -28,10 +28,15 @@ public class Fade : Singleton<Fade>
 {
 	IFade fade;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+
+    }
     //public bool StartFade;      //トランジション用変数
     void Start ()
 	{
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         Init ();
 		fade.Range = cutoutRange;
 

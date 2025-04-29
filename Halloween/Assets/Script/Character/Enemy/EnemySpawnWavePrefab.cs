@@ -43,7 +43,7 @@ public class EnemySpawnWavePrefab : MonoBehaviour
     void SpawnWave(int No)
     {
 
-        if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
+        //if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
             GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
 
 

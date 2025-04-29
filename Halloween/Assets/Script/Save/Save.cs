@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Save : Singleton<Save>
@@ -124,6 +122,11 @@ public class Save : Singleton<Save>
 
     int stageNo = 0;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+
+    }
     public void PlayerSave(Vector3 pos)
     {
         Debug.Log("保存した");
