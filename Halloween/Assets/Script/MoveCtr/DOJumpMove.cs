@@ -1,5 +1,7 @@
 ﻿using DG.Tweening;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class JumpMoveDO : BaseMove
 {
@@ -26,7 +28,13 @@ public class JumpMoveDO : BaseMove
     public override void MoveUpdate()
     {
 
-    
+        
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        Debug.Log(this.GetType().FullName + "Destroy");
     }
 
 }

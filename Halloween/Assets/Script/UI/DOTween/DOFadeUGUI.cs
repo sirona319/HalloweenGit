@@ -1,4 +1,4 @@
-using DG.Tweening;
+ï»¿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,7 +17,7 @@ public class DOFadeUGUI : MonoBehaviour
     void Start()
     {
         textUgui = GetComponent<TextMeshProUGUI>();
-        //ƒRƒ‹[ƒ`ƒ“‚Ì‹N“®@ƒtƒF[ƒh
+        //ã‚³ãƒ«ãƒ¼ãƒãƒ³ã®èµ·å‹•ã€€ãƒ•ã‚§ãƒ¼ãƒ‰
         StartCoroutine(MyLib.DelayCoroutine(4f, () =>
         {
 
@@ -56,5 +56,11 @@ public class DOFadeUGUI : MonoBehaviour
         ShowWindow();
 
         textUgui.DOComplete();
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        Debug.Log(this.GetType().FullName + "Destroy");
     }
 }

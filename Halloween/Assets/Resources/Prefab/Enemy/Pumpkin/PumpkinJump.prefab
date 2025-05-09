@@ -240,15 +240,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 8070656094626350437}
+  isDead: 0
   eDamage: {fileID: 6045209402796862328}
-  baseMove:
-  - {fileID: 3751133012385811689}
+  move: {fileID: 3751133012385811689}
+  isMove: 1
   isBoss: 0
-  sprite: {fileID: 8687611365685043167}
-  isNoise: 0
-  noiseTiming: 1
-  noiseTime: 0
-  randTime: 0
 --- !u!114 &3751133012385811689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,9 +257,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ef11c8ea80b354c9675a806d6a29e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb3: {fileID: 0}
-  rb2: {fileID: 0}
-  isMove: 1
   isFirstDirX: 0
   forceUpR: {x: 0, y: 0, z: 0}
   forceUpL: {x: 0, y: 0, z: 0}

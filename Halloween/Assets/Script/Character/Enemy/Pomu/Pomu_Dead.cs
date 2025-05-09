@@ -34,6 +34,7 @@ public class Pomu_Dead : StateChildBase
         Instantiate(deadParticleB, transform.position, Quaternion.identity);
 
         gameObject.SetActive(false);
+        Destroy(gameObject, 0);
 
     }
 

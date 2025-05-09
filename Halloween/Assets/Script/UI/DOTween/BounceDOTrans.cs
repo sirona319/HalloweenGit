@@ -32,7 +32,6 @@ public class BounceDOTrans : MonoBehaviour
     private void OnDestroy()
     {
         DOTween.Kill(this.transform);
-        //DOTween.KillAll();
-        Debug.Log("BounceDOTrans Destroy");
+        Debug.Log(this.GetType().FullName + "Destroy");
     }
 }

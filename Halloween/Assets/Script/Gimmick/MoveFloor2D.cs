@@ -21,7 +21,9 @@ public class MoveFloor2D : MonoBehaviour
 
     void Start()
     {
+        if(GameObject.FindGameObjectWithTag(TagName.Player)!=null)
         pMove = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
+
         rb2 = GetComponent<Rigidbody2D>();
 
         moveDir = moveTrans[targetNo].position - transform.position;
@@ -56,9 +58,8 @@ public class MoveFloor2D : MonoBehaviour
                 isMoveBack = false;
 
             }
+
             moveDir = moveTrans[targetNo].position - transform.position;
-
-
 
 
         }
@@ -67,7 +68,7 @@ public class MoveFloor2D : MonoBehaviour
 
 
         rb2.MovePosition((Vector2)transform.position + floorVelocity);
-
+        //Debug.Log(gameObject.name + "MovePosition");
 
         //プレイヤーが乗っている時の処理
         if (isRide)
@@ -81,6 +82,9 @@ public class MoveFloor2D : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(TagName.Player))
         {
+            if (pMove == null)
+                pMove = collision.GetComponent<PlayerMove>();
+
             isRide = true;
         }
 

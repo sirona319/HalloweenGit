@@ -23,9 +23,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using Unity.Hierarchy;
-using System;
-using UnityEngine.Rendering.Universal;
 
 [DisallowMultipleComponent]
 public class FadeScene : MonoBehaviour
@@ -129,9 +126,12 @@ public class FadeScene : MonoBehaviour
     {
         //TitleScene,
         //GameScene,
-        First,
+        First,//turorial?
 
-        TestDoor,
+        First2,
+        First3,
+        First4,
+        First5,
     }
 
     //bool isSceneChange = true;

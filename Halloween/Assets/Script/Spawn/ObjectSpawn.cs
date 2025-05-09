@@ -20,13 +20,14 @@ public class ObjectSpawn : MonoBehaviour
     //    spawnData[CountIndex].enemyCount--;
     //}
 
-
     //インデックス使用　関数
     //アップキャスト
     void Start()
     {
         for (int i = 0; i < spawnData.Length; i++)
-            SpawnStart(i);
+            SpawnObj(i);
+
+        //SpawnStart(i);
 
     }
 
@@ -77,7 +78,6 @@ public class ObjectSpawn : MonoBehaviour
 
     public async UniTask DelaySpawnAsyncSceneObject(float seconds, GameObject loadObj, Vector3 spawnPos)
     {
-
 
         await UniTask.WaitForSeconds(seconds);
 

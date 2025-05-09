@@ -151,6 +151,12 @@ public class TargetSet : MonoBehaviour
         switch (type)
         {
             case Target.Player:
+                if(GameObject.FindGameObjectWithTag(Target.Player.ToString())==null)
+                {
+                    Debug.Log("プレイヤーが存在しない");
+                    break;
+                }
+
                 t = GameObject.FindGameObjectWithTag(Target.Player.ToString()).transform;
                 break;
             case Target.LeftMiddle: //固定

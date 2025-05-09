@@ -25,7 +25,7 @@ public class SpawnPumpkinChild : StraightPointMove
     {
         //base.MoveEnter();
         GetComponent<RotModule>().enabled = true;
-        direction = (movePointLists[targetNo].position - transform.position).normalized;
+        direction = (moveTransLists[targetNo].position - transform.position).normalized;
     }
 
     public override void MoveExit()
@@ -42,13 +42,13 @@ public class SpawnPumpkinChild : StraightPointMove
         transform.position += direction * speed * Time.deltaTime;
 
 
-        float len = Vector3.Distance(transform.position, movePointLists[targetNo].position);
+        float len = Vector3.Distance(transform.position, moveTransLists[targetNo].position);
 
         if (len > ENDMOVELEN)
             return;
 
         //最後の移動地点へ到着したら
-        if (targetNo == movePointLists.Count - 1)
+        if (targetNo == moveTransLists.Count - 1)
         {
             //if (isSpawn) return;
             Spawn();
@@ -62,7 +62,7 @@ public class SpawnPumpkinChild : StraightPointMove
         else
         {
             targetNo++;
-            direction = (movePointLists[targetNo].position - transform.position).normalized;
+            direction = (moveTransLists[targetNo].position - transform.position).normalized;
         }
         //base.MoveUpdate();
 

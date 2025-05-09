@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,5 +18,11 @@ public class DOTweenScale : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        Debug.Log(this.GetType().FullName + "Destroy");
     }
 }

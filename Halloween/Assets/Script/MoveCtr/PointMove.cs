@@ -127,7 +127,7 @@ public class PointMove : BaseMove
     //}
 
 
-    [SerializeField] List<Transform> moveTrans;
+    [SerializeField] protected List<Transform> moveTrans;
     //[SerializeField] List<Vector3> moveVecs = new();
     [SerializeField] List<float> endLength;
     [SerializeField] float speed = 4f;
@@ -136,7 +136,7 @@ public class PointMove : BaseMove
     [SerializeField] bool isLoop = false;
     public ReactiveProperty<bool> isPointMoveEnd = new ReactiveProperty<bool>(false);//CreateMoveでSubscribe　エネミークラスなど？
 
-    int targetNo = 0;
+    protected int targetNo = 0;
     //Rigidbody2D rb2;
 
     TargetSet targetSet;

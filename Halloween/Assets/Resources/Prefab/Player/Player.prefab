@@ -506,7 +506,7 @@ SpriteRenderer:
   m_SortingLayerID: -573303605
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1368436950245636399, guid: 6e41732176140f1409683d49175474db, type: 3}
+  m_Sprite: {fileID: 6735247549449805027, guid: 6e41732176140f1409683d49175474db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -527,7 +527,7 @@ Animator:
   m_GameObject: {fileID: 8882433819604259064}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e38d2033d12dcc1498f87bdc94001d39, type: 2}
+  m_Controller: {fileID: 9100000, guid: b7c7afaaae687d44383d11e35a541452, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hp: 3
+  hp: 2
 --- !u!114 &1955295828361177465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +695,8 @@ MonoBehaviour:
   closeEyeImageUp0: {fileID: 0}
   closeEyeImageDown0: {fileID: 0}
   reviveText: {fileID: 0}
+  deadImages: {fileID: 0}
+  EyeObj: {fileID: 0}
 --- !u!114 &8991353470934290635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +710,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugmoveX: 0
+  startT: {fileID: 0}
+  isStartPos: 0
+  bossT: {fileID: 0}
+  isBossPos: 0
+  m_animator: {fileID: 6787725113368855630}
   m_movement: {x: 0, y: 0}
   maxMoveSpeed: 3.6
   moveSpeed: 3.6

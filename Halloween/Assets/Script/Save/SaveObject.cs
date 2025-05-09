@@ -22,12 +22,6 @@ public class SaveObject : MonoBehaviour
         savePos.y += saveY;
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
     private void OnTriggerEnter(Collider other)
     {
 

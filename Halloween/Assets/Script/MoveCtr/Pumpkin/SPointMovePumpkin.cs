@@ -33,9 +33,9 @@ public class SPointMovePumpkin : StraightPointMove
     public void ReTarget(Transform t)
     {
         //movePointLists.Clear();
-        movePointLists.Add(t);
+        moveTransLists.Add(t);
         targetNo++;
-        direction = (movePointLists[targetNo].position - transform.position).normalized;
+        direction = (moveTransLists[targetNo].position - transform.position).normalized;
 
     }
 

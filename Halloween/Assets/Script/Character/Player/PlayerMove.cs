@@ -146,6 +146,7 @@ public class PlayerMove : MonoBehaviour
 
         m_rb.MovePosition((Vector2)transform.position + m_movement * moveSpeed * Time.deltaTime);
 
+        //Debug.Log(gameObject.name+"MovePosition");
     }
 
     public void RideMove(Vector2 f)

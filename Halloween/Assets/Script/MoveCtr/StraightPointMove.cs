@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StraightPointMove : BaseMove
 {
-    [SerializeField] protected List<Transform> movePointLists = new();
+    [SerializeField] protected List<Transform> moveTransLists = new();
     [SerializeField] protected float speed = 5f;
     protected float ENDMOVELEN = 0.7f;
 
@@ -29,13 +29,13 @@ public class StraightPointMove : BaseMove
         if (gameObject.GetComponent<TargetSet>()!=null)
         {
             targetSet = GetComponent<TargetSet>();
-            movePointLists = targetSet.SetPointArray(movePointLists);
+            moveTransLists = targetSet.SetPointArray(moveTransLists);
         }
 
         //rb2=GetComponent<Rigidbody>();
-        direction = (movePointLists[targetNo].position - transform.position).normalized;
+        direction = (moveTransLists[targetNo].position - transform.position).normalized;
 
-        //transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
     }
 
     public override void MoveEnter()
@@ -50,7 +50,7 @@ public class StraightPointMove : BaseMove
         //rb2.MovePosition(rb2.position + direction * speed * Time.deltaTime);
 
 
-        float len = Vector3.Distance(transform.position, movePointLists[targetNo].position);
+        float len = Vector3.Distance(transform.position, moveTransLists[targetNo].position);
 
         if (len > ENDMOVELEN)
             return;
@@ -60,12 +60,12 @@ public class StraightPointMove : BaseMove
         //{
 
             //最後の移動地点へ到着したら
-            if (targetNo == movePointLists.Count - 1)
+            if (targetNo == moveTransLists.Count - 1)
                 IsMoveEnd.Value = true;
             else
             {
                 targetNo++;
-                direction = (movePointLists[targetNo].position - transform.position).normalized;
+                direction = (moveTransLists[targetNo].position - transform.position).normalized;
             }
         //}
         // Debug.Log("目標へ到着");

@@ -1,4 +1,5 @@
 ﻿using Cysharp.Threading.Tasks;
+using NUnit.Framework.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,46 +8,44 @@ using UnityEngine;
 public class EnemySpawnWavePrefab : MonoBehaviour
 {
     //[SerializeField] JerryBuilder jerryBuilder;
-
-    public SpawnWaveDataPrefab[] spawnData;
-
-    int CountIndex = 0;
-
     //[SerializeField] GameObject trailSe;
-    public void UpdateCount()
-    {
-        spawnData[CountIndex].enemyCount--;
 
-        if (spawnData[CountIndex].enemyCount <= 0)
-        {
-            CountIndex++;
-            if (CountIndex == spawnData.Length)
-                return;
 
-            EnemysWaveStart(CountIndex);
+    [SerializeField] SpawnWaveDataPrefab[] spawnData;
 
-        }
-    }
+
+    //int CountIndex = 0;
+
+    //public void UpdateCount()
+    //{
+    //    spawnData[CountIndex].enemyCount--;
+
+    //    if (spawnData[CountIndex].enemyCount <= 0)
+    //    {
+    //        CountIndex++;
+    //        if (CountIndex == spawnData.Length)
+    //            return;
+
+    //        SpawnWave(CountIndex);
+
+    //    }
+    //}
 
     void Start()
     {
-        EnemysWaveStart(0);
-
+        SpawnWave(0);
     }
 
-    void EnemysWaveStart(int idx)
-    {
-
-        SpawnWave(idx);
-    }
+    //void EnemysWaveStart(int idx)
+    //{
+    //    SpawnWave(idx);
+    //}
 
     void SpawnWave(int No)
     {
 
         //if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
             GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
-
-
 
         //1回目以降
         while (true)
@@ -85,6 +84,8 @@ public class EnemySpawnWavePrefab : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         var obj = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
+
+
         //obj.GetComponent<EnemyBase>().Init();
         //bMove.Initialize();
 

@@ -46,4 +46,10 @@ public class DOJumpDirMove2D : BaseMove
 
 
     }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(this.transform);
+        Debug.Log(this.GetType().FullName + "Destroy");
+    }
 }
