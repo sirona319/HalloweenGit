@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemySpawnPrefabRepeat : MonoBehaviour
+public class EnemySpawnPrefabRepeat : BaseSpawn
 {
     [SerializeField] float notifyTime = 0f;
     [SerializeField] float objDeadTime = 0f;
@@ -12,10 +12,10 @@ public class EnemySpawnPrefabRepeat : MonoBehaviour
     void Start()
     {
         //最初のスポーン　エリアか時間で生成するようにする？
-        SpawnWave(0);
+        Spawn(0);
     }
 
-    void SpawnWave(int No)
+    public override void Spawn(int No)
     {
 
         //if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
@@ -47,7 +47,7 @@ public class EnemySpawnPrefabRepeat : MonoBehaviour
     {
         StartCoroutine(MyLib.DelayCoroutine(notifyTime, () =>
         {
-            SpawnWave(No);
+            Spawn(No);
             Debug.Log(gameObject.name+"スポーン");
         }));
 

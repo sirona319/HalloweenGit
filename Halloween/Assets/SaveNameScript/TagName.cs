@@ -23,4 +23,5 @@ public static class TagName
 	public const string Fade = "Fade";
 	public const string SoundM = "SoundM";
 	public const string SaveM = "SaveM";
+	public const string Spawn = "Spawn";
 }

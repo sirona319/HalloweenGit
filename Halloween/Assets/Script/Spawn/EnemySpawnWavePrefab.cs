@@ -1,11 +1,8 @@
-﻿using Cysharp.Threading.Tasks;
-using NUnit.Framework.Constraints;
-using System;
+﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawnWavePrefab : MonoBehaviour
+public class EnemySpawnWavePrefab : BaseSpawn
 {
     //[SerializeField] JerryBuilder jerryBuilder;
     //[SerializeField] GameObject trailSe;
@@ -33,13 +30,26 @@ public class EnemySpawnWavePrefab : MonoBehaviour
 
     void Start()
     {
-        SpawnWave(0);
+        Spawn(0);
     }
 
     //void EnemysWaveStart(int idx)
     //{
     //    SpawnWave(idx);
     //}
+    public override void Spawn(int No)
+    {
+        GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
+
+        StartCoroutine(DelaySpawnWave(
+            spawnData[No].spawnTime[spawnData[No].enemyCount], /** spawnData[No].enemyCount + 1*///float型　生成時間
+
+            spawnData[No].LoadState[spawnData[No].enemyCount],//敵の種類
+
+            spawnData[No].spawnLocations[spawnData[No].enemyCount]//生成座標
+                                                                  //spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
+            ));
+    }
 
     void SpawnWave(int No)
     {
@@ -52,14 +62,12 @@ public class EnemySpawnWavePrefab : MonoBehaviour
         {
             StartCoroutine(DelaySpawnWave(
                 spawnData[No].spawnTime[spawnData[No].enemyCount], /** spawnData[No].enemyCount + 1*///float型　生成時間
-                
+
                 spawnData[No].LoadState[spawnData[No].enemyCount],//敵の種類
 
                 spawnData[No].spawnLocations[spawnData[No].enemyCount]//生成座標
-                //spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
+                                                                      //spawnData[No].movePointsSet[spawnData[No].enemyCount].childArray//目標座標
                 ));
-
-
             //DelaySpawnAsyncWave
             //    (spawnData[No].spawnTime[spawnData[No].enemyCount] /** spawnData[No].enemyCount + 1*/,//float型　生成時間
 
