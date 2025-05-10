@@ -1,22 +1,36 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Rendering;
+using UnityEngine;
 
 public class Pomu_Move : StateChildBase
 {
     PomuScr pScr;
+    BaseMagazine atkMagazine = null;
     public override void Initialize(int stateNo)
     {
         base.Initialize(stateNo);
 
         pScr = GetComponent<PomuScr>();
         pScr.move.Initialize();
+
+        if (GetComponent<BaseMagazine>() != null)
+        {
+            atkMagazine = GetComponent<BaseMagazine>();
+            atkMagazine.Initialize();
+            atkMagazine.enabled = false;
+        }
+
     }
 
     public override void OnEnter()
     {
         stateTime = 0f;
 
+        if(atkMagazine != null)
+            if(atkMagazine.enabled)
+            atkMagazine.MagazineEnter();
+
         //foreach (var move in pScr.baseMove)
-            GetComponent<PomuScr>().move.MoveEnter();
+        GetComponent<PomuScr>().move.MoveEnter();
 
     }
 
@@ -41,8 +55,9 @@ public class Pomu_Move : StateChildBase
             GetComponent<PomuScr>().move.MoveUpdate();
         //}
 
-        //if (!pScr.isMove)
-        //    pScr.isAttack = true;
+        if (atkMagazine != null)
+            if (atkMagazine.enabled)
+                atkMagazine.MagazineUpdate();
 
         if (!pScr.isMove)
             return (int)pScr.ReturnStateType(StateType);

@@ -3,7 +3,13 @@
 public class NormalBullet : BaseBullet
 {
     public float angle; // 角度
-    [SerializeField] public float speed; // 速度
+    float speed; // 速度
+
+    public void SetSpeed(float x)
+    {
+        speed = x;
+    }
+
     private void Update()
     {
         BulletUpdate();
@@ -29,7 +35,5 @@ public class NormalBullet : BaseBullet
         // 毎フレーム、弾を移動させる
         transform.position += transform.up * speed * Time.deltaTime;//前方方向に進む（回転によって進行方向が変化する）
     }
-
-
 
 }

@@ -48,7 +48,7 @@ public class KnifeScr : ReleaseDestroyer
 
     private void OnCollisionEnter2D(Collision2D ot)
     {
-
+        //破壊できる壁
         if (ot.gameObject.CompareTag(TagName.GroundBreak))
         {
             //https://qiita.com/kako_vail/items/57c574629fcaf4d9787f

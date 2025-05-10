@@ -13014,7 +13014,7 @@ MonoBehaviour:
     spawnTime:
     - 0
     LoadState:
-    - {fileID: 5069094761338709197, guid: 7e817d3957b2e0642af2f5d6caefdb88, type: 3}
+    - {fileID: 5069094761338709197, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
     spawnLocations:
     - {fileID: 1333785890}
     movePointsSet:
@@ -24866,7 +24866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1981725231
 Transform:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2253911629886400664, guid: 919b8ef5180c8404297e0eb836820b82, type: 3}
       propertyPath: m_Name
-      value: PomuJump
+      value: PomuBound
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 919b8ef5180c8404297e0eb836820b82, type: 3}
       propertyPath: m_Layer
@@ -143,17 +143,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.675}
+  m_Offset: {x: 0, y: 0.013400823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: -0.29411766}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.6, y: 0.85}
     newSize: {x: 1.6, y: 0.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.66, y: 0.85}
+  m_Size: {x: 0.66, y: 0.84324914}
   m_EdgeRadius: 0
 --- !u!61 &2413225235930890840
 BoxCollider2D:
@@ -189,17 +189,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.675}
+  m_Offset: {x: 0, y: 0.008337796}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: -0.29411766}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.6, y: 0.85}
     newSize: {x: 1.6, y: 0.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.74, y: 0.85}
+  m_Size: {x: 0.74, y: 0.85337543}
   m_EdgeRadius: 0
 --- !u!50 &5893120194090532049
 Rigidbody2D:
@@ -267,7 +267,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateController: {fileID: 8796450538056874082}
+  isDead: 0
   eDamage: {fileID: 3627144842158201365}
+  isMove: 1
   move: {fileID: 9025772394010269942}
 --- !u!114 &8796450538056874082
 MonoBehaviour:
@@ -307,4 +309,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c91b059335c69b44a3fe3099ae81889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMove: 1
+  randMin: 0.1
+  randMax: 0.5

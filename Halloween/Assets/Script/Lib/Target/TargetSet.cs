@@ -62,7 +62,10 @@ public class TargetSet : MonoBehaviour
     public Transform SetVec(Transform target)
     {
         //var tArrayChild = transform.GetComponentsInChildren<TargetPoint>();
-
+        if (target.GetComponent<TargetPoint>() == null)
+        {
+            Debug.Log("TargetPointが設定されていない");
+        }
         return TargetSelect(target.GetComponent<TargetPoint>().target, target);
 
     }
@@ -218,7 +221,6 @@ public class TargetSet : MonoBehaviour
         return t;
 
     }
-
 
     //public List<Vector3> SetArrayVec()
     //{

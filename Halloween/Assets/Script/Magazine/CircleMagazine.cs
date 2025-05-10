@@ -14,7 +14,7 @@ public class CircleMagazine : BaseMagazine
 
     //逆回り作る
     CreateBullet createBullet;
-    //逆回り作る
+
     public override void Initialize()
     {
         createBullet = GetComponent<CreateBullet>();

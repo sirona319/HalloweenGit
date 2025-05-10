@@ -91,10 +91,10 @@ public class CreateBullet : MonoBehaviour
 
         if (bullet.GetComponent<NormalBullet>() != null)
         {
-
-            bullet.GetComponent<NormalBullet>().speed = bulletSpeed;
-            bullet.GetComponent<NormalBullet>().angle = angle;
-            bullet.GetComponent<NormalBullet>().BulletInit();
+            var normalBullet = bullet.GetComponent<NormalBullet>();
+            normalBullet.SetSpeed(bulletSpeed);
+            normalBullet.angle = angle;
+            normalBullet.BulletInit();
         }
 
         //if(bullet.GetComponent<ForceBullet>() != null)
