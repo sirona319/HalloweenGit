@@ -21,7 +21,6 @@ public class TargetMagazine : BaseMagazine
         intervalTime = intervalTimeMax;
     }
 
-
     public override void MagazineEnter()
     {
 
@@ -29,7 +28,7 @@ public class TargetMagazine : BaseMagazine
 
     public override void MagazineUpdate()
     {
-        Debug.Log("f");
+        //Debug.Log("f");
         intervalTime -= Time.deltaTime;
         if (intervalTime <= 0)
         {
