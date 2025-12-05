@@ -5,6 +5,8 @@ public class NotifyDead : MonoBehaviour
 {
     public GameObject spawnObj;
 
+    public float spawntime;
+
     //public float spawnTime = 0f;
 
     private void OnDestroy()

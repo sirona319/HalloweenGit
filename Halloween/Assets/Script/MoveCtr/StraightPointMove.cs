@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class StraightPointMove : BaseMove
 {
-    [SerializeField] protected List<Transform> moveTransLists = new();
     [SerializeField] protected float speed = 5f;
+
+    [SerializeField] protected List<Transform> moveTransLists = new();
     protected float ENDMOVELEN = 0.7f;
 
     //[SerializeField]Transform[] targets;// = new List<Vector3>();
@@ -17,7 +18,7 @@ public class StraightPointMove : BaseMove
     protected ReactiveProperty<bool> IsMoveEnd = new ReactiveProperty<bool>(false);
     //public ReactiveProperty<bool[]> IsPointMoveEnd = new ReactiveProperty<bool[]>(new bool[] {false,false });
 
-    TargetSet targetSet;
+    protected TargetSet targetSet;
 
     //Rigidbody rb2;
 

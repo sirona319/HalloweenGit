@@ -2,6 +2,8 @@
 
 public class BossCollisionTrigger : MonoBehaviour
 {
+    [SerializeField] GameObject DEBUGbossPumpkin;
+
     [SerializeField] float cameraDuration;
     [SerializeField] Transform cameraSetTrans;
 
@@ -28,19 +30,19 @@ public class BossCollisionTrigger : MonoBehaviour
             }
         }
 
-
-
         Camera.main.GetComponent<CameraControl>().CameraEventTrigger(cameraSetTrans.position, cameraDuration);
+
+
+
+
+        //デバッグ用 シグナルで呼んでいる　
+        DEBUGbossPumpkin.GetComponent<PumpkinBossScr>().SignalBattleState(true);
+        return;
+        ///////////////////
 
         var readText = boss.GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();
-
-
-        //デバッグ用 シグナルで呼んでいる　
-        //bossPumpkin.GetComponent<PumpkinBossScr>().BattleStart(true);
-        
-
     }
 
     //
@@ -48,6 +50,7 @@ public class BossCollisionTrigger : MonoBehaviour
     {
         //isBossBattle = false;
 
+        //コリジョンの無効
         foreach (var i in boxs2D)
         {
             foreach (var j in i.GetComponents<BoxCollider2D>())

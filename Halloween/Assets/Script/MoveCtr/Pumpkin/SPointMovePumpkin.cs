@@ -8,7 +8,16 @@ public class SPointMovePumpkin : StraightPointMove
     public override void Initialize()
     {
 
-        base.Initialize();
+        if (gameObject.GetComponent<TargetSet>() != null)
+        {
+            targetSet = GetComponent<TargetSet>();
+            moveTransLists = targetSet.SetPointArray(moveTransLists);
+        }
+
+        //rb2=GetComponent<Rigidbody>();
+        direction = (moveTransLists[targetNo].position - transform.position).normalized;
+
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 
         SetSpeed(delaySetSpeed, delaySetTiming);
         //transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);

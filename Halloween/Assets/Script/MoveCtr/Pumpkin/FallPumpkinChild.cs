@@ -4,7 +4,10 @@ public class FallPumpkinChild : StraightPointMove
 {
     public override void Initialize()
     {
-        base.Initialize();
+        //base.Initialize();
+        direction = (moveTransLists[targetNo].position - transform.position).normalized;
+
+        //transform.rotation = Quaternion.FromToRotation(Vector3.up, direction); //回転180　2LVから　ミスコード
     }
     public override void MoveEnter()
     {

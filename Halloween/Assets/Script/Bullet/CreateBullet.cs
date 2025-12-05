@@ -33,7 +33,7 @@ public class CreateBullet : MonoBehaviour
 
     //[SerializeField] BulletType[] bulletType;
 
-    [SerializeField] GameObject bulletObj;
+    //[SerializeField] GameObject bulletObj;
     [SerializeField] PoolControl poolCtr;
 
     private void Start()
@@ -70,10 +70,10 @@ public class CreateBullet : MonoBehaviour
 
     }
 
-    public GameObject BulletAtk(float angle,Vector3 pos,Quaternion rot)
+    public GameObject BulletAtk(float angle,Vector3 pos,Quaternion rot, GameObject charaBullet=null)
     {
         //Debug.Log(poolManager);
-        var bullet = poolCtr.GetGameObject(bulletObj, pos, rot);
+        var bullet = poolCtr.GetGameObject(charaBullet, pos, rot);
 
         //if (bulletType.Length > 0)
         //{
@@ -104,6 +104,29 @@ public class CreateBullet : MonoBehaviour
         //    bullet.GetComponent<ForceBullet>().BulletInit();
         //}
 
+
+        var destroyer = bullet.GetComponent<ReleaseDestroyer>();
+        destroyer.pool = poolCtr;//キャラの種類ごとに分けるために引き渡し
+        destroyer.IsRelease = false;//二重リリース回避用フラグ
+
+
+        return bullet;
+    }
+
+    public GameObject BulletAtkNotGravity(float angle, Vector3 pos, Quaternion rot,GameObject charaBullet)
+    {
+
+        var bullet = poolCtr.GetGameObject(charaBullet, pos, rot);
+
+        bullet.GetComponent<Rigidbody2D>().gravityScale = 0f;
+
+        if (bullet.GetComponent<NormalBullet>() != null)
+        {
+            var normalBullet = bullet.GetComponent<NormalBullet>();
+            normalBullet.SetSpeed(bulletSpeed);
+            normalBullet.angle = angle;
+            normalBullet.BulletInit();
+        }
 
         var destroyer = bullet.GetComponent<ReleaseDestroyer>();
         destroyer.pool = poolCtr;//キャラの種類ごとに分けるために引き渡し

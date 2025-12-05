@@ -10,8 +10,8 @@ public class PumpkinBoss_Attack : StateChildBase
 
     void SetPumpkinChild(int n)
     {
-        const float atkRotSpd = 30f;
-        bossScr.pumpkins[n].GetComponent<RotModule>().speed = atkRotSpd;
+        //const float atkRotSpd = 30f;
+        //bossScr.pumpkins[n].GetComponent<RotModule>().speed = atkRotSpd;
         //bossScr.pumpkins[n].GetComponent<RotModule>().enabled = true;
         //childList.Add(bossScr.pumpkins[n].GetComponent<PumpkinBossChildScr>());
 

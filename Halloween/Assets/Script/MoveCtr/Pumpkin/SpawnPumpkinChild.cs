@@ -1,7 +1,4 @@
-﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnPumpkinChild : StraightPointMove
 {
@@ -15,15 +12,31 @@ public class SpawnPumpkinChild : StraightPointMove
     //[SerializeField] List<Transform> spawnPointLists = new();//生成したオブジェクトに設定する移動座標
     //[SerializeField] protected float setPointSpeed = 7f;
     //[SerializeField] float spdSetTiming;
-
+    //TargetSet targetSet;
     public override void Initialize()
     {
         //base.Initialize();d
+        if (gameObject.GetComponent<TargetSet>() != null)
+        {
+            targetSet = GetComponent<TargetSet>();
+            moveTransLists = targetSet.SetPointArray(moveTransLists);
+        }
     }
 
     public override void MoveEnter()
     {
-        //base.MoveEnter();
+        //if (gameObject.GetComponent<TargetSet>() != null)
+        //{
+        //    targetSet = GetComponent<TargetSet>();
+        //    moveTransLists = targetSet.SetPointArray(moveTransLists);
+        //}
+
+        //rb2=GetComponent<Rigidbody>();
+        //direction = (moveTransLists[targetNo].position - transform.position).normalized;
+
+        //transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+
+
         GetComponent<RotModule>().enabled = true;
         direction = (moveTransLists[targetNo].position - transform.position).normalized;
     }

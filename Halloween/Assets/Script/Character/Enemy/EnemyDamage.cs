@@ -39,9 +39,10 @@ public class EnemyDamage : MonoBehaviour,IDamage
         return true;
     }
 
-    public void Damage(int damage, bool deadSound)
-    {
-        Damage(damage);
-        GetComponent<CreateDeadSound>().IsSoundEnable = deadSound;
-    }
+    //public void Damage(int damage, bool deadSound)
+    //{
+    //    Damage(damage);
+    //    //eBase.isDead = true;
+    //    //GetComponent<CreateDeadSound>().IsSoundEnable = deadSound;
+    //}
 }

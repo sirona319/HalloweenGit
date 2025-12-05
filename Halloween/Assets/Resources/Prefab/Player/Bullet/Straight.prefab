@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -8845671504171273348}
   - component: {fileID: 6317350796830080718}
   m_Layer: 12
-  m_Name: "\u30CA\u30A4\u30D5\u5358\u4F53500_0"
+  m_Name: Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 879c522cbf9c18c4c9f4429cecb857c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tForceX: {x: 2.5, y: 6, z: 0}
-  tForceXInv: {x: -2.5, y: 6, z: 0}
+  tForceX: {x: 6, y: 0, z: 0}
+  tForceXInv: {x: -6, y: 0, z: 0}
 --- !u!114 &-8021869746627226537
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -179,7 +179,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5069094761338709197}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ffe04de75b0e841b12468a2ff4da99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSoundEnable: 1
+  path: "Sound/SE/wave/\u30DA\u30BF\u30C3"
 --- !u!114 &3676364550083006289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2697917986134227492}
   intervalTimeMax: 2
+  bullet: {fileID: 0}
 --- !u!114 &-2133638151079476348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,7 +403,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolType: 0
   bulletSpeed: 3
-  bulletObj: {fileID: 6881125046265089057, guid: 6c9535f5c7d38d945bb510f19bf0e0fa, type: 3}
   poolCtr: {fileID: 3333698195248625363}
 --- !u!114 &3333698195248625363
 MonoBehaviour:
@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48484abed622b6041885c8da1d3d3029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debuglen: 0
   target: {fileID: 2697917986134227492}
   limitLen: 5
 --- !u!4 &5455249324703517864 stripped

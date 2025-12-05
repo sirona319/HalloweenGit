@@ -11,6 +11,8 @@ public class TargetMagazine : BaseMagazine
     float intervalTime = 0f; //ExitでintervalTimeMaxにする？
     [SerializeField] float intervalTimeMax = 1f;
 
+    [SerializeField] GameObject bullet;
+
     void Start()
     {
         targetSet = GetComponent<TargetSet>();
@@ -44,7 +46,7 @@ public class TargetMagazine : BaseMagazine
         Vector2 direction = target.position - transform.position;
         float pAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//ターゲットへの角度を取得する
 
-        createBullet.BulletAtk(pAngle, transform.position, transform.rotation); //Target渡す
+        createBullet.BulletAtk(pAngle, transform.position, transform.rotation, bullet); //Target渡す
     }
 
 

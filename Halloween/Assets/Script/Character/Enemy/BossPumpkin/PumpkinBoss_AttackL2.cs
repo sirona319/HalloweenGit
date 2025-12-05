@@ -11,8 +11,8 @@ public class PumpkinBoss_AttackL2 : StateChildBase
 
     void SetPumpkinChild(int n)
     {
-        const float atkRotSpd = 30f;
-        bossScr.pumpkinsLv2[n].GetComponent<RotModule>().speed = atkRotSpd;
+        //const float atkRotSpd = 30f;
+        //bossScr.pumpkinsLv2[n].GetComponent<RotModule>().speed = atkRotSpd;
         //bossScr.pumpkinsLv2[n].GetComponent<RotModule>().enabled = true;
         //childList.Add(bossScr.pumpkinsLv2[n].GetComponent<PumpkinBossChildScr>());
         bossScr.pumpkinsLv2[n].GetComponent<PumpkinBossChildScr>().isSpawnMove = true;

@@ -22,7 +22,7 @@ public class CollisionExitErase : MonoBehaviour
             var iDamage = other.transform.GetComponent<IDamage>();
             if (iDamage != null)
             {
-                iDamage.Damage(1, false);
+                iDamage.Damage(1);
                 //MyLib.DebugInfo(other.gameObject);
             }
             else

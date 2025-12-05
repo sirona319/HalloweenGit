@@ -116,15 +116,13 @@ public class PlayerDead : MonoBehaviour
 
         GetComponent<PlayerHp>().HealLife(3);
 
-        foreach (var obj in GameObject.FindGameObjectsWithTag(TagName.Enemy))
-        {
-            Destroy(obj);
-        }
 
         //敵のリスポーン　破棄して　生成？
         foreach (var obj in GameObject.FindGameObjectsWithTag(TagName.Spawn))
         {
-            obj.GetComponent<BaseSpawn>().Spawn(0);
+            var spawn = obj.GetComponent<BaseSpawn>();
+            spawn.GetComponent<EnemySpawnWavePrefab>().DeadCheck();
+
         }
     }
 

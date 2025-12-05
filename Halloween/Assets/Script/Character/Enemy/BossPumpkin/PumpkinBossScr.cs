@@ -22,7 +22,9 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     public bool startBattle = false;
 
-    public int pumpkinChildDeadCount = 0;
+    public int pumpkinChildDeadCount = 0;// 6  16
+    public bool testLv2 = false;
+    public bool testLv3 = false;
 
     //[SerializeField] float rotSpeedPumpkin1 = 0;
     //[SerializeField] float rotSpeedPumpkin2 = 0;
@@ -63,6 +65,11 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     void Start()
     {
+        if(testLv2)
+            pumpkinChildDeadCount= 6;
+        if (testLv3)
+            pumpkinChildDeadCount= 16;
+
         //foreach (var go in pumpkins)
         //{
         //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;

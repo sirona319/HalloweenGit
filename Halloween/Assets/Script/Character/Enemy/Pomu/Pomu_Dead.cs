@@ -27,19 +27,30 @@ public class Pomu_Dead : StateChildBase
     {
         stateTime = 0f;
 
-        GetComponent<CreateDeadSound>().Create();
+        //GetComponent<CreateDeadSound>().Create();
 
         Instantiate(deadParticleR, transform.position, Quaternion.identity);
         Instantiate(deadParticleY, transform.position, Quaternion.identity);
         Instantiate(deadParticleB, transform.position, Quaternion.identity);
 
-        gameObject.SetActive(false);
-        Destroy(gameObject, 0);
+        var cols = GetComponents<BoxCollider2D>();
+
+        foreach (var col in cols)
+        {
+            col.enabled = false;
+        }
+        //Destroy();
+        //Destroy(GetComponent<DamagePlayer>());
+        //GetComponent<DamagePlayer>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        //gameObject.SetActive(false);
+        //Destroy(gameObject, 0);
 
     }
 
     public override void OnExit()
     {
+        //Destroy(gameObject, 0);
 
     }
 
@@ -47,7 +58,12 @@ public class Pomu_Dead : StateChildBase
     {
         stateTime += Time.deltaTime;
 
-        return (int)StateType;
+        //if (stateTime >= DEADTIME)
+        //{
+        //    //return (int)PomuCtr.State.Pomu_Move;
+        //}
+
+            return (int)StateType;
 
     }
 

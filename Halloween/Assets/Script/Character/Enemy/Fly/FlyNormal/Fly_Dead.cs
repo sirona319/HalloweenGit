@@ -27,14 +27,20 @@ public class Fly_Dead : StateChildBase
     {
         stateTime = 0f;
 
-        GetComponent<CreateDeadSound>().Create();
+        //GetComponent<CreateDeadSound>().Create();
 
         Instantiate(deadParticleR, transform.position, Quaternion.identity);
         Instantiate(deadParticleY, transform.position, Quaternion.identity);
         Instantiate(deadParticleB, transform.position, Quaternion.identity);
 
-        gameObject.SetActive(false);
-       
+        var cols = GetComponents<BoxCollider2D>();
+
+        foreach (var col in cols)
+        {
+            col.enabled = false;
+        }
+
+        GetComponent<SpriteRenderer>().enabled = false;
 
         //StartCoroutine(MyLib.DelayCoroutine(DEADTIME, () =>
         //{

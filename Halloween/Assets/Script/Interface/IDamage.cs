@@ -7,5 +7,5 @@ public interface IDamage
 
     public bool Damage(int damage);
 
-    public virtual void Damage(int damage,bool sound) { }
+    //public virtual void Damage(int damage,bool sound) { }
 }

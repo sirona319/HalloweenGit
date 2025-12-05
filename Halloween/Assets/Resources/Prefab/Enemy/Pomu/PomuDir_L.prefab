@@ -167,7 +167,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5069094761338709197}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ffe04de75b0e841b12468a2ff4da99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSoundEnable: 1
+  path: "Sound/SE/wave/\u30DA\u30BF\u30C3"
 --- !u!114 &3676364550083006289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,9 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4232bf00c4f82624db6b11ef0e29ec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4
   moveTransLists:
   - {fileID: 3667874218552715804}
-  speed: 4
 --- !u!114 &7814257645059079167
 MonoBehaviour:
   m_ObjectHideFlags: 0

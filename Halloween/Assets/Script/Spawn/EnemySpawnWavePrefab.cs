@@ -10,7 +10,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     [SerializeField] SpawnWaveDataPrefab[] spawnData;
 
-
+    [SerializeField] GameObject saveGo;
     //int CountIndex = 0;
 
     //public void UpdateCount()
@@ -91,7 +91,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
     {
         yield return new WaitForSeconds(seconds);
 
-        var obj = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
+        saveGo = Instantiate(loadState, spawnTrans.position, spawnTrans.rotation);
 
 
         //obj.GetComponent<EnemyBase>().Init();
@@ -100,6 +100,24 @@ public class EnemySpawnWavePrefab : BaseSpawn
         //SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().baseMove[0].GetType().FullName, movePoint, obj);
         //SelectCreateMoveJerry(obj.GetComponent<EnemyBase>().move, obj);
     }
+
+    public void DeadCheck()
+    {
+        if (!saveGo.GetComponent<EnemyBase>().isDead) return;
+
+        //破棄と生成
+        Destroy(saveGo);
+        Spawn(0);
+
+    }
+
+    //public bool DeadCheck()
+    //{
+    //    if (saveGo.GetComponent<EnemyBase>().isDead)
+    //        return true;
+
+    //    return false;
+    //}
 
 
     //public async UniTask DelaySpawnAsyncWave(float seconds, GameObject loadState, Transform spawnTrans, Transform[] movePoint)
@@ -128,7 +146,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     //            break;
 
-           
+
     //        default:
     //            //go.GetComponent<EnemyBase>().baseMove[0].Initialize();
 

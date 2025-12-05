@@ -5,24 +5,30 @@ public class CreateDeadSound : MonoBehaviour
 {
     //public AudioSource deadSound;
 
-    public bool IsSoundEnable = true;
+    bool IsSoundEnable = false;
 
-    AudioSource audioSe;
+    [SerializeField] string path;
+
+    //AudioSource audioSe;
 
     //[SerializeField] AudioResource audioSe;
 
-    private void Start()
+    //private void Start()
+    //{
+    //    //audioSe= MyLib.GetComponentLoad<AudioSource>("Prefab/Sound/DestroySound");
+    //}
+
+
+    public void Update()
     {
-        audioSe= MyLib.GetComponentLoad<AudioSource>("Prefab/Sound/DestroySound");
-    }
+        if (IsSoundEnable) return;
+        if (!GetComponent<EnemyBase>().isDead) return ;
+        IsSoundEnable = true;
 
+        MyLib.MyPlayOneSound(path, 0.1f, gameObject);
 
-    public bool Create()
-    {
-        if (!IsSoundEnable) return IsSoundEnable;
-        var seGo = Instantiate(audioSe, transform.position, Quaternion.identity);
-        seGo.GetComponent<SoundEndDestroy>().StartDestroyFlg();//削除登録
-
-        return IsSoundEnable;
+        //var seGo = Instantiate(audioSe, transform.position, Quaternion.identity);
+        //seGo.GetComponent<SoundEndDestroy>().StartDestroyFlg();//削除登録
+        //return IsSoundEnable;
     }
 }
