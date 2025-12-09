@@ -10,9 +10,9 @@ public class Drop : MonoBehaviour
     {
         if(!GetComponent<EnemyBase>().isDead) return;
         if(isDropEnd) return;
-        isDropEnd = true;
 
         Instantiate(go, transform.position, Quaternion.identity);
+        isDropEnd = true;
 
     }
 

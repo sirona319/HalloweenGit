@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using UnityEngine;
 
 public class SoundEndDestroy : MonoBehaviour
@@ -38,3 +39,4 @@ public class SoundEndDestroy : MonoBehaviour
         Destroy(gameObject);
     }
 }
+*/

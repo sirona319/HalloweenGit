@@ -45,8 +45,17 @@ public class Pumpkin_Dead : StateChildBase
 
         }
 
-        gameObject.SetActive(false);
-        Destroy(gameObject, 0);
+        var cols = GetComponents<BoxCollider2D>();
+
+        foreach (var col in cols)
+        {
+            col.enabled = false;
+        }
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        //gameObject.SetActive(false);
+        //Destroy(gameObject, 0);
         //Instantiate(deadParticle, transform.position, Quaternion.identity);
 
         //StartCoroutine(MyLib.DelayCoroutine(DEADTIME, () =>

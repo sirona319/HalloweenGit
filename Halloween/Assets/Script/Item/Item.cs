@@ -44,4 +44,14 @@ public class Item : MonoBehaviour
         this.gameObject.SetActive(false);
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.gameObject.transform.CompareTag(TagName.Player)) return;
+
+        ItemManager.I.GetItemEffect(type, collision.transform);
+
+        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, ItemManager.I.gameObject);
+        this.gameObject.SetActive(false);
+    }
 }

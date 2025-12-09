@@ -7,7 +7,7 @@ public class RotModule : MonoBehaviour
     [SerializeField] bool y = false;
     [SerializeField] bool z = false;
 
-    public float speed=0;
+    [SerializeField] float speed=0;
 
     [SerializeField] Transform target = null;
     //[SerializeField] float d=0;
@@ -26,19 +26,25 @@ public class RotModule : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TargetRotIf())
-            return;
+        TargetRotIf();
 
         //float ROTVALUE = speed;
-        float duration = 1f;
         // StartCoroutine(MyLib.LoopDelayCoroutine(1f, () =>
         // {
-        if (y)
-            this.transform.DORotate(Vector3.up * speed, duration, RotateMode.LocalAxisAdd);
-        else if (x)
-            this.transform.DORotate(Vector3.right * speed, duration, RotateMode.LocalAxisAdd);
-        else if (z)
-            this.transform.DORotate(Vector3.forward * speed, duration, RotateMode.LocalAxisAdd);
+
+
+        //if (TargetRotIf())
+        //    return;
+        //float duration = 1f;
+
+        //if (y)
+        //    this.transform.DORotate(Vector3.up * speed, duration, RotateMode.LocalAxisAdd);
+        //else if (x)
+        //    this.transform.DORotate(Vector3.right * speed, duration, RotateMode.LocalAxisAdd);
+        //else if (z)
+        //    this.transform.DORotate(Vector3.forward * speed, duration, RotateMode.LocalAxisAdd);
+
+
         //}));
 
         //const float ROLLSPEED = 7f;
@@ -47,9 +53,9 @@ public class RotModule : MonoBehaviour
         //transform.rotation = transform.rotation * rot;
     }
 
-    bool TargetRotIf()
+    void TargetRotIf()
     {
-        if (target == null) return false;
+        if (target == null) target = this.transform;
 
         //float ROTVALUE = SPEED;
         float duration = 1f;
@@ -62,7 +68,7 @@ public class RotModule : MonoBehaviour
         else if (z)
             target.DORotate(Vector3.forward * speed, duration, RotateMode.LocalAxisAdd);
 
-        return true;
+        //return true;
 
     }
 

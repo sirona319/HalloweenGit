@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using UnityEngine;
 
 public class NotifyDead : MonoBehaviour
@@ -15,3 +15,4 @@ public class NotifyDead : MonoBehaviour
         spawnObj.GetComponent<EnemySpawnPrefabRepeat>().SpawnWaveTime(0);
     }
 }
+

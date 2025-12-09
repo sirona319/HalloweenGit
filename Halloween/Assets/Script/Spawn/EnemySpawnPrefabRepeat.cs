@@ -12,10 +12,10 @@ public class EnemySpawnPrefabRepeat : BaseSpawn
     void Start()
     {
         //最初のスポーン　エリアか時間で生成するようにする？
-        Spawn(0);
+        Spawn();
     }
 
-    public override void Spawn(int No)
+    public override void Spawn(int No = 0)
     {
 
         //if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))

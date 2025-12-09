@@ -12591,6 +12591,7 @@ MonoBehaviour:
     movePointsSet:
     - childArray:
       - {fileID: 0}
+  saveGo: {fileID: 0}
 --- !u!4 &1355505845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2589005681813767411, guid: 74d43ac17513e3f428b6cfcd73b2a5ea, type: 3}
@@ -14409,11 +14410,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b7c7afaaae687d44383d11e35a541452, type: 2}
     - target: {fileID: 6983425906397115818, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.73
+      value: 31.44
       objectReference: {fileID: 0}
     - target: {fileID: 6983425906397115818, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.07
+      value: -2.03
       objectReference: {fileID: 0}
     - target: {fileID: 6983425906397115818, guid: 2a85dc9aaa3536d429e217128ac72445, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25174,6 +25175,7 @@ MonoBehaviour:
     movePointsSet:
     - childArray:
       - {fileID: 0}
+  saveGo: {fileID: 0}
 --- !u!4 &1987328931 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3601465050893685708, guid: 74d43ac17513e3f428b6cfcd73b2a5ea, type: 3}
@@ -27263,5 +27265,5 @@ SceneRoots:
   - {fileID: 364170418}
   - {fileID: 635013901}
   - {fileID: 1125472420}
-  - {fileID: 1654394601}
   - {fileID: 5952247074660971210}
+  - {fileID: 1654394601}
