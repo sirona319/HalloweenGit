@@ -9,6 +9,8 @@ public class Pumpkin_Dead : StateChildBase
     ParticleSystem deadParticleY;//パーティクル
     ParticleSystem deadParticleB;//パーティクル
 
+    PumpkinBossScr bossPumpkin =null;
+
     public override void Initialize(int stateNo)
     {
         base.Initialize(stateNo);
@@ -19,6 +21,10 @@ public class Pumpkin_Dead : StateChildBase
         deadParticleR = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtR");
         deadParticleY = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtY");
         deadParticleB = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtB");
+
+        if(GetComponent<PumpkinScr>().isBoss)
+            bossPumpkin = GameObject.FindGameObjectWithTag("BossPumpkin").GetComponent<PumpkinBossScr>();
+
     }
 
     public override void OnEnter()
@@ -39,11 +45,10 @@ public class Pumpkin_Dead : StateChildBase
 
         //}
 
-        if (GetComponent<PumpkinScr>().isBoss)
-        {
-            GameObject.Find("PumpkinBOSS").GetComponent<PumpkinBossScr>().pumpkinChildDeadCount++;
+        if (bossPumpkin!=null)
+            bossPumpkin.pumpkinChildDeadCount++;
 
-        }
+        
 
         var cols = GetComponents<BoxCollider2D>();
 

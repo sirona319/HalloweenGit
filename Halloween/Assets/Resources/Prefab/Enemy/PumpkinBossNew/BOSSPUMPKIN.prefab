@@ -295,7 +295,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &5342882688048530050
 SpriteRenderer:
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -395,7 +395,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 1412959083973277901}
 --- !u!114 &4344395397019982761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 4138173954569341261}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: d3624b357bba4b24a9734c2a00c87337, type: 3}
 --- !u!1 &342486672477128500
@@ -653,7 +655,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -721,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05902ab48340f64cbdd476780277811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 0}
+  stateController: {fileID: 4272024169958896473}
   isDead: 0
   isFallMove: 0
   isSpawnMove: 0
@@ -752,7 +754,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 7521031493091812574}
 --- !u!114 &8919198353580109119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,7 +769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 577658952435166118}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 3673bd58b5a5fc740b215cbf18e4c45f, type: 3}
 --- !u!1 &504669175494012410
@@ -952,7 +956,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &4666736851915522514
 SpriteRenderer:
@@ -977,7 +981,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1052,7 +1056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 4242624628459968114}
 --- !u!114 &1311244301673933017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,7 +1071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 4138173954569341261}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 54efa33d2808839479050697375347ce, type: 3}
 --- !u!1 &707742377474735987
@@ -1222,7 +1228,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1313,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 4425903230712048145}
 --- !u!1 &841632044602595919
@@ -1483,7 +1489,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1574,7 +1580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 9052041059708199899}
 --- !u!1 &1120504394522095691
@@ -1801,8 +1807,8 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
-  target: {fileID: 8236565917159623659}
+  speed: 100
+  target: {fileID: 0}
 --- !u!212 &6782429881083751670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1826,7 +1832,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1901,7 +1907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 1932163825840625315}
 --- !u!114 &7167754071728634323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,7 +1922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2787346598587586986}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: ab5eb0052f49b7b4d86b7589ca8c9aa7, type: 3}
 --- !u!1 &1432575497983646886
@@ -1997,7 +2005,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2088,7 +2096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 5529511651491852656}
 --- !u!114 &2284226145145379444
@@ -2182,7 +2190,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2273,7 +2281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 7334671201005560231}
 --- !u!114 &6835061444757859070
@@ -2573,7 +2581,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2669,7 +2677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2779452939611451646}
 --- !u!114 &393294415163541410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2683,7 +2692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 4767378168157708823}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 380dad898d025e94d9a275a8f2b15ea7, type: 3}
 --- !u!1 &1793046507532684321
@@ -2973,7 +2983,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3064,7 +3074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 7735924542955910903}
 --- !u!114 &9203455451878914913
@@ -3125,7 +3135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1985619855588169509
 Transform:
   m_ObjectHideFlags: 0
@@ -3436,7 +3446,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2412490234643394966}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3531,7 +3541,7 @@ GameObject:
   - component: {fileID: 6120767337405579985}
   m_Layer: 0
   m_Name: PumpkinBOSS
-  m_TagString: Untagged
+  m_TagString: BossPumpkin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3545,7 +3555,7 @@ Transform:
   m_GameObject: {fileID: 2461970634689153075}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.0481758, y: -0.3308589, z: 0.156588}
+  m_LocalPosition: {x: 0, y: -0.3308589, z: 0.156588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3569,7 +3579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateController: {fileID: 6120767337405579985}
   startBattle: 0
-  pumpkinChildDeadCount: 6
+  pumpkinChildDeadCount: 0
   testLv2: 0
   testLv3: 0
   pumpkins:
@@ -3870,7 +3880,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &7606427353272960140
 SpriteRenderer:
@@ -3895,7 +3905,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3970,7 +3980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2250240932833339465}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: d580477e34d160b48b468eb3876a4d9d, type: 3}
 --- !u!114 &4355972746149103374
@@ -3986,7 +3997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 1179267084835820449}
 --- !u!1 &2660387384420191823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4065,7 +4077,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4132,7 +4144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05902ab48340f64cbdd476780277811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 0}
+  stateController: {fileID: 3095206789944927597}
   isDead: 0
   isFallMove: 0
   isSpawnMove: 0
@@ -4163,7 +4175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 7066100897870762707}
 --- !u!114 &8651951834653514296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4177,7 +4190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 414541009894195789}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 5cbf46a5076027542b523522f21d52d4, type: 3}
 --- !u!1 &2811657566808653959
@@ -4383,7 +4397,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &6998510472831018841
 SpriteRenderer:
@@ -4408,7 +4422,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4483,7 +4497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2361855550716626383}
 --- !u!114 &5406932884521700347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4497,7 +4512,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 4138173954569341261}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: d3624b357bba4b24a9734c2a00c87337, type: 3}
 --- !u!1 &3237411238979700486
@@ -4578,7 +4594,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4675,7 +4691,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 3803943293013632406}
 --- !u!114 &1825312502372515268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4690,7 +4707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   moveTransLists:
-  - {fileID: 3803943293013632406}
+  - {fileID: 5204150727730841587}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 56e259c04b37805469fc2d2a4e2975a2, type: 3}
 --- !u!1 &3292362469691291437
@@ -4867,7 +4884,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &6993660505210261960
 SpriteRenderer:
@@ -4892,7 +4909,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4967,7 +4984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 6897141890183598595}
 --- !u!114 &14401797175091718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4981,7 +4999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 4138173954569341261}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 2cd4d844858a83541b5298973b4544a5, type: 3}
 --- !u!1 &3390319418920929216
@@ -5163,7 +5182,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5254,7 +5273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 2869034862680763450}
 --- !u!114 &2474913292350561053
@@ -5661,7 +5680,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5752,7 +5771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 2533379405407265203}
 --- !u!1 &3791747276085419483
@@ -5982,7 +6001,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6057,7 +6076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 7859500979437739524}
 --- !u!114 &906488640660984591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6071,7 +6091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 6941487557838393622}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: af8b90bf457d8044eb195e3e2aead853, type: 3}
   - {fileID: 6205204080456637428, guid: eeaf9dfc64106a44bb520d9dc655cbc5, type: 3}
@@ -6143,7 +6164,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &3592902569605460513
 SpriteRenderer:
@@ -6168,7 +6189,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6243,7 +6264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 1160608271708141739}
 --- !u!114 &2784131222422856240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6257,7 +6279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2250240932833339465}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: d580477e34d160b48b468eb3876a4d9d, type: 3}
 --- !u!1 &4079242861775232743
@@ -6623,7 +6646,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &3373363091493238898
 SpriteRenderer:
@@ -6648,7 +6671,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6723,7 +6746,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 9149178195230009141}
 --- !u!114 &1786187642707463005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6737,7 +6761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2250240932833339465}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 8c478bda6cc5f47448b021025d05c11a, type: 3}
 --- !u!1 &4453985683804424400
@@ -6810,7 +6835,7 @@ Transform:
   m_GameObject: {fileID: 4461301095410330191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7060,7 +7085,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7151,7 +7176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 2100277516655665538}
 --- !u!1 &4837583900842740780
@@ -7664,7 +7689,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7729,7 +7754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05902ab48340f64cbdd476780277811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 0}
+  stateController: {fileID: 5747984862473943522}
   isDead: 0
   isFallMove: 0
   isSpawnMove: 0
@@ -7760,7 +7785,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 6481257363265004987}
 --- !u!114 &4444518562524835755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7774,7 +7800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 8784805995904273714}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 7e89118e216b7af4186cee4e3307b215, type: 3}
 --- !u!1 &5484940895749087665
@@ -7819,7 +7846,7 @@ GameObject:
   - component: {fileID: 3131270128831018513}
   m_Layer: 0
   m_Name: BOSSPUMPKIN
-  m_TagString: Untagged
+  m_TagString: EnemyBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7833,7 +7860,7 @@ Transform:
   m_GameObject: {fileID: 5650915251221225199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.8, y: 0.010858905, z: -0.156588}
+  m_LocalPosition: {x: 0, y: 0.010858905, z: -0.156588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7891,7 +7918,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5659550619981186430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7968,7 +7995,7 @@ Transform:
   m_GameObject: {fileID: 5726921959544284784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -2.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8039,7 +8066,7 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 1
-  speed: 0
+  speed: 100
   target: {fileID: 0}
 --- !u!212 &655041170968006662
 SpriteRenderer:
@@ -8064,7 +8091,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8139,7 +8166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 611468873569044230}
 --- !u!114 &7939941865623087703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8153,7 +8181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 2250240932833339465}
   spawnObjs:
   - {fileID: 6509073088709276920, guid: 4812c8ee952d05149be45bf1858115da, type: 3}
 --- !u!1 &5853207476511122932
@@ -8434,7 +8463,7 @@ Transform:
   m_GameObject: {fileID: 6325401910495168381}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.0200005, z: 0}
+  m_LocalPosition: {x: 0, y: -4.72, z: 0}
   m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9417,7 +9446,7 @@ Transform:
   m_GameObject: {fileID: 7538798343069814730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7381744, y: -0.31242174, z: 0.008073449}
+  m_LocalPosition: {x: 0, y: -0.31242174, z: 0.008073449}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9631,7 +9660,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9706,7 +9735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  moveTransLists: []
+  moveTransLists:
+  - {fileID: 5966212426995387626}
   spawnObjs:
   - {fileID: 6205204080456637428, guid: c0fbf44a2248d844f997c6b9d1886895, type: 3}
 --- !u!114 &2993740636005089872
@@ -9721,7 +9751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 4109942320417106688}
 --- !u!114 &220721199996293031
@@ -10017,7 +10047,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10108,7 +10138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe84767d7274f44b81202c005cb57b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 3
   moveTransLists:
   - {fileID: 5470796692929530062}
 --- !u!114 &218664852205810985
@@ -10185,7 +10215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8804808001157762034
 Transform:
   m_ObjectHideFlags: 0
@@ -10557,7 +10587,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8558233779146172567}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11544,6 +11574,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 567550995488445772}
     m_Modifications:
+    - target: {fileID: 72611566149885950, guid: 52946841546b7e54ab773a8367837757, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 605232290449061617, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -11556,13 +11590,17 @@ PrefabInstance:
       propertyPath: 'moveTransLists.Array.data[0]'
       value: 
       objectReference: {fileID: 8862450486807614798}
+    - target: {fileID: 1741255254189125682, guid: 52946841546b7e54ab773a8367837757, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 1915830653916291419, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: m_Name
       value: L1
       objectReference: {fileID: 0}
     - target: {fileID: 1915830653916291419, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2103252121029513589, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: moveTransLists.Array.size
@@ -11572,6 +11610,10 @@ PrefabInstance:
       propertyPath: 'moveTransLists.Array.data[0]'
       value: 
       objectReference: {fileID: 5824040272359863645}
+    - target: {fileID: 2456840304760486061, guid: 52946841546b7e54ab773a8367837757, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 2563031126080207893, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: fallPointRed
       value: 
@@ -11584,6 +11626,10 @@ PrefabInstance:
       propertyPath: 'moveTransLists.Array.data[0]'
       value: 
       objectReference: {fileID: 3452846422554434649}
+    - target: {fileID: 5159773947059024483, guid: 52946841546b7e54ab773a8367837757, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5197089524589843853, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: moveTransLists.Array.size
       value: 1
@@ -11592,6 +11638,10 @@ PrefabInstance:
       propertyPath: 'moveTransLists.Array.data[0]'
       value: 
       objectReference: {fileID: 8038791756888390038}
+    - target: {fileID: 6176432323523028483, guid: 52946841546b7e54ab773a8367837757, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 6415621617055873583, guid: 52946841546b7e54ab773a8367837757, type: 3}
       propertyPath: moveTransLists.Array.size
       value: 1
@@ -11648,6 +11698,10 @@ PrefabInstance:
       propertyPath: 'moveTransLists.Array.data[0]'
       value: 
       objectReference: {fileID: 3486076053312413281}
+    - target: {fileID: 7952458176264384322, guid: 52946841546b7e54ab773a8367837757, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

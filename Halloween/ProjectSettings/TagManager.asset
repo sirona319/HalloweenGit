@@ -18,6 +18,8 @@ TagManager:
   - SoundM
   - SaveM
   - Spawn
+  - BossPumpkin
+  - EnemyM
   layers:
   - Default
   - TransparentFX

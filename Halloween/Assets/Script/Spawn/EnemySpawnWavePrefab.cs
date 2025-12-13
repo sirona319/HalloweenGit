@@ -11,6 +11,8 @@ public class EnemySpawnWavePrefab : BaseSpawn
     [SerializeField] SpawnWaveDataPrefab[] spawnData;
 
     [SerializeField] GameObject saveGo;
+
+    EnemyManager EnemyM;
     //int CountIndex = 0;
 
     //public void UpdateCount()
@@ -30,6 +32,9 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     void Start()
     {
+        EnemyM = GameObject.FindGameObjectWithTag("EnemyM").GetComponent<EnemyManager>();
+
+
         Spawn(0);
     }
 
@@ -103,6 +108,14 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     public void DeadCheck()
     {
+        if(saveGo.CompareTag(TagName.EnemyBoss))
+        {
+            //敵全部を破棄　生成
+            EnemyM.EnemyClearAll();
+            Spawn(0);
+            return;
+        }
+
         if (!saveGo.GetComponent<EnemyBase>().isDead) return;
 
         //破棄と生成

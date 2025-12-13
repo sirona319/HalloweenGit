@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: -1728225169162419063}
   m_Layer: 10
   m_Name: PumpkinDirectioRed2DCol_LV2
-  m_TagString: EnemyBoss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
