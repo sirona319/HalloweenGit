@@ -36,8 +36,8 @@ public class BossCollisionTrigger : MonoBehaviour
 
 
         //デバッグ用 シグナルで呼んでいる　
-        DEBUGbossPumpkin.GetComponent<PumpkinBossScr>().SignalBattleState(true);
-        return;
+        //DEBUGbossPumpkin.GetComponent<PumpkinBossScr>().SignalBattleState(true);
+        //return;
         ///////////////////
 
         var readText = boss.GetComponent<IHaveText>();

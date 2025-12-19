@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: NarrationAsset
   m_EditorClassIdentifier: 
   TextErea: "\u7D42\u4E86"
+  isTextPause: 1
 --- !u!114 &-6968871426851228910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_Name: NarrationAsset
   m_EditorClassIdentifier: 
   TextErea: "\u6226\u95D8"
+  isTextPause: 1
 --- !u!114 &5942973228738948546
 MonoBehaviour:
   m_ObjectHideFlags: 1

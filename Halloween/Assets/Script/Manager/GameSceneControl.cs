@@ -14,13 +14,13 @@ public class GameSceneControl : Singleton<GameSceneControl>
     //[SerializeField] Fade fade;
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Fade") == null) return;
+        var fade = GameObject.FindGameObjectWithTag("Fade");
+        if (fade == null) return;
 
 
 
         //プレイヤー座標を受け取る？
-
-        GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScene>().FadeOut(1f);
+        fade.GetComponent<FadeScene>().FadeOut(1f);
         //タイムラインの最後？　シグナル？
         //GManager.I.FadeOut();
 

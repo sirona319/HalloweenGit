@@ -645,7 +645,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hp: 2
+  hp: 1
 --- !u!114 &1955295828361177465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +660,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poolType: 1
   bulletSpeed: 5
-  bulletObj: {fileID: 1210582036955340074, guid: 5ffe053c01a5ecb43a768631712d492c, type: 3}
   poolCtr: {fileID: 8891363794273283409}
 --- !u!114 &8891363794273283409
 MonoBehaviour:
@@ -767,6 +766,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 960162021970225536}
   intervalTimeMax: 1
+  pNormal: {fileID: 1210582036955340074, guid: 5ffe053c01a5ecb43a768631712d492c, type: 3}
+  pStraight: {fileID: 1210582036955340074, guid: c9c9713d2491fd94d96621864e9707c1, type: 3}
 --- !u!114 &2585773837475990111
 MonoBehaviour:
   m_ObjectHideFlags: 0

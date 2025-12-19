@@ -27,8 +27,8 @@ public class Item : MonoBehaviour
 
             //collision.transform.GetComponent<PlayerHp>().HealLife(1);
         ItemManager.I.GetItemEffect(type, collision.transform);
-        const float volume = 0.3f;
-        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), volume, ItemManager.I.gameObject);
+        //const float volume = 0.3f;
+        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, ItemManager.I.gameObject);
         this.gameObject.SetActive(false);
         // }
 

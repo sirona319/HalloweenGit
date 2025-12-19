@@ -65,29 +65,29 @@ public class ActiveMessagePanel : MonoBehaviour
 
 
         //デバッグ用
-        if (Input.GetKey(KeyCode.F))
-        {
-            messageScript.transform.GetChild(0).gameObject.SetActive(true);
+        //if (Input.GetKey(KeyCode.F))
+        //{
+        //    messageScript.transform.GetChild(0).gameObject.SetActive(true);
 
 
-            //allMessage = "今回はRPGでよく使われるメッセージ表示機能を作りたいと思います。\n"
-            //+ "メッセージが表示されるスピードの調節も可能であり、改行にも対応します。\n"
-            //+ "改善の余地がかなりありますが、               最低限の機能は備えていると思われます。\n"
-            //+ "ぜひ活用してみてください。\n<>";
+        //    //allMessage = "今回はRPGでよく使われるメッセージ表示機能を作りたいと思います。\n"
+        //    //+ "メッセージが表示されるスピードの調節も可能であり、改行にも対応します。\n"
+        //    //+ "改善の余地がかなりありますが、               最低限の機能は備えていると思われます。\n"
+        //    //+ "ぜひ活用してみてください。\n<>";
 
-            message = "翡翠";
+        //    message = "翡翠";
 
-            messageScript.SetMessagePanel(message);
-        }
+        //    messageScript.SetMessagePanel(message);
+        //}
 
-        //デバッグ用
+        ////デバッグ用
 
-        if (Input.GetKey(KeyCode.M))
-        {
-            messageScript.SetEndMessage();
-            //bool isSelf = transform.GetChild(0).gameObject.activeInHierarchy;
-            //transform.GetChild(0).gameObject.SetActive(!isSelf);
-        }
+        //if (Input.GetKey(KeyCode.M))
+        //{
+        //    messageScript.SetEndMessage();
+        //    //bool isSelf = transform.GetChild(0).gameObject.activeInHierarchy;
+        //    //transform.GetChild(0).gameObject.SetActive(!isSelf);
+        //}
            
     }
 

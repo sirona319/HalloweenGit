@@ -1666,7 +1666,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 5942973228738948546, guid: 49b54173642ac8243adfefc95dd61f98, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 5715856480904003479}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &6764450087344955678
@@ -1704,18 +1704,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: PumpkinBossScr, Assembly-CSharp
           m_MethodName: SignalBattleState
           m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-          m_MethodName: MoveActive
-          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3619,7 +3607,6 @@ MonoBehaviour:
   timelineTexts:
   - {fileID: 6764450087344955678}
   - {fileID: 7838841253592970319}
-  eDamage: {fileID: 0}
 --- !u!114 &6120767337405579985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6819,6 +6806,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547341839214659955}
+  - component: {fileID: 9074683018797064543}
+  - component: {fileID: 5715856480904003479}
   m_Layer: 0
   m_Name: PUMPKINTEXTS
   m_TagString: Untagged
@@ -6843,6 +6832,63 @@ Transform:
   - {fileID: 6347955082036492657}
   m_Father: {fileID: 3131270128831018513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9074683018797064543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461301095410330191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564be8395e976f9439e6252a7a24916f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5715856480904003479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461301095410330191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: a39a39a49f7fb0940a00eb7475537f57, type: 2}
+    - {fileID: 11400000, guid: 32c2cfd881366464da4b10168c6d79b1, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9074683018797064543}
+          m_TargetAssemblyTypeName: MessageEvent, Assembly-CSharp
+          m_MethodName: MessageStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9074683018797064543}
+          m_TargetAssemblyTypeName: MessageEvent, Assembly-CSharp
+          m_MethodName: MessageEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4555302539008635893
 GameObject:
   m_ObjectHideFlags: 0
@@ -9783,7 +9829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6347955082036492657
 Transform:
   m_ObjectHideFlags: 0
@@ -9819,7 +9865,7 @@ PlayableDirector:
   - key: {fileID: 5942973228738948546, guid: 49b54173642ac8243adfefc95dd61f98, type: 2}
     value: {fileID: 0}
   - key: {fileID: 5942973228738948546, guid: 1dddc26754723634685aabeaf7ce2a36, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 5715856480904003479}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &7838841253592970319

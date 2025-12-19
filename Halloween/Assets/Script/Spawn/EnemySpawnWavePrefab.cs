@@ -112,6 +112,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
         {
             //敵全部を破棄　生成
             EnemyM.EnemyClearAll();
+            //EnemyManager.I.EnemyClearAll();
             Spawn(0);
             return;
         }

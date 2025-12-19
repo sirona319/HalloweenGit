@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using TMPro;
+using DG.Tweening;
 
 //https://gametukurikata.com/program/rpgmessage　参考サイト
 
@@ -192,8 +193,9 @@ public class Message : MonoBehaviour
     }
 
 
-    //#region　アニメーションイベント
-
+    #region　アニメーションイベント
+    
+    //const float fadeSpeed = 1;
     //public void MessageEnd()
     //{
     //    //this.messageText.enabled = false;
@@ -210,7 +212,7 @@ public class Message : MonoBehaviour
 
     //    //プレイヤーの移動制限解除
     //    var p = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerMove>();
-    //    p.isLimitMove = false;
+    //    //p.isLimitMove = false;
     //    p.moveSpeed = p.maxMoveSpeed;
 
     //}
@@ -232,7 +234,7 @@ public class Message : MonoBehaviour
 
     //}
 
-    //#endregion
+    #endregion
 
 
 }

@@ -39,7 +39,7 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     public TimelineControl[] timelineTexts;
     int timelineNo = 0;
 
-    public EnemyDamage eDamage;
+    //public EnemyDamage eDamage;
 
     //public bool isDEBUG=true;
     public void TextReadPlus()
