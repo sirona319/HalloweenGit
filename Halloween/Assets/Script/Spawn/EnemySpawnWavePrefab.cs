@@ -108,6 +108,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     public void DeadCheck()
     {
+        //敵を倒して死んだらバグ　ステージ1
         if(saveGo.CompareTag(TagName.EnemyBoss))
         {
             //敵全部を破棄　生成

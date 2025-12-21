@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//ターゲットが近くに来たら撃つ
 public class EreaLimitBullet : MonoBehaviour
 {
     [SerializeField] float debuglen = 0;

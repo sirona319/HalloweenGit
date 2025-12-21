@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: -6010305915658794038}
   - component: {fileID: -8845671504171273348}
   - component: {fileID: 6317350796830080718}
+  - component: {fileID: -8367719649382406161}
   m_Layer: 12
-  m_Name: "Up\u30CA\u30A4\u30D5\u5358\u4F53500_0"
+  m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +32,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210582036955340074}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.079992, y: -2.1732593, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -257,3 +258,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.72, y: 0.97}
   m_EdgeRadius: 0
+--- !u!114 &-8367719649382406161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210582036955340074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dee5b437427514c9de0837b758122d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadTime: 2

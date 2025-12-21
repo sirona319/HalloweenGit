@@ -1137,17 +1137,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4182799421910361247, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 6881125046265089057, guid: 6c9535f5c7d38d945bb510f19bf0e0fa, type: 3}
+    - target: {fileID: -5768260722233616939, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
+      propertyPath: limitLen
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 948724054876683714, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5069094761338709197, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
       propertyPath: m_Name
       value: BulletBound
-      objectReference: {fileID: 0}
-    - target: {fileID: 5069094761338709197, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5455249324703517864, guid: 9c35599f21b61f846a628d67d65b754a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13086,7 +13086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &364170416
 Rigidbody2D:
   serializedVersion: 5
@@ -40148,11 +40148,11 @@ PrefabInstance:
       objectReference: {fileID: 704293890}
     - target: {fileID: 6746334301348217392, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.64
+      value: 17.4
       objectReference: {fileID: 0}
     - target: {fileID: 6746334301348217392, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.142
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 6746334301348217392, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40184,6 +40184,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6746334301348217392, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195451796793425904, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8413570243603184152, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}

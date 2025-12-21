@@ -47,9 +47,9 @@ public class PlayerMagazine : BaseMagazine
         if (Input.GetKey(KeyCode.G) && intervalTime <= 0)
         {
             intervalTime = intervalTimeMax;
-
+            Debug.Log("直進弾");
             //修正
-            Vector2 direction = transform.position-(transform.position+Vector3.right) ;
+            Vector2 direction = transform.position - (transform.position+Vector3.right) ;
             float pAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//ターゲットへの角度を取得する
 
             createBullet.BulletAtkNotGravity(pAngle, transform.position, transform.rotation,pStraight); //Target渡す
