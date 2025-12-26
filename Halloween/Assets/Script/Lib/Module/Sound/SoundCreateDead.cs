@@ -26,7 +26,7 @@ public class SoundCreateDead : MonoBehaviour
         IsSoundEnable = true;
 
         MyLib.MyPlayOneSound(path, 0.1f, gameObject);
-        StartCoroutine(DestroyFlagFalse());
+        //StartCoroutine(DestroyFlagFalse());
         //var seGo = Instantiate(audioSe, transform.position, Quaternion.identity);
         //seGo.GetComponent<SoundEndDestroy>().StartDestroyFlg();//削除登録
         //return IsSoundEnable;

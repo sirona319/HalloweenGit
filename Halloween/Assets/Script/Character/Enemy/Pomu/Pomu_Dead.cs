@@ -45,7 +45,7 @@ public class Pomu_Dead : StateChildBase
         GetComponent<SpriteRenderer>().enabled = false;
         //gameObject.SetActive(false);
         //Destroy(gameObject, 0);
-
+        //GetComponent<EnemyBase>().isDead = true;
     }
 
     public override void OnExit()

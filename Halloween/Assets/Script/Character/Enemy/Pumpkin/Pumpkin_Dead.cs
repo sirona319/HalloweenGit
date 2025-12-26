@@ -58,7 +58,7 @@ public class Pumpkin_Dead : StateChildBase
         }
 
         GetComponent<SpriteRenderer>().enabled = false;
-
+        //GetComponent<EnemyBase>().isDead = true;
         //gameObject.SetActive(false);
         //Destroy(gameObject, 0);
         //Instantiate(deadParticle, transform.position, Quaternion.identity);

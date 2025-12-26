@@ -41,7 +41,7 @@ public class Fly_Dead : StateChildBase
         }
 
         GetComponent<SpriteRenderer>().enabled = false;
-
+        //GetComponent<EnemyBase>().isDead = true;
         //StartCoroutine(MyLib.DelayCoroutine(DEADTIME, () =>
         //{
         //    //GameObject spawn = GameObject.Find("WaveSpawn");

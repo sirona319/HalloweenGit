@@ -24,4 +24,7 @@ public static class TagName
 	public const string SoundM = "SoundM";
 	public const string SaveM = "SaveM";
 	public const string Spawn = "Spawn";
+	public const string BossPumpkin = "BossPumpkin";
+	public const string EnemyM = "EnemyM";
+	public const string Message = "Message";
 }

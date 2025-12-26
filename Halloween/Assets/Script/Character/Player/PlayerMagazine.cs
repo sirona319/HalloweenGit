@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static BaseBullet;
 using static TargetSet;
 
 public class PlayerMagazine : BaseMagazine
@@ -52,7 +53,14 @@ public class PlayerMagazine : BaseMagazine
             Vector2 direction = transform.position - (transform.position+Vector3.right) ;
             float pAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//ターゲットへの角度を取得する
 
-            createBullet.BulletAtkNotGravity(pAngle, transform.position, transform.rotation,pStraight); //Target渡す
+            var poolShotSt = createBullet.BulletAtk(pAngle, transform.position, transform.rotation,pStraight); //Target渡す
+
+
+            //バレットのタイプを上書き　他のモジュールは入る　消す仕様にする後々？？
+            //createBullet.AddBulletType(poolShotSt.GetComponent<BaseBullet>(), ModuleClassName..ToString());
+            //Force,EndDestroy コンポーネント追加　プール使う用　ステータス設定Force
+
+
 
             MyLib.MyPlayOneSound("Sound/SE/wave/刀を鞘にしまう1", 0.1f, gameObject);
         }

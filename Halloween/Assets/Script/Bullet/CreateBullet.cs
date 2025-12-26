@@ -21,13 +21,13 @@ public class CreateBullet : MonoBehaviour
 
 
     //}
-    enum PoolType
-    {
-        enemy,
-        player,
-    }
+    //enum PoolType
+    //{
+    //    enemy,
+    //    player,
+    //}
 
-    [SerializeField] PoolType poolType;
+    //[SerializeField] PoolType poolType;
 
     [SerializeField] float bulletSpeed = 5f;
 
@@ -117,32 +117,32 @@ public class CreateBullet : MonoBehaviour
         return bullet;
     }
 
-    public GameObject BulletAtkNotGravity(float angle, Vector3 pos, Quaternion rot,GameObject charaBullet)
-    {
-        charaBullet.transform.position = pos;
-        charaBullet.transform.rotation = rot;
-        var bullet = Instantiate(charaBullet);
+    //public GameObject BulletAtkNotGravity(float angle, Vector3 pos, Quaternion rot,GameObject charaBullet)
+    //{
+    //    charaBullet.transform.position = pos;
+    //    charaBullet.transform.rotation = rot;
+    //    var bullet = Instantiate(charaBullet);
 
   
-        //var bullet = poolCtr.GetGameObject(charaBullet, pos, rot);
+    //    //var bullet = poolCtr.GetGameObject(charaBullet, pos, rot);
 
-        //bullet.GetComponent<Rigidbody2D>().gravityScale = 0f;
+    //    //bullet.GetComponent<Rigidbody2D>().gravityScale = 0f;
 
-        if (bullet.GetComponent<NormalBullet>() != null)
-        {
-            var normalBullet = bullet.GetComponent<NormalBullet>();
-            normalBullet.SetSpeed(bulletSpeed);
-            normalBullet.angle = angle;
-            normalBullet.BulletInit();
-        }
+    //    if (bullet.GetComponent<NormalBullet>() != null)
+    //    {
+    //        var normalBullet = bullet.GetComponent<NormalBullet>();
+    //        normalBullet.SetSpeed(bulletSpeed);
+    //        normalBullet.angle = angle;
+    //        normalBullet.BulletInit();
+    //    }
 
-        //var destroyer = bullet.GetComponent<ReleaseDestroyer>();
-        //destroyer.pool = poolCtr;//キャラの種類ごとに分けるために引き渡し
-        //destroyer.IsRelease = false;//二重リリース回避用フラグ
+    //    //var destroyer = bullet.GetComponent<ReleaseDestroyer>();
+    //    //destroyer.pool = poolCtr;//キャラの種類ごとに分けるために引き渡し
+    //    //destroyer.IsRelease = false;//二重リリース回避用フラグ
 
 
-        return bullet;
-    }
+    //    return bullet;
+    //}
 
     void AddSetParamComponent(BulletType bulletType,GameObject bullet)
     {

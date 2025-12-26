@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawnWavePrefab : BaseSpawn
 {
@@ -108,16 +109,19 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     public void DeadCheck()
     {
-        //敵を倒して死んだらバグ　ステージ1
-        if(saveGo.CompareTag(TagName.EnemyBoss))
+        if (SceneManager.GetActiveScene().name.Contains("boss"))
         {
-            //敵全部を破棄　生成
-            EnemyM.EnemyClearAll();
-            //EnemyManager.I.EnemyClearAll();
-            Spawn(0);
-            return;
+            if (saveGo.CompareTag(TagName.EnemyBoss))
+            {
+                //敵全部を破棄　生成
+                EnemyM.EnemyClearAll();
+                //EnemyManager.I.EnemyClearAll();
+                Spawn(0);
+                return;
+            }
         }
 
+        //if(saveGo == null) return;
         if (!saveGo.GetComponent<EnemyBase>().isDead) return;
 
         //破棄と生成
