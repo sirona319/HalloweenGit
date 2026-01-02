@@ -132,6 +132,7 @@ public class FadeScene : MonoBehaviour
         First3,
         First4,
         First5,
+        First6_boss
     }
 
     //bool isSceneChange = true;

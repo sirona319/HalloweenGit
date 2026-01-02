@@ -66,4 +66,9 @@ public class EnemySpawnPrefabRepeat : BaseSpawn
         //notify.spawnTime = notifyTime;
     }
 
+    //public override void DeadTest()
+    //{
+    //    Debug.Log("PPP");
+    //}
+
 }

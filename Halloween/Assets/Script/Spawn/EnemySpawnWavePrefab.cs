@@ -109,17 +109,17 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     public void DeadCheck()
     {
-        if (SceneManager.GetActiveScene().name.Contains("boss"))
-        {
-            if (saveGo.CompareTag(TagName.EnemyBoss))
-            {
-                //敵全部を破棄　生成
-                EnemyM.EnemyClearAll();
-                //EnemyManager.I.EnemyClearAll();
-                Spawn(0);
-                return;
-            }
-        }
+        //if (SceneManager.GetActiveScene().name.Contains("boss"))
+        //{
+        //    if (saveGo.CompareTag(TagName.EnemyBoss))
+        //    {
+        //        //敵全部を破棄　生成
+        //        EnemyM.EnemyClearAll();
+        //        //EnemyManager.I.EnemyClearAll();
+        //        Spawn(0);
+        //        return;
+        //    }
+        //}
 
         //if(saveGo == null) return;
         if (!saveGo.GetComponent<EnemyBase>().isDead) return;
@@ -128,6 +128,17 @@ public class EnemySpawnWavePrefab : BaseSpawn
         Destroy(saveGo);
         Spawn(0);
 
+    }
+
+    public override void DeadTest()
+    {
+        //Debug.Log();
+        //Debug.Log("0");
+        if (!saveGo.GetComponent<EnemyBase>().isDead) return;
+
+        //破棄と生成
+        Destroy(saveGo);
+        Spawn(0);
     }
 
     //public bool DeadCheck()

@@ -8487,6 +8487,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -9811,7 +9812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2783700791523882677, guid: 3300c3c28fe08894e8513d095c25ed66, type: 3}
       propertyPath: SceneName
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10440,6 +10441,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -12045,6 +12047,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -12096,7 +12099,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1105750372999487640, guid: 4b13256806ab26844bfcebe8cecc601b, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e02e0c7cfb2789944bda045594023817, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e02e0c7cfb2789944bda045594023817, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -13020,6 +13023,7 @@ MonoBehaviour:
     movePointsSet:
     - childArray:
       - {fileID: 0}
+  saveGo: {fileID: 0}
 --- !u!1 &1378213124
 GameObject:
   m_ObjectHideFlags: 0
@@ -13515,9 +13519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564be8395e976f9439e6252a7a24916f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBackImage: {fileID: 447441963}
-  readIcon: {fileID: 632522066}
-  messageUI: {fileID: 965457519}
 --- !u!1 &1489847964
 GameObject:
   m_ObjectHideFlags: 0
@@ -24977,6 +24978,7 @@ MonoBehaviour:
     movePointsSet:
     - childArray:
       - {fileID: 0}
+  saveGo: {fileID: 0}
 --- !u!1 &1994836749
 GameObject:
   m_ObjectHideFlags: 0

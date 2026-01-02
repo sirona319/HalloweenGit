@@ -120,9 +120,7 @@ public class PlayerDead : MonoBehaviour
         //敵のリスポーン　破棄して　生成？
         foreach (var obj in GameObject.FindGameObjectsWithTag(TagName.Spawn))
         {
-            var spawn = obj.GetComponent<BaseSpawn>();
-            spawn.GetComponent<EnemySpawnWavePrefab>().DeadCheck();
-
+            obj.GetComponent<BaseSpawn>().DeadTest();
         }
     }
 

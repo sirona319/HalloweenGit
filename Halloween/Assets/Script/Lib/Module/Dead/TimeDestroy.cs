@@ -5,28 +5,24 @@ public class TimeDestroy : MonoBehaviour
 {
     public float deadTime = 1f;
 
+    [SerializeField]bool isStart = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
+    {
+        if(!isStart) return;
+        StartCoroutine(DestroyTimer(deadTime));
+    }
+
+    public void SetTime()
     {
         StartCoroutine(DestroyTimer(deadTime));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //[SerializeField] float DESTIME = 7f;
-
-    //public void StartDestroyTimer(float time)
-    //{
-    //   StartCoroutine(DestroyTimer(time));
-    //}
-
     IEnumerator DestroyTimer(float time)
     {
         yield return new WaitForSeconds(time);
+        Debug.Log("TimeDestroy:" + gameObject.name);
 
         Destroy(gameObject);
     }

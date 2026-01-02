@@ -2,6 +2,7 @@
 using UniRx;
 using UnityEngine;
 
+//地面の衝突判定　設定した時間で破棄（衝突しないとき用）　プレイヤーがSTARTLEN以内に入ったら移動開始 
 public class StraightPointTargetMove : BaseMove
 {
     [SerializeField] protected float speed = 5f;
@@ -88,8 +89,22 @@ public class StraightPointTargetMove : BaseMove
             return isStart;
         }
 
+        //オブジェクトにTimeDestroyコンポーネントが必要
+        GetComponent<TimeDestroy>().SetTime();
         isStart = true;
         return isStart;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag(TagName.Ground))
+        {
+
+            Destroy(gameObject);
+            Debug.Log("地面に衝突して消滅");
+        }
+
     }
 
 }
