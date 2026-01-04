@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Item : MonoBehaviour
 {
     [SerializeField] ItemManager.ItemType type;
 
-    [SerializeField] float seVolume = 0.3f;
+    [SerializeField] float seVolume = 1;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -50,8 +51,10 @@ public class Item : MonoBehaviour
         if (!collision.gameObject.transform.CompareTag(TagName.Player)) return;
 
         ItemManager.I.GetItemEffect(type, collision.transform);
+        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(ItemManager.ItemType.heal), seVolume, gameObject);
+        //this.gameObject.SetActive(false);
 
-        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, gameObject);
-        this.gameObject.SetActive(false);
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }
