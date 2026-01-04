@@ -12,7 +12,7 @@ public class NotifyDead : MonoBehaviour
     private void OnDestroy()
     {
         //オブジェクトが死んだら再生成させる　継承させる？　時間差付ける？
-        spawnObj.GetComponent<EnemySpawnPrefabRepeat>().SpawnWaveTime(0);
+        //spawnObj.GetComponent<EnemySpawnPrefabRepeat>().SpawnWaveTime(0);
     }
 }
 

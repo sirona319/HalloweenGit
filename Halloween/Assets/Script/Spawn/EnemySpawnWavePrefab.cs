@@ -43,7 +43,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
     //{
     //    SpawnWave(idx);
     //}
-    public override void Spawn(int No)
+    public void Spawn(int No)
     {
         GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
 

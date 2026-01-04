@@ -51,7 +51,7 @@ public class Item : MonoBehaviour
 
         ItemManager.I.GetItemEffect(type, collision.transform);
 
-        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, ItemManager.I.gameObject);
+        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, gameObject);
         this.gameObject.SetActive(false);
     }
 }

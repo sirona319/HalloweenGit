@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SaveObject : MonoBehaviour
 {
@@ -24,7 +25,6 @@ public class SaveObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.transform.CompareTag(TagName.Player))
         {
             //敵のリセット
@@ -34,18 +34,17 @@ public class SaveObject : MonoBehaviour
             //const int healVal = 3;
             //other.GetComponent<PlayerScr2D>().PlayerHeal(healVal);
 
-
-
             //パーティクル
             if (savePa != null)
-            savePa.Play();
+                savePa.Play();
 
             //セーブ
             var SaveMgr = GameObject.FindGameObjectWithTag(TagName.SaveM).GetComponent<Save>();
             SaveMgr.PlayerSave(savePos);
 
             const float volume = 0.1f;
-            MyLib.MyPlayOneSound("SE/Item/" + "02_Heal_02", volume, this.gameObject);
+
+            MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(ItemManager.ItemType.heal), volume, gameObject);
 
             const float fadeEndTime = 2f;
             const float sceneChangeEndTime = 2f;//次の遷移が可能になるまで
@@ -54,7 +53,6 @@ public class SaveObject : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScene>().PlayerMoveTarget(movePoint.position, fadeEndTime, sceneChangeEndTime);
             //other.transform.position = movePoint.position;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -68,8 +66,9 @@ public class SaveObject : MonoBehaviour
             //回復
             //const int healVal = 3;
             //other.GetComponent<PlayerScr2D>().PlayerHeal(healVal);
-
-
+            other.transform.GetComponent<PlayerHp>().HealLife(3);
+            const float volume = 0.1f;
+            MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(ItemManager.ItemType.heal), volume, gameObject);
 
             //パーティクル
             if (savePa != null)
