@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class TitleEvent : MonoBehaviour
 {
-   // [SerializeField] private GManager.SceneNameType sceneName;
+   // [SerializeField] private GameMgr.SceneNameType sceneName;
 
     [SerializeField] private TextMeshProUGUI textMeshPro;
 
@@ -61,7 +61,7 @@ public class TitleEvent : MonoBehaviour
        // var enterEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerEnter };
        // //var exitEvent = new EventTrigger.Entry { eventID = EventTriggerType.PointerExit };
 
-       // clickEvent.callback.AddListener((eventData) => { GManager.I.SceneChangeUseSoundTitle(sceneName.ToString()); });
+       // clickEvent.callback.AddListener((eventData) => { GameMgr.I.SceneChangeUseSoundTitle(sceneName.ToString()); });
         //clickEvent.callback.AddListener((eventData) => { TitleControl.I.MoveSelect(); });
         // enterEvent.callback.AddListener((eventData) => { PointerEnter(); });
         // exitEvent.callback.AddListener((eventData) => { PointerExit();});

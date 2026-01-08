@@ -68,7 +68,7 @@ public class Pumpkin_Dead : StateChildBase
         //    //GameObject spawn = GameObject.Find("WaveSpawn");
         //    //spawn.GetComponent<EnemySpawnWave>().UpdateCount();
 
-        //    if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
+        //    if (GameMgr.I.IsSceneName(GameMgr.SceneNameType.GameScene.ToString()))
         //        GameSceneControl.I.UpdateEnemyCount();
 
         //    gameObject.SetActive(false);
@@ -77,7 +77,7 @@ public class Pumpkin_Dead : StateChildBase
         //}));
 
         //クリアチェック　スコア加算　
-        //if (SceneManager.GetActiveScene().name.Contains(GManager.SceneNameType.NormalScene.ToString()))
+        //if (SceneManager.GetActiveScene().name.Contains(GameMgr.SceneNameType.NormalScene.ToString()))
         //{
         //    //GameSceneControl.I.UpdateEnemyCount();
         //}

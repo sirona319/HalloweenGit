@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] ItemManager.ItemType type;
+    [SerializeField] ItemMgr.ItemType type;
 
     [SerializeField] float seVolume = 1;
 
@@ -27,9 +27,9 @@ public class Item : MonoBehaviour
 
 
             //collision.transform.GetComponent<PlayerHp>().HealLife(1);
-        ItemManager.I.GetItemEffect(type, collision.transform);
+        ItemMgr.I.GetItemEffect(type, collision.transform);
         //const float volume = 0.3f;
-        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, ItemManager.I.gameObject);
+        MyLib.MyPlayOneSound(ItemMgr.I.GetItemSe(type), seVolume, ItemMgr.I.gameObject);
         this.gameObject.SetActive(false);
         // }
 
@@ -39,9 +39,9 @@ public class Item : MonoBehaviour
     {
         if (!collision.gameObject.transform.CompareTag(TagName.Player))return;
 
-        ItemManager.I.GetItemEffect(type, collision.transform);
+        ItemMgr.I.GetItemEffect(type, collision.transform);
 
-        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(type), seVolume, ItemManager.I.gameObject);
+        MyLib.MyPlayOneSound(ItemMgr.I.GetItemSe(type), seVolume, ItemMgr.I.gameObject);
         this.gameObject.SetActive(false);
 
     }
@@ -50,8 +50,8 @@ public class Item : MonoBehaviour
     {
         if (!collision.gameObject.transform.CompareTag(TagName.Player)) return;
 
-        ItemManager.I.GetItemEffect(type, collision.transform);
-        MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(ItemManager.ItemType.heal), seVolume, gameObject);
+        ItemMgr.I.GetItemEffect(type, collision.transform);
+        MyLib.MyPlayOneSound(ItemMgr.I.GetItemSe(ItemMgr.ItemType.heal), seVolume, gameObject);
         //this.gameObject.SetActive(false);
 
         GetComponent<BoxCollider2D>().enabled = false;

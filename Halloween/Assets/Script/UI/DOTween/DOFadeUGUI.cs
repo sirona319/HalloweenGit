@@ -1,11 +1,6 @@
 ﻿using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static GManager;
-using UnityEngine.SceneManagement;
-using System.Linq;
 
 public class DOFadeUGUI : MonoBehaviour
 {

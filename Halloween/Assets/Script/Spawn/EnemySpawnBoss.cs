@@ -10,12 +10,12 @@ public class EnemySpawnBoss : BaseSpawn
 
     [SerializeField] GameObject saveGo;
 
-    EnemyManager EnemyM;
+    EnemyMgr EnemyM;
 
 
     void Start()
     {
-        EnemyM = GameObject.FindGameObjectWithTag("EnemyM").GetComponent<EnemyManager>();
+        EnemyM = GameObject.FindGameObjectWithTag("EnemyM").GetComponent<EnemyMgr>();
 
         Spawn(0);
     }
@@ -49,7 +49,7 @@ public class EnemySpawnBoss : BaseSpawn
         MyLib.DebugInfo(gameObject);
         //敵全部を破棄　生成
         EnemyM.EnemyClearAll();
-        //EnemyManager.I.EnemyClearAll();
+        //EnemyMgr.I.EnemyClearAll();
         Spawn(0);
 
     }

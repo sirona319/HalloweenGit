@@ -180,17 +180,17 @@ public class PlayerHp : MonoBehaviour,IDamage
 
         //        //エクストラモードの場合ランキング表示
         //        //クリアチェック　スコア加算　エクストラシーン
-        //        if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
+        //        if (GameMgr.I.IsSceneName(GameMgr.SceneNameType.GameScene.ToString()))
         //        {
         //            //クリア失敗なのでfalse
         //            //  ExtraControl.I.ShowRanking(false);
-        //            GManager.I.SceneChangeTimerSet(GManager.SceneNameType.TitleScene.ToString());
+        //            GameMgr.I.SceneChangeTimerSet(GameMgr.SceneNameType.TitleScene.ToString());
 
         //        }
         //        else
         //        {
         //            //タイトルシーン遷移
-        //            GManager.I.SceneChangeTimerSet(GManager.SceneNameType.TitleScene.ToString());
+        //            GameMgr.I.SceneChangeTimerSet(GameMgr.SceneNameType.TitleScene.ToString());
         //        }
 
         //    }

@@ -82,7 +82,7 @@ public class ObjectSpawn : MonoBehaviour
         await UniTask.WaitForSeconds(seconds);
 
         //オブジェクトマネージャーに変更する？
-        //var eData = EnemyManager.I.GetEnemyData(loadState.ToString());
+        //var eData = EnemyMgr.I.GetEnemyData(loadState.ToString());
 
         Instantiate(loadObj, spawnPos, transform.rotation);
 

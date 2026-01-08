@@ -31,7 +31,7 @@ public class Save : Singleton<Save>
 
     //public void ItemLoad()
     //{
-    //    //var names = ItemManager.I.GetAllNames();
+    //    //var names = ItemMgr.I.GetAllNames();
 
     //    playerItemNum=PlayerPrefs.GetInt("PLAYEITEMNUM", 0);
 
@@ -43,7 +43,7 @@ public class Save : Singleton<Save>
     //        var name = PlayerPrefs.GetString("PHMKey" + i.ToString(), "None");
     //        if (name != "None")
     //        {
-    //            ItemManager.I.SetUseItem(ItemManager.ItemType.stockHeal);
+    //            ItemMgr.I.SetUseItem(ItemMgr.ItemType.stockHeal);
     //            //names[i]= name;
     //            continue;
     //        }
@@ -51,21 +51,21 @@ public class Save : Singleton<Save>
     //        name = PlayerPrefs.GetString("PAMKey" + i.ToString(), "None");
     //        if (name != "None")
     //        {
-    //            ItemManager.I.SetUseItem(ItemManager.ItemType.stockAttack);
+    //            ItemMgr.I.SetUseItem(ItemMgr.ItemType.stockAttack);
     //            //names[i] = name;
     //            continue;
     //        }
     //        name = PlayerPrefs.GetString("PDMKey" + i.ToString(), "None");
     //        if (name != "None")
     //        {
-    //            ItemManager.I.SetUseItem(ItemManager.ItemType.stockDefence);
+    //            ItemMgr.I.SetUseItem(ItemMgr.ItemType.stockDefence);
     //            //names[i] = name;
     //            continue;
     //        }
     //        name = PlayerPrefs.GetString("PSMKey" + i.ToString(), "None");
     //        if (name != "None")
     //        {
-    //            ItemManager.I.SetUseItem(ItemManager.ItemType.stockSpeed);
+    //            ItemMgr.I.SetUseItem(ItemMgr.ItemType.stockSpeed);
     //            //names[i] = name;
     //            continue;
     //        }
@@ -76,7 +76,7 @@ public class Save : Singleton<Save>
     //void ItemSave()
     //{
     //    playerItemNum = 0;
-    //    var names = ItemManager.I.GetAllNames();
+    //    var names = ItemMgr.I.GetAllNames();
     //    foreach (var name in names)
     //    {
     //       if (name == "PHM")

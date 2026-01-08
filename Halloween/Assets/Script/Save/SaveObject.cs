@@ -1,8 +1,11 @@
 ﻿using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Rendering;
+using static ItemMgr;
 
 public class SaveObject : MonoBehaviour
 {
@@ -44,7 +47,7 @@ public class SaveObject : MonoBehaviour
 
             const float volume = 0.1f;
 
-            MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(ItemManager.ItemType.heal), volume, gameObject);
+            MyLib.MyPlayOneSound(ItemMgr.I.GetItemSe(ItemMgr.ItemType.heal), volume, gameObject);
 
             const float fadeEndTime = 2f;
             const float sceneChangeEndTime = 2f;//次の遷移が可能になるまで
@@ -60,27 +63,23 @@ public class SaveObject : MonoBehaviour
 
         if (other.transform.CompareTag(TagName.Player))
         {
-            //敵のリセット
-            //SpawnManager.I.ResetSpawns();
-
             //回復
-            //const int healVal = 3;
-            //other.GetComponent<PlayerScr2D>().PlayerHeal(healVal);
-            other.transform.GetComponent<PlayerHp>().HealLife(3);
+            const int healVal = 3;
+            other.transform.GetComponent<PlayerHp>().HealLife(healVal);
             const float volume = 0.1f;
-            MyLib.MyPlayOneSound(ItemManager.I.GetItemSe(ItemManager.ItemType.heal), volume, gameObject);
+            var itemMgr = GameObject.FindGameObjectWithTag("ItemMgr").GetComponent<ItemMgr>();
+            MyLib.MyPlayOneSound(
+                itemMgr.GetItemSe((ItemType)Enum.ToObject(typeof(ItemType), ItemType.heal)),
+                volume, 
+                gameObject);
 
             //パーティクル
-            if (savePa != null)
-                savePa.Play();
+            //if (savePa != null)
+            //    savePa.Play();
 
             //セーブ
-
             var SaveMgr = GameObject.FindGameObjectWithTag(TagName.SaveM).GetComponent<Save>();
             SaveMgr.PlayerSave(savePos);
-
-            //const float volume = 0.1f;
-            //MyLib.MyPlayOneSound("SE/Item/" + "02_Heal_02", volume, this.gameObject);
 
             const float fadeEndTime = 2f;
             const float sceneChangeEndTime = 2f;//次の遷移が可能になるまで

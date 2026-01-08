@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerDead : MonoBehaviour
 {
+    [SerializeField] Transform DeadSprite;
+
     //移動させる画像
     [SerializeField] Image eyeImageUp;
     [SerializeField] Image eyeImageDown;
@@ -18,8 +20,8 @@ public class PlayerDead : MonoBehaviour
     [SerializeField] Image closeEyeImageDown0;
     [SerializeField] TextMeshProUGUI reviveText;
 
-    [SerializeField] Transform deadImages;
     [SerializeField] Transform EyeObj;
+
 
     const string eyeNameUp0 = "up0";
     const string eyeNameDown0 = "down0";
@@ -41,17 +43,17 @@ public class PlayerDead : MonoBehaviour
         eyeImageDown = EyeObj.Find(eyeNameDownReal).GetComponent<Image>();
 
 
-        closeEyeImageUp0 = deadImages.Find(eyeNameUp0).GetComponent<Image>();
-        closeEyeImageDown0 = deadImages.Find(eyeNameDown0).GetComponent<Image>();
-        closeEyeImageUp1 = deadImages.Find(eyeNameUp1).GetComponent<Image>();
-        closeEyeImageDown1 = deadImages.Find(eyeNameDown1).GetComponent<Image>();
-        closeEyeImageUp2 = deadImages.Find(eyeNameUp2).GetComponent<Image>();
-        closeEyeImageDown2 = deadImages.Find(eyeNameDown2).GetComponent<Image>();
+        closeEyeImageUp0 = DeadSprite.Find(eyeNameUp0).GetComponent<Image>();
+        closeEyeImageDown0 = DeadSprite.Find(eyeNameDown0).GetComponent<Image>();
+        closeEyeImageUp1 = DeadSprite.Find(eyeNameUp1).GetComponent<Image>();
+        closeEyeImageDown1 = DeadSprite.Find(eyeNameDown1).GetComponent<Image>();
+        closeEyeImageUp2 = DeadSprite.Find(eyeNameUp2).GetComponent<Image>();
+        closeEyeImageDown2 = DeadSprite.Find(eyeNameDown2).GetComponent<Image>();
 
         reviveText = EyeObj.Find(eyeNameDownRealText).GetComponent<TextMeshProUGUI>();
 
         EyeObj.gameObject.SetActive(false);
-        //deadImages.gameObject.SetActive(false);
+        //DeadSprite.gameObject.SetActive(false);
 
     }
 
@@ -59,7 +61,7 @@ public class PlayerDead : MonoBehaviour
     public void CloseEye1()
     {
         EyeObj.gameObject.SetActive(true);
-        deadImages.gameObject.SetActive(true);
+        DeadSprite.gameObject.SetActive(true);
         eyeImageUp.transform.DOMove(closeEyeImageUp1.transform.position, 1f);
         eyeImageDown.transform.DOMove(closeEyeImageDown1.transform.position, 1f);
     }

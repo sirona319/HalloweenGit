@@ -11,11 +11,21 @@ public class CameraControl : MonoBehaviour
     Vector3 eventTargetPos = Vector3.zero;
     float cameraDuration = 1f;
 
-    [SerializeField] Transform cameraTarget;
+    [SerializeField] Transform cameraTarget; // Z -10
     [SerializeField] float cameraSpd = 0.08f;
     //[SerializeField] float cameraSize = 5f;
     void Start()
     {
+        if (cameraTarget == null)
+        {
+            cameraTarget= GameObject.FindGameObjectWithTag(TagName.Player).transform.Find("CameraTarget").transform;
+            //var pos = transform.position;
+            //pos.z = -10f;
+            //transform.position = pos;
+            return;
+        }
+
+
         var t = transform.position;
         t.x = cameraTarget.position.x;
         t.y = cameraTarget.position.y;
@@ -26,7 +36,7 @@ public class CameraControl : MonoBehaviour
     }
 
     void Update()
-    { 
+    {
         CameraEventUpdate();
     }
 

@@ -18,6 +18,11 @@ public class ManagerSceneAutoLoader
         {
             SceneManager.LoadScene(managerSceneName, LoadSceneMode.Additive);
         }
+
+        //if (!SceneManager.GetSceneByName(managerSceneName).IsValid())
+        //{
+        //    SceneManager.LoadScene(managerSceneName, LoadSceneMode.Additive);
+        //}
     }
 
 }

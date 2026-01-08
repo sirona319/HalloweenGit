@@ -48,7 +48,7 @@ public class EnemySpawnPrefabRepeat : BaseSpawn
     //public override void Spawn(int No = 0)
     //{
 
-    //    //if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
+    //    //if (GameMgr.I.IsSceneName(GameMgr.SceneNameType.GameScene.ToString()))
     //    GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
 
     //    //1回目以降

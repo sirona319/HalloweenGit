@@ -21,6 +21,7 @@ TagManager:
   - BossPumpkin
   - EnemyM
   - Message
+  - ItemMgr
   layers:
   - Default
   - TransparentFX

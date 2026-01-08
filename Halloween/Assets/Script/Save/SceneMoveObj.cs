@@ -56,14 +56,14 @@ public class SceneMoveObj : MonoBehaviour
 
 
             Save.I.isLoad = true;
-            //GManager.I.SceneChangeTimerSet(PlayerPrefs.GetString("SCENENAME"), 0.3f);
+            //GameMgr.I.SceneChangeTimerSet(PlayerPrefs.GetString("SCENENAME"), 0.3f);
 
             //const float volume = 0.1f;
             //MyLib.MyPlayOneSound("SE/Item/" + "02_Heal_02", volume, this.gameObject);
 
             //転送位置があるかどうか
             //if (movePoint != null)
-            //    GManager.I.PlayerMoveTarget(movePoint.position);
+            //    GameMgr.I.PlayerMoveTarget(movePoint.position);
             //other.transform.position = movePoint.position;
         }
 

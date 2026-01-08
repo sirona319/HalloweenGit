@@ -31,7 +31,7 @@ public class DoorScene : MonoBehaviour
         var seAudio = GameObject.FindGameObjectWithTag("SoundM").GetComponent<SoundManager>().se.gameObject;
         MyLib.MyPlayOneSound("Sound/SE/wave/決定ボタンを押す12", 1f, seAudio);
 
-        var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GManager>();
+        var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>();
         gMgr.playerPos = playerToPos;
         gMgr.isChangePlayer = true;
         gMgr.playerHp = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerHp>().hp;

@@ -23,11 +23,10 @@ public class PlayerScr2D : MonoBehaviour
         Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
     }
 
-    private void Awake()
-    {
-        //DontDestroyOnLoad(this.gameObject);
-
-    }
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(this.gameObject);
+    //}
 
     private void Start()
     {
@@ -37,7 +36,7 @@ public class PlayerScr2D : MonoBehaviour
         //tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
         mag.MagazineEnter();
 
-        var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GManager>();
+        var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>();
         if (gMgr.isChangePlayer)
         {
             transform.position = gMgr.playerPos;

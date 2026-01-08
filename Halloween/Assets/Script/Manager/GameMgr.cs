@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 //ParticlePackはTextMeshProのマテリアルも入っているため使用　アセット
 
 //[DefaultExecutionOrder(-1)]
-public class GManager : Singleton<GManager>
+public class GameMgr : Singleton<GameMgr>
 {
     //public enum SceneNameType
     //{

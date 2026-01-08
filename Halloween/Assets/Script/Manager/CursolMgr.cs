@@ -1,8 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CursolManager : Singleton<CursolManager>
+public class CursolMgr : Singleton<CursolMgr>
 {
     bool isCursol = false;
     // Start is called before the first frame update

@@ -22,7 +22,7 @@ public class GameSceneControl : Singleton<GameSceneControl>
         //プレイヤー座標を受け取る？
         fade.GetComponent<FadeScene>().FadeOut(1f);
         //タイムラインの最後？　シグナル？
-        //GManager.I.FadeOut();
+        //GameMgr.I.FadeOut();
 
         //var fade = GameObject.Find("FadeCanvas").GetComponent<Fade>();
         //fade.FadeOut(1f);
@@ -78,7 +78,7 @@ public class GameSceneControl : Singleton<GameSceneControl>
 
             //StartCoroutine(SoundManager.I.SoundFadeOffCoroutine(GetComponent<AudioSource>(), 0.00001f));
             
-            //GManager.I.SceneChangeTimerSet(GManager.SceneNameType.Title.ToString());
+            //GameMgr.I.SceneChangeTimerSet(GameMgr.SceneNameType.Title.ToString());
 
 
         }

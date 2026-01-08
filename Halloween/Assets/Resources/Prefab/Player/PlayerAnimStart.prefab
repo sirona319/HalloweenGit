@@ -250,9 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7944acaaef4e5f346bef6fda2b75bdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: 1
   bulletSpeed: 5
-  bulletObj: {fileID: 1210582036955340074, guid: 5ffe053c01a5ecb43a768631712d492c, type: 3}
   poolCtr: {fileID: 8195451796793425904}
 --- !u!114 &8195451796793425904
 MonoBehaviour:
@@ -261,7 +259,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7842647298161675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8c5c57df08da56438535784ff21bc40, type: 3}
   m_Name: 
@@ -312,7 +310,7 @@ MonoBehaviour:
   moveSpeed: 3.6
   isGround:
     value: 1
-  isLimitMove: 1
+  isLimitMove: 0
   skyGravity: 22
   groundGravity: 1
   isJump: 0
@@ -359,6 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4215199592262332079}
   intervalTimeMax: 1
+  pNormal: {fileID: 1210582036955340074, guid: 5ffe053c01a5ecb43a768631712d492c, type: 3}
+  pStraight: {fileID: 1210582036955340074, guid: c9c9713d2491fd94d96621864e9707c1, type: 3}
 --- !u!114 &3636299670302272774
 MonoBehaviour:
   m_ObjectHideFlags: 0

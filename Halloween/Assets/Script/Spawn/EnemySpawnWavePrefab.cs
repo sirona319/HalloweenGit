@@ -13,7 +13,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     [SerializeField] GameObject saveGo;
 
-    EnemyManager EnemyM;
+    EnemyMgr EnemyM;
     //int CountIndex = 0;
 
     //public void UpdateCount()
@@ -33,7 +33,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     void Start()
     {
-        EnemyM = GameObject.FindGameObjectWithTag("EnemyM").GetComponent<EnemyManager>();
+        EnemyM = GameObject.FindGameObjectWithTag("EnemyM").GetComponent<EnemyMgr>();
 
 
         Spawn(0);
@@ -60,7 +60,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
     void SpawnWave(int No)
     {
 
-        //if (GManager.I.IsSceneName(GManager.SceneNameType.GameScene.ToString()))
+        //if (GameMgr.I.IsSceneName(GameMgr.SceneNameType.GameScene.ToString()))
             GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
 
         //1回目以降
@@ -115,7 +115,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
         //    {
         //        //敵全部を破棄　生成
         //        EnemyM.EnemyClearAll();
-        //        //EnemyManager.I.EnemyClearAll();
+        //        //EnemyMgr.I.EnemyClearAll();
         //        Spawn(0);
         //        return;
         //    }

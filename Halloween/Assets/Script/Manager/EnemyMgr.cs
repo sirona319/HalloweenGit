@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyManager : Singleton<EnemyManager>
+public class EnemyMgr : Singleton<EnemyMgr>
 {
     private void Awake()
     {

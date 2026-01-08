@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ItemManager : Singleton<ItemManager>
+public class ItemMgr : Singleton<ItemMgr>
 {
     public enum ItemType
     {
@@ -20,9 +20,17 @@ public class ItemManager : Singleton<ItemManager>
         //swordI,
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+
+    }
+
     //public ItemType type;
 
     [SerializeField] string itemHealSE= "Sound/SE/Item/02_Heal_02";
+
+    public ItemType item;
 
     public string GetItemSe(ItemType t)
     {
