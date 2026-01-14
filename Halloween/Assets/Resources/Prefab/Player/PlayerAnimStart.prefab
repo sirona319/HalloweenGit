@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 7853432632523623585}
   - component: {fileID: 6397515494999113425}
   - component: {fileID: 8644580384566398804}
+  - component: {fileID: 5845170910668126526}
   - component: {fileID: 1361300882733528907}
   - component: {fileID: 8195451796793425904}
-  - component: {fileID: 5845170910668126526}
   - component: {fileID: 8413570243603184152}
   - component: {fileID: 2180555613249007929}
   - component: {fileID: 1734828523394376505}
@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 4893158698966266951}
   - component: {fileID: 7409670274437917338}
   - component: {fileID: 4490123541053036819}
+  - component: {fileID: 1753270396091876719}
   m_Layer: 6
   m_Name: PlayerAnimStart
   m_TagString: Player
@@ -229,15 +230,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DEBUGDMG: 1
-  pScr: {fileID: 6397515494999113425}
   MAXHP: 3
-  damageTimeMax: 1
-  damageTime: 0
-  lifeImage:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  hp: 2
+  hp: 3
+--- !u!114 &5845170910668126526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7842647298161675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b765f7e9746ff7f4e8eab5d4ea02ff79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1361300882733528907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,29 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c5c57df08da56438535784ff21bc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5845170910668126526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7842647298161675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b765f7e9746ff7f4e8eab5d4ea02ff79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eyeImageUp: {fileID: 0}
-  eyeImageDown: {fileID: 0}
-  closeEyeImageUp1: {fileID: 0}
-  closeEyeImageDown1: {fileID: 0}
-  closeEyeImageUp2: {fileID: 0}
-  closeEyeImageDown2: {fileID: 0}
-  closeEyeImageUp0: {fileID: 0}
-  closeEyeImageDown0: {fileID: 0}
-  reviveText: {fileID: 0}
-  deadImages: {fileID: 0}
-  EyeObj: {fileID: 0}
 --- !u!114 &8413570243603184152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +487,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1753270396091876719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7842647298161675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d67fad8afb216b4bba2035a2d110d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pScr: {fileID: 6397515494999113425}
+  damageTimeMax: 1
+  damageTime: 0
 --- !u!1 &1211736669972492098
 GameObject:
   m_ObjectHideFlags: 0

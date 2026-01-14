@@ -60,9 +60,9 @@ public class PlayerMove : MonoBehaviour
     //    m_animator.SetBool("dead", true);
     //}
 
-    public bool isNoise = false;
-
     [SerializeField]PlayerGroundCollider pGroundCol;
+
+    public bool isNoise = false;
 
     void DebugSetPosition()
     {

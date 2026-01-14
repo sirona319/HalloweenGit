@@ -19,7 +19,7 @@ public class FallCol : MonoBehaviour
         if (other.CompareTag(TagName.Player))
         {
             //モーションをさせないダメージ
-            other.GetComponent<PlayerHp>().AbsDamage(1);
+            other.GetComponent<PlayerDamage>().AbsDamage(1);
             other.transform.position = transform.GetChild(0).position;
         }
 

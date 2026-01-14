@@ -44,7 +44,7 @@ public class EnemySpawnBoss : BaseSpawn
 
     }
 
-    public override void DeadTest()
+    public override void DeadNotice()
     {
         MyLib.DebugInfo(gameObject);
         //敵全部を破棄　生成

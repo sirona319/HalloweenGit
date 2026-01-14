@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
+//プレイヤーはシーン遷移ごとに消去されて再生成される
 //[RequireComponent(typeof(コンポーネント名))]
 [DisallowMultipleComponent]
 public class PlayerScr2D : MonoBehaviour
@@ -30,6 +31,8 @@ public class PlayerScr2D : MonoBehaviour
 
     private void Start()
     {
+        Camera.main.GetComponent<CameraControl>().cameraTarget = this.transform.Find("CameraTarget").transform;
+
         m_animator = GetComponent<Animator>();
 
         mag = GetComponent<PlayerMagazine>();
@@ -39,7 +42,7 @@ public class PlayerScr2D : MonoBehaviour
         var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>();
         if (gMgr.isChangePlayer)
         {
-            transform.position = gMgr.playerPos;
+            //transform.position = gMgr.playerPos;
 
             var pHp = GetComponent<PlayerHp>();
             pHp.hp = gMgr.playerHp;

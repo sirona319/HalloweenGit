@@ -22,6 +22,7 @@ TagManager:
   - EnemyM
   - Message
   - ItemMgr
+  - PlayerUI
   layers:
   - Default
   - TransparentFX

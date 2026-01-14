@@ -11,7 +11,7 @@ public class CameraControl : MonoBehaviour
     Vector3 eventTargetPos = Vector3.zero;
     float cameraDuration = 1f;
 
-    [SerializeField] Transform cameraTarget; // Z -10
+    public Transform cameraTarget; // Z -10
     [SerializeField] float cameraSpd = 0.08f;
     //[SerializeField] float cameraSize = 5f;
     void Start()

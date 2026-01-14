@@ -130,7 +130,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
 
     }
 
-    public override void DeadTest()
+    public override void DeadNotice()
     {
         //Debug.Log();
         //Debug.Log("0");
