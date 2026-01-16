@@ -120,7 +120,7 @@ Animator:
   m_GameObject: {fileID: 7842647298161675}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e38d2033d12dcc1498f87bdc94001d39, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9c0ca508b1938cc4087269bb48fe3c42, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -300,8 +300,8 @@ MonoBehaviour:
   jumpHeight: 2
   dashLen: 10
   dashStopTime: 0.3
-  isNoise: 0
   pGroundCol: {fileID: 6847530850885655526}
+  isNoise: 0
 --- !u!114 &2180555613249007929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,7 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d67fad8afb216b4bba2035a2d110d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pScr: {fileID: 6397515494999113425}
   damageTimeMax: 1
   damageTime: 0
 --- !u!1 &1211736669972492098

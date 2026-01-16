@@ -9,22 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/ManagerScene.unity
     guid: cf3da76da9204054ea02eb94f150f5ac
   - enabled: 1
-    path: Assets/Scenes/FirstErea/First.unity
-    guid: e18efb97afce18a49b857848834dd179
+    path: Assets/Scenes/FirstErea/Stage1_1.unity
+    guid: 408e644aeb39bcb41a430401fa8558ae
   - enabled: 1
-    path: Assets/Scenes/FirstErea/First2.unity
+    path: Assets/Scenes/FirstErea/Stage1_2.unity
     guid: df4b72e6deb6bc04ab6c012e5476b292
   - enabled: 1
-    path: Assets/Scenes/FirstErea/First3.unity
+    path: Assets/Scenes/FirstErea/Stage1_3.unity
     guid: bf8c9bee2295fb840af1c63fc348f12f
   - enabled: 1
-    path: Assets/Scenes/FirstErea/First4.unity
+    path: Assets/Scenes/FirstErea/Stage1_4.unity
     guid: c76a5f789edcb4047a8d550979e1435a
   - enabled: 1
-    path: Assets/Scenes/FirstErea/First5.unity
+    path: Assets/Scenes/FirstErea/Stage1_5.unity
     guid: 3678af4148edfc24da170d8277e5d960
   - enabled: 1
-    path: Assets/Scenes/FirstErea/First6_boss.unity
+    path: Assets/Scenes/FirstErea/Stage1_6.unity
     guid: 6dbc0accb6b6e2b46b5cdb48a5d7a010
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b2cae2fba5e92654d9a5710ed946f5f2, type: 2}

@@ -23,14 +23,11 @@ public class ItemMgr : Singleton<ItemMgr>
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-
     }
 
-    //public ItemType type;
+    public ItemType type;
 
     [SerializeField] string itemHealSE= "Sound/SE/Item/02_Heal_02";
-
-    public ItemType item;
 
     public string GetItemSe(ItemType t)
     {

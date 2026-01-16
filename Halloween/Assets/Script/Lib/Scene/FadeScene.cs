@@ -126,13 +126,13 @@ public class FadeScene : MonoBehaviour
     {
         //TitleScene,
         //GameScene,
-        First,//turorial?
+        Stage1_1, // tutorial?
 
-        First2,
-        First3,
-        First4,
-        First5,
-        First6_boss
+        Stage1_2,
+        Stage1_3,
+        Stage1_4,
+        Stage1_5,
+        Stage1_6
     }
 
     //bool isSceneChange = true;
