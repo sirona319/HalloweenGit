@@ -8,6 +8,30 @@ public class EnemyMgr : Singleton<EnemyMgr>
 
     }
 
+    [SerializeField] int enemyAllCount;
+
+
+    //[SerializeField] GameObject startEvent;
+    public void CountUp(int count)
+    {
+        enemyAllCount += count;
+    }
+
+    public void UpdateEnemyCount()
+    {
+        enemyAllCount--;
+        if (enemyAllCount <= 0)
+        {
+            //GameObject.Find("CLEARTEXT").GetComponent<DOFade>().ShowWindow();
+
+            //StartCoroutine(SoundManager.I.SoundFadeOffCoroutine(GetComponent<AudioSource>(), 0.00001f));
+
+            //GameMgr.I.SceneChangeTimerSet(GameMgr.SceneNameType.Title.ToString());
+
+
+        }
+    }
+
     // Update is called once per frame
     //void Update()
     //{

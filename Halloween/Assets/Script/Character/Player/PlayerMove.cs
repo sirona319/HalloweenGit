@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    #region デバッグ
-    [SerializeField, HeaderAttribute("DEBUG")]
-    float debugmoveX = 0;
+    //#region デバッグ
+    //[SerializeField, HeaderAttribute("DEBUG")]
+    //float debugmoveX = 0;
 
-    [SerializeField] Transform startT;
-    public bool isStartPos= false;
+    //[SerializeField] Transform startT;
+    //public bool isStartPos= false;
 
-    [SerializeField] Transform bossT;
-    public bool isBossPos = false;
-    #endregion
+    //[SerializeField] Transform bossT;
+    //public bool isBossPos = false;
+    //#endregion
 
 
     #region 移動
@@ -64,18 +64,18 @@ public class PlayerMove : MonoBehaviour
 
     public bool isNoise = false;
 
-    void DebugSetPosition()
-    {
-        if (isStartPos)
-            this.transform.position = startT.position;
+    //void DebugSetPosition()
+    //{
+    //    if (isStartPos)
+    //        this.transform.position = startT.position;
 
-        if (isBossPos)
-            this.transform.position = bossT.position;
-    }
+    //    if (isBossPos)
+    //        this.transform.position = bossT.position;
+    //}
     void Start()
     {
         //デバッグ用　座標
-        DebugSetPosition();
+        //DebugSetPosition();
 
         //m_animator.SetBool("isStart", true);
         //moveSpeed = maxMoveSpeed;
@@ -158,7 +158,7 @@ public class PlayerMove : MonoBehaviour
     void MoveControl()
     {
         //テスト用
-        debugmoveX = Input.GetAxis("Horizontal");
+        //debugmoveX = Input.GetAxis("Horizontal");
         // 入力の取得
         m_movement.x = Input.GetAxis("Horizontal");
         m_movement.y = 0f;//Input.GetAxis("Vertical");

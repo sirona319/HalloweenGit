@@ -45,7 +45,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
     //}
     public void Spawn(int No)
     {
-        GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
+        EnemyM.CountUp(spawnData[No].LoadState.Length);
 
         StartCoroutine(DelaySpawnWave(
             spawnData[No].spawnTime[spawnData[No].enemyCount], /** spawnData[No].enemyCount + 1*///float型　生成時間
@@ -61,7 +61,7 @@ public class EnemySpawnWavePrefab : BaseSpawn
     {
 
         //if (GameMgr.I.IsSceneName(GameMgr.SceneNameType.GameScene.ToString()))
-            GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
+        EnemyM.CountUp(spawnData[No].LoadState.Length);
 
         //1回目以降
         while (true)

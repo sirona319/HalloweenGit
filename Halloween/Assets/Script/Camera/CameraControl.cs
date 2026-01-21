@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour
     {
         if (cameraTarget == null)
         {
-            cameraTarget= GameObject.FindGameObjectWithTag(TagName.Player).transform.Find("CameraTarget").transform;
+            //cameraTarget= GameObject.FindGameObjectWithTag(TagName.Player).transform.Find("CameraTarget").transform;
             //var pos = transform.position;
             //pos.z = -10f;
             //transform.position = pos;
@@ -86,7 +86,6 @@ public class CameraControl : MonoBehaviour
     {
         isEventCamera = false;
     }
-
 
     public void ChangePlayerPos()
     {

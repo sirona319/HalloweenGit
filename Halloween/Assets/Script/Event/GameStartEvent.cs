@@ -13,7 +13,7 @@ public class GameStartEvent : MonoBehaviour, IHaveText
 
     void Awake()
     {
-        player.GetComponent<PlayerMove>().isStartPos = true;
+        //player.GetComponent<PlayerMove>().isStartPos = true;
 
     }
     void Start()

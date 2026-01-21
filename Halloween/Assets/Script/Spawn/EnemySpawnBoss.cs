@@ -23,7 +23,7 @@ public class EnemySpawnBoss : BaseSpawn
 
     public void Spawn(int No)
     {
-        GameSceneControl.I.CountUp(spawnData[No].LoadState.Length);
+        EnemyM.CountUp(spawnData[No].LoadState.Length);
 
         StartCoroutine(DelaySpawnWave(
             spawnData[No].spawnTime[spawnData[No].enemyCount], /** spawnData[No].enemyCount + 1*///float型　生成時間
