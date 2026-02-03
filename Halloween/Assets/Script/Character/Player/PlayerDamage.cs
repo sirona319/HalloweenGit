@@ -141,7 +141,7 @@ public class PlayerDamage : MonoBehaviour,IDamage
 
         if (playerHp.hp <= 0)
         {
-            pScr.PlayerDead();
+            GetComponent<PlayerDead>().Dead();
         }
 
     }

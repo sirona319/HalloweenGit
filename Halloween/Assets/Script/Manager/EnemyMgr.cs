@@ -2,11 +2,10 @@
 
 public class EnemyMgr : Singleton<EnemyMgr>
 {
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-
-    }
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(this.gameObject);
+    //}
 
     [SerializeField] int enemyAllCount;
 

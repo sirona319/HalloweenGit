@@ -17,6 +17,7 @@ public class ManagerSceneAutoLoader
         if (!SceneManager.GetSceneByName(managerSceneName).IsValid())
         {
             SceneManager.LoadScene(managerSceneName, LoadSceneMode.Additive);
+            //SceneManager.LoadScene("TestAdd", LoadSceneMode.Additive);
         }
 
         //if (!SceneManager.GetSceneByName(managerSceneName).IsValid())

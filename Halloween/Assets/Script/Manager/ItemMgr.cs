@@ -20,10 +20,10 @@ public class ItemMgr : Singleton<ItemMgr>
         //swordI,
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(this.gameObject);
+    //}
 
     public ItemType type;
 

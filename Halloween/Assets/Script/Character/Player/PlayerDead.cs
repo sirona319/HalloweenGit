@@ -95,6 +95,12 @@ public class PlayerDead : MonoBehaviour
     #endregion
     public void DeadPosLoad()
     {
+        //GetComponent<PlayerScr2D>().isDead = true;
+        GetComponent<Animator>().SetBool("dead", true);
+
+        //イベントカメラが適用されていたら？
+        Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
+
         //if (Save.I.isLoad)
         //{
         Vector3 loadPos;
@@ -115,6 +121,15 @@ public class PlayerDead : MonoBehaviour
         {
             obj.GetComponent<BaseSpawn>().DeadNotice();
         }
+    }
+
+    public void Dead()
+    {
+        GetComponent<PlayerScr2D>().isDead = true;
+        GetComponent<Animator>().SetBool("dead", true);
+
+        //イベントカメラが適用されていたら？
+        Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
     }
 
     private void OnDestroy()

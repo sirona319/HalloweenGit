@@ -17,14 +17,14 @@ public class PlayerScr2D : MonoBehaviour
     public bool isDead = false;
 
     [SerializeField] TextMeshProUGUI timeText;//一時停止テキスト
-    public void PlayerDead()
-    {
-        GetComponent<PlayerScr2D>().isDead = true;
-        m_animator.SetBool("dead", true);
+    //public void PlayerDead()
+    //{
+    //    GetComponent<PlayerScr2D>().isDead = true;
+    //    m_animator.SetBool("dead", true);
 
-        //イベントカメラが適用されていたら？
-        Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
-    }
+    //    //イベントカメラが適用されていたら？
+    //    Camera.main.GetComponent<CameraControl>().CameraEventTriggerOff();
+    //}
 
     //private void Awake()
     //{
@@ -36,6 +36,7 @@ public class PlayerScr2D : MonoBehaviour
         Camera.main.GetComponent<CameraControl>().cameraTarget = this.transform.Find("CameraTarget").transform;
 
         m_animator = GetComponent<Animator>();
+
         if (SceneManager.GetActiveScene().name == SceneNameType.Stage1_1.ToString())
             m_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("AnimatorCtr/ナイぽ_Anim");
 
@@ -43,19 +44,18 @@ public class PlayerScr2D : MonoBehaviour
         //tMag.TargetSet(tMag, tMag.bulletTarget, this.gameObject);
         mag.MagazineEnter();
 
-        var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>();
-        if (gMgr.isChangePlayer)
-        {
-            //transform.position = gMgr.playerPos;
+        //var gMgr = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>();
+        //if (gMgr.isChangePlayer)
+        //{
+        //    //transform.position = gMgr.playerPos;
 
-            var pHp = GetComponent<PlayerHp>();
-            pHp.hp = gMgr.playerHp;
-            pHp.UpdateLifeImage();
+        //    var pHp = GetComponent<PlayerHp>();
+        //    pHp.hp = gMgr.playerHp;
+        //    pHp.UpdateLifeImage();
 
-            gMgr.isChangePlayer = false;
-            //return;
-        }
-
+        //    gMgr.isChangePlayer = false;
+        //    //return;
+        //}
     }
 
     private void Update()

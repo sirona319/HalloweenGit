@@ -99,7 +99,7 @@ SpriteRenderer:
   m_SortingLayerID: -573303605
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6735247549449805027, guid: 6e41732176140f1409683d49175474db, type: 3}
+  m_Sprite: {fileID: -1368436950245636399, guid: 6e41732176140f1409683d49175474db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -282,18 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e142f5707ce0a4e8084cd055c7ada1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugmoveX: 0
-  startT: {fileID: 0}
-  isStartPos: 0
-  bossT: {fileID: 0}
-  isBossPos: 0
   m_animator: {fileID: 4422683685633664959}
   m_movement: {x: 0, y: 0}
   maxMoveSpeed: 3.6
   moveSpeed: 3.6
   isGround:
     value: 1
-  isLimitMove: 0
+  isLimitMove: 1
   skyGravity: 22
   groundGravity: 1
   isJump: 0

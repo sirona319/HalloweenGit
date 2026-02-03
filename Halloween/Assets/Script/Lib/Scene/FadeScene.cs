@@ -44,6 +44,12 @@ public class FadeScene : MonoBehaviour
         //Debug.Log("FadeScene Start");
 
 
+
+
+
+        //プレイヤー座標を受け取る？
+        //FadeOut(1f);
+
     }
 
     float cutoutRange;
@@ -156,6 +162,7 @@ public class FadeScene : MonoBehaviour
         {
             FadeIn(1f, () => { 
                 SceneManager.LoadScene(name);
+                //SceneManager.LoadScene("TestAdd", LoadSceneMode.Additive);
                 //SceneManager.LoadScene("TestDoor",LoadSceneMode.Additive);
                 //isSceneChange = true;
 

@@ -50,12 +50,12 @@ public class SceneMoveObj : MonoBehaviour
            //     savePa.Play();
 
             //セーブ
-            Save.I.PlayerSave(savePos);
+            //Save.I.PlayerSave(savePos);
 
-            Save.I.SceneNameSave(moveSceneName);
+            //Save.I.SceneNameSave(moveSceneName);
 
 
-            Save.I.isLoad = true;
+            //Save.I.isLoad = true;
             //GameMgr.I.SceneChangeTimerSet(PlayerPrefs.GetString("SCENENAME"), 0.3f);
 
             //const float volume = 0.1f;

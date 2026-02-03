@@ -33,6 +33,14 @@ public class PlayerHp : MonoBehaviour
     {
         playerUI = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<PlayerUI>();
 
+        var SaveMgr = GameObject.FindGameObjectWithTag(TagName.SaveM).GetComponent<Save>();
+        if (SaveMgr.isSceneChange)
+        {
+            hp = PlayerPrefs.GetInt("HP");
+            SaveMgr.isSceneChange = false;
+        }
+
+        //PlayerPrefs.SetInt("HP", hpScr.hp);
         UpdateLifeImage();
     }
 

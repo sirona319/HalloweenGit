@@ -21,12 +21,12 @@ public class GameStartEvent : MonoBehaviour, IHaveText
 
         GameObject.FindGameObjectWithTag("SoundM").GetComponent<AudioSource>().Stop();
 
-        var isEvent = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>().isStartEventEnable;
+        //var isEvent = GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>().isStartEventEnable;
 
-        if (!isEvent)
-        {
-            timelineTexts[0].gameObject.SetActive(false);
-        }
+        //if (!isEvent)
+        //{
+        //    timelineTexts[0].gameObject.SetActive(false);
+        //}
     }
     //[SerializeField] GameObject player;
     //[SerializeField] Image eventBack;
@@ -46,7 +46,7 @@ public class GameStartEvent : MonoBehaviour, IHaveText
     public void EndEvent()
     {
         GameObject.FindGameObjectWithTag("SoundM").GetComponent<AudioSource>().Play();
-        GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>().isStartEventEnable = false;
+        //GameObject.FindGameObjectWithTag(TagName.GameController).GetComponent<GameMgr>().isStartEventEnable = false;
     }
 
     //public void SignalDisabelImage()

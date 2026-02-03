@@ -16,7 +16,7 @@ public class StraightPointTargetMove : BaseMove
 
     protected Vector3 direction;
 
-    protected ReactiveProperty<bool> IsMoveEnd = new ReactiveProperty<bool>(false);
+    //protected ReactiveProperty<bool> IsMoveEnd = new ReactiveProperty<bool>(false);
 
     protected TargetSet targetSet;
 
@@ -60,7 +60,10 @@ public class StraightPointTargetMove : BaseMove
 
         //最後の移動地点へ到着したら
         if (targetNo == moveTransLists.Count - 1)
-            IsMoveEnd.Value = true;
+        {
+            //IsMoveEnd.Value = true;
+
+        }
         else
         {
             targetNo++;
