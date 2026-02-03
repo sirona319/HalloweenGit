@@ -5,7 +5,7 @@ public class RotStartVecModule : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Z軸を中心に0〜360度の間でランダムに回転させる
+        // Z軸を中心に0〜360度の間でランダムに回転させる (検索ワード)unity オブジェクトをランダムな方向へ向かせる z軸のみ
         transform.Rotate(0f, 0f, Random.Range(0f, 360f));
 
         return;

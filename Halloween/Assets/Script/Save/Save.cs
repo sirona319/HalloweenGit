@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Save : Singleton<Save>
 {
@@ -120,7 +119,6 @@ public class Save : Singleton<Save>
 
     public bool isLoad;//タイトル画面でロードを選択し場合trueにする
     public bool isSceneChange = false;
-    //int stageNo = 0;
 
     private void Awake()
     {
@@ -134,17 +132,13 @@ public class Save : Singleton<Save>
         //全部の　セーブの消去
         PlayerPrefs.DeleteAll();
 
-
         //PlayerPrefs.SetInt("STAGENO", stageNo);
-
         //PlayerPrefs.SetInt("GOLD", GameObject.Find("GoldUI").GetComponent<GoldScr>().GetGold());
-
         //ItemSave();
 
         //HP MAXHPセーブ
         var hpScr = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerHp>();
         //PlayerPrefs.SetInt("HP", hpScr.hp);
-
         //PlayerPrefs.SetInt("MAXHP", hpScr.MAXHP);
 
 
@@ -162,43 +156,17 @@ public class Save : Singleton<Save>
 
     public void PlayerHpSave()
     {
-        Debug.Log("保存した");
+        Debug.Log("HP保存");
 
-        //全部の　セーブの消去
-        PlayerPrefs.DeleteAll();
-
-
-        //PlayerPrefs.SetInt("STAGENO", stageNo);
-
-        //PlayerPrefs.SetInt("GOLD", GameObject.Find("GoldUI").GetComponent<GoldScr>().GetGold());
-
-        //ItemSave();
 
         //HP MAXHPセーブ
         var hpScr = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerHp>();
         PlayerPrefs.SetInt("HP", hpScr.hp);
 
-        //PlayerPrefs.SetInt("MAXHP", hpScr.MAXHP);
 
-
-        //プレイ時間の保存
-        //PlayerPrefs.SetFloat("PLAYTIME", GameObject.Find("GameTimer").GetComponent<GameTimerOriginal>().deltaTime);
-
-        //PlayerPrefs.SetFloat("POSX", pos.x);
-        //PlayerPrefs.SetFloat("POSY", pos.y);
-        //PlayerPrefs.SetFloat("POSZ", pos.z);
-
-        //PlayerPrefs.SetString("SCENENAME", SceneManager.GetActiveScene().name);
         //セーブ処理
         PlayerPrefs.Save();
         isSceneChange = true;
     }
 
-    //public void SceneNameSave(string sceneName)
-    //{
-
-    //    PlayerPrefs.SetString("SCENENAME", sceneName);
-    //    //セーブ処理
-    //    PlayerPrefs.Save();
-    //}
 }
