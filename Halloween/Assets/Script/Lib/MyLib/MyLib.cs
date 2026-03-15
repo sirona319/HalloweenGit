@@ -586,27 +586,27 @@ public static class MyLib
     /// <typeparam name="T"></typeparam>
     /// <param name="original"></param>
     /// <returns></returns>
-    public static T InstantiateGetComponent<T>(GameObject original)
-        where T : Component
-    {
-        var go = UnityEngine.Object.Instantiate(original);
-        return go.GetComponent<T>();
-    }
+    //public static T InstantiateGetComponent<T>(GameObject original)
+    //    where T : Component
+    //{
+    //    var go = UnityEngine.Object.Instantiate(original);
+    //    return go.GetComponent<T>();
+    //}
 
-    public static T GetComponentLoad<T>(string name)
-        where T : Component
-    {
-        var go = (GameObject)Resources.Load(name);
-        return go.GetComponent<T>();
-    }
+    //public static T GetComponentLoad<T>(string name)
+    //    where T : Component
+    //{
+    //    var go = (GameObject)Resources.Load(name);
+    //    return go.GetComponent<T>();
+    //}
 
-    public static T InstantiateGetComponentLoad<T>(string name, Transform trans)
-        where T : Component
-    {
-        var go = (GameObject)Resources.Load(name);
+    //public static T InstantiateGetComponentLoad<T>(string name, Transform trans)
+    //    where T : Component
+    //{
+    //    var go = (GameObject)Resources.Load(name);
 
-        return UnityEngine.Object.Instantiate(go, trans).GetComponent<T>(); ;
-    }
+    //    return UnityEngine.Object.Instantiate(go, trans).GetComponent<T>(); ;
+    //}
 
     #endregion
 

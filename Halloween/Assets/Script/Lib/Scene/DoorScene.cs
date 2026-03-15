@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using static FadeScene;
 
 public class DoorScene : MonoBehaviour
 {
-    [SerializeField] SceneNameType SceneName;
+    [SerializeField] EnumSceneName.SceneNameType SceneName;
     [SerializeField] Vector3 playerToPos;
 
     bool isDoorOpen = false;

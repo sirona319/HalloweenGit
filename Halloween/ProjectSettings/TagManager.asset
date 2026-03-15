@@ -72,6 +72,15 @@ TagManager:
   - name: P
     uniqueID: 3721663691
     locked: 0
+  - name: Pt0
+    uniqueID: 1152561079
+    locked: 0
+  - name: Pt1
+    uniqueID: 1528062911
+    locked: 0
+  - name: Pt2
+    uniqueID: 2700191719
+    locked: 0
   - name: Title
     uniqueID: 4070861363
     locked: 0

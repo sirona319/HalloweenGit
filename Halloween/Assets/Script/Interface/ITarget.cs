@@ -2,5 +2,5 @@
 
 public interface ITarget
 {
-    [SerializeField] Transform Target { get; set; }
+   // [SerializeField] Transform Target { get; set; }
 }

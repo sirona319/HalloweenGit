@@ -1,7 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static FadeScene;
 
 //プレイヤーはシーン遷移ごとに消去されて再生成される
 //[RequireComponent(typeof(コンポーネント名))]
@@ -37,7 +36,7 @@ public class PlayerScr2D : MonoBehaviour
 
         m_animator = GetComponent<Animator>();
 
-        if (SceneManager.GetActiveScene().name == SceneNameType.Stage1_1.ToString())
+        if (SceneManager.GetActiveScene().name == EnumSceneName.SceneNameType.Stage1_1.ToString())
             m_animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("AnimatorCtr/ナイぽ_Anim");
 
         mag = GetComponent<PlayerMagazine>();

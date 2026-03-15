@@ -1,24 +1,27 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class Fly_Dead : StateChildBase
 {
     const float DEADTIME = 0.1f;
 
     //private ParticleSystem deadParticle;//パーティクル
-    ParticleSystem deadParticleR;//パーティクル
-    ParticleSystem deadParticleY;//パーティクル
+    //ParticleSystem deadParticleR;//パーティクル
+    //ParticleSystem deadParticleY;//パーティクル
     ParticleSystem deadParticleB;//パーティクル
-    AudioSource deadSound;
+   // AudioSource deadSound;
 
     public override void Initialize(int stateNo)
     {
         base.Initialize(stateNo);
+        //deadParticleR = Resources.Load("prefab/Particle/BreakPtR").GetComponent<ParticleSystem>();
+        //deadParticleY = Resources.Load("prefab/Particle/BreakPtY").GetComponent<ParticleSystem>();
+        deadParticleB = Resources.Load("prefab/Particle/BreakPtB_Poof").GetComponent<ParticleSystem>();
+        //deadParticleR = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtR");
+        //deadParticleY = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtY");
+        //deadParticleB = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtB");
 
-        deadParticleR = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtR");
-        deadParticleY = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtY");
-        deadParticleB = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtB");
-
-        deadSound = MyLib.GetComponentLoad<AudioSource>("prefab/Sound/DestroySound");
+        //deadSound = MyLib.GetComponentLoad<AudioSource>("prefab/Sound/DestroySound");
 
 
     }
@@ -29,8 +32,8 @@ public class Fly_Dead : StateChildBase
 
         //GetComponent<CreateDeadSound>().Create();
 
-        Instantiate(deadParticleR, transform.position, Quaternion.identity);
-        Instantiate(deadParticleY, transform.position, Quaternion.identity);
+        //Instantiate(deadParticleR, transform.position, Quaternion.identity);
+        //Instantiate(deadParticleY, transform.position, Quaternion.identity);
         Instantiate(deadParticleB, transform.position, Quaternion.identity);
 
         var cols = GetComponents<BoxCollider2D>();

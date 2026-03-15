@@ -7,7 +7,8 @@ public class KnifeScr : ReleaseDestroyer
     [SerializeField] ParticleSystem breakPt;
     private void Start()
     {
-        breakPt = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/CFXR Magic Poof");
+        breakPt = (ParticleSystem)Resources.Load("Prefab/Particle/CFXR Magic Poof");
+        //breakPt = MyLib.GetComponentLoad<GameObject>("Prefab/Particle/CFXR Magic Poof");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

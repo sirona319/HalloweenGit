@@ -60,7 +60,6 @@ public class Item : MonoBehaviour
         itemMgr.GetItemEffect(type, collision.transform);
         MyLib.MyPlayOneSound(itemMgr.GetItemSe(type), seVolume, gameObject);
 
-
         GetComponent<BoxCollider2D>().enabled = false;
         GetComponent<SpriteRenderer>().enabled = false;
     }

@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class Pumpkin_Dead : StateChildBase
 {
-    const float DEADTIME = 0.1f;
+    //const float DEADTIME = 0.1f;
 
     //private ParticleSystem deadParticle;//パーティクル
     ParticleSystem deadParticleR;//パーティクル
@@ -18,11 +19,11 @@ public class Pumpkin_Dead : StateChildBase
         //deadParticle = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/Flash_star_ellow_green");
 
 
-        deadParticleR = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtR");
-        deadParticleY = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtY");
-        deadParticleB = MyLib.GetComponentLoad<ParticleSystem>("prefab/Particle/BreakPtB");
+        deadParticleR = Resources.Load("prefab/Particle/BreakPtR").GetComponent<ParticleSystem>();
+        deadParticleY = Resources.Load("prefab/Particle/BreakPtY").GetComponent<ParticleSystem>();
+        deadParticleB = Resources.Load("prefab/Particle/BreakPtB").GetComponent<ParticleSystem>();
 
-        if(GetComponent<PumpkinScr>().isBoss)
+        if (GetComponent<PumpkinScr>().isBoss)
             bossPumpkin = GameObject.FindGameObjectWithTag("BossPumpkin").GetComponent<PumpkinBossScr>();
 
     }
