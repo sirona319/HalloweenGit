@@ -46,14 +46,14 @@ public class EnemyMgr : Singleton<EnemyMgr>
 
     public void EnemyClearAll()
     {
-        var enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
+        var enemys = GameObject.FindGameObjectsWithTag("Enemy");
 
         foreach (var e in enemys)
         {
             Destroy(e);
         }
 
-        var enemysB = GameObject.FindGameObjectsWithTag(TagName.EnemyBoss);
+        var enemysB = GameObject.FindGameObjectsWithTag("EnemyBoss");
 
         foreach (var e in enemysB)
         {

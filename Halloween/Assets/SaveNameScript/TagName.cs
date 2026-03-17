@@ -29,4 +29,5 @@ public static class TagName
 	public const string Message = "Message";
 	public const string ItemMgr = "ItemMgr";
 	public const string PlayerUI = "PlayerUI";
+	public const string tes = "tes";
 }

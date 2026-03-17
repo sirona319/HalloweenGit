@@ -27,7 +27,7 @@ public class CircleMove : BaseMove
     {
         base.Initialize();
 
-        var player = GameObject.FindGameObjectWithTag(TagName.Player);
+        var player = GameObject.FindGameObjectWithTag("Player");
 
         //targetPos = player.transform.position;
         targetTrans = player.transform;

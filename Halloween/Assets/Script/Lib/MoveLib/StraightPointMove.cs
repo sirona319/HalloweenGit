@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using UniRx;
+//using UniRx;
 using UnityEngine;
 
 public class StraightPointMove : BaseMove
@@ -15,7 +15,7 @@ public class StraightPointMove : BaseMove
 
     protected Vector3 direction;
 
-    protected ReactiveProperty<bool> IsMoveEnd = new ReactiveProperty<bool>(false);
+    //protected ReactiveProperty<bool> IsMoveEnd = new ReactiveProperty<bool>(false);
     //public ReactiveProperty<bool[]> IsPointMoveEnd = new ReactiveProperty<bool[]>(new bool[] {false,false });
 
     protected TargetSet targetSet;
@@ -62,7 +62,10 @@ public class StraightPointMove : BaseMove
 
             //最後の移動地点へ到着したら
             if (targetNo == moveTransLists.Count - 1)
-                IsMoveEnd.Value = true;
+        {
+
+        }
+               // IsMoveEnd.Value = true;
             else
             {
                 targetNo++;

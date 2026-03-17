@@ -39,7 +39,7 @@ public class BounceDOTransGround : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (this.enabled) return;
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             this.enabled = true;
 
@@ -56,7 +56,7 @@ public class BounceDOTransGround : MonoBehaviour
         if (this.enabled) return;
 
 
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             this.enabled = true;
             //pScr.IsGround = true;

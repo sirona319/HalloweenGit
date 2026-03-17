@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 //プレイヤーはシーン遷移ごとに消去されて再生成される
 //[RequireComponent(typeof(コンポーネント名))]
 [DisallowMultipleComponent]
-public class PlayerScr2D : MonoBehaviour
+public class PlayerScr2D : CharaBase
 {
     public bool DEBUGNoDamage = false;
 
@@ -13,7 +13,7 @@ public class PlayerScr2D : MonoBehaviour
     PlayerMagazine mag;
 
     Animator m_animator;
-    public bool isDead = false;
+    //public bool isDead = false;
 
     [SerializeField] TextMeshProUGUI timeText;//一時停止テキスト
     //public void PlayerDead()

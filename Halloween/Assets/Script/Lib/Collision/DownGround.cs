@@ -41,7 +41,7 @@ public class DownGround : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             playerFall = true;
             //Debug.Log("DownGroundEnter");
@@ -52,7 +52,7 @@ public class DownGround : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.transform.CompareTag(TagName.Player)/*|| other.transform.CompareTag("PlayerAI")*/)
+        if (other.transform.CompareTag("Player")/*|| other.transform.CompareTag("PlayerAI")*/)
         {
             playerFall = false;
             //Debug.Log("DownGroundExit");

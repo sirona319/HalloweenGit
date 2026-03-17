@@ -7,7 +7,7 @@ public class DamagePlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag(TagName.Player))return;
+        if (!other.CompareTag("Player"))return;
         
         var iDamage = other.GetComponent<IDamage>();
         if (iDamage != null)

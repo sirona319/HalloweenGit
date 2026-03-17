@@ -22,7 +22,7 @@ public class SoundCreateDead : MonoBehaviour
     public void Update()
     {
         if (IsSoundEnable) return;
-        if (!GetComponent<EnemyBase>().isDead) return ;
+        if (!GetComponent<CharaBase>().isDead) return ;
         IsSoundEnable = true;
 
         MyLib.MyPlayOneSound(path, 0.1f, gameObject);

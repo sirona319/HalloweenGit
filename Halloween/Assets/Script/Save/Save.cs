@@ -137,7 +137,7 @@ public class Save : Singleton<Save>
         //ItemSave();
 
         //HP MAXHPセーブ
-        var hpScr = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerHp>();
+        //var hpScr = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerHp>();
         //PlayerPrefs.SetInt("HP", hpScr.hp);
         //PlayerPrefs.SetInt("MAXHP", hpScr.MAXHP);
 
@@ -160,7 +160,7 @@ public class Save : Singleton<Save>
 
 
         //HP MAXHPセーブ
-        var hpScr = GameObject.FindGameObjectWithTag(TagName.Player).GetComponent<PlayerHp>();
+        var hpScr = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHp>();
         PlayerPrefs.SetInt("HP", hpScr.hp);
 
 

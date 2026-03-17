@@ -2,17 +2,33 @@
 
 public class MEMO : MonoBehaviour
 {
-    [TextArea(3, 20)]
-    public string memo;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    /*
+    ・パッケージ
+    FadeCamera2.unitypackage
+        https://x.gd/97tTw
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    DOTween (HOTween v2)
+
+    ・UIサイト
+    https://icon-rainbow.com/?s=%E6%9C%AC
+
+
+
+
+
+
+
+
+
+
+    */
+
+
+
+    //[TextArea(3, 20)]
+    //public string memo;
+
+
+
+
 }

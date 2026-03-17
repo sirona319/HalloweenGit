@@ -25,13 +25,30 @@ public class FallPumpkinChild : StraightPointMove
     public override void MoveUpdate()
     {
 
-        base.MoveUpdate();
 
-        if(IsMoveEnd.Value)
-        {
+
+                //指定ポイント方向へ進み続ける（停止しない）
+        transform.position += direction * speed * Time.deltaTime;
+        //rb2.MovePosition(rb2.position + direction * speed * Time.deltaTime);
+
+
+        float len = Vector3.Distance(transform.position, moveTransLists[targetNo].position);
+
+        if (len > ENDMOVELEN)
+            return;
+
+
+        //if (len < ENDMOVELEN)
+        //{
+
+            //最後の移動地点へ到着したら
+            if (targetNo == moveTransLists.Count - 1)
             GetComponent<PumpkinBossChildScr>().isFallMove = false;
-            //GetComponent<PumpkinBossChildScr>().isSpawnMove = true;//&&isAllfall
-        }
+        else
+            {
+                targetNo++;
+                direction = (moveTransLists[targetNo].position - transform.position).normalized;
+            }
 
     }
 }

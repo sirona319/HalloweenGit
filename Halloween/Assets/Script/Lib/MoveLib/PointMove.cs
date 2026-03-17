@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using UniRx;
+//using UniRx;
 using UnityEngine;
 
 public class PointMove : BaseMove
@@ -134,7 +134,7 @@ public class PointMove : BaseMove
     const float rotSpeed = 5f;
 
     [SerializeField] bool isLoop = false;
-    public ReactiveProperty<bool> isPointMoveEnd = new ReactiveProperty<bool>(false);//CreateMoveでSubscribe　エネミークラスなど？
+    //public ReactiveProperty<bool> isPointMoveEnd = new ReactiveProperty<bool>(false);//CreateMoveでSubscribe　エネミークラスなど？
 
     protected int targetNo = 0;
     //Rigidbody2D rb2;
@@ -181,7 +181,7 @@ public class PointMove : BaseMove
             {
 
                 //if (!IsKeepMove)
-                isPointMoveEnd.Value = true;
+                //isPointMoveEnd.Value = true;
 
                 if (isLoop)
                     targetNo = 0;

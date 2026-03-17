@@ -29,7 +29,7 @@ public class NoiseEnablePumpkin : MonoBehaviour
         //stateController.Initialize((int)FlyCtr.State.Fly_Wait);
 
         randTime = Random.Range(randTimeMin, randTimeMax);
-        pTrans = GameObject.FindWithTag(TagName.Player).transform;
+        pTrans = GameObject.FindWithTag("Player").transform;
 
         warpPositions = GameObject.FindGameObjectsWithTag("PumpkinWorp");
 

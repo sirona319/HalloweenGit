@@ -54,7 +54,7 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.transform.CompareTag(TagName.Player)) return;
+        if (!collision.transform.CompareTag("Player")) return;
 
 
         itemMgr.GetItemEffect(type, collision.transform);

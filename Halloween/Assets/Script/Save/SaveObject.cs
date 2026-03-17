@@ -1,10 +1,5 @@
-﻿using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using UnityEngine;
-using UnityEngine.Rendering;
 using static ItemMgr;
 
 public class SaveObject : MonoBehaviour

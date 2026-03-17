@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UniRx;
 using UnityEngine;
 
 //地面の衝突判定　設定した時間で破棄（衝突しないとき用）　プレイヤーがSTARTLEN以内に入ったら移動開始 
@@ -36,7 +35,7 @@ public class StraightPointTargetMove : BaseMove
 
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 
-        player = GameObject.FindGameObjectWithTag(TagName.Player.ToString())?.transform;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     public override void MoveEnter()
@@ -79,7 +78,7 @@ public class StraightPointTargetMove : BaseMove
 
         if (player == null)
         {
-            player = GameObject.FindGameObjectWithTag(TagName.Player.ToString())?.transform;
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
             Debug.Log("プレイヤーが存在しない");
             return isStart;
         }
@@ -101,7 +100,7 @@ public class StraightPointTargetMove : BaseMove
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(TagName.Ground))
+        if (collision.gameObject.CompareTag("Ground"))
         {
 
             Destroy(gameObject);

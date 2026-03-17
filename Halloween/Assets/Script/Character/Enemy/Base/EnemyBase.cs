@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 
-public class EnemyBase : MonoBehaviour
+public class EnemyBase : CharaBase
 {
     #region ステートコントローラー
     [SerializeField] protected StateControllerBase stateController = default;
@@ -15,7 +15,7 @@ public class EnemyBase : MonoBehaviour
     }
     #endregion
 
-    public bool isDead = false;
+    //public bool isDead = false;
 
 
     //[SerializeField] public bool isDamage = false;

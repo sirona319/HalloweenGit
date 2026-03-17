@@ -21,7 +21,7 @@ public class NoiseEnablePlayer : MonoBehaviour
         spriteR.material.SetFloat("_GlitchFrequency", frequency);
         spriteR.material.SetFloat("_GlitchDuration", duration);
         GetComponent<SpriteRenderer>().flipX = false;
-        GetComponent<PlayerMove>().isNoise = true;
+        GetComponent<PlayerMove>().isNoise = true;//
     }
 
     //private void FixedUpdate()

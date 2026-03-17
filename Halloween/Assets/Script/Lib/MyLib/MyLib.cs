@@ -393,20 +393,20 @@ public static class MyLib
 
     #endregion
 
-    #region　エネミー
+    #region　キャラ
 
     /// <summary>
     ///　敵の数を返す
     /// </summary>
     /// <param name="target"></param>
     /// <returns></returns>
-    public static int EnemyNum()
+    public static int CharaNum(string tagName)
     {
-        var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
-        if (Enemys.Length == 0)
+        var Charas = GameObject.FindGameObjectsWithTag(tagName);
+        if (Charas.Length == 0)
             return 0;
 
-        return Enemys.Length;
+        return Charas.Length;
 
     }
 
@@ -415,59 +415,86 @@ public static class MyLib
     /// </summary>
     /// <param name="pos">プレイヤーなどのオブジェクト座標</param>
     /// <returns>一番近い敵の座標を返す</returns>
-    public static Vector3 EnemysNearVec(Vector3 pos)
+    //public static Vector3 EnemysNearVec(Vector3 pos)
+    //{
+    //    var Enemys = GameObject.FindGameObjectsWithTag("Enemy");
+    //    if (Enemys.Length == 0)
+    //        return Vector3.zero;
+
+    //    Vector3 nearVec = Enemys[0].transform.position;
+    //    float nearLen = Vector3.Distance(pos, nearVec);
+    //    foreach (GameObject enemy in Enemys)
+    //    {
+    //        float enemyLen = Vector3.Distance(pos, enemy.transform.position);
+    //        if (enemyLen <= nearLen)
+    //        {
+    //            nearVec = enemy.transform.position;
+    //            nearLen = enemyLen;//距離の更新
+    //        }
+    //    }
+
+    //    return nearVec;
+    //}
+
+    ///// 一番近い敵を返す
+    //public static EnemyBase EnemysNearScr(Vector3 pos)
+    //{
+    //    var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
+    //    if (Enemys.Length == 0)
+    //        return null;
+
+    //    Vector3 nearVec = Enemys[0].transform.position;
+    //    float nearLen = Vector3.Distance(pos, nearVec);
+    //    EnemyBase saveEnemy = null;
+    //    foreach (GameObject enemy in Enemys)
+    //    {
+    //        var baseEnemy = enemy.GetComponent<EnemyBase>();
+    //        //敵が死んでいたら無効　
+    //        //if (baseEnemy.GetState() == (int)EnemyStateController.EnemyStateType.EnemyStateChild_Dead)
+    //        //{
+    //            //baseEnemy.rockImage.enabled = false;
+    //           // continue;
+    //       // }
+
+    //        float enemyLen = Vector3.Distance(pos, baseEnemy.transform.position);
+    //        if (enemyLen <= nearLen)
+    //        {
+    //            //nearVec = baseEnemy.transform.position;
+
+    //            nearLen = enemyLen;//距離の更新
+
+    //            saveEnemy = baseEnemy;//距離が近い敵の保存
+    //        }
+    //    }
+
+    //    return saveEnemy;
+    //}
+
+    /// 一番近いキャラオブジェクトを返す
+    public static CharaBase CharaNearScr(Vector3 pos,string tagName)
     {
-        var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
-        if (Enemys.Length == 0)
-            return Vector3.zero;
-
-        Vector3 nearVec = Enemys[0].transform.position;
-        float nearLen = Vector3.Distance(pos, nearVec);
-        foreach (GameObject enemy in Enemys)
-        {
-            float enemyLen = Vector3.Distance(pos, enemy.transform.position);
-            if (enemyLen <= nearLen)
-            {
-                nearVec = enemy.transform.position;
-                nearLen = enemyLen;//距離の更新
-            }
-        }
-
-        return nearVec;
-    }
-
-    /// 一番近い敵を返す
-    public static EnemyBase EnemysNearScr(Vector3 pos)
-    {
-        var Enemys = GameObject.FindGameObjectsWithTag(TagName.Enemy);
-        if (Enemys.Length == 0)
+        var charas = GameObject.FindGameObjectsWithTag(tagName);
+        if (charas.Length == 0)
             return null;
 
-        Vector3 nearVec = Enemys[0].transform.position;
+        Vector3 nearVec = charas[0].transform.position;
         float nearLen = Vector3.Distance(pos, nearVec);
-        EnemyBase saveEnemy = null;
-        foreach (GameObject enemy in Enemys)
+        CharaBase saveChara = null;
+        foreach (GameObject chara in charas)
         {
-            var baseEnemy = enemy.GetComponent<EnemyBase>();
-            //敵が死んでいたら無効　
-            //if (baseEnemy.GetState() == (int)EnemyStateController.EnemyStateType.EnemyStateChild_Dead)
-            //{
-                //baseEnemy.rockImage.enabled = false;
-               // continue;
-           // }
+            var baseChara = chara.GetComponent<CharaBase>();
 
-            float enemyLen = Vector3.Distance(pos, baseEnemy.transform.position);
-            if (enemyLen <= nearLen)
+            float charaLen = Vector3.Distance(pos, baseChara.transform.position);
+            if (charaLen <= nearLen)
             {
-                //nearVec = baseEnemy.transform.position;
 
-                nearLen = enemyLen;//距離の更新
+                nearLen = charaLen;//距離の更新
 
-                saveEnemy = baseEnemy;//距離が近い敵の保存
+                saveChara = baseChara;//距離が近い敵の保存
             }
         }
 
-        return saveEnemy;
+        return saveChara;
     }
 
     #endregion

@@ -16,7 +16,7 @@ public class FallCol : MonoBehaviour
     //Spawner SpawnPoof;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(TagName.Player))
+        if (other.CompareTag("Player"))
         {
             //モーションをさせないダメージ
             other.GetComponent<PlayerDamage>().AbsDamage(1);
