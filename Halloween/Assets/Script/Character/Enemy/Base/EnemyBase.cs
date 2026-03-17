@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using System;
 //using static EnemyData;
-using System.Collections.Generic;
 
 
 public class EnemyBase : CharaBase

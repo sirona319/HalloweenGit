@@ -1,8 +1,4 @@
-﻿using Cysharp.Threading.Tasks.Triggers;
-using System;
-using UnityEngine;
-using UnityEngine.Audio;
-using static CreateBullet;
+﻿using UnityEngine;
 //using static EnemyData;
 
 public abstract class BaseMagazine : MonoBehaviour

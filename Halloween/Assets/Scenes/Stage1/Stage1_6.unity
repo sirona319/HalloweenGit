@@ -10505,9 +10505,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1215716869}
-  - component: {fileID: 1215716868}
   - component: {fileID: 1215716867}
   - component: {fileID: 1215716866}
+  - component: {fileID: 1215716870}
   m_Layer: 0
   m_Name: spawnBoss
   m_TagString: Spawn
@@ -10590,31 +10590,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1215716868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215716865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a376f74931994a45857f27891644972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnData:
-  - DataName: pumpkinBoss
-    enemyCount: 0
-    spawnTime:
-    - 0
-    LoadState:
-    - {fileID: 5650915251221225199, guid: 74d43ac17513e3f428b6cfcd73b2a5ea, type: 3}
-    spawnLocations:
-    - {fileID: 1215716869}
-    movePointsSet:
-    - childArray:
-      - {fileID: 0}
-  saveGo: {fileID: 0}
 --- !u!4 &1215716869
 Transform:
   m_ObjectHideFlags: 0
@@ -10630,6 +10605,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1215716870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215716865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b53c892a15fa344add3fbf56bc0ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnBoss
+  spawnData:
+  - DataName: pumpkinBoss
+    enemyCount: 0
+    spawnTime:
+    - 0
+    LoadState:
+    - {fileID: 5650915251221225199, guid: 74d43ac17513e3f428b6cfcd73b2a5ea, type: 3}
+    spawnLocations:
+    - {fileID: 1215716869}
+    movePointsSet: []
+  saveGo: {fileID: 0}
 --- !u!1 &1258395255
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System.Collections;
 using UnityEngine;
 
 public class ObjectSpawn : MonoBehaviour
@@ -49,13 +49,13 @@ public class ObjectSpawn : MonoBehaviour
         while (true)
         {
 
-            DelaySpawnAsyncSceneObject
+            StartCoroutine(DelaySpawnWave
             (spawnData[No].spawnTime[spawnData[No].Count] * spawnData[No].Count + 1,//float型
 
             spawnData[No].ObjState[spawnData[No].Count],//ステート
 
             transform.position//spawnData[No].spawnLocations[spawnData[No].Count].position//生成座標
-            ).Forget();
+            ));
 
             spawnData[No].Count++;
             if (spawnData[No].Count >= spawnData[No].ObjState.Length)
@@ -76,10 +76,10 @@ public class ObjectSpawn : MonoBehaviour
     //    //colTrigger.isActiveTrigger = false;
     //}
 
-    public async UniTask DelaySpawnAsyncSceneObject(float seconds, GameObject loadObj, Vector3 spawnPos)
+    public IEnumerator DelaySpawnWave(float seconds, GameObject loadObj, Vector3 spawnPos)
     {
 
-        await UniTask.WaitForSeconds(seconds);
+        yield return new WaitForSeconds(seconds);
 
         //オブジェクトマネージャーに変更する？
         //var eData = EnemyMgr.I.GetEnemyData(loadState.ToString());

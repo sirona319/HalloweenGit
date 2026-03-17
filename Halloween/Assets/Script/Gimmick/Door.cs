@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using static FadeScene;
 
 public class Door : MonoBehaviour
 {

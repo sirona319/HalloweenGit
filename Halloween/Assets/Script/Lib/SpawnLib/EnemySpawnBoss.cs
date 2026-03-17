@@ -52,6 +52,8 @@ public class EnemySpawnBoss : BaseSpawn
         //EnemyMgr.I.EnemyClearAll();
         Spawn(0);
 
+        Debug.Log("BossDead");
+
     }
 
 
