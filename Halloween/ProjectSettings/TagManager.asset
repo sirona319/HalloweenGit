@@ -23,6 +23,7 @@ TagManager:
   - Message
   - ItemMgr
   - PlayerUI
+  - PumpkinText
   layers:
   - Default
   - TransparentFX

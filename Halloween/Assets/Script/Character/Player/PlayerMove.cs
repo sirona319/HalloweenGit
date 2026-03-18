@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
         set => isGround.Value = value;
     }
 
-    [SerializeField] bool isLimitMove = false;     //アニメーション中などの移動制限
+    [SerializeField] bool isLimitMove = true;     //アニメーション中などの移動制限
     [SerializeField] float skyGravity = 22;
     [SerializeField] float groundGravity = 1; //ダッシュ対応のため1
 
@@ -81,7 +81,7 @@ public class PlayerMove : MonoBehaviour
         //moveSpeed = maxMoveSpeed;
 
         //アニメーションイベントで解除する
-        //isLimitMove = true;
+
         //ダッシュ残像のオフ
         GetComponent<DynamicAfterImageEffect2DPlayer>().SetActive(false);
 
@@ -264,7 +264,7 @@ public class PlayerMove : MonoBehaviour
         //GetComponent<PlayerHp>().AbsDamage(100);
         m_animator.SetBool("isStart", true);
         //if (!m_animator.GetBool("isStart")) return;
-        //isLimitMove = false;
+
         moveSpeed = maxMoveSpeed;
     }
 
@@ -276,7 +276,7 @@ public class PlayerMove : MonoBehaviour
     public void StartAnimEnd()
     {
         //フラグをオフ
-        isLimitMove = false;
+
         Debug.Log("isLimitMove = false;");
     }
 

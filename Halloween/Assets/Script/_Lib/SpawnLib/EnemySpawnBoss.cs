@@ -53,7 +53,9 @@ public class EnemySpawnBoss : BaseSpawn
         Spawn(0);
 
         Debug.Log("BossDead");
-
+        //GameObject.FindGameObjectWithTag("EnemyBoss").GetComponentInChildren<BossCollisionTrigger>().BossCollisionOff();
+        //timelineTexts[0].GetComponentInChildren<BossCollisionTrigger>().BossCollisionOff();
+        //startBattle = false;
     }
 
 

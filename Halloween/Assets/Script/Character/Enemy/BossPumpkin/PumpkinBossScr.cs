@@ -36,12 +36,46 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     //public GameObject[][] pumpkinsDEBUG;
     //SerializeField] SerializedDictionary<PumpkinChild, bool> pumpkinDicLv3;
 
-    public TimelineControl[] timelineTexts;
+    TimelineControl[] timelineTexts;
     int timelineNo = 0;
 
     //public EnemyDamage eDamage;
 
     //public bool isDEBUG=true;
+
+    void Start()
+    {
+        timelineTexts = GameObject.FindGameObjectWithTag("PumpkinText").GetComponentsInChildren<TimelineControl>();
+        //int i = 0;
+        //foreach (var tx in pGo)
+        //{
+        //    timelineTexts = tx;
+        //    i++;
+        //}
+
+
+
+        if (testLv2)
+            pumpkinChildDeadCount = 6;
+        if (testLv3)
+            pumpkinChildDeadCount = 16;
+
+        //foreach (var go in pumpkins)
+        //{
+        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;
+        //}
+        //foreach (var go in pumpkinsLv2)
+        //{
+        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin2;
+        //}
+        //foreach (var go in pumpkinsLv3)
+        //{
+        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin3;
+        //}
+
+        stateController.Initialize((int)PumpkinBossCtr.State.PumpkinBoss_Wait);
+
+    }
     public void TextReadPlus()
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
@@ -63,29 +97,7 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
 
     #endregion
 
-    void Start()
-    {
-        if(testLv2)
-            pumpkinChildDeadCount= 6;
-        if (testLv3)
-            pumpkinChildDeadCount= 16;
 
-        //foreach (var go in pumpkins)
-        //{
-        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin1;
-        //}
-        //foreach (var go in pumpkinsLv2)
-        //{
-        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin2;
-        //}
-        //foreach (var go in pumpkinsLv3)
-        //{
-        //    go.GetComponent<RotModule>().speed = rotSpeedPumpkin3;
-        //}
-
-        stateController.Initialize((int)PumpkinBossCtr.State.PumpkinBoss_Wait);
-
-    }
 
     void Update()
     {

@@ -249,3 +249,43 @@
     //    pDamage.Damage(damage);
 
     //}
+
+
+    //UniTask　参考
+    using Cysharp.Threading.Tasks;
+
+    void SpawnObj(int No)
+    {
+
+        //1回目以降
+        while (true)
+        {
+
+            DelaySpawnAsyncSceneObject
+            (spawnData[No].spawnTime[spawnData[No].Count] * spawnData[No].Count + 1,//float型
+
+            spawnData[No].ObjState[spawnData[No].Count],//ステート
+
+            transform.position//spawnData[No].spawnLocations[spawnData[No].Count].position//生成座標
+            ).Forget();
+
+            spawnData[No].Count++;
+            if (spawnData[No].Count >= spawnData[No].ObjState.Length)
+                break;
+
+        }
+
+    }
+
+
+    public async UniTask DelaySpawnAsyncSceneObject(float seconds, GameObject loadObj, Vector3 spawnPos)
+    {
+
+        await UniTask.WaitForSeconds(seconds);
+
+        //オブジェクトマネージャーに変更する？
+        //var eData = EnemyMgr.I.GetEnemyData(loadState.ToString());
+
+        Instantiate(loadObj, spawnPos, transform.rotation);
+
+    }

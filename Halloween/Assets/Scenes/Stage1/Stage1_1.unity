@@ -25373,7 +25373,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 2143866692}
           m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-          m_MethodName: StartMoveActive
+          m_MethodName: MoveActive
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -25402,6 +25402,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1488305093}
           m_TargetAssemblyTypeName: MessageEvent, Assembly-CSharp
           m_MethodName: MessageStart
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2143866692}
+          m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+          m_MethodName: MoveStop
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -37926,7 +37938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8413570243603184152, guid: 67efa1df80dd6a84f9b6c04b25f5dfe6, type: 3}
       propertyPath: isLimitMove
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44741,6 +44753,10 @@ PrefabInstance:
     - target: {fileID: 5203495955232968941, guid: d348d702cd128f74cac5398a7fac70e1, type: 3}
       propertyPath: m_Name
       value: ManagerObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791974279548499253, guid: d348d702cd128f74cac5398a7fac70e1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

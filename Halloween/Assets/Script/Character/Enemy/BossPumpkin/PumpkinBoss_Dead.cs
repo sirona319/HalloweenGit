@@ -11,7 +11,7 @@ public class PumpkinBoss_Dead : StateChildBase
     public override void OnEnter()
     {
 
-
+        Debug.Log("PumpkinBoss_Dead");
     }
 
     public override void OnExit()

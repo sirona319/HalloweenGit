@@ -51,9 +51,9 @@ public class MessageEvent : MonoBehaviour
         readIcon.enabled = true;
         textBackImage.enabled = true;
 
-        var p = GameObject.FindGameObjectWithTag("Player");
-        if (p != null)
-            p.GetComponent<PlayerMove>().MoveStop();
+        //var p = GameObject.FindGameObjectWithTag("Player");
+        //if (p != null)
+        //    p.GetComponent<PlayerMove>().MoveStop();
 
 
         const float targetAlpha = 0.7f;
@@ -81,8 +81,9 @@ public class MessageEvent : MonoBehaviour
         textBackImage.DOColor(tColor, fadeSpeed).SetEase(Ease.Linear);
 
         //プレイヤーの移動制限解除
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().MoveActive();
+        //if (GameObject.FindGameObjectWithTag("Player") != null)
+        //    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().MoveActive();
+
         //p.isLimitMove = false;
         //p.moveSpeed = p.maxMoveSpeed;
         Debug.Log("メッセージ終了" + GetType().FullName);

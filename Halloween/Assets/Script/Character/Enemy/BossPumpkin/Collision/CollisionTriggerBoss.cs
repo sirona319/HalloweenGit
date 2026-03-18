@@ -2,14 +2,14 @@
 
 public class BossCollisionTrigger : MonoBehaviour
 {
-    [SerializeField] GameObject DEBUGbossPumpkin;
+    //[SerializeField] GameObject DEBUGbossPumpkin;
 
     [SerializeField] float cameraDuration;
     [SerializeField] Transform cameraSetTrans;
 
     [SerializeField] BoxCollider2D[] boxs2D;
 
-    [SerializeField] GameObject boss;
+    //[SerializeField] GameObject boss;
     bool isBossBattle = false;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -17,7 +17,7 @@ public class BossCollisionTrigger : MonoBehaviour
 
         if (isBossBattle) return;
 
-        if (!other.transform.CompareTag(TagName.Player)) return;
+        if (!other.transform.CompareTag("Player")) return;
         
         isBossBattle = true;
 
@@ -36,11 +36,13 @@ public class BossCollisionTrigger : MonoBehaviour
 
 
         //デバッグ用 シグナルで呼んでいる　
-        //DEBUGbossPumpkin.GetComponent<PumpkinBossScr>().SignalBattleState(true);
+        var bPumpkin = GameObject.FindGameObjectWithTag("BossPumpkin");
+        //bPumpkin.GetComponent<PumpkinBossScr>().SignalBattleState(true);
+
         //return;
         ///////////////////
+        var readText = bPumpkin.GetComponent<IHaveText>();
 
-        var readText = boss.GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();
     }
@@ -60,11 +62,21 @@ public class BossCollisionTrigger : MonoBehaviour
         }
 
         //ボスの死亡会話？
-        var readText = boss.GetComponent<IHaveText>();
+        var readText = GameObject.FindGameObjectWithTag("BossPumpkin").GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();
 
         Camera.main.GetComponent<CameraControl>().isEventCamera = false;
     }
 
+
+
+
+    public void TimelinePumpkin()
+    {
+        var bPumpkin = GameObject.FindGameObjectWithTag("BossPumpkin");
+        bPumpkin.GetComponent<PumpkinBossScr>().SignalBattleState(true);
+    }
 }
+
+
