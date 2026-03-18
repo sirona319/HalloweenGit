@@ -4,4 +4,6 @@
 public interface IHaveText
 {
     public void TextReadPlus();
+
+    public void TextReset();
 }

@@ -36,6 +36,12 @@ public class GameStartEvent : MonoBehaviour, IHaveText
         //timelineNo++;
     }
 
+    public void TextReset()
+    {
+        timelineNo = 0;
+        //timelineNo++;
+    }
+
     #region シグナル
 
     //public void SoundMgrActive()

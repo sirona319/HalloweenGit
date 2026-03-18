@@ -53,7 +53,7 @@ public class EnemyMgr : Singleton<EnemyMgr>
             Destroy(e);
         }
 
-        var enemysB = GameObject.FindGameObjectsWithTag("EnemyBoss");
+        var enemysB = GameObject.FindGameObjectsWithTag("BossPumpkin");
 
         foreach (var e in enemysB)
         {

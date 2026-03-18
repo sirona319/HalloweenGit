@@ -21,6 +21,11 @@ public static class MyLib
 
     #region  sin移動
 
+    //    if(sinType == SinType.Add)
+    //    addSinTime = Time.deltaTime;
+    //else if(sinType == SinType.Sub)
+    //    addSinTime = -Time.deltaTime;
+
     //上下　浮遊のような動き
     public static void LoopMotionSinWait(float sinTime,Transform t,float addX,float addY)
     {

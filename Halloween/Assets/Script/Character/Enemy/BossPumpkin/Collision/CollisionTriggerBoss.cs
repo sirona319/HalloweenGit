@@ -10,7 +10,7 @@ public class BossCollisionTrigger : MonoBehaviour
     [SerializeField] BoxCollider2D[] boxs2D;
 
     //[SerializeField] GameObject boss;
-    bool isBossBattle = false;
+    [SerializeField] bool isBossBattle = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -48,7 +48,7 @@ public class BossCollisionTrigger : MonoBehaviour
     }
 
     //
-    public void BossCollisionOff()
+    public void BossCollisionOffWin()
     {
         //isBossBattle = false;
 
@@ -65,6 +65,22 @@ public class BossCollisionTrigger : MonoBehaviour
         var readText = GameObject.FindGameObjectWithTag("BossPumpkin").GetComponent<IHaveText>();
         if (readText != null)
             readText.TextReadPlus();
+
+        Camera.main.GetComponent<CameraControl>().isEventCamera = false;
+    }
+
+    public void BossCollisionOffLosePlayer()
+    {
+        isBossBattle = false;
+
+        //コリジョンの無効
+        foreach (var i in boxs2D)
+        {
+            foreach (var j in i.GetComponents<BoxCollider2D>())
+            {
+                j.enabled = false;
+            }
+        }
 
         Camera.main.GetComponent<CameraControl>().isEventCamera = false;
     }

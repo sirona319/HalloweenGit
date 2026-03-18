@@ -7,10 +7,8 @@ TagManager:
   - Enemy
   - ExitErea
   - Ground
-  - EnemyBoss
   - PumpkinWorp
   - GroundRight
-  - FxTemporaire
   - GroundBreak
   - Knife
   - MoveFloor
@@ -24,6 +22,7 @@ TagManager:
   - ItemMgr
   - PlayerUI
   - PumpkinText
+  - PumpkinCol
   layers:
   - Default
   - TransparentFX

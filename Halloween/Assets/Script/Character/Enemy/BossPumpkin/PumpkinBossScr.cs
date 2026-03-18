@@ -36,8 +36,8 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
     //public GameObject[][] pumpkinsDEBUG;
     //SerializeField] SerializedDictionary<PumpkinChild, bool> pumpkinDicLv3;
 
-    TimelineControl[] timelineTexts;
-    int timelineNo = 0;
+    [SerializeField]TimelineControl[] timelineTexts;
+    [SerializeField] int timelineNo = 0;
 
     //public EnemyDamage eDamage;
 
@@ -81,10 +81,15 @@ public class PumpkinBossScr : MonoBehaviour, IHaveText
         timelineTexts[timelineNo].isPlayTrigger = true;
         timelineNo++;
     }
+    public void TextReset()
+    {
+        timelineNo = 0;
+        //timelineNo++;
+    }
     public void BattleEnd()
     {
         timelineTexts[timelineNo].isPlayTrigger = true;
-        timelineTexts[0].GetComponentInChildren<BossCollisionTrigger>().BossCollisionOff();
+        timelineTexts[0].GetComponentInChildren<BossCollisionTrigger>().BossCollisionOffWin();
         startBattle = false;
 
     }

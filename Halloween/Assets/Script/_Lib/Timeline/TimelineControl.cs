@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 using UnityEngine.Playables;
 
 public class TimelineControl : MonoBehaviour
@@ -103,5 +104,17 @@ public class TimelineControl : MonoBehaviour
         //    //Debug.Log("SPACE成功");
         //}
 
+        
+    }
+
+    public void FlgReset()
+    {
+        isPlayTrigger = false;
+        isPlay = false;
+    }
+
+    public void FlgActive()
+    {
+        isPlayTrigger = true;
     }
 }
